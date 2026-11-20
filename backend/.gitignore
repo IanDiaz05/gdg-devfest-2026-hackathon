@@ -1,0 +1,19 @@
+# Python bytecode / caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.ruff_cache/
+
+# Virtualenvs and env files
+.venv/
+venv/
+.env
+.env.*
+
+# SQLite
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+*.db-wal
