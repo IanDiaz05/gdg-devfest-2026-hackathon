@@ -146,28 +146,14 @@ La recomendación sale de **cruzar el clima con los requisitos**. El contenido l
 
 ### Archivo de cultivos que vamos a armar (`cultivos.json`)
 
-Toma los números de ECOCROP y los completa a mano:
+Toma los números de ECOCROP y los completa a mano. Usa **los mismos nombres de campos que el contrato 2** de [`docs/json-contracts.md`](docs/json-contracts.md) (`nombre_cientifico`, `categoria`, `ficha_tecnica.temp_ideal_c`, `companeros_cultivo`, sin `ñ`), más los campos internos que necesita el motor de reglas:
 
-```json
-{
-  "id": "jitomate",
-  "nombre": "Jitomate",
-  "cientifico": "Lycopersicon esculentum",
-  "seccion": "Hortalizas",
-  "temp_ideal": [20, 27],
-  "temp_limite": [7, 35],
-  "tolera_helada": false,
-  "dias_a_cosecha": [70, 150],
-  "altitud_max": 2400,
-  "maceta_min_litros": 20,
-  "luz": "pleno sol, 6-8 h",
-  "riego": "constante, sin encharcar",
-  "dificultad": "media",
-  "compañeros": ["albahaca", "zanahoria"],
-  "tutorial": ["Siembra la semilla a 0.5 cm en almácigo...", "..."],
-  "curiosidades": ["La palabra viene del náhuatl xitomatl..."]
-}
-```
+| Campo interno | Origen | Para qué |
+|---|---|---|
+| `ecocrop_nombre` | ECOCROP | Saber de dónde salieron las temperaturas |
+| `altitud_max_m` | ECOCROP (`ALTMX`) | Regla de altitud |
+| `perenne` | ECOCROP (`LISPA`), revisado a mano | Revisar 12 meses en lugar del ciclo |
+| `producto_sniim` | A mano | Variante de SNIIM para el perfil de precios (`null` si no está) |
 
 ---
 
@@ -183,7 +169,8 @@ Sin machine learning, solo reglas que se pueden explicar:
    - **Cultivos que no toleran heladas** (jitomate, chile, calabaza, frijol, maíz…): cuenta cualquier noche con mínima ≤ 2 °C. Con 20% o más → ❌; entre 5 y 20% → ⚠️.
    - **Cultivos que toleran heladas ligeras** (lechuga, espinaca, ajo, cebolla, zanahoria, cilantro…): solo cuentan las heladas fuertes (≤ −2 °C).
 4. **Altitud:** si tu zona está más alta de lo normal para ese cultivo → ⚠️.
-5. **Resultado:** ✅ / ⚠️ / ❌, la razón principal en una frase y los meses en que sí conviene.
+5. **Resultado:** ✅ / ⚠️ / ❌ y la razón principal en una frase.
+6. **Calendario:** corremos las reglas para los 12 meses de siembra. Los meses ✅ son `meses_ideales` y los ✅ + ⚠️ son `meses_posibles`.
 
 > Usamos 2 °C y no 0 °C porque el dato es la temperatura del aire a 2 m de altura en una zona de unos 10 km: cuando el aire está a 2 °C, a ras de suelo ya puede helar.
 
@@ -216,17 +203,17 @@ Corrimos un prototipo de las reglas con **30 años de clima (1996-2025)** de Ope
 [Usuario]
    │ ciudad o ubicación
    ▼
-[Frontend web] ──► [API FastAPI] ──► Open-Meteo (geocoding, 30 años de clima, pronóstico)
+[Frontend web] ──► [API FastAPI] ──► Open-Meteo (geocoding, 30 años de clima, pronóstico 7 días)
                         │                └─ guardado en caché por zona (evita el error 429)
-                        ├─► cultivos.json (ECOCROP + curación manual + tutoriales + curiosidades)
+                        ├─► cultivos.json      (ECOCROP + curación manual + tutoriales + curiosidades)
+                        ├─► sniim_perfiles.json (temporada de precios, CDMX 2021-2026)
+                        ├─► sequia.json         (Monitor de Sequía, último reporte por municipio)
                         └─► motor de reglas (sección 7)
 ```
 
-**Endpoints**
-- `GET /zona?q=Toluca` → coordenadas, altitud y resumen del clima.
-- `GET /recomendaciones?lat=&lon=&mes=12` → lista ✅ / ⚠️ / ❌ con su razón y los meses buenos.
-- `GET /cultivos/{id}` → ficha: tutorial y curiosidades.
-- `GET /alertas?lat=&lon=` → heladas o calor en los próximos 7 días (opcional).
+**Endpoints** (detalle, origen de cada campo y errores en [`docs/json-contracts.md`](docs/json-contracts.md))
+- `GET /api/recomendaciones?q=Toluca&mes=12` (o `?lat=&lon=&mes=`) → zona, clima típico, sequía, alertas de 7 días y la lista ✅ / ⚠️ / ❌ con razón, calendario y datos de ahorro. Alimenta 4 de las 5 pantallas.
+- `GET /api/cultivos/{id}` → ficha: tutorial, compañeros de cultivo, curiosidades, avisos y contexto de precios.
 
 **¿Hace falta backend?** Aquí **sí conviene**:
 - Guarda el clima en caché para no pedir 30 años en cada consulta.
@@ -271,5 +258,9 @@ Empezamos con un **monitor de precios de temporada** (qué fruta o verdura está
 El README completo de la idea anterior está en el historial de git (commit `244190e`).
 
 ---
+
+**Documentos**
+- [`docs/json-contracts.md`](docs/json-contracts.md): contratos oficiales de la API.
+- [`docs/revision-contratos.md`](docs/revision-contratos.md): revisión de los contratos con datos reales y de dónde sale cada campo.
 
 *Scripts de exploración (descarga de SNIIM, clima, análisis de correlación y prototipo de recomendador de siembra): disponibles localmente, pendiente subirlos al repo.*
