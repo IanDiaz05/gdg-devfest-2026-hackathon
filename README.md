@@ -262,5 +262,6 @@ El README completo de la idea anterior está en el historial de git (commit `244
 **Documentos**
 - [`docs/json-contracts.md`](docs/json-contracts.md): contratos oficiales de la API.
 - [`docs/revision-contratos.md`](docs/revision-contratos.md): revisión de los contratos con datos reales y de dónde sale cada campo.
+- [`docs/analisis-frontend.md`](docs/analisis-frontend.md): revisión del diseño (`QueSiembro.pdf`): qué corregir, qué sobra, qué falta y la propuesta de "Recomendaciones del mes".
 
 *Scripts de exploración (descarga de SNIIM, clima, análisis de correlación y prototipo de recomendador de siembra): disponibles localmente, pendiente subirlos al repo.*
