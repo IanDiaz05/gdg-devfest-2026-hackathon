@@ -8,7 +8,12 @@
       "tutorial": ["Siembra las semillas a 0.5 cm de profundidad; germinan en 7 a 10 días.", "Cuando tengan 4 hojas, deja una planta cada 20 cm.", "Ponla donde le dé sol en la mañana y sombra a mediodía.", "Cosecha las hojas de afuera conforme crezcan o la planta completa a los 50-60 días."],
       "companeros": [{"id": "rabano", "beneficio": "Se cosechan en tiempos distintos y aprovechan el mismo espacio.", "evidencia": "popular"}],
       "curiosidades": ["Es de la misma familia que el girasol y el diente de león (Asteráceas)."],
-      "ojo": []
+      "ojo": [],
+      "fuentes": [
+        "Manual de Huerto en Casa - Universidad Veracruzana (UV)",
+        "Guía de Huertos Urbanos - SEDEMA CDMX",
+        "Base de datos FAO ECOCROP"
+      ]
     },
     "espinaca": {
       "resumen": "Hoja de clima fresco que crece rápido en maceta; con calor florece y deja de producir.",
@@ -17,7 +22,12 @@
       "tutorial": ["Siembra a 1 cm de profundidad; germina en 7 a 14 días.", "Deja una planta cada 10-15 cm.", "Prefiere sol de mañana y media sombra en las horas de calor.", "Corta las hojas exteriores desde los 40 días; la planta sigue produciendo."],
       "companeros": [{"id": "fresa", "beneficio": "Comparten maceta grande sin competir mucho por la luz.", "evidencia": "popular"}],
       "curiosidades": ["Es de la misma familia que la acelga y el betabel."],
-      "ojo": []
+      "ojo": [],
+      "fuentes": [
+        "Manual de Huerto en Casa - Universidad Veracruzana (UV)",
+        "Guía de Huertos Urbanos - SEDEMA CDMX",
+        "Base de datos FAO ECOCROP"
+      ]
     },
     "acelga": {
       "resumen": "Hoja muy productiva y resistente; se corta muchas veces durante meses.",
@@ -26,7 +36,12 @@
       "tutorial": ["Siembra las semillas a 2 cm de profundidad; cada 'semilla' puede dar varias plantas.", "Deja la planta más fuerte cada 25 cm.", "Ponla a pleno sol o media sombra.", "Corta las hojas de afuera desde los 60 días y deja el centro para que siga creciendo."],
       "companeros": [{"id": "cebolla", "beneficio": "Ocupan distinta profundidad de la maceta.", "evidencia": "popular"}],
       "curiosidades": ["Es la misma especie que el betabel (Beta vulgaris): una se cultiva por la hoja y la otra por la raíz."],
-      "ojo": []
+      "ojo": [],
+      "fuentes": [
+        "Manual de Huerto en Casa - Universidad Veracruzana (UV)",
+        "Guía de Huertos Urbanos - SEDEMA CDMX",
+        "Base de datos FAO ECOCROP"
+      ]
     },
     "rabano": {
       "resumen": "El cultivo más rápido para empezar: en unas 4 semanas ya se cosecha.",
@@ -35,7 +50,12 @@
       "tutorial": ["Siembra a 1 cm de profundidad; germina en 3 a 5 días.", "Ralea a una planta cada 5 cm.", "Ponlo a pleno sol.", "Cosecha a los 25-35 días, cuando asome la raíz; si esperas de más se pone fofo."],
       "companeros": [{"id": "lechuga", "beneficio": "El rábano sale antes y deja espacio a la lechuga.", "evidencia": "popular"}],
       "curiosidades": ["Es pariente de la col y la mostaza (Brasicáceas); por eso pica."],
-      "ojo": []
+      "ojo": [],
+      "fuentes": [
+        "Manual de Huerto en Casa - Universidad Veracruzana (UV)",
+        "Guía de Huertos Urbanos - SEDEMA CDMX",
+        "Base de datos FAO ECOCROP"
+      ]
     },
     "zanahoria": {
       "resumen": "Raíz dulce que en maceta da mejor con variedades cortas y una maceta profunda.",
@@ -44,7 +64,12 @@
       "tutorial": ["Siembra directo a 0.5-1 cm de profundidad (no se trasplanta); germina en 10 a 20 días.", "Ralea a una planta cada 5 cm cuando midan 5 cm.", "Ponla a pleno sol.", "Cosecha a los 70-90 días, cuando el cuello de la raíz tenga 2 cm."],
       "companeros": [{"id": "cebolla", "beneficio": "Se dice que el olor de la cebolla aleja a la mosca de la zanahoria.", "evidencia": "popular"}],
       "curiosidades": ["Las primeras zanahorias cultivadas eran moradas o amarillas; la naranja se popularizó en Europa siglos después."],
-      "ojo": []
+      "ojo": [],
+      "fuentes": [
+        "Manual de Huerto en Casa - Universidad Veracruzana (UV)",
+        "Guía de Huertos Urbanos - SEDEMA CDMX",
+        "Base de datos FAO ECOCROP"
+      ]
     },
     "cebolla": {
       "resumen": "Cebolla cambray o de bulbo chico, fácil en maceta mediana.",
@@ -53,7 +78,12 @@
       "tutorial": ["Siembra en semillero a 0.5 cm o compra plántula.", "Trasplanta cuando midan 10-15 cm, una cada 8-10 cm.", "Ponla a pleno sol.", "Cosecha como cambray a los 60-90 días o espera a que doblen las hojas para bulbo."],
       "companeros": [{"id": "zanahoria", "beneficio": "Ocupan distinta profundidad de la maceta.", "evidencia": "popular"}],
       "curiosidades": ["Hace llorar porque al cortarla libera un gas que irrita los ojos."],
-      "ojo": ["Es tóxica para perros y gatos: no la dejes a su alcance."]
+      "ojo": ["Es tóxica para perros y gatos: no la dejes a su alcance."],
+      "fuentes": [
+        "Manual de Huerto en Casa - Universidad Veracruzana (UV)",
+        "Lista de plantas tóxicas para perros y gatos - ASPCA",
+        "Base de datos FAO ECOCROP"
+      ]
     },
     "ajo": {
       "resumen": "Se siembra de un diente y pide paciencia: tarda varios meses, pero casi no da trabajo.",
@@ -62,7 +92,12 @@
       "tutorial": ["Separa los dientes de una cabeza sana y siembra cada uno con la punta hacia arriba, a 3-5 cm de profundidad.", "Deja 10 cm entre dientes.", "Ponlo a pleno sol; en climas templados se siembra en otoño.", "Cosecha cuando la mayoría de las hojas estén amarillas y deja secar la cabeza a la sombra."],
       "companeros": [{"id": "fresa", "beneficio": "Se dice que su olor aleja algunas plagas.", "evidencia": "popular"}],
       "curiosidades": ["Su olor viene de la alicina, una defensa de la planta que se forma al cortar o machacar el diente."],
-      "ojo": ["Es tóxico para perros y gatos."]
+      "ojo": ["Es tóxico para perros y gatos."],
+      "fuentes": [
+        "Manual de Huerto en Casa - Universidad Veracruzana (UV)",
+        "Lista de plantas tóxicas para perros y gatos - ASPCA",
+        "Base de datos FAO ECOCROP"
+      ]
     },
     "papa": {
       "resumen": "Se puede cultivar en costal o bolsa de cultivo grande, cubriendo la planta con tierra conforme crece.",
@@ -71,7 +106,12 @@
       "tutorial": ["Corta una papa con brotes en trozos de 2 yemas y déjalos secar un día.", "Pon 15 cm de tierra en el costal y siembra los trozos a 10 cm de profundidad.", "Cuando la planta mida 20 cm, cúbrela con tierra dejando solo las puntas (aporcar); repite 2 o 3 veces.", "Cosecha cuando la planta se seque, a los 90-120 días."],
       "companeros": [],
       "curiosidades": ["Viene de los Andes de Sudamérica y llegó a Europa en el siglo XVI."],
-      "ojo": ["No comas papas verdes ni brotes: tienen solanina, que es tóxica.", "No la siembres junto al jitomate: comparten el tizón tardío.", "Las hojas y tallos son tóxicos para perros y gatos."]
+      "ojo": ["No comas papas verdes ni brotes: tienen solanina, que es tóxica.", "No la siembres junto al jitomate: comparten el tizón tardío.", "Las hojas y tallos son tóxicos para perros y gatos."],
+      "fuentes": [
+        "Manual de Huerto en Casa - Universidad Veracruzana (UV)",
+        "Lista de plantas tóxicas para perros y gatos - ASPCA",
+        "Base de datos FAO ECOCROP"
+      ]
     },
     "jitomate": {
       "resumen": "El cultivo estrella del huerto en casa; requiere sol directo y soporte para crecer vertical.",
@@ -80,7 +120,12 @@
       "tutorial": ["Siembra 2 semillas a 0.5 cm de profundidad en un semillero húmedo; germinan en 6 a 10 días.", "Cuando la plántula mida 10-15 cm y tenga 4 hojas verdaderas, trasplántala a una maceta de al menos 20 L.", "Coloca un tutor desde el inicio y quita los brotes que salen entre el tallo y las ramas.", "Cosecha cuando el fruto tenga color rojo uniforme pero siga firme."],
       "companeros": [{"id": "albahaca", "beneficio": "Se dice que ayuda a repeler mosca blanca y pulgones.", "evidencia": "popular"}, {"id": "zanahoria", "beneficio": "Aprovecha la parte baja de la maceta sin competir por luz.", "evidencia": "popular"}],
       "curiosidades": ["Su nombre viene del náhuatl xitomatl.", "Aunque en la cocina se usa como verdura, botánicamente es una fruta."],
-      "ojo": ["Las hojas y los tallos no se comen y son tóxicos para perros y gatos.", "No lo siembres junto a la papa: comparten el tizón tardío."]
+      "ojo": ["Las hojas y los tallos no se comen y son tóxicos para perros y gatos.", "No lo siembres junto a la papa: comparten el tizón tardío."],
+      "fuentes": [
+        "Manual de Huerto en Casa - Universidad Veracruzana (UV)",
+        "Guía de Huertos Urbanos - SEDEMA CDMX",
+        "Base de datos FAO ECOCROP"
+      ]
     },
     "tomate_verde": {
       "resumen": "Base de la salsa verde; crece rápido y produce mucho si tiene compañía de otra planta.",
@@ -89,7 +134,12 @@
       "tutorial": ["Siembra en semillero a 0.5 cm; germina en 7 a 10 días.", "Trasplanta cuando mida 15 cm; siembra al menos dos plantas cerca.", "Ponle tutor: las ramas se abren y se quiebran con el peso.", "Cosecha cuando el fruto llene y empiece a romper la cáscara de papel."],
       "companeros": [{"id": "albahaca", "beneficio": "Comparte sol y riego parecido.", "evidencia": "popular"}],
       "curiosidades": ["Su nombre viene del náhuatl tomatl.", "Casi no se poliniza solo: necesita otra planta cerca para dar fruto."],
-      "ojo": ["Las hojas no se comen y son tóxicas para mascotas."]
+      "ojo": ["Las hojas no se comen y son tóxicas para mascotas."],
+      "fuentes": [
+        "Manual de Huerto en Casa - Universidad Veracruzana (UV)",
+        "SIAP - Cierre agrícola municipal",
+        "Base de datos FAO ECOCROP"
+      ]
     },
     "chile_serrano": {
       "resumen": "Chile muy productivo en maceta mediana; necesita calor y mucho sol.",
@@ -98,7 +148,12 @@
       "tutorial": ["Siembra en semillero a 0.5 cm en un lugar cálido; germina en 10 a 20 días.", "Trasplanta cuando tenga 4 a 6 hojas.", "Ponlo a pleno sol.", "Cosecha los chiles verdes o espera a que maduren rojos (pican más)."],
       "companeros": [{"id": "albahaca", "beneficio": "Comparte sol y riego parecido.", "evidencia": "popular"}],
       "curiosidades": ["El picor (capsaicina) aleja a los mamíferos, pero las aves no lo sienten y dispersan las semillas.", "El chile (Capsicum annuum) se domesticó en México."],
-      "ojo": ["Lávate las manos después de manipularlo y no te toques los ojos."]
+      "ojo": ["Lávate las manos después de manipularlo y no te toques los ojos.", "Las hojas y los frutos picantes son tóxicos para perros y gatos."],
+      "fuentes": [
+        "INIFAP - Instituto Nacional de Investigaciones Forestales, Agrícolas y Pecuarias",
+        "Lista de plantas tóxicas para perros y gatos - ASPCA",
+        "Base de datos FAO ECOCROP"
+      ]
     },
     "chile_habanero": {
       "resumen": "Uno de los chiles más picosos; necesita calor constante y es ideal para zonas cálidas.",
@@ -107,7 +162,12 @@
       "tutorial": ["Siembra en semillero a 0.5 cm en un lugar muy cálido (25-30 °C); puede tardar 2 a 4 semanas en germinar.", "Trasplanta cuando tenga 4 a 6 hojas.", "Ponlo a pleno sol y protégelo del frío.", "Cosecha cuando los frutos tomen su color final (naranja o rojo)."],
       "companeros": [{"id": "albahaca", "beneficio": "Comparte sol y riego parecido.", "evidencia": "popular"}],
       "curiosidades": ["El chile habanero de la Península de Yucatán tiene denominación de origen.", "Su especie (Capsicum chinense) viene de la Amazonía, no de México."],
-      "ojo": ["Usa guantes al cortarlo y no te toques los ojos."]
+      "ojo": ["Usa guantes al cortarlo y no te toques los ojos.", "Las hojas y los frutos picantes son tóxicos para perros y gatos."],
+      "fuentes": [
+        "Denominación de origen Chile Habanero de la Península de Yucatán - IMPI",
+        "INIFAP - Instituto Nacional de Investigaciones Forestales, Agrícolas y Pecuarias",
+        "Base de datos FAO ECOCROP"
+      ]
     },
     "calabacita": {
       "resumen": "Muy productiva pero ocupa espacio: necesita una maceta grande o un costal.",
@@ -116,7 +176,12 @@
       "tutorial": ["Siembra 2 semillas directo a 2-3 cm de profundidad y deja la más fuerte.", "Ponla a pleno sol.", "Si no da fruto, pasa con un pincel el polen de la flor macho a la hembra (la que tiene la calabacita chiquita).", "Cosecha cuando mida 15-20 cm; si las dejas crecer, la planta produce menos."],
       "companeros": [{"id": "frijol_ejote", "beneficio": "Juntos forman parte de la milpa: el frijol aporta nitrógeno al suelo.", "evidencia": "comprobada"}],
       "curiosidades": ["La calabaza (Cucurbita pepo) fue de las primeras plantas domesticadas en México, hace unos 10,000 años."],
-      "ojo": ["Si una calabacita sabe muy amarga, no la comas: puede tener cucurbitacinas."]
+      "ojo": ["Si una calabacita sabe muy amarga, no la comas: puede tener cucurbitacinas."],
+      "fuentes": [
+        "Manual de Huerto en Casa - Universidad Veracruzana (UV)",
+        "Guía de Huertos Urbanos - SEDEMA CDMX",
+        "Base de datos FAO ECOCROP"
+      ]
     },
     "pepino": {
       "resumen": "Trepador y rápido; con una guía vertical cabe bien en balcón.",
@@ -125,7 +190,12 @@
       "tutorial": ["Siembra 2 semillas directo a 2 cm de profundidad.", "Coloca una malla o guía para que trepe.", "Ponlo a pleno sol.", "Cosecha seguido, cuando el fruto sea firme y verde; así la planta da más."],
       "companeros": [],
       "curiosidades": ["Es alrededor de 95% agua."],
-      "ojo": ["Si sabe muy amargo, no lo comas."]
+      "ojo": ["Si sabe muy amargo, no lo comas."],
+      "fuentes": [
+        "Manual de Huerto en Casa - Universidad Veracruzana (UV)",
+        "Guía de Huertos Urbanos - SEDEMA CDMX",
+        "Base de datos FAO ECOCROP"
+      ]
     },
     "frijol_ejote": {
       "resumen": "Frijol de mata para cosechar ejotes tiernos; no necesita guía y mejora el suelo.",
@@ -134,7 +204,12 @@
       "tutorial": ["Siembra 2 o 3 semillas directo a 3 cm de profundidad (no le gusta el trasplante).", "Deja una planta cada 10-15 cm.", "Ponlo a pleno sol.", "Cosecha los ejotes tiernos a los 55-65 días, antes de que se marquen los granos."],
       "companeros": [{"id": "calabacita", "beneficio": "Juntos forman parte de la milpa.", "evidencia": "comprobada"}],
       "curiosidades": ["El frijol se domesticó en Mesoamérica y es parte de la milpa, junto con el maíz y la calabaza.", "Sus raíces se asocian con bacterias que fijan nitrógeno del aire."],
-      "ojo": ["No comas el frijol crudo: tiene lectinas. Cuécelo bien."]
+      "ojo": ["No comas el frijol crudo: tiene lectinas. Cuécelo bien."],
+      "fuentes": [
+        "Manual de Huerto en Casa - Universidad Veracruzana (UV)",
+        "SIAP - Cierre agrícola municipal",
+        "Base de datos FAO ECOCROP"
+      ]
     },
     "chicharo": {
       "resumen": "Trepador de clima fresco; da vainas dulces y casi no pide abono.",
@@ -143,7 +218,12 @@
       "tutorial": ["Remoja las semillas una noche y siémbralas a 3 cm de profundidad.", "Coloca una malla o hilos para que trepe.", "Siémbralo en la temporada fresca.", "Cosecha las vainas cuando se llenen los granos y sigan verdes."],
       "companeros": [{"id": "zanahoria", "beneficio": "Ocupan distinta profundidad de la maceta.", "evidencia": "popular"}],
       "curiosidades": ["Gregor Mendel usó chícharos en sus experimentos para descubrir las leyes de la herencia."],
-      "ojo": []
+      "ojo": [],
+      "fuentes": [
+        "Manual de Huerto en Casa - Universidad Veracruzana (UV)",
+        "Guía de Huertos Urbanos - SEDEMA CDMX",
+        "Base de datos FAO ECOCROP"
+      ]
     },
     "fresa": {
       "resumen": "Perenne que vive varios años en maceta y da fruto en la temporada fresca.",
@@ -152,7 +232,12 @@
       "tutorial": ["Compra una planta o un estolón enraizado (de semilla es lento).", "Plántala con la corona (el centro) al ras de la tierra.", "Ponla a pleno sol.", "Quita los estolones si quieres más fruto; cosecha cuando estén rojas por completo."],
       "companeros": [{"id": "espinaca", "beneficio": "Comparten maceta sin competir mucho por la luz.", "evidencia": "popular"}, {"id": "ajo", "beneficio": "Se dice que su olor aleja algunas plagas.", "evidencia": "popular"}],
       "curiosidades": ["Los puntitos de afuera no son semillas: cada uno es un pequeño fruto (aquenio)."],
-      "ojo": []
+      "ojo": [],
+      "fuentes": [
+        "Manual de Huerto en Casa - Universidad Veracruzana (UV)",
+        "Guía de Huertos Urbanos - SEDEMA CDMX",
+        "Base de datos FAO ECOCROP"
+      ]
     },
     "cilantro": {
       "resumen": "Hierba rápida de clima fresco; con calor florece pronto, así que conviene sembrarlo seguido.",
@@ -161,7 +246,12 @@
       "tutorial": ["Frota las semillas para partirlas en dos; así germinan mejor.", "Siembra directo a 1 cm de profundidad (no le gusta el trasplante).", "Ponlo con sol de mañana y sombra en la tarde.", "Corta las hojas desde los 40 días y vuelve a sembrar cada 3 semanas para tener siempre."],
       "companeros": [],
       "curiosidades": ["La semilla seca es una especia llamada coriandro.", "A algunas personas les sabe a jabón por una variante genética en su olfato."],
-      "ojo": []
+      "ojo": [],
+      "fuentes": [
+        "Manual de Huerto en Casa - Universidad Veracruzana (UV)",
+        "Guía de Huertos Urbanos - SEDEMA CDMX",
+        "Base de datos FAO ECOCROP"
+      ]
     },
     "perejil": {
       "resumen": "Hierba de crecimiento lento al inicio pero que da hojas durante muchos meses.",
@@ -170,7 +260,12 @@
       "tutorial": ["Remoja la semilla 24 horas y siémbrala a 0.5 cm de profundidad.", "Ten paciencia: tarda de 2 a 4 semanas en germinar.", "Ponlo con sol de mañana o media sombra.", "Corta los tallos de afuera desde la base."],
       "companeros": [{"id": "jitomate", "beneficio": "Comparten maceta grande sin competir mucho.", "evidencia": "popular"}],
       "curiosidades": ["Es bianual: el segundo año florece y deja de dar tantas hojas."],
-      "ojo": ["Es tóxico para perros y gatos en cantidad."]
+      "ojo": [],
+      "fuentes": [
+        "Manual de Huerto en Casa - Universidad Veracruzana (UV)",
+        "Guía de Huertos Urbanos - SEDEMA CDMX",
+        "Base de datos FAO ECOCROP"
+      ]
     },
     "albahaca": {
       "resumen": "Hierba aromática de clima cálido; si la despuntas, se pone frondosa.",
@@ -179,7 +274,12 @@
       "tutorial": ["Siembra a 0.5 cm de profundidad con calor; germina en 5 a 10 días.", "Trasplanta cuando tenga 4 hojas.", "Ponla a pleno sol.", "Corta las puntas por encima de un par de hojas y quita las flores para que dé más hojas."],
       "companeros": [{"id": "jitomate", "beneficio": "Se dice que ayuda a repeler mosca blanca y pulgones.", "evidencia": "popular"}, {"id": "chile_serrano", "beneficio": "Comparte sol y riego parecido.", "evidencia": "popular"}],
       "curiosidades": ["Es de la misma familia que la menta y el romero (Lamiáceas)."],
-      "ojo": ["No resiste heladas: métela en noches frías."]
+      "ojo": ["No resiste heladas: métela en noches frías."],
+      "fuentes": [
+        "Manual de Huerto en Casa - Universidad Veracruzana (UV)",
+        "Guía de Huertos Urbanos - SEDEMA CDMX",
+        "Base de datos FAO ECOCROP"
+      ]
     },
     "epazote": {
       "resumen": "Hierba mexicana para los frijoles y los esquites; crece sola y resiste casi todo.",
@@ -188,7 +288,12 @@
       "tutorial": ["Esparce las semillas en la superficie y cúbrelas apenas.", "Ralea a una planta cada 20 cm.", "Ponlo a pleno sol.", "Corta las puntas tiernas; quita las flores para que no se riegue por todas las macetas."],
       "companeros": [],
       "curiosidades": ["Su nombre viene del náhuatl epazotl.", "Tradicionalmente se le pone a los frijoles."],
-      "ojo": ["Úsalo solo como condimento: en grandes cantidades es tóxico.", "Es tóxico para mascotas."]
+      "ojo": ["Úsalo solo como condimento: en grandes cantidades es tóxico.", "Es tóxico para mascotas."],
+      "fuentes": [
+        "Manual de Huerto en Casa - Universidad Veracruzana (UV)",
+        "SIAP - Cierre agrícola municipal",
+        "Base de datos FAO ECOCROP"
+      ]
     },
     "hierbabuena": {
       "resumen": "Menta muy fácil de propagar; crece tanto que conviene tenerla sola en su maceta.",
@@ -197,7 +302,12 @@
       "tutorial": ["Pon un tallo de 10 cm en un vaso con agua; echa raíces en 1 a 2 semanas.", "Plántalo en su propia maceta.", "Ponla con media sombra.", "Corta las puntas seguido para que se ramifique."],
       "companeros": [],
       "curiosidades": ["Se extiende por tallos subterráneos y puede invadir toda una maceta."],
-      "ojo": ["Es tóxica para perros y gatos en cantidad."]
+      "ojo": ["Mantenla en su propia maceta: sus raíces invaden las plantas vecinas."],
+      "fuentes": [
+        "Manual de Huerto en Casa - Universidad Veracruzana (UV)",
+        "Guía de Huertos Urbanos - SEDEMA CDMX",
+        "Base de datos FAO ECOCROP"
+      ]
     },
     "romero": {
       "resumen": "Arbusto aromático perenne que aguanta sequía y vive años en maceta.",
@@ -206,7 +316,12 @@
       "tutorial": ["Lo más fácil es enraizar un esqueje de 10 cm en tierra húmeda (de semilla es lento).", "Trasplanta a una maceta de 15 L con buen drenaje.", "Ponlo a pleno sol.", "Corta ramitas cuando lo necesites, sin quitar más de un tercio de la planta."],
       "companeros": [{"id": "zanahoria", "beneficio": "Se dice que su aroma confunde a algunas plagas.", "evidencia": "popular"}],
       "curiosidades": ["En 2017 se cambió su nombre científico a Salvia rosmarinus: es pariente de la salvia."],
-      "ojo": []
+      "ojo": [],
+      "fuentes": [
+        "Manual de Huerto en Casa - Universidad Veracruzana (UV)",
+        "Guía de Huertos Urbanos - SEDEMA CDMX",
+        "Base de datos FAO ECOCROP"
+      ]
     },
     "oregano": {
       "resumen": "Hierba perenne y resistente; su sabor es más intenso con sol y poco riego.",
@@ -215,7 +330,12 @@
       "tutorial": ["Esparce la semilla en la superficie sin enterrarla, o divide una mata ya hecha.", "Trasplanta cuando mida 5 cm.", "Ponlo a pleno sol.", "Corta las ramas antes de que florezca para más aroma."],
       "companeros": [],
       "curiosidades": ["El 'orégano mexicano' (Lippia graveolens) es otra planta distinta, aunque se use igual."],
-      "ojo": ["Es tóxico para perros y gatos en cantidad."]
+      "ojo": [],
+      "fuentes": [
+        "Manual de Huerto en Casa - Universidad Veracruzana (UV)",
+        "Guía de Huertos Urbanos - SEDEMA CDMX",
+        "Base de datos FAO ECOCROP"
+      ]
     },
     "cebollin": {
       "resumen": "Hierba perenne de hojas finas que rebrota cada vez que se corta.",
@@ -224,7 +344,12 @@
       "tutorial": ["Siembra la semilla a 0.5 cm o divide una mata.", "Deja grupos de plantas cada 10 cm.", "Ponlo a pleno sol.", "Corta las hojas dejando 3 a 5 cm para que vuelvan a crecer."],
       "companeros": [{"id": "zanahoria", "beneficio": "Se dice que su olor aleja a la mosca de la zanahoria.", "evidencia": "popular"}],
       "curiosidades": ["Sus flores moradas también se comen."],
-      "ojo": ["Es tóxico para perros y gatos."]
+      "ojo": ["Es tóxico para perros y gatos."],
+      "fuentes": [
+        "Manual de Huerto en Casa - Universidad Veracruzana (UV)",
+        "Lista de plantas tóxicas para perros y gatos - ASPCA",
+        "Base de datos FAO ECOCROP"
+      ]
     },
     "verdolaga": {
       "resumen": "Quelite suculento y nutritivo, casi imposible de matar; ideal para calor y poca agua.",
@@ -233,7 +358,12 @@
       "tutorial": ["Esparce la semilla en la superficie sin enterrarla, o planta un tallo directamente.", "Ponla a pleno sol.", "Riega poco.", "Corta las puntas tiernas desde los 30-40 días; rebrota."],
       "companeros": [],
       "curiosidades": ["Es de las verduras de hoja con más omega-3."],
-      "ojo": ["Tiene oxalatos: es tóxica para perros y gatos."]
+      "ojo": ["Tiene oxalatos: en exceso puede molestar a mascotas con problemas renales."],
+      "fuentes": [
+        "Manual de Huerto en Casa - Universidad Veracruzana (UV)",
+        "SIAP - Cierre agrícola municipal",
+        "Base de datos FAO ECOCROP"
+      ]
     },
     "amaranto": {
       "resumen": "Quelite y grano prehispánico; sus hojas tiernas se comen como verdura.",
@@ -242,7 +372,12 @@
       "tutorial": ["Esparce la semilla (es diminuta) casi en la superficie.", "Ralea a una planta cada 20 cm.", "Ponlo a pleno sol y en un lugar protegido del viento.", "Cosecha las hojas tiernas a los 30-45 días o espera la espiga para el grano."],
       "companeros": [{"id": "frijol_ejote", "beneficio": "Se cultivaban juntos en la milpa tradicional.", "evidencia": "popular"}],
       "curiosidades": ["Con su grano reventado y miel se hacen las alegrías.", "En náhuatl se llama huauhtli."],
-      "ojo": ["Cocina las hojas antes de comerlas."]
+      "ojo": ["Cocina las hojas antes de comerlas."],
+      "fuentes": [
+        "SIAP - Cierre agrícola municipal",
+        "Manual de Huerto en Casa - Universidad Veracruzana (UV)",
+        "Base de datos FAO ECOCROP"
+      ]
     },
     "nopal": {
       "resumen": "Cactácea mexicana muy resistente; de una penca salen nopalitos para cocinar.",
@@ -251,7 +386,12 @@
       "tutorial": ["Corta una penca y déjala cicatrizar 1 a 2 semanas a la sombra.", "Entierra un tercio de la penca en tierra seca y no riegues la primera semana.", "Ponlo a pleno sol.", "Corta los nopalitos tiernos cuando midan 15-20 cm."],
       "companeros": [],
       "curiosidades": ["Aparece en el escudo nacional de México."],
-      "ojo": ["Usa guantes: tiene espinas y ahuates (espinas finitas)."]
+      "ojo": ["Usa guantes: tiene espinas y ahuates (espinas finitas)."],
+      "fuentes": [
+        "Nopal verdura - SADER",
+        "SIAP - Cierre agrícola municipal",
+        "Base de datos FAO ECOCROP"
+      ]
     }
   }
 }

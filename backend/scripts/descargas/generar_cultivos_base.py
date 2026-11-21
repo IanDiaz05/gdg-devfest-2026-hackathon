@@ -20,9 +20,40 @@ from comun import CURACION, DATA, cultivos_curados, guardar_json, hoy, leer_json
 def opcional(nombre: str) -> dict:
     ruta = DATA / nombre
     if not ruta.exists():
-        print(f"  ⚠️ falta {nombre}: córrelo antes para completar esos campos")
+        print(f"  falta {nombre}: córrelo antes para completar esos campos")
         return {}
     return leer_json(ruta).get("cultivos", {})
+
+
+def _tomar(curado: dict, eco: dict, clave: str):
+    if clave in curado and curado[clave] is not None:
+        return curado[clave]
+    return eco.get(clave)
+
+
+def _fuentes(contenido: dict, eco: dict, wiki: dict) -> list[str]:
+    vistos: set[str] = set()
+    salida: list[str] = []
+    for item in contenido.get("fuentes") or []:
+        if not isinstance(item, str):
+            continue
+        texto = item.strip()
+        if texto and texto not in vistos:
+            vistos.add(texto)
+            salida.append(texto)
+    if eco:
+        linea_eco = "Base de datos FAO ECOCROP"
+        nombre_eco = eco.get("ecocrop_nombre")
+        if nombre_eco:
+            linea_eco = f"Base de datos FAO ECOCROP ({nombre_eco})"
+        if not any("ecocrop" in f.lower() for f in salida):
+            salida.append(linea_eco)
+    url = wiki.get("url")
+    if url:
+        linea_wiki = f"Wikipedia: {url}"
+        if linea_wiki not in vistos:
+            salida.append(linea_wiki)
+    return salida
 
 
 def espacio_tipo(litros: int) -> str:
@@ -59,13 +90,11 @@ def main() -> None:
             pendiente.append("revisar el borrador de contenido_cultivos.json contra los manuales")
         companeros = [{"id": x["id"], "nombre": nombres.get(x["id"], x["id"]), "beneficio": x["beneficio"],
                        "evidencia": x.get("evidencia", "popular")} for x in k.get("companeros", [])]
-        if not e:
+        if not e and "temp_ideal_c" not in c:
             pendiente.append("ficha_tecnica.temp_* (no está en ECOCROP)")
-        fuentes = []
-        if e:
-            fuentes.append(f"FAO ECOCROP: {e['ecocrop_nombre']}")
-        if w.get("url"):
-            fuentes.append(f"Wikipedia: {w['url']}")
+        fuentes = _fuentes(k, e, w)
+        if not fuentes:
+            pendiente.append("fuentes")
 
         salida.append({
             "id": c["id"],
@@ -77,10 +106,10 @@ def main() -> None:
             "resumen": k.get("resumen", ""),
             "es_nativa_region": c["es_nativa_region"],
             "ficha_tecnica": {
-                "temp_ideal_c": e.get("temp_ideal_c"),
-                "temp_limite_c": e.get("temp_limite_c"),
+                "temp_ideal_c": _tomar(c, e, "temp_ideal_c"),
+                "temp_limite_c": _tomar(c, e, "temp_limite_c"),
                 "tolera_helada": c["tolera_helada"],
-                "altitud_max_m": e.get("altitud_max_m"),
+                "altitud_max_m": _tomar(c, e, "altitud_max_m"),
                 "dias_a_cosecha": rango_cosecha(c["dias_cosecha_aprox"], e.get("dias_ciclo")),
                 "maceta_min_litros": c["maceta_min_litros"],
                 "profundidad_maceta_cm": c["profundidad_maceta_cm"],
@@ -114,6 +143,10 @@ def main() -> None:
                 "necesita_tutor": c["necesita_tutor"],
                 "sensible_a": c["sensible_a"],
                 "siap_nombres": c["siap_nombres"],
+                "temp_ideal_c": _tomar(c, e, "temp_ideal_c"),
+                "temp_limite_c": _tomar(c, e, "temp_limite_c"),
+                "tolera_helada": c["tolera_helada"],
+                "altitud_max_m": _tomar(c, e, "altitud_max_m"),
             },
             "_referencia": {
                 "wikipedia_extracto": w.get("extracto"),
@@ -122,7 +155,7 @@ def main() -> None:
             },
             "_pendiente": pendiente,
         })
-        print(f"  {c['id']:<15} ECOCROP {'✓' if e else '✗'} | Wikipedia {'✓' if w else '✗'}")
+        print(f"  {c['id']:<15} ECOCROP {'ok' if e else 'no'} | Wikipedia {'ok' if w else 'no'}")
 
     guardar_json({
         "generado": hoy(),

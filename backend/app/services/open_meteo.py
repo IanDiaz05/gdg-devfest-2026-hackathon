@@ -83,13 +83,24 @@ async def buscar_ubicacion(q: str) -> dict:
 
 async def resolver_coordenadas(lat: float, lon: float) -> dict:
     """Para el GPS del navegador: toma los datos de la ciudad más cercana en data/ciudades.json."""
-    lista = ciudades()
+    try:
+        lat_n = float(lat)
+        lon_n = float(lon)
+    except (TypeError, ValueError) as exc:
+        raise CiudadNoEncontradaError() from exc
+    if not (14.0 <= lat_n <= 33.5 and -118.5 <= lon_n <= -86.0):
+        raise CiudadNoEncontradaError()
+    lista = [
+        c
+        for c in ciudades()
+        if isinstance(c.get("lat"), (int, float)) and isinstance(c.get("lon"), (int, float))
+    ]
     if not lista:
         raise CiudadNoEncontradaError()
-    cercana = min(lista, key=lambda c: distancia_km(lat, lon, c["lat"], c["lon"]))
-    km = distancia_km(lat, lon, cercana["lat"], cercana["lon"])
+    cercana = min(lista, key=lambda c: distancia_km(lat_n, lon_n, c["lat"], c["lon"]))
+    km = distancia_km(lat_n, lon_n, cercana["lat"], cercana["lon"])
     nombre = cercana["nombre"] if km <= RADIO_GPS_KM else "Tu ubicación"
-    return _ubicacion(cercana, [], nombre=nombre, lat=lat, lon=lon)
+    return _ubicacion(cercana, [], nombre=nombre, lat=lat_n, lon=lon_n)
 
 
 async def _get(url: str, params: dict[str, Any]) -> dict[str, Any]:
