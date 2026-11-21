@@ -21,7 +21,7 @@ export function TarjetaCultivo({ cultivo, busqueda, destacada = false }: {
   return <Link
     to={{ pathname: `/cultivo/${encodeURIComponent(cultivo.id)}`, search: busqueda }}
     aria-label={`Ver ficha de ${cultivo.nombre}`}
-    className={`group flex h-full gap-3 rounded-2xl border p-4 transition-shadow focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring ${destacada ? 'border-primary bg-primary text-primary-foreground shadow-hero' : 'border-border bg-card hover:shadow-soft'}`}
+    className={`group flex h-full gap-2 rounded-2xl border p-3 sm:gap-3 sm:p-4 motion-safe:transition-shadow focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring ${destacada ? 'border-primary bg-primary text-primary-foreground shadow-hero' : 'border-border bg-card hover:shadow-soft'}`}
   >
     <CultivoIcono icono={cultivo.icono} />
     <div className="min-w-0 flex-1">
@@ -46,13 +46,14 @@ export function CultivosRecomendados({ cultivos, busqueda }: { cultivos: Recomen
   const { espacio, setEspacio } = useFiltroEspacio()
   const [categoria, setCategoria] = useState('')
   const categorias = [...new Set(cultivos.map((cultivo) => cultivo.categoria))].sort((a, b) => a.localeCompare(b, 'es-MX'))
+  const categoriaActiva = categorias.includes(categoria) ? categoria : ''
   const filtrados = cultivos.filter((cultivo) =>
-    (!categoria || cultivo.categoria === categoria) &&
+    (!categoriaActiva || cultivo.categoria === categoriaActiva) &&
     (!espacio || cultivo.filtros_rapidos.espacio_tipo === espacio),
   )
   return <section className="mt-8" aria-labelledby="recomendaciones">
     <h2 id="recomendaciones" className="text-2xl font-bold">Qué sembrar</h2>
-    <div className="mt-4 grid gap-4 lg:grid-cols-2">
+    <div className="surface mt-4 grid gap-4 p-3 sm:p-4 lg:grid-cols-2">
       <fieldset>
         <legend className="mb-2 text-sm font-semibold">Espacio</legend>
         <div className="flex flex-wrap gap-2">
@@ -62,11 +63,12 @@ export function CultivosRecomendados({ cultivos, busqueda }: { cultivos: Recomen
       <fieldset>
         <legend className="mb-2 text-sm font-semibold">Categoría</legend>
         <div className="flex flex-wrap gap-2">
-          <Chip selected={categoria === ''} onClick={() => setCategoria('')}>Todas las categorías</Chip>
-          {categorias.map((valor) => <Chip key={valor} selected={categoria === valor} onClick={() => setCategoria(valor)}>{valor}</Chip>)}
+          <Chip selected={categoriaActiva === ''} onClick={() => setCategoria('')}>Todas las categorías</Chip>
+          {categorias.map((valor) => <Chip key={valor} selected={categoriaActiva === valor} onClick={() => setCategoria(valor)}>{valor}</Chip>)}
         </div>
       </fieldset>
     </div>
+    <p role="status" className="sr-only">{filtrados.length} cultivos coinciden con los filtros.</p>
     {filtrados.length === 0 && <Aviso>{cultivos.length ? 'No hay cultivos con estos filtros.' : 'Todavía no hay recomendaciones para esta zona.'}</Aviso>}
     {grupos.map((grupo) => {
       const lista = filtrados.filter((cultivo) => cultivo.estado === grupo)
@@ -76,7 +78,7 @@ export function CultivosRecomendados({ cultivos, busqueda }: { cultivos: Recomen
         <h3 className={`mb-3 flex items-center gap-2 rounded-xl border p-3 font-bold ${clase}`}>
           <Icono size={20} strokeWidth={1.75} aria-hidden="true" /> {titulo}
         </h3>
-        <ul className="grid gap-3 md:grid-cols-2">
+        <ul className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
           {lista.map((cultivo) => <li key={cultivo.id}><TarjetaCultivo cultivo={cultivo} busqueda={busqueda} /></li>)}
         </ul>
       </section>

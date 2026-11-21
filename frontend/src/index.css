@@ -1,54 +1,29 @@
 @import "tailwindcss";
 
-@theme {
-  --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif;
-  --color-background: oklch(0.979 0.007 97.4);
-  --color-foreground: oklch(0.25 0.016 152.7);
-  --color-shell: oklch(0.953 0.009 84.6);
-  --color-card: oklch(1 0 0);
-  --color-primary: oklch(0.387 0.062 155.7);
-  --color-primary-hover: oklch(0.354 0.078 144.7);
-  --color-primary-foreground: oklch(0.985 0.005 97);
-  --color-secondary: oklch(0.952 0.012 91.5);
-  --color-muted-foreground: oklch(0.499 0.018 151.5);
-  --color-terracotta: oklch(0.49 0.113 47.2);
-  --color-scientific: oklch(0.553 0.012 58.1);
-  --color-border: oklch(0.913 0.013 91.5);
-  --color-ring: oklch(0.387 0.062 155.7);
-  --color-success: oklch(0.523 0.135 144.2);
-  --color-success-soft: oklch(0.957 0.021 147.6);
-  --color-success-border: oklch(0.523 0.135 144.2 / 22%);
-  --color-warning: oklch(0.473 0.125 46.2);
-  --color-warning-soft: oklch(0.987 0.021 95.3);
-  --color-warning-border: oklch(0.924 0.115 95.7);
-  --color-danger: oklch(0.444 0.161 26.9);
-  --color-danger-soft: oklch(0.971 0.013 17.4);
-  --color-danger-border: oklch(0.885 0.059 18.3);
-  --color-neutral-cell: oklch(0.935 0.01 91.5);
-  --color-cream: oklch(0.952 0.012 91.5);
-  --color-leaf: oklch(0.387 0.062 155.7);
-  --color-leaf-light: oklch(0.715 0.076 134.7);
-  --color-tomato: oklch(0.641 0.157 39.8);
-  --color-pot-cream: oklch(0.904 0.028 90.9);
-  --color-sun: oklch(0.813 0.145 78);
-  --color-sun-soft: oklch(0.958 0.038 85.3);
-  --color-frost: oklch(0.55 0.09 240);
-  --color-frost-soft: oklch(0.955 0.02 240);
-  --shadow-soft: 0 1px 2px rgb(28 36 30 / 5%), 0 8px 24px -12px rgb(28 36 30 / 16%);
-  --shadow-hero: 0 18px 40px -20px rgb(38 78 54 / 55%);
-}
+@config "../tailwind.config.js";
 
 @utility surface {
-  border-radius: var(--radius-2xl);
-  border: 1px solid var(--color-border);
-  background-color: var(--color-card);
+  @apply rounded-2xl border border-border bg-card;
 }
 
 @utility eyebrow {
-  font-size: 0.75rem;
-  line-height: 1rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-terracotta);
+  @apply text-xs font-bold uppercase tracking-[0.13em] text-terracotta;
+}
+
+@utility app-frame {
+  @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10 2xl:max-w-[1440px];
+}
+
+@utility app-button {
+  @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-border bg-card px-3.5 text-sm font-bold text-primary hover:bg-secondary disabled:opacity-65;
+}
+
+@layer base {
+  :is(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+    @apply outline-2 outline-offset-3 outline-ring;
+  }
+
+  :target {
+    @apply scroll-mt-24;
+  }
 }

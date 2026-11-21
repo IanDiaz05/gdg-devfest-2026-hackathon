@@ -1,3 +1,6 @@
+import { useConexion } from '../pwa/conexion'
+import { fechaGuardada } from '../pwa/datosGuardados'
+import { EstadoDatos } from '../components/EstadoDatos'
 import { useSearchParams } from 'react-router-dom'
 import { AlertasClima } from '../components/AlertasClima'
 import { CultivosRecomendados, TarjetaCultivo } from '../components/CultivosRecomendados'
@@ -15,6 +18,7 @@ const prioridad = (cultivo: Recomendacion) => Number(cultivo.estado === 'optimo'
 
 export function ZonaRecomendacionesPage() {
   const { consulta, ubicacion, busqueda } = useRecomendaciones()
+  const conectado = useConexion()
   const [params, setParams] = useSearchParams()
 
   if (!ubicacion) return <ElegirZona />
@@ -22,7 +26,7 @@ export function ZonaRecomendacionesPage() {
   if (consulta.isError) return <ErrorConsulta error={consulta.error} busqueda={busqueda} reintentar={() => void consulta.refetch()} />
 
   const { ubicacion: zona, clima_zona: clima, alertas_7_dias: alertas, cultivos } = consulta.data
-  const destacados = [...cultivos].filter((cultivo) => prioridad(cultivo) > 0)
+  const destacados = [...cultivos].filter((cultivo) => cultivo.estado !== 'no_ahora')
     .sort((a, b) => prioridad(b) - prioridad(a)).slice(0, 4)
 
   function cambiar(lugar: Ubicacion, mes: number) {
@@ -32,19 +36,22 @@ export function ZonaRecomendacionesPage() {
     setParams(siguiente)
   }
 
-  return <div className="mx-auto max-w-md md:max-w-none">
+  return <div className="w-full">
+    <EstadoDatos datos={consulta.data} actualizado={consulta.dataUpdatedAt} />
     <h1 className="sr-only">Tu zona</h1>
     <div className="mb-4">
       <BarraUbicacion ubicacion={zona} mes={clima.mes_evaluado} busqueda={busqueda} onMes={(mes) => cambiar(ubicacion, mes)} />
     </div>
     <SelectorLocalidad alternativas={zona.alternativas} elegir={({ lat, lon }) => cambiar({ lat, lon }, clima.mes_evaluado)} />
-    <AlertasClima alertas={alertas} />
-
-    <ClimaCard clima={clima} altitud={zona.altitud_m} />
+    <div className={conectado && !fechaGuardada(consulta.data) && alertas.length ? 'grid gap-5 lg:grid-cols-[minmax(0,1.65fr)_minmax(0,1fr)]' : undefined}>
+      <ClimaCard clima={clima} altitud={zona.altitud_m} />
+      {conectado && !fechaGuardada(consulta.data) && <AlertasClima alertas={alertas} />}
+    </div>
 
     {destacados.length > 0 && <section className="mt-8" aria-labelledby="destacados">
-      <h2 id="destacados" className="mb-4 text-2xl font-bold tracking-tight">Destacados de {clima.mes_nombre.toLocaleLowerCase('es-MX')}</h2>
-      <ul className="grid auto-cols-[min(82vw,19rem)] grid-flow-col gap-3 overflow-x-auto pb-3 snap-x">
+      <h2 id="destacados" className="mb-4 text-2xl font-bold tracking-tight">Recomendaciones de {clima.mes_nombre.toLocaleLowerCase('es-MX')} en {zona.nombre}</h2>
+      {destacados.length > 1 && <p id="guia-destacados" className="mb-2 text-sm text-muted-foreground">Desliza la lista o usa las flechas del teclado para explorar.</p>}
+      <ul tabIndex={destacados.length > 1 ? 0 : undefined} aria-describedby={destacados.length > 1 ? 'guia-destacados' : undefined} className="grid auto-cols-[min(83%,20rem)] grid-flow-col snap-x gap-3 overflow-x-auto p-1 pb-3 lg:grid-flow-row lg:grid-cols-2 xl:grid-cols-4">
         {destacados.map((cultivo) => <li key={cultivo.id} className="snap-start"><TarjetaCultivo cultivo={cultivo} busqueda={busqueda} destacada /></li>)}
       </ul>
     </section>}

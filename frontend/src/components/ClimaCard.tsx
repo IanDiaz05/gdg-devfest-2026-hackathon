@@ -1,4 +1,4 @@
-import { CloudSun, Mountain, Snowflake, Sun, ThermometerSnowflake, ThermometerSun } from "lucide-react";
+import { CloudSun, Droplets, Mountain, Snowflake, Sun, ThermometerSnowflake, ThermometerSun } from "lucide-react";
 
 import type { ReactNode } from "react";
 
@@ -14,10 +14,10 @@ function IconoClima({ clima }: { clima: ClimaZona }) {
   const Icono = frio ? Snowflake : t >= 22 ? Sun : CloudSun;
   return (
     <div
-      className={`grid size-16 shrink-0 place-items-center rounded-full ${frio ? "bg-frost-soft text-frost" : "bg-sun-soft text-warning"}`}
+      className={`grid size-13 shrink-0 place-items-center rounded-full ${frio ? "bg-frost-soft text-frost" : "bg-sun-soft text-warning"}`}
       aria-hidden
     >
-      <Icono className="size-8" strokeWidth={1.75} />
+      <Icono className="size-7" strokeWidth={1.75} />
     </div>
   );
 }
@@ -25,7 +25,7 @@ function IconoClima({ clima }: { clima: ClimaZona }) {
 function Metrica({ icono, etiqueta, valor }: { icono: ReactNode; etiqueta: string; valor: string }) {
   return (
     <div className="min-w-0">
-      <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+      <div className="flex items-center gap-1.5 text-sm text-muted-foreground">
         {icono}
         <span className="min-w-0">{etiqueta}</span>
       </div>
@@ -45,12 +45,12 @@ export function ClimaCard({ clima, altitud }: { clima: ClimaZona; altitud: numbe
         <div className="flex items-start justify-between gap-4">
           <div className="min-w-0">
             <p className="text-sm text-muted-foreground">Temperatura media de {clima.mes_nombre.toLocaleLowerCase("es-MX")}</p>
-            <p className="mt-1 text-5xl font-bold tracking-tight text-primary">{formatearTemp(clima.temp_media_c)}</p>
+            <p className="mt-1 text-4xl font-bold sm:text-5xl tracking-tight text-primary">{formatearTemp(clima.temp_media_c)}</p>
           </div>
           <IconoClima clima={clima} />
         </div>
 
-        <div className="mt-5 grid grid-cols-2 gap-3 min-[360px]:grid-cols-3 border-t border-border pt-4">
+        <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 border-t border-border pt-4">
           <Metrica
             icono={<ThermometerSnowflake className={ic} strokeWidth={1.75} aria-hidden />}
             etiqueta="Mín. prom."
@@ -84,21 +84,32 @@ export function ClimaCard({ clima, altitud }: { clima: ClimaZona; altitud: numbe
         </div>
 
         <div className="mt-4 flex flex-wrap gap-2">
-          <span className="inline-flex items-center gap-1 rounded-lg bg-secondary px-2.5 py-1 text-xs text-muted-foreground">
+          <span className="inline-flex items-center gap-1 rounded-lg bg-secondary px-2.5 py-1 text-sm text-muted-foreground">
             <Mountain className="size-3.5" strokeWidth={1.75} aria-hidden />
             Altitud: {formatoNumero.format(altitud)} m
           </span>
-          {clima.sequia?.activa && (
+          {clima.lluvia_mes_mm != null && <span className="inline-flex items-center gap-1 rounded-lg bg-secondary px-2.5 py-1 text-sm text-muted-foreground">
+            <Droplets className="size-3.5" aria-hidden /> Lluvia histórica: {formatoNumero.format(clima.lluvia_mes_mm)} mm
+          </span>}
+          {clima.sequia && (
             <span className="rounded-lg bg-warning-soft px-2.5 py-1 text-xs font-medium text-warning">
               {clima.sequia.nivel_nombre} · {clima.sequia.nivel}
             </span>
           )}
         </div>
-        {clima.sequia?.activa && (
+        {clima.sequia && (
           <p className="mt-3 rounded-xl border border-warning-border bg-warning-soft px-3 py-2 text-xs text-warning">
             {clima.sequia.consejo}
             <span className="mt-1 block opacity-80">Reporte CONAGUA · <time dateTime={clima.sequia.fecha_dato}>{clima.sequia.fecha_dato}</time></span>
           </p>
+        )}
+        {clima.lluvia_reciente && (
+          <div className="mt-4 rounded-xl bg-secondary p-3 text-sm">
+            <h3 className="font-semibold">Lluvia reciente</h3>
+            <p className="mt-1">{clima.lluvia_reciente.mensaje}</p>
+            <p className="mt-1">{clima.lluvia_reciente.consejo}</p>
+            <p className="mt-1 text-sm text-muted-foreground">Fuente: {clima.lluvia_reciente.fuente}</p>
+          </div>
         )}
       </div>
     </section>

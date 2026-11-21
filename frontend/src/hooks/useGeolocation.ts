@@ -26,7 +26,8 @@ export function useGeolocation(alEncontrar: (ubicacion: Ubicacion) => void) {
     navigator.geolocation.getCurrentPosition(({ coords }) => {
       if (id !== solicitud.current) return
       setBuscando(false)
-      alEncontrar({ lat: coords.latitude, lon: coords.longitude })
+      // Tres decimales conservan unos 110 m de resolución sin enviar el GPS exacto.
+      alEncontrar({ lat: Number(coords.latitude.toFixed(3)), lon: Number(coords.longitude.toFixed(3)) })
     }, ({ code }) => {
       if (id !== solicitud.current) return
       setBuscando(false)

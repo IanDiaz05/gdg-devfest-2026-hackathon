@@ -12,6 +12,7 @@ const texto: Regla = (valor) => typeof valor === 'string'
 const numero: Regla = (valor) => typeof valor === 'number' && Number.isFinite(valor)
 const booleano: Regla = (valor) => typeof valor === 'boolean'
 const lista = (regla: Regla): Regla => (valor) => Array.isArray(valor) && valor.every(regla)
+const opcional = (regla: Regla): Regla => (valor) => valor === undefined || regla(valor)
 const nullable = (regla: Regla): Regla => (valor) => valor === null || regla(valor)
 const unoDe = (...opciones: string[]): Regla => (valor) => typeof valor === 'string' && opciones.includes(valor)
 const campos = (reglas: Record<string, Regla>): Regla => (valor) => {
@@ -20,7 +21,11 @@ const campos = (reglas: Record<string, Regla>): Regla => (valor) => {
 }
 const rango: Regla = (valor) => Array.isArray(valor) && valor.length === 2 && valor.every(numero) && valor[0] <= valor[1]
 
-const luz = unoDe('pleno_sol', 'media_sombra', 'sombra')
+const luzNivel: Regla = (valor) => typeof valor === 'number' && Number.isInteger(valor) && valor >= 1 && valor <= 4
+const entero: Regla = (valor) => typeof valor === 'number' && Number.isInteger(valor)
+const diasRiego: Regla = (valor) => typeof valor === 'number' && Number.isInteger(valor) && valor >= 1
+const consumoHidrico = unoDe('bajo', 'medio', 'alto')
+const dificultad = unoDe('facil', 'media', 'dificil')
 const alternativa = { nombre: texto, estado: texto, lat: numero, lon: numero }
 const mesClimatico = campos({ mes: esMes, nombre: texto, temp_media_c: numero })
 const diagnostico = campos({
@@ -32,10 +37,21 @@ const diagnostico = campos({
     temp_media_c: numero, temp_min_promedio_c: numero, temp_max_promedio_c: numero,
     anios_con_helada_pct: (valor) => typeof valor === 'number' && valor >= 0 && valor <= 100,
     mes_mas_frio: mesClimatico, mes_mas_caluroso: mesClimatico,
-    sequia: nullable(campos({ activa: booleano, nivel: texto, nivel_nombre: texto, fecha_dato: texto, consejo: texto })),
+    sequia: opcional(nullable(campos({
+      activa: booleano, nivel: unoDe('D0', 'D1', 'D2', 'D3', 'D4'), nivel_nombre: texto, fecha_dato: texto, consejo: texto,
+    }))),
+    lluvia_mes_mm: opcional(nullable(numero)),
+    lluvia_reciente: opcional(nullable(campos({
+      fuente: texto, estacion: texto, distancia_km: numero, mes: texto, lluvia_mm: numero,
+      normal_mm: opcional(nullable(numero)), anomalia_pct: opcional(nullable(entero)),
+      temp_min_c: opcional(nullable(numero)), temp_max_c: opcional(nullable(numero)),
+      mensaje: texto, consejo: texto,
+    }))),
   }),
   alertas_7_dias: lista(campos({
-    tipo: unoDe('helada', 'calor'), severidad: unoDe('media', 'alta'), titulo: texto, mensaje: texto,
+    tipo: unoDe('helada', 'calor', 'lluvia_fuerte', 'tormenta', 'viento', 'uv'),
+    severidad: unoDe('media', 'alta'), fecha: texto, titulo: texto, mensaje: texto,
+    cultivos_afectados: opcional(lista(texto)),
   })),
   cultivos: lista(campos({
     id: texto, nombre: texto, icono: texto, categoria: texto,
@@ -43,31 +59,27 @@ const diagnostico = campos({
     razon_corta: texto, etiqueta_clima: texto, meses_ideales: lista(esMes), meses_posibles: lista(esMes),
     filtros_rapidos: campos({
       maceta_min_litros: numero, espacio_tipo: unoDe('maceta_chica', 'maceta_grande', 'patio'),
-      luz, dias_cosecha_aprox: numero, dificultad: unoDe('facil', 'media', 'dificil'),
+      profundidad_maceta_cm: entero, luz_nivel: luzNivel, riego_frecuencia_dias: diasRiego,
+      consumo_hidrico: consumoHidrico, pet_safe: booleano, atrae_polinizadores: booleano,
+      es_nativa_region: booleano, dias_cosecha_aprox: entero, dificultad,
     }),
-    finanzas_sniim: nullable(campos({
-      mercado_referencia: texto, producto_sniim: texto, mes_cosecha_estimado: esMes,
-      variacion_precio_pct: numero, destacar_ahorro: booleano, mensaje_ahorro: nullable(texto),
-    })),
   })),
 })
 
-const mesPrecio = campos({ mes: esMes, nombre: texto, variacion_pct: numero })
 const ficha = campos({
   id: texto, nombre: texto, nombre_cientifico: texto, ecocrop_nombre: texto,
-  categoria: texto, icono: texto, resumen: texto,
+  categoria: texto, icono: texto, resumen: texto, es_nativa_region: booleano,
+  restricciones: campos({ pet_safe: booleano, dificultad }),
+  impacto_ambiental: campos({ consumo_hidrico: consumoHidrico, atrae_polinizadores: booleano }),
+  guia_rapida: campos({ error_comun: texto }),
   ficha_tecnica: campos({
     temp_ideal_c: rango, temp_limite_c: rango, tolera_helada: booleano, altitud_max_m: numero,
-    dias_a_cosecha: rango, maceta_min_litros: numero, profundidad_min_cm: numero,
-    luz, riego: texto, sustrato_recomendado: texto,
+    dias_a_cosecha: rango, maceta_min_litros: entero, profundidad_maceta_cm: entero,
+    luz_nivel: luzNivel, riego_frecuencia_dias: diasRiego, riego: texto, sustrato_recomendado: texto,
   }),
   tutorial: lista(texto),
   companeros_cultivo: lista(campos({ id: texto, nombre: texto, beneficio: texto, evidencia: unoDe('comprobada', 'popular') })),
   curiosidades: lista(texto), ojo: lista(texto), fuentes: lista(texto),
-  contexto_economico_sniim: nullable(campos({
-    mercado_referencia: texto, producto_sniim: texto, mes_mas_caro: mesPrecio, mes_mas_barato: mesPrecio,
-    estados_productores: lista(campos({ estado: texto, participacion_pct: numero })), tip_ahorro: texto,
-  })),
 })
 
 function validar<T>(valor: unknown, regla: Regla): T {
@@ -75,5 +87,14 @@ function validar<T>(valor: unknown, regla: Regla): T {
   return valor as T
 }
 
-export const validarDiagnostico = (valor: unknown) => validar<Diagnostico>(valor, diagnostico)
+const semaforos = { optimo: 'verde', con_cuidados: 'amarillo', no_ahora: 'rojo' }
+
+export function validarDiagnostico(valor: unknown): Diagnostico {
+  const datos = validar<Diagnostico>(valor, diagnostico)
+  if (datos.cultivos.some((cultivo) => cultivo.semaforo !== semaforos[cultivo.estado]
+    || !cultivo.meses_ideales.every((mes) => cultivo.meses_posibles.includes(mes)))) {
+    throw new Error('La API devolvió recomendaciones de siembra inconsistentes.')
+  }
+  return datos
+}
 export const validarFicha = (valor: unknown) => validar<FichaCultivo>(valor, ficha)

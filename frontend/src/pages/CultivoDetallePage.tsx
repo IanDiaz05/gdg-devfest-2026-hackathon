@@ -1,3 +1,4 @@
+import { EstadoDatos } from '../components/EstadoDatos'
 import { useState } from 'react'
 import { ArrowLeft, Clock3, Droplets, Share2, Sprout, Sun } from 'lucide-react'
 import { Link, useParams } from 'react-router-dom'
@@ -9,6 +10,7 @@ import { useRecomendaciones } from '../hooks/useRecomendaciones'
 import { formatoNumero } from '../utils/consulta'
 
 const luz = { pleno_sol: 'Pleno sol', media_sombra: 'Media sombra', sombra: 'Sombra' }
+const luzPorNivel = { 1: 'Sombra', 2: 'Luz indirecta', 3: 'Sol parcial', 4: 'Pleno sol' }
 const panel = 'surface p-5 shadow-soft'
 const porcentaje = (valor: number) => `${valor > 0 ? '+' : ''}${formatoNumero.format(valor)}%`
 
@@ -40,16 +42,18 @@ export function CultivoDetallePage() {
   const zona = diagnostico.data
   const recomendacion = zona?.cultivos.find((cultivo) => cultivo.id === id)
   const precios = ficha.contexto_economico_sniim
+  const luzCultivo = 'luz_nivel' in tecnica ? luzPorNivel[tecnica.luz_nivel] : luz[tecnica.luz]
+  const profundidad = 'profundidad_maceta_cm' in tecnica ? tecnica.profundidad_maceta_cm : tecnica.profundidad_min_cm
   const tarjetas = [
-    { titulo: 'Luz', valor: luz[tecnica.luz], Icono: Sun },
-    { titulo: 'Maceta', valor: `${tecnica.maceta_min_litros} L · ${tecnica.profundidad_min_cm} cm de profundidad mín.`, Icono: Sprout },
-    { titulo: 'Riego', valor: tecnica.riego, Icono: Droplets },
+    { titulo: 'Luz', valor: luzCultivo, Icono: Sun },
+    { titulo: 'Maceta', valor: `${tecnica.maceta_min_litros} L · ${profundidad} cm de profundidad mín.`, Icono: Sprout },
+    { titulo: 'Riego', valor: 'riego_frecuencia_dias' in tecnica ? `Cada ${tecnica.riego_frecuencia_dias} días · ${tecnica.riego}` : tecnica.riego, Icono: Droplets },
     { titulo: 'Cosecha', valor: `${tecnica.dias_a_cosecha.join('–')} días`, Icono: Clock3 },
   ]
 
   async function compartir() {
     const url = new URL(window.location.href)
-    url.pathname = `/cultivo/${encodeURIComponent(id)}`
+    url.pathname = `${import.meta.env.BASE_URL}cultivo/${encodeURIComponent(id)}`
     // Comparte la ficha sin incluir las coordenadas de la consulta.
     url.search = ''
     const enlace = url.toString()
@@ -71,10 +75,11 @@ export function CultivoDetallePage() {
     }
   }
 
-  return <article className="mx-auto max-w-md space-y-5 pb-6 md:max-w-3xl">
-    <header className="grid grid-cols-[1fr_auto_1fr] items-center gap-2">
+  return <article className="w-full space-y-5 pb-3">
+    <EstadoDatos datos={consulta.data} actualizado={consulta.dataUpdatedAt} contexto="Ficha" />
+    {diagnostico.data && <EstadoDatos datos={diagnostico.data} actualizado={diagnostico.dataUpdatedAt} contexto="Zona" />}
+    <header className="flex flex-wrap items-center justify-between gap-2 border-b border-border pb-2">
       {volver}
-      <p className="max-w-[28vw] truncate text-center text-sm font-bold" title={ficha.nombre}>{ficha.nombre}</p>
       <button className="flex min-h-11 items-center gap-1.5 justify-self-end text-sm font-bold text-primary" type="button" onClick={() => void compartir()}><Share2 size={17} strokeWidth={1.75} aria-hidden="true" /> Compartir</button>
     </header>
     {mensaje && <Aviso>{mensaje}</Aviso>}
@@ -82,11 +87,11 @@ export function CultivoDetallePage() {
       <input className="min-h-11 rounded-xl border border-border bg-white px-3" readOnly value={enlaceManual} onFocus={(event) => event.currentTarget.select()} />
     </label>}
 
-    <div className="flex items-start gap-3">
+    <div className="surface flex items-start gap-4 bg-secondary p-4 sm:p-6">
       <CultivoIcono icono={ficha.icono} />
       <div>
         <p className="eyebrow">{ficha.categoria} · Maceta de {tecnica.maceta_min_litros} L mín.</p>
-        <h1 className="mt-2 text-4xl font-bold tracking-tight">{ficha.nombre}</h1>
+        <h1 className="mt-2 font-display text-4xl font-semibold tracking-tight text-primary">{ficha.nombre}</h1>
         <p className="mt-1 italic text-scientific">{ficha.nombre_cientifico}</p>
         <p className="mt-3 leading-7">{ficha.resumen}</p>
       </div>
@@ -98,9 +103,9 @@ export function CultivoDetallePage() {
       <p className="mt-2 text-sm leading-6">{recomendacion.razon_corta}</p>
     </section>}
 
-    <dl className="grid grid-cols-2 gap-3">
+    <dl className="grid grid-cols-2 gap-3 lg:grid-cols-4">
       {tarjetas.map(({ titulo, valor, Icono }) => (
-        <div className={panel} key={titulo}>
+        <div className="surface min-w-0 p-3 sm:p-5" key={titulo}>
           <Icono size={20} strokeWidth={1.75} className="text-primary" aria-hidden="true" />
           <dt className="mt-2 text-sm text-muted-foreground">{titulo}</dt>
           <dd className="mt-1 text-sm font-bold leading-6">{valor}</dd>
@@ -108,11 +113,17 @@ export function CultivoDetallePage() {
       ))}
     </dl>
 
-    <section className={panel}>
-      <h2 className="text-xl font-bold">Sustrato recomendado</h2>
-      <p className="mt-2 leading-7">{tecnica.sustrato_recomendado}</p>
-    </section>
-    <GraficaTemperatura ideal={tecnica.temp_ideal_c} limite={tecnica.temp_limite_c} media={zona?.clima_zona.temp_media_c} />
+    <div className="grid gap-4 md:grid-cols-2">
+      <GraficaTemperatura ideal={tecnica.temp_ideal_c} limite={tecnica.temp_limite_c} media={zona?.clima_zona.temp_media_c} />
+      <section className={panel}>
+        <h2 className="text-xl font-bold">Sustrato recomendado</h2>
+        <p className="mt-2 leading-7">{tecnica.sustrato_recomendado}</p>
+      </section>
+    </div>
+    {ficha.guia_rapida?.error_comun && <section className={panel}>
+      <h2 className="text-xl font-bold">Error común</h2>
+      <p className="mt-2 leading-7">{ficha.guia_rapida.error_comun}</p>
+    </section>}
     <ListaFicha titulo="Ojo al sembrar" items={ficha.ojo} alerta />
 
     {ficha.tutorial.length > 0 && <section className={panel}>
