@@ -27,7 +27,7 @@ from app.services import open_meteo
 
 router = APIRouter(prefix="/api")
 
-_PERIODO_REFERENCIA = "1996-2025"
+_PERIODO_REFERENCIA = open_meteo.PERIODO_REFERENCIA
 _EVIDENCIAS = {"comprobada", "popular"}
 
 
@@ -205,29 +205,38 @@ async def recomendaciones(
         periodo = str(cache_clima["periodo_referencia"])
         desde_cache = True
     else:
-        diarios = await open_meteo.obtener_diario_30_anios(lat_resuelta, lon_resuelta)
-        resumen = clima_processor.procesar_clima_30_anios(diarios)
-        if len(resumen) < 12:  # respuesta incompleta: no se guarda en caché
-            raise ClimaNoDisponibleError()
-        periodo = _PERIODO_REFERENCIA
-        await database.save_clima_cache(
-            lat_grid,
-            lon_grid,
-            altitud_m,
-            periodo,
-            resumen,
-        )
-        desde_cache = False
+        try:
+            diarios = await open_meteo.obtener_diario_30_anios(lat_resuelta, lon_resuelta)
+            resumen = clima_processor.procesar_clima_30_anios(diarios)
+            if len(resumen) < 12:  # respuesta incompleta: no se guarda en caché
+                raise ClimaNoDisponibleError()
+            periodo = _PERIODO_REFERENCIA
+            await database.save_clima_cache(
+                lat_grid,
+                lon_grid,
+                altitud_m,
+                periodo,
+                resumen,
+            )
+            desde_cache = False
+        except ClimaNoDisponibleError:
+            # Open-Meteo saturado/timeout: respaldo SMN-CONAGUA sin guardar como caché permanente
+            respaldo = clima_processor.resumen_smn_fallback(lat_resuelta, lon_resuelta)
+            if respaldo is None:
+                raise
+            resumen, periodo = respaldo
+            desde_cache = False
 
     alertas = await database.get_pronostico_cache(lat_grid, lon_grid)
     if alertas is None:
         alertas = await open_meteo.obtener_pronostico_7d(lat_resuelta, lon_resuelta)
-        await database.save_pronostico_cache(
-            lat_grid,
-            lon_grid,
-            alertas,
-            settings.PRONOSTICO_TTL_SECONDS,
-        )
+        if alertas:
+            await database.save_pronostico_cache(
+                lat_grid,
+                lon_grid,
+                alertas,
+                settings.PRONOSTICO_TTL_SECONDS,
+            )
 
     lluvia = lluvia_reciente.obtener_lluvia_reciente(lat_resuelta, lon_resuelta)
     cultivos_db = await database.get_all_cultivos()

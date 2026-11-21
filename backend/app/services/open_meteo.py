@@ -1,7 +1,7 @@
 """Ubicación (data/ciudades.json) y clima (Open-Meteo).
 
 - Búsqueda de ciudades: sin API, en data/ciudades.json (GeoNames + nombres de municipio del INEGI).
-- Clima de 30 años: Open-Meteo Historical (archive-api.open-meteo.com).
+- Clima de 10 años: Open-Meteo Historical (archive-api.open-meteo.com).
 - Pronóstico de 7 días: Open-Meteo Forecast (api.open-meteo.com).
 """
 from typing import Any
@@ -14,10 +14,15 @@ from app.services.datos_locales import ciudades, distancia_km, normalizar
 
 URL_HISTORICO = "https://archive-api.open-meteo.com/v1/archive"
 URL_PRONOSTICO = "https://api.open-meteo.com/v1/forecast"
-PERIODO_INICIO, PERIODO_FIN = "1996-01-01", "2025-12-31"
+PERIODO_INICIO, PERIODO_FIN = "2016-01-01", "2025-12-31"
+PERIODO_REFERENCIA = "2016-2025"
 TIMEOUT_S = 90
 MAX_ALTERNATIVAS = 3
 RADIO_GPS_KM = 20  # si la ciudad más cercana está más lejos, se muestra "Tu ubicación"
+
+
+class OpenMeteoRateLimitError(ClimaNoDisponibleError):
+    """Open-Meteo respondió 429 (límite de peticiones)."""
 
 
 def _ubicacion(c: dict[str, Any], alternativas: list[dict[str, Any]], nombre: str | None = None,
@@ -93,14 +98,16 @@ async def _get(url: str, params: dict[str, Any]) -> dict[str, Any]:
             r = await cliente.get(url, params=params)
     except httpx.HTTPError as e:
         raise ClimaNoDisponibleError() from e
-    if r.status_code == 429 or r.status_code >= 500:
+    if r.status_code == 429:
+        raise OpenMeteoRateLimitError()
+    if r.status_code >= 500:
         raise ClimaNoDisponibleError()
     r.raise_for_status()
     return r.json()
 
 
 async def obtener_diario_30_anios(lat: float, lon: float) -> dict[str, list]:
-    """Clima diario de 1996 a 2025 (una sola petición). Devuelve el bloque `daily` de Open-Meteo."""
+    """Clima diario de 2016 a 2025 (una sola petición). Devuelve el bloque `daily` de Open-Meteo."""
     datos = await _get(URL_HISTORICO, {
         "latitude": lat, "longitude": lon,
         "start_date": PERIODO_INICIO, "end_date": PERIODO_FIN,
@@ -111,10 +118,16 @@ async def obtener_diario_30_anios(lat: float, lon: float) -> dict[str, list]:
 
 
 async def obtener_pronostico_7d(lat: float, lon: float) -> list[dict]:
-    """Pronóstico de 7 días convertido en alertas (helada, calor, lluvia fuerte, tormenta, viento, UV)."""
-    datos = await _get(URL_PRONOSTICO, {
-        "latitude": lat, "longitude": lon, "forecast_days": 7, "timezone": "auto",
-        "daily": "weather_code,temperature_2m_min,temperature_2m_max,precipitation_sum,"
-                 "wind_gusts_10m_max,uv_index_max",
-    })
+    """Pronóstico de 7 días convertido en alertas.
+
+    Si Open-Meteo falla (429, timeout o red), devuelve lista vacía para no tumbar la API.
+    """
+    try:
+        datos = await _get(URL_PRONOSTICO, {
+            "latitude": lat, "longitude": lon, "forecast_days": 7, "timezone": "auto",
+            "daily": "weather_code,temperature_2m_min,temperature_2m_max,precipitation_sum,"
+                     "wind_gusts_10m_max,uv_index_max",
+        })
+    except ClimaNoDisponibleError:
+        return []
     return motor_alertas.construir_alertas(datos.get("daily", {}))
