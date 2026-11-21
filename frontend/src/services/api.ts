@@ -1,8 +1,8 @@
 import { clavePublica, guardarDatos, recuperarDatos } from '../pwa/datosGuardados'
 import { ErrorApi } from './ErrorApi'
-import type { SugerenciaCiudad, Ubicacion } from '../types/api'
+import type { RespuestaAlertas, SugerenciaCiudad, Ubicacion } from '../types/api'
 import { normalizar, parametros } from '../utils/consulta'
-import { objeto, validarDiagnostico, validarFicha, validarSugerencias } from './validacion'
+import { objeto, validarAlertas, validarDiagnostico, validarFicha, validarSugerencias } from './validacion'
 
 const baseUrl = (import.meta.env.VITE_API_BASE_URL ?? '').trim().replace(/\/+$/, '')
 export const modoDemo = import.meta.env.VITE_USE_MOCKS === 'true'
@@ -41,6 +41,16 @@ async function pedir<T extends object>(ruta: string, signal: AbortSignal, valida
   const resultado = validar(datos)
   await guardarDatos(clave, resultado, respuesta)
   return resultado
+}
+
+/** Alertas de 7 días de la zona (`GET /api/alertas`). Se piden aparte para mostrarlas con su propio "cargando". */
+export async function obtenerAlertas(ubicacion: Ubicacion, signal: AbortSignal): Promise<RespuestaAlertas> {
+  if (modoDemo) {
+    const demo = (await import('../mocks/recomendaciones.mock')).diagnosticoDemo(ubicacion)
+    const { nombre, estado, lat, lon } = demo.ubicacion
+    return { ubicacion: { nombre, estado, lat, lon }, alertas_7_dias: demo.alertas_7_dias, desde_cache: true }
+  }
+  return pedir(`/api/alertas?${parametros(ubicacion)}`, signal, validarAlertas)
 }
 
 export async function obtenerDiagnostico(ubicacion: Ubicacion, mes: number | undefined, signal: AbortSignal) {

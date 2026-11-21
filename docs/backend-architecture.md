@@ -22,10 +22,10 @@ backend/
 │   │   ├── recomendaciones.py       # Contratos de salida de GET /api/recomendaciones
 │   │   └── cultivos.py              # Contratos de salida de GET /api/cultivos/{id}
 │   ├── services/                    # Capa de I/O (peticiones HTTP y lectura de data/)
-│   │   ├── open_meteo.py            # Resolución de ubicación, histórico (30 años) y pronóstico
+│   │   ├── open_meteo.py            # Resolución de ubicación, histórico (10 años, 2016-2025) y pronóstico
 │   │   └── datos_locales.py         # Lectura de data/*.json (ciudades, SMN), con re-lectura por mtime
 │   ├── engine/                      # Capa de procesamiento puro (sin red ni HTTP)
-│   │   ├── clima_processor.py       # Conversión de clima diario (30 años) a resumen mensual
+│   │   ├── clima_processor.py       # Conversión de clima diario (10 años) a resumen mensual
 │   │   ├── reglas_siembra.py        # Evaluación de cultivos x clima (ventanas mensuales, filtros)
 │   │   ├── alertas.py               # Alertas de 7 días a partir del pronóstico diario
 │   │   └── lluvia_reciente.py       # Lluvia del mes más reciente del SMN-CONAGUA
@@ -104,12 +104,12 @@ GET /api/recomendaciones?lat=L&lon=LO&mes=M
  2. Caché de clima
     database.get_clima_cache(round(lat,1), round(lon,1))
         HIT  -> resumen mensual instantáneo (desde_cache = true)
-        MISS -> open_meteo.obtener_diario_30_anios(lat, lon)
+        MISS -> open_meteo.obtener_clima_diario(lat, lon)
                     -> archive-api.open-meteo.com/v1/archive
                        (start 2016-01-01, end 2025-12-31;
                         daily: temperature_2m_mean, temperature_2m_min, temperature_2m_max,
                                precipitation_sum; timezone auto)
-                clima_processor.procesar_clima_30_anios(diarios)
+                clima_processor.procesar_clima_diario(diarios)
                     -> 12 resúmenes mensuales: temp_media_c, temp_min_promedio_c,
                        temp_max_promedio_c, anios_con_helada_pct, anios_con_helada_fuerte_pct,
                        lluvia_mm
@@ -193,14 +193,14 @@ Open-Meteo, se llama `clima_processor.resumen_smn_fallback(lat, lon)`:
   `ciudad_no_encontrada` (404), `cultivo_no_encontrado` (404), `clima_no_disponible` (503,
   con `reintentar_en_s: 60`).
 - **`services/open_meteo.py`** — Todo I/O a Open-Meteo: geocodificación local
-  (`buscar_ubicacion`, `resolver_coordenadas`), histórico de 30 años
-  (`obtener_diario_30_anios`), pronóstico de 7 días (`obtener_pronostico_7d`).
+  (`buscar_ubicacion`, `resolver_coordenadas`), histórico de 10 años
+  (`obtener_clima_diario`), pronóstico de 7 días (`obtener_pronostico_7d`).
   Constantes: `URL_HISTORICO`, `URL_PRONOSTICO`, `PERIODO_INICIO=2016-01-01`,
   `PERIODO_FIN=2025-12-31`, `PERIODO_REFERENCIA="2016-2025"`, `TIMEOUT_S=90`,
   `RADIO_GPS_KM=20`.
 - **`services/datos_locales.py`** — Lectura pura de `data/*.json` (`ciudades()`, `smn()`);
   los archivos se recargan si cambian en disco (mtime).
-- **`engine/clima_processor.py`** — Conversión de clima diario de 30 años a 12 resúmenes
+- **`engine/clima_processor.py`** — Conversión de clima diario de 10 años a 12 resúmenes
   mensuales (medias, mínimas, máximas, % de años con helada y helada fuerte, lluvia
   mensual). Umbrales: helada `<= 2 °C`, helada fuerte `<= -2 °C`.
 - **`engine/reglas_siembra.py`** — Evaluación de cultivos: estados `optimo` /

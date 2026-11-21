@@ -10,7 +10,7 @@ const vite = await createServer({
 })
 after(() => vite.close())
 
-const { obtenerDiagnostico, obtenerFicha, sugerirCiudades } = await vite.ssrLoadModule('/src/services/api.ts')
+const { obtenerAlertas, obtenerDiagnostico, obtenerFicha, sugerirCiudades } = await vite.ssrLoadModule('/src/services/api.ts')
 const { ErrorApi } = await vite.ssrLoadModule('/src/services/ErrorApi.ts')
 const { leerUbicacion, leerMes } = await vite.ssrLoadModule('/src/utils/consulta.ts')
 const { diagnosticoDemo, fichaDemo } = await vite.ssrLoadModule('/src/mocks/recomendaciones.mock.ts')
@@ -131,4 +131,19 @@ test('el buscador usa el catálogo local si la API no ofrece sugerencias', async
 
   status = 503
   await assert.rejects(sugerirCiudades('Toluca', signal), { status: 503 })
+})
+
+test('las alertas se piden aparte en /api/alertas y se validan', async (t) => {
+  const respuesta = {
+    ubicacion: { nombre: 'Bacalar', estado: 'Quintana Roo', lat: 18.68, lon: -88.39 },
+    alertas_7_dias: [{ tipo: 'lluvia_fuerte', severidad: 'alta', fecha: '2026-11-24', titulo: 'Lluvia fuerte', mensaje: 'Ejemplo', cultivos_afectados: ['ajo'] }],
+    desde_cache: false,
+  }
+  const rutas = []
+  t.mock.method(globalThis, 'fetch', async (ruta) => { rutas.push(ruta); return Response.json(respuesta) })
+  const resultado = await obtenerAlertas({ q: 'Bacalar' }, signal)
+  assert.equal(resultado.alertas_7_dias[0].tipo, 'lluvia_fuerte')
+  assert.deepEqual(rutas, ['/api/alertas?q=Bacalar'])
+  respuesta.alertas_7_dias[0].tipo = 'granizo'
+  await assert.rejects(obtenerAlertas({ q: 'Bacalar' }, signal), /formato inesperado/)
 })

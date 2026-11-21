@@ -38,6 +38,13 @@ export interface Alerta {
   mensaje: string
 }
 
+/** `GET /api/alertas`: pronóstico de 7 días, separado de las recomendaciones */
+export interface RespuestaAlertas {
+  ubicacion: { nombre: string; estado: string; lat: number; lon: number }
+  alertas_7_dias: Alerta[]
+  desde_cache: boolean
+}
+
 export interface Recomendacion {
   id: string
   nombre: string

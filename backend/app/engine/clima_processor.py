@@ -39,7 +39,7 @@ def _estimar_heladas_desde_tmin(tmin_c: float) -> tuple[int, int]:
     return _curva(tmin_c, CURVA_HELADA), _curva(tmin_c, CURVA_HELADA_FUERTE)
 
 
-def procesar_clima_30_anios(datos_diarios: dict[str, list]) -> list[dict[str, Any]]:
+def procesar_clima_diario(datos_diarios: dict[str, list]) -> list[dict[str, Any]]:
     """`datos_diarios` es el bloque `daily` de Open-Meteo Historical.
 
     Por mes calcula: temperatura media, mínima y máxima promedio, % de años con al menos una

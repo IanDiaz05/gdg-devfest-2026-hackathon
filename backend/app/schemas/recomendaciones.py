@@ -112,6 +112,21 @@ class Alerta7Dias(BaseModel):
     cultivos_afectados: list[str] = Field(default_factory=list)
 
 
+class UbicacionAlertas(BaseModel):
+    nombre: str
+    estado: str
+    lat: float
+    lon: float
+
+
+class AlertasResponse(BaseModel):
+    """`GET /api/alertas`: pronóstico de 7 días de la zona, separado de las recomendaciones."""
+
+    ubicacion: UbicacionAlertas
+    alertas_7_dias: list[Alerta7Dias]
+    desde_cache: bool = Field(description="True si el pronóstico salió de la caché (se guarda 1 hora)")
+
+
 class FiltrosRapidos(BaseModel):
     maceta_min_litros: int
     espacio_tipo: EspacioTipo

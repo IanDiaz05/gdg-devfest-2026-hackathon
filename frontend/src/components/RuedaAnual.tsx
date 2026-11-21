@@ -12,15 +12,15 @@ const paso = Math.PI / 6
 
 const tonos = {
   ideal: {
-    relleno: 'fill-rueda-ideal', fondo: 'bg-rueda-ideal text-[#10271B]', letra: 'fill-[#10271B]',
+    relleno: 'fill-rueda-ideal', activo: 'fill-rueda-ideal-activo', fondo: 'bg-rueda-ideal text-[#10271B]', letra: 'fill-[#10271B]',
     texto: 'Óptimo', simbolo: '✓', mensaje: 'Es un mes ideal para sembrar.',
   },
   cuidados: {
-    relleno: 'fill-rueda-cuidados', fondo: 'bg-rueda-cuidados text-rueda-cuidados-texto', letra: 'fill-rueda-cuidados-texto',
+    relleno: 'fill-rueda-cuidados', activo: 'fill-rueda-cuidados-activo', fondo: 'bg-rueda-cuidados text-rueda-cuidados-texto', letra: 'fill-rueda-cuidados-texto',
     texto: 'Con cuidados', simbolo: '!', mensaje: 'Puedes sembrar este mes con cuidados.',
   },
   no: {
-    relleno: 'fill-neutral-cell', fondo: 'bg-neutral-cell text-muted-foreground', letra: 'fill-muted-foreground',
+    relleno: 'fill-neutral-cell', activo: 'fill-rueda-no-activo', fondo: 'bg-neutral-cell text-muted-foreground', letra: 'fill-muted-foreground',
     texto: 'No recomendado', simbolo: '–', mensaje: 'Este mes no se recomienda sembrar.',
   },
 }
@@ -75,11 +75,14 @@ export function RuedaAnual({ cultivos, elegido, elegir, mes, busqueda }: {
           <circle cx={centro} cy={centro} r={85} className="fill-card stroke-border" />
           {segmentos.map(({ nombre, numero, x, y, ruta }) => {
             const tono = tonos[estadoDelMes(elegido, numero)]
+            // El mes elegido no lleva recuadro: cambia a un tono más oscuro de su color (con transición)
+            const activo = numero === seleccionado
+            const transicion = 'motion-safe:transition-[fill] motion-safe:duration-300 motion-safe:ease-out motion-reduce:transition-none'
             return <g key={nombre}>
-              <path d={ruta} className={`${tono.relleno} motion-safe:transition-colors motion-safe:duration-300 motion-reduce:transition-none ${numero === mes ? 'stroke-terracotta' : numero === seleccionado ? 'stroke-primary' : ''}`}
-                strokeWidth={numero === mes ? 3 : numero === seleccionado ? 2 : 0} />
-              <text x={x} y={y - 2} textAnchor="middle" fontSize="13" fontWeight="700" className={tono.letra}>{nombre.slice(0, 3)}</text>
-              <text x={x} y={y + 13} textAnchor="middle" fontSize="12" fontWeight="700" className={tono.letra}>{tono.simbolo}</text>
+              <path d={ruta} className={`${activo ? tono.activo : tono.relleno} ${transicion} ${numero === mes ? 'stroke-terracotta' : ''}`}
+                strokeWidth={numero === mes ? 3 : 0} />
+              <text x={x} y={y - 2} textAnchor="middle" fontSize="13" fontWeight="700" className={`${activo ? 'fill-rueda-activo-texto' : tono.letra} ${transicion}`}>{nombre.slice(0, 3)}</text>
+              <text x={x} y={y + 13} textAnchor="middle" fontSize="12" fontWeight="700" className={`${activo ? 'fill-rueda-activo-texto' : tono.letra} ${transicion}`}>{tono.simbolo}</text>
             </g>
           })}
           <g key={`${elegido.id}-${mesVisible}`} className="motion-safe:animate-fade-up motion-safe:[animation-duration:180ms] motion-reduce:animate-none">
@@ -94,7 +97,7 @@ export function RuedaAnual({ cultivos, elegido, elegir, mes, busqueda }: {
               role="button" aria-pressed={numero === seleccionado}
               aria-label={`${nombre}: ${tonos[estadoDelMes(elegido, numero)].texto.toLocaleLowerCase('es-MX')}`}
               tabIndex={numero === seleccionado ? 0 : -1}
-              className="group cursor-pointer focus-visible:outline-none"
+              className="group cursor-pointer outline-none focus:outline-none"
               onPointerEnter={(event) => { if (event.pointerType !== 'touch') setApuntado(numero) }}
               onPointerLeave={() => setApuntado(null)}
               onFocus={() => setEnFoco(numero)}
@@ -115,7 +118,9 @@ export function RuedaAnual({ cultivos, elegido, elegir, mes, busqueda }: {
                 setSeleccionado(destino + 1)
                 botones.current[destino]?.focus()
               }}>
-              <path d={ruta} className="pointer-events-auto fill-transparent stroke-transparent group-hover:stroke-foreground group-focus-visible:stroke-foreground" strokeWidth={3} />
+              {/* Al pasar el mouse el mes se aclara. El foco del teclado siempre está en el mes elegido,
+                  que ya se distingue por su color, así que no se dibuja ningún recuadro */}
+              <path d={ruta} className="pointer-events-auto fill-transparent group-hover:fill-white/20 motion-safe:transition-[fill] motion-safe:duration-200 oscuro:group-hover:fill-white/10" />
             </g>
           ))}
         </svg>
