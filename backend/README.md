@@ -47,6 +47,17 @@ backend\.venv\Scripts\python backend\scripts\descargas\descargar_todo.py
 | `generar_cultivos_base.py` | Todo lo anterior + `data/curacion/*.json` | `data/cultivos_base.json`: los 28 cultivos con la forma del contrato v3 |
 | `descargar_todo.py` | — | Corre todos los anteriores en orden |
 
+### Precargar el clima de las ciudades (caché en `quesiembro.db`)
+
+| Script | Qué hace |
+|---|---|
+| `scripts/precarga_cache.py --limit 40` | Pide a **Open-Meteo** las zonas más pobladas que todavía no tienen su dato (incluye las que solo tienen dato de CONAGUA, para reemplazarlo). Cada zona pesa ~100 llamadas: el límite es de ~5,000 por hora y 10,000 al día por red |
+| `scripts/precarga_conagua.py` | Llena **todas las zonas vacías** con la estación del SMN más cercana (≤ 50 km), sin red y sin límite. Guarda `origen = "conagua"`. Opciones: `--limit 100`, `--estado Yucatán`, `--radio 30` |
+
+Orden recomendado: primero `precarga_cache.py` hasta donde deje el límite y después `precarga_conagua.py` para que ninguna ciudad se quede sin datos.
+
+**Qué tan bueno es el dato de CONAGUA:** comparado con Open-Meteo en las 144 zonas que tienen ambos, la temperatura media difiere ±1.5 °C (las estaciones salen +1.3 °C más cálidas en promedio), el % de heladas ±6 puntos, y el ✅ ⚠️ ❌ de los cultivos coincide en el 77 % de los casos (solo 1.6 % pasa de ✅ a ❌ o al revés). El % de heladas es **estimado** con la mínima promedio del mes (curva ajustada en `app/engine/clima_processor.py`).
+
 ## 4. Actualizar el SMN cada mes
 
 El SMN publica cada mes 4 archivos CSV (lluvia, temperatura media, máxima y mínima de ~1,400 estaciones). No tiene API, pero cada archivo tiene una dirección fija:
@@ -93,7 +104,7 @@ backend/data/
 | Parte | Fuente |
 |---|---|
 | Búsqueda de ciudad y GPS | `data/ciudades.json` (sin red) |
-| Clima típico de 30 años (temperaturas, % de heladas, lluvia del mes) | **Open-Meteo Historical** (en vivo, con caché en SQLite por celda de 0.1°) |
+| Clima típico (temperaturas, % de heladas, lluvia del mes) | **Open-Meteo Historical**, 10 años (en vivo, con caché en SQLite por celda de 0.1°). Si Open-Meteo no responde: **estación del SMN más cercana** (≤ 50 km). La respuesta lo indica en `clima_zona.origen` (`open-meteo` o `conagua`) |
 | Alertas de 7 días: helada, calor, lluvia fuerte, tormenta, viento y UV | **Open-Meteo Forecast** (en vivo, caché de 1 hora) |
 | Lluvia del último mes y su comparación con lo normal | **SMN-CONAGUA**, estación más cercana (≤ 30 km) en `data/smn_estaciones.json` |
 | Estado ✅ ⚠️ ❌, razón y meses buenos | Motor de reglas (`app/engine/reglas_siembra.py`) |

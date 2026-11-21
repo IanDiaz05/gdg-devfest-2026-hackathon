@@ -2,7 +2,7 @@ import { useId } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { espacios, guardarEspacio, leerEspacio } from '../utils/consulta'
 
-export const estiloControl = 'min-h-11 rounded-xl border border-border bg-white px-3 text-sm font-medium text-foreground'
+export const estiloControl = 'min-h-11 rounded-xl border border-border bg-card px-3 text-sm font-medium text-foreground'
 
 export function useFiltroEspacio() {
   const [params, setParams] = useSearchParams()

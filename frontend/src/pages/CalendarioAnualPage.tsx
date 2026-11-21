@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { ErrorConsulta } from '../components/ErrorConsulta'
 import { FiltroEspacio, estiloControl, useFiltroEspacio } from '../components/FiltrosCultivos'
 import { Aviso, CargaPantalla, ElegirZona, TituloPagina } from '../components/Interfaz'
+import { RuedaAnual } from '../components/RuedaAnual'
 import { useRecomendaciones } from '../hooks/useRecomendaciones'
 import { meses, normalizar } from '../utils/consulta'
 
@@ -17,6 +18,7 @@ export function CalendarioAnualPage() {
   const { consulta, ubicacion, busqueda } = useRecomendaciones()
   const { espacio, setEspacio } = useFiltroEspacio()
   const [nombre, setNombre] = useState('')
+  const [enRueda, setEnRueda] = useState('')
 
   if (!ubicacion) return <ElegirZona />
   if (consulta.isPending) return <CargaPantalla mensaje="Cargando el calendario…" />
@@ -25,6 +27,10 @@ export function CalendarioAnualPage() {
   const { cultivos, ubicacion: zona } = consulta.data
   const filtrados = cultivos.filter((cultivo) => normalizar(cultivo.nombre).includes(normalizar(nombre))
     && (!espacio || cultivo.filtros_rapidos.espacio_tipo === espacio))
+  const mes = consulta.data.clima_zona.mes_evaluado
+  // La rueda muestra el cultivo elegido; si no hay uno, el primero que es ideal en el mes consultado
+  const elegido = filtrados.find((cultivo) => cultivo.id === enRueda)
+    ?? filtrados.find((cultivo) => cultivo.meses_ideales.includes(mes)) ?? filtrados[0]
 
   return <div className="w-full">
     <EstadoDatos datos={consulta.data} actualizado={consulta.dataUpdatedAt} />
@@ -35,6 +41,7 @@ export function CalendarioAnualPage() {
       </label>
       <FiltroEspacio valor={espacio} cambiar={setEspacio} />
     </div>
+    {elegido && <RuedaAnual cultivos={filtrados} elegido={elegido} elegir={setEnRueda} mes={mes} busqueda={busqueda} />}
     <ul className="mb-4 flex flex-wrap gap-2 text-sm">
       {Object.values(estadosMes).map(({ texto, clase, simbolo }) => <li key={texto} className={`rounded-full px-3 py-1.5 font-semibold ${clase}`}>{simbolo} {texto}</li>)}
     </ul>

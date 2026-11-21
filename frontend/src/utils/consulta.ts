@@ -66,3 +66,27 @@ export function guardarEspacio(valor: string) {
     // La navegación todavía conserva el filtro en la URL.
   }
 }
+
+/** Tramos seguidos de meses (1-12), uniendo diciembre con enero: [[10, 3]] = de octubre a marzo. */
+export function tramosDeMeses(lista: number[]): [number, number][] {
+  const meses = new Set(lista)
+  if (meses.size === 0) return []
+  if (meses.size === 12) return [[1, 12]]
+  const tramos: [number, number][] = []
+  for (let mes = 1; mes <= 12; mes++) {
+    const anterior = mes === 1 ? 12 : mes - 1
+    if (!meses.has(mes) || meses.has(anterior)) continue
+    let fin = mes
+    while (meses.has(fin === 12 ? 1 : fin + 1)) fin = fin === 12 ? 1 : fin + 1
+    tramos.push([mes, fin])
+  }
+  return tramos
+}
+
+/** "oct–mar", "todo el año" o "oct–dic y feb–mar", para decir cuándo conviene sembrar. */
+export function textoTemporada(lista: number[]): string {
+  const corto = (mes: number) => meses[mes - 1].slice(0, 3).toLocaleLowerCase('es-MX')
+  const tramos = tramosDeMeses(lista)
+  if (tramos.length === 1 && tramos[0][0] === 1 && tramos[0][1] === 12) return 'todo el año'
+  return tramos.map(([inicio, fin]) => inicio === fin ? corto(inicio) : `${corto(inicio)}–${corto(fin)}`).join(' y ')
+}

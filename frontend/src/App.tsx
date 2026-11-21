@@ -21,7 +21,7 @@ export default function App() {
           <Route path="cultivos/:id" element={<CultivoDetallePage />} />
           <Route path="calendario" element={<CalendarioAnualPage />} />
           <Route path="*" element={<TituloPagina etiqueta="QUESIEMBRO" titulo="Página no encontrada">
-            <Link className="mt-4 inline-flex min-h-11 items-center font-bold text-[#264E36] underline underline-offset-4" to="/">Volver al inicio</Link>
+            <Link className="mt-4 inline-flex min-h-11 items-center font-bold text-primary underline underline-offset-4" to="/">Volver al inicio</Link>
           </TituloPagina>} />
         </Route>
       </Routes>

@@ -2,6 +2,113 @@
 
 @config "../tailwind.config.js";
 
+/* oscuro:clase aplica solo con el modo oscuro activo (<html data-tema="oscuro">) */
+@custom-variant oscuro (&:where([data-tema="oscuro"], [data-tema="oscuro"] *));
+
+/* Paleta. tailwind.config.js usa estas variables, así que bg-primary, text-tinta, etc. cambian solas */
+:root {
+  color-scheme: light;
+  --c-background: #FAFAF7;
+  --c-foreground: #243229;
+  --c-shell: #F5F3EB;
+  --c-card: #FFFEFB;
+  --c-primary: #2D5A3D;
+  --c-primary-hover: #214930;
+  --c-primary-foreground: #FAFAF7;
+  --c-secondary: #E8F0E5;
+  --c-muted-foreground: #4B5C50;
+  --c-terracotta: oklch(0.49 0.113 47.2);
+  --c-scientific: oklch(0.553 0.012 58.1);
+  --c-border: #D4DCCE;
+  --c-ring: #2D5A3D;
+  --c-success: oklch(0.523 0.135 144.2);
+  --c-success-soft: oklch(0.957 0.021 147.6);
+  --c-success-border: oklch(0.523 0.135 144.2 / 22%);
+  --c-warning: oklch(0.473 0.125 46.2);
+  --c-warning-soft: oklch(0.987 0.021 95.3);
+  --c-warning-border: oklch(0.924 0.115 95.7);
+  --c-danger: oklch(0.444 0.161 26.9);
+  --c-danger-soft: oklch(0.971 0.013 17.4);
+  --c-danger-border: oklch(0.885 0.059 18.3);
+  --c-neutral-cell: oklch(0.935 0.01 91.5);
+  --c-cream: #FAFAF7;
+  --c-leaf: #2D5A3D;
+  --c-leaf-light: #A8C3A0;
+  --c-tomato: oklch(0.641 0.157 39.8);
+  --c-pot-cream: oklch(0.904 0.028 90.9);
+  --c-sun: oklch(0.813 0.145 78);
+  --c-sun-soft: oklch(0.958 0.038 85.3);
+  --c-frost: oklch(0.55 0.09 240);
+  --c-frost-soft: oklch(0.955 0.02 240);
+  --c-sage: #A8C3A0;
+  --c-earth-soft: #F0EADF;
+  --c-papel: #F6EEDC;
+  --c-papel-claro: #FBF6EA;
+  --c-kraft: #B0643C;
+  --c-tinta: #3B2A1A;
+  --c-tinta-suave: #6F5F4A;
+  --c-nota: #FCE9A8;
+  --c-nota-tinta: #5A3E08;
+  --c-pie: #2D5A3D;
+  --c-pie-texto: #FAFAF7;
+  --c-rueda-ideal: #5E9B5A;
+  --c-rueda-cuidados: #F0D592;
+  --c-rueda-cuidados-texto: #6B4E12;
+  --c-barra: rgb(38 78 54 / 22%);
+}
+
+/* Modo oscuro "Pino y arcilla suave": verde azulado de noche, títulos menta-agua y acento de arcilla rosada */
+:root[data-tema="oscuro"] {
+  color-scheme: dark;
+  --c-background: #0D1614;
+  --c-foreground: #DDE8E4;
+  --c-shell: #0A1210;
+  --c-card: #14211D;
+  --c-primary: #A6D8C6;
+  --c-primary-hover: #BDE3D5;
+  --c-primary-foreground: #0D1614;
+  --c-secondary: #1B2B26;
+  --c-muted-foreground: #8FA6A0;
+  --c-terracotta: #D9A58C;
+  --c-scientific: #A9B7B2;
+  --c-border: #263A34;
+  --c-ring: #A6D8C6;
+  --c-success: #7FD1B5;
+  --c-success-soft: #16302A;
+  --c-success-border: rgb(127 209 181 / 30%);
+  --c-warning: #E9C08E;
+  --c-warning-soft: #2E2519;
+  --c-warning-border: #6B5537;
+  --c-danger: #E8A59A;
+  --c-danger-soft: #2E1C1B;
+  --c-danger-border: #6B3A34;
+  --c-neutral-cell: #22302B;
+  --c-cream: #0D1614;
+  --c-leaf: #5FB39A;
+  --c-leaf-light: #4F8F7C;
+  --c-tomato: oklch(0.68 0.15 35);
+  --c-pot-cream: #CDBFB4;
+  --c-sun: #E2B67E;
+  --c-sun-soft: #2B261C;
+  --c-frost: #8CC3E0;
+  --c-frost-soft: #16262E;
+  --c-sage: #4F8F7C;
+  --c-earth-soft: #1E2A26;
+  --c-papel: #14211D;
+  --c-papel-claro: #172521;
+  --c-kraft: #9A7A6B;
+  --c-tinta: #DDE8E4;
+  --c-tinta-suave: #8FA6A0;
+  --c-nota: #3A2A24;
+  --c-nota-tinta: #F0CDBE;
+  --c-rueda-ideal: #4FA38A;
+  --c-rueda-cuidados: #E2B67E;
+  --c-rueda-cuidados-texto: #3A2E10;
+  --c-pie: #08100E;
+  --c-pie-texto: #DDE8E4;
+  --c-barra: rgb(166 216 198 / 25%);
+}
+
 @utility surface {
   @apply rounded-2xl border border-border bg-card;
 }
@@ -18,7 +125,54 @@
   @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-border bg-card px-3.5 text-sm font-bold text-primary hover:bg-secondary disabled:opacity-65;
 }
 
+/* Estilo "sobre de semillas": papel, etiquetas con borde punteado y sellos */
+@utility sobre {
+  @apply rounded-3xl bg-papel p-3 text-tinta sm:p-4;
+}
+
+@utility etiqueta {
+  @apply rounded-2xl border-[1.5px] border-dashed border-kraft bg-papel-claro p-4;
+}
+
+@utility sello {
+  @apply inline-block rounded-lg border-2 bg-papel-claro px-2 py-1 text-center text-xs leading-tight font-bold tracking-wider uppercase;
+}
+
+@utility titulo-sobre {
+  @apply font-display text-xl font-semibold text-primary;
+}
+
+/* Oculta la barra de desplazamiento sin quitar el scroll (rueda, touch y teclado siguen funcionando) */
+@utility sin-barra {
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 @layer base {
+  /* Barra de la página delgada, sin fondo y del color de la marca */
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--c-barra) transparent;
+  }
+
+  /* Safari y navegadores sin scrollbar-width */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 9999px;
+    background: var(--c-barra);
+  }
+
   :is(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
     @apply outline-2 outline-offset-3 outline-ring;
   }

@@ -45,7 +45,7 @@ export function Aviso({ children, error, reintentar, reintentoBloqueado }: {
   reintentoBloqueado?: boolean
 }) {
   return (
-    <div className={`my-3 rounded-2xl border p-4 ${error ? 'border-red-200 bg-red-50 text-red-800' : 'border-border bg-white text-muted-foreground'}`} role={error ? 'alert' : 'status'}>
+    <div className={`my-3 rounded-2xl border p-4 ${error ? 'border-danger-border bg-danger-soft text-danger' : 'border-border bg-card text-muted-foreground'}`} role={error ? 'alert' : 'status'}>
       <p>{children}</p>
       {reintentar && <button className="mt-3 min-h-11 rounded-full border border-primary px-4 text-sm font-bold text-primary disabled:opacity-60" disabled={reintentoBloqueado} onClick={reintentar}>Reintentar</button>}
     </div>

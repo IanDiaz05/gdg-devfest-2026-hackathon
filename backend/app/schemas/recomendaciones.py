@@ -9,6 +9,7 @@ Dificultad = Literal["facil", "media", "dificil"]
 ConsumoHidrico = Literal["bajo", "medio", "alto"]
 TipoAlerta = Literal["helada", "calor", "lluvia_fuerte", "tormenta", "viento", "uv"]
 SeveridadAlerta = Literal["media", "alta"]
+OrigenClima = Literal["open-meteo", "conagua"]
 
 
 class ErrorResponse(BaseModel):
@@ -20,6 +21,17 @@ class ErrorResponse(BaseModel):
 class AlternativaUbicacion(BaseModel):
     nombre: str
     estado: str
+    lat: float
+    lon: float
+
+
+class SugerenciaCiudad(BaseModel):
+    """Opción del buscador (`GET /api/ciudades`). `etiqueta` es lo que se muestra y se manda como `q`."""
+
+    nombre: str
+    estado: str
+    municipio: str
+    etiqueta: str
     lat: float
     lon: float
 
@@ -57,10 +69,26 @@ class LluviaReciente(BaseModel):
     consejo: str
 
 
+class EstacionClima(BaseModel):
+    """Estación del SMN usada para el clima típico cuando `origen` es "conagua"."""
+
+    estacion: str
+    clave: str
+    distancia_km: float
+    heladas_estimadas: bool = Field(
+        description="El SMN solo publica promedios mensuales: el % de heladas se estima con la mínima promedio",
+    )
+
+
 class ClimaZona(BaseModel):
     mes_evaluado: int = Field(ge=1, le=12)
     mes_nombre: str
     periodo_referencia: str
+    origen: OrigenClima = Field(
+        default="open-meteo",
+        description="De dónde sale el clima típico: Open-Meteo (modelo, punto exacto) o CONAGUA (estación cercana)",
+    )
+    estacion_smn: EstacionClima | None = None
     temp_media_c: float
     temp_min_promedio_c: float
     temp_max_promedio_c: float

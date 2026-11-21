@@ -60,7 +60,10 @@ def _celdas_por_poblacion() -> list[dict[str, Any]]:
 
 
 async def _ya_en_cache(lat_grid: float, lon_grid: float) -> bool:
-    return await database.get_clima_cache(lat_grid, lon_grid) is not None
+    """True si la zona ya tiene clima de Open-Meteo. Las de origen "conagua" se vuelven a pedir
+    para reemplazar el respaldo por el dato completo."""
+    cache = await database.get_clima_cache(lat_grid, lon_grid)
+    return cache is not None and cache.get("origen") == database.ORIGEN_OPEN_METEO
 
 
 async def _precargar_celda(celda: dict[str, Any]) -> bool:

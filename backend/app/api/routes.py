@@ -21,6 +21,7 @@ from app.schemas.recomendaciones import (
     ErrorResponse,
     MesTemperatura,
     RecomendacionesResponse,
+    SugerenciaCiudad,
     UbicacionInfo,
 )
 from app.services import open_meteo
@@ -47,12 +48,16 @@ def _clima_zona(
     mes: int,
     periodo: str,
     lluvia: dict[str, Any] | None,
+    origen: str,
+    fuente: dict[str, Any] | None,
 ) -> ClimaZona:
     actual = next(item for item in resumen if int(item["mes"]) == mes)
     return ClimaZona(
         mes_evaluado=mes,
         mes_nombre=str(actual["nombre"]),
         periodo_referencia=periodo,
+        origen=origen,
+        estacion_smn=fuente if origen == "conagua" else None,
         temp_media_c=float(actual["temp_media_c"]),
         temp_min_promedio_c=float(actual["temp_min_promedio_c"]),
         temp_max_promedio_c=float(actual["temp_max_promedio_c"]),
@@ -203,6 +208,8 @@ async def recomendaciones(
     if cache_clima is not None:
         resumen = cache_clima["resumen_mensual_json"]
         periodo = str(cache_clima["periodo_referencia"])
+        origen = str(cache_clima.get("origen") or database.ORIGEN_OPEN_METEO)
+        fuente = cache_clima.get("fuente")
         desde_cache = True
     else:
         try:
@@ -211,6 +218,7 @@ async def recomendaciones(
             if len(resumen) < 12:  # respuesta incompleta: no se guarda en caché
                 raise ClimaNoDisponibleError()
             periodo = _PERIODO_REFERENCIA
+            origen, fuente = database.ORIGEN_OPEN_METEO, None
             await database.save_clima_cache(
                 lat_grid,
                 lon_grid,
@@ -220,11 +228,22 @@ async def recomendaciones(
             )
             desde_cache = False
         except ClimaNoDisponibleError:
-            # Open-Meteo saturado/timeout: respaldo SMN-CONAGUA sin guardar como caché permanente
+            # Open-Meteo saturado o sin respuesta: se usa la estación del SMN más cercana y se guarda
+            # con origen "conagua". scripts/precarga_cache.py la reemplaza después por Open-Meteo.
             respaldo = clima_processor.resumen_smn_fallback(lat_resuelta, lon_resuelta)
             if respaldo is None:
                 raise
-            resumen, periodo = respaldo
+            resumen, periodo, fuente = respaldo
+            origen = database.ORIGEN_CONAGUA
+            await database.save_clima_cache(
+                lat_grid,
+                lon_grid,
+                altitud_m,
+                periodo,
+                resumen,
+                origen=origen,
+                fuente=fuente,
+            )
             desde_cache = False
 
     alertas = await database.get_pronostico_cache(lat_grid, lon_grid)
@@ -262,10 +281,19 @@ async def recomendaciones(
             desde_cache=desde_cache,
             alternativas=lugar.get("alternativas") or [],
         ),
-        clima_zona=_clima_zona(resumen, mes_evaluado, periodo, lluvia),
+        clima_zona=_clima_zona(resumen, mes_evaluado, periodo, lluvia, origen, fuente),
         alertas_7_dias=alertas,
         cultivos=cultivos,
     )
+
+
+@router.get("/ciudades", response_model=list[SugerenciaCiudad])
+async def ciudades_sugeridas(
+    q: str = Query(default="", max_length=120),
+    limite: int = Query(default=10, ge=1, le=20),
+) -> list[SugerenciaCiudad]:
+    """Sugerencias del buscador: sin `q`, las primeras en orden alfabético; con `q`, las que coinciden."""
+    return [SugerenciaCiudad(**s) for s in open_meteo.sugerir_ciudades(q, limite)]
 
 
 @router.get(

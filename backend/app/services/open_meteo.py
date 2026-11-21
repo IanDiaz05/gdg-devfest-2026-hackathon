@@ -81,6 +81,52 @@ async def buscar_ubicacion(q: str) -> dict:
     return _ubicacion(principal, alternativas)
 
 
+def sugerir_ciudades(q: str | None, limite: int = 10) -> list[dict[str, Any]]:
+    """Sugerencias para el buscador, en orden alfabético.
+
+    - Sin texto: las primeras `limite` del catálogo (A, B, C…).
+    - Con texto (sin importar acentos ni mayúsculas): primero las que empiezan así, luego las que
+      tienen una palabra que empieza así ("carmen" → Playa del Carmen) y al final las del estado
+      ("yuc" → ciudades de Yucatán). Dentro de cada grupo, alfabético.
+    - Acepta "ciudad, estado" para filtrar por estado ("san juan, jal").
+    Cada lugar aparece una vez por estado (el más poblado si hay varios con el mismo nombre).
+    """
+    partes = [normalizar(p) for p in str(q or "").split(",")]
+    texto, filtro_estado = partes[0], (partes[1] if len(partes) > 1 else "")
+
+    mejores: dict[tuple[str, str], tuple[int, dict[str, Any]]] = {}
+    for c in ciudades():
+        estado = normalizar(c["estado"])
+        if filtro_estado and not estado.startswith(filtro_estado) and f" {filtro_estado}" not in f" {estado}":
+            continue
+        nombre = c["busqueda"]
+        if not texto or nombre.startswith(texto):
+            rango = 0
+        elif f" {texto}" in f" {nombre}":
+            rango = 1
+        elif not filtro_estado and (estado.startswith(texto) or f" {texto}" in f" {estado}"):
+            rango = 2
+        else:
+            continue
+        llave = (nombre, estado)
+        previo = mejores.get(llave)
+        if previo is None or (rango, -int(c.get("poblacion") or 0)) < (previo[0], -int(previo[1].get("poblacion") or 0)):
+            mejores[llave] = (rango, c)
+
+    ordenadas = sorted(mejores.items(), key=lambda item: (item[1][0], item[0][0], item[0][1]))
+    return [
+        {
+            "nombre": c["nombre"],
+            "estado": c["estado"],
+            "municipio": c.get("municipio") or c["nombre"],
+            "etiqueta": f"{c['nombre']}, {c['estado']}",
+            "lat": c["lat"],
+            "lon": c["lon"],
+        }
+        for _, (_, c) in ordenadas[:limite]
+    ]
+
+
 async def resolver_coordenadas(lat: float, lon: float) -> dict:
     """Para el GPS del navegador: toma los datos de la ciudad más cercana en data/ciudades.json."""
     try:

@@ -11,7 +11,7 @@ const vite = await createServer({
 })
 after(() => vite.close())
 
-const { obtenerDiagnostico, obtenerFicha } = await vite.ssrLoadModule('/src/services/api.ts')
+const { obtenerDiagnostico, obtenerFicha, sugerirCiudades } = await vite.ssrLoadModule('/src/services/api.ts')
 const { ErrorApi } = await vite.ssrLoadModule('/src/services/ErrorApi.ts')
 const { leerUbicacion, leerMes } = await vite.ssrLoadModule('/src/utils/consulta.ts')
 const { diagnosticoDemo, fichaDemo } = await vite.ssrLoadModule('/src/mocks/recomendaciones.mock.ts')
@@ -104,4 +104,19 @@ test('la demo conserva el fixture de diciembre y no fabrica otros meses ni homó
   assert.equal(zona.clima_zona.mes_evaluado, 12)
   assert.deepEqual(zona.ubicacion.alternativas, [])
   assert.throws(() => diagnosticoDemo({ q: 'Toluca' }, 1), /solo incluye diagnósticos de diciembre/)
+})
+
+test('el buscador pide sugerencias con y sin texto y valida la respuesta', async (t) => {
+  const tulum = { nombre: 'Tulum', estado: 'Quintana Roo', municipio: 'Tulum', etiqueta: 'Tulum, Quintana Roo', lat: 20.21, lon: -87.46 }
+  const rutas = []
+  let respuesta = [tulum]
+  t.mock.method(globalThis, 'fetch', async (ruta) => {
+    rutas.push(ruta)
+    return Response.json(respuesta)
+  })
+  assert.deepEqual(await sugerirCiudades('', signal), [tulum])
+  assert.deepEqual(await sugerirCiudades('  tul ', signal), [tulum])
+  assert.deepEqual(rutas, ['/api/ciudades?limite=10', '/api/ciudades?limite=10&q=tul'])
+  respuesta = [{ ...tulum, etiqueta: undefined }]
+  await assert.rejects(sugerirCiudades('tul', signal), /formato inesperado/)
 })

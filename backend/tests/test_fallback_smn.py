@@ -69,19 +69,29 @@ def test_periodo_referencia_es_10_anios() -> None:
 
 
 def test_estimar_heladas_desde_tmin() -> None:
-    assert clima_processor._estimar_heladas_desde_tmin(-3.0) == (100, 100)
-    assert clima_processor._estimar_heladas_desde_tmin(-0.5) == (100, 50)
-    assert clima_processor._estimar_heladas_desde_tmin(1.5) == (100, 0)
-    assert clima_processor._estimar_heladas_desde_tmin(5.0) == (0, 0)
+    # Curva ajustada con las zonas de Open-Meteo: casi seguro con mínimas bajo 0 °C,
+    # mitad de los años alrededor de 6 °C y casi nunca arriba de 12 °C
+    helada, fuerte = clima_processor._estimar_heladas_desde_tmin(-3.0)
+    assert helada >= 99 and fuerte >= 99
+    helada, fuerte = clima_processor._estimar_heladas_desde_tmin(6.3)
+    assert helada == 50 and fuerte < 15
+    helada, fuerte = clima_processor._estimar_heladas_desde_tmin(14.0)
+    assert helada <= 1 and fuerte == 0
+    # Siempre: más años con helada que con helada fuerte
+    for tmin in range(-5, 20):
+        helada, fuerte = clima_processor._estimar_heladas_desde_tmin(float(tmin))
+        assert 0 <= fuerte <= helada <= 100
 
 
 def test_resumen_smn_fallback_cdmx() -> None:
     # Ciudad de Mexico: debe haber estacion SMN cerca
     resultado = clima_processor.resumen_smn_fallback(19.43, -99.13)
     assert resultado is not None
-    resumen, periodo = resultado
+    resumen, periodo, fuente = resultado
     assert len(resumen) == 12
     assert periodo.startswith("SMN-CONAGUA")
+    assert fuente["estacion"] and fuente["distancia_km"] <= clima_processor.RADIO_SMN_FALLBACK_KM
+    assert fuente["heladas_estimadas"] is True
     for item in resumen:
         assert "temp_media_c" in item
         assert "temp_min_promedio_c" in item
@@ -131,5 +141,27 @@ def test_recomendaciones_fallback_smn_cuando_open_meteo_falla(
     _assert_contrato_v31(payload)
     assert payload["ubicacion"]["desde_cache"] is False
     assert str(payload["clima_zona"]["periodo_referencia"]).startswith("SMN-CONAGUA")
+    assert payload["clima_zona"]["origen"] == "conagua"
+    assert payload["clima_zona"]["estacion_smn"]["heladas_estimadas"] is True
     assert payload["alertas_7_dias"] == []
-    save_mock.assert_not_called()
+    # El respaldo se guarda marcado como "conagua" para que precarga_cache.py lo reemplace después
+    save_mock.assert_called_once()
+    assert save_mock.call_args.kwargs["origen"] == "conagua"
+
+
+def test_recomendaciones_open_meteo_marca_origen(cliente_api: TestClient) -> None:
+    cache = {
+        "resumen_mensual_json": clima_processor.resumen_smn_fallback(19.43, -99.13)[0],
+        "periodo_referencia": PERIODO_REFERENCIA,
+        "origen": "open-meteo",
+        "fuente": None,
+    }
+    with (
+        patch("app.api.routes.open_meteo.obtener_pronostico_7d", new=AsyncMock(return_value=[])),
+        patch("app.api.routes.database.get_clima_cache", new=AsyncMock(return_value=cache)),
+    ):
+        respuesta = cliente_api.get("/api/recomendaciones", params={"lat": 19.43, "lon": -99.13, "mes": 12})
+    assert respuesta.status_code == 200, respuesta.text
+    clima = respuesta.json()["clima_zona"]
+    assert clima["origen"] == "open-meteo"
+    assert clima["estacion_smn"] is None

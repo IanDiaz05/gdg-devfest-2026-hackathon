@@ -1,8 +1,8 @@
 import { clavePublica, guardarDatos, recuperarDatos } from '../pwa/datosGuardados'
 import { ErrorApi } from './ErrorApi'
-import type { Ubicacion } from '../types/api'
-import { parametros } from '../utils/consulta'
-import { objeto, validarDiagnostico, validarFicha } from './validacion'
+import type { SugerenciaCiudad, Ubicacion } from '../types/api'
+import { normalizar, parametros } from '../utils/consulta'
+import { objeto, validarDiagnostico, validarFicha, validarSugerencias } from './validacion'
 
 const baseUrl = (import.meta.env.VITE_API_BASE_URL ?? '').trim().replace(/\/+$/, '')
 export const modoDemo = import.meta.env.VITE_USE_MOCKS === 'true'
@@ -56,6 +56,24 @@ export async function obtenerDiagnostico(ubicacion: Ubicacion, mes: number | und
     throw new Error('El servicio devolvió datos para un mes distinto al solicitado.')
   }
   return resultado
+}
+
+const ciudadesDemo: SugerenciaCiudad[] = [
+  { nombre: 'Mérida', estado: 'Yucatán', municipio: 'Mérida', etiqueta: 'Mérida, Yucatán', lat: 20.97, lon: -89.62 },
+  { nombre: 'Monterrey', estado: 'Nuevo León', municipio: 'Monterrey', etiqueta: 'Monterrey, Nuevo León', lat: 25.67, lon: -100.31 },
+  { nombre: 'Toluca', estado: 'Estado de México', municipio: 'Toluca', etiqueta: 'Toluca, Estado de México', lat: 19.29, lon: -99.66 },
+]
+
+/** Sugerencias del buscador: sin texto, las primeras en orden alfabético; con texto, las que coinciden. */
+export async function sugerirCiudades(texto: string, signal: AbortSignal): Promise<SugerenciaCiudad[]> {
+  const q = texto.trim()
+  if (modoDemo) {
+    const buscado = normalizar(q.split(',')[0] ?? '')
+    return ciudadesDemo.filter((ciudad) => normalizar(ciudad.etiqueta).includes(buscado))
+  }
+  const consulta = new URLSearchParams({ limite: '10' })
+  if (q) consulta.set('q', q)
+  return pedir(`/api/ciudades?${consulta}`, signal, validarSugerencias)
 }
 
 export async function obtenerFicha(id: string, signal: AbortSignal) {

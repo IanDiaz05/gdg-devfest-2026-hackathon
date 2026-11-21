@@ -37,6 +37,8 @@ ESTADOS_INEGI = {
     "32": ("Zacatecas", []),
 }
 TIPOS = {"PPLC": "capital_pais", "PPLA": "capital_estado", "PPLA2": "cabecera_municipal"}
+# GeoNames guarda algunos nombres en inglés; se muestran y buscan en español
+NOMBRES_EN_ESPANOL = {"Mexico City": "Ciudad de México"}
 
 
 def mapa_estados(ruta_admin1) -> dict[str, str]:
@@ -113,6 +115,7 @@ def main() -> None:
         if not cve_ent:
             continue
         cve_mun = r[11].zfill(3) if r[11].isdigit() else None
+        r[1] = NOMBRES_EN_ESPANOL.get(r[1], r[1])
         busqueda = normalizar(r[1])
         llave = (busqueda, cve_ent, cve_mun)
         if llave in vistos:  # mismo nombre en el mismo municipio: se queda el más poblado

@@ -1,8 +1,9 @@
-import { skipToken, useQuery, useQueryClient } from '@tanstack/react-query'
-import { ArrowRight, CalendarDays, Container, Flower, LoaderCircle, LocateFixed, MapPin, Search, Sprout, Trees, UserRound } from 'lucide-react'
+import { skipToken, useQuery } from '@tanstack/react-query'
+import { ArrowRight, CalendarDays, Container, Flower, LoaderCircle, LocateFixed, Search, Sprout, Trees, UserRound } from 'lucide-react'
 import { useState } from 'react'
 import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 import { Boton } from '../components/Boton'
+import { BuscadorCiudad } from '../components/BuscadorCiudad'
 import { Chip } from '../components/Chip'
 import { HeroHuerto } from '../components/HeroHuerto'
 import { Aviso } from '../components/Interfaz'
@@ -26,20 +27,10 @@ export function HomePage() {
   const [espacio, setEspacio] = useState(() => leerEspacio(params.get('espacio')))
   const ubicacionActual = leerUbicacion(params)
   const mes = modoDemo ? 12 : leerMes(params)
-  const cliente = useQueryClient()
 
   // La portada reutiliza el diagnóstico de la navegación, sin iniciar una consulta.
   const consulta = useQuery<Diagnostico>({ queryKey: claveDiagnostico(ubicacionActual, mes), queryFn: skipToken })
   const datos = !modoDemo && conectado && !fechaGuardada(consulta.data) ? consulta.data : undefined
-  const localidades = [...new Set([
-    ...ejemplos,
-    ...cliente.getQueriesData<Diagnostico>({ queryKey: ['diagnostico'] }).flatMap(([clave, dato]) => {
-      const origen = clave[1]
-      if (!dato || typeof origen !== 'object' || origen === null || !('q' in origen)) return []
-      const { ubicacion } = dato
-      return [ubicacion, ...ubicacion.alternativas].map(({ nombre, estado }) => `${nombre}, ${estado}`)
-    }),
-  ])].slice(0, 12)
 
   function consultar(ubicacion: Ubicacion) {
     const consulta = parametros(ubicacion, mes)
@@ -73,7 +64,8 @@ export function HomePage() {
             </p>
           </div>
 
-          <div id="ubicacion" className="surface min-w-0 p-4 shadow-soft motion-safe:animate-fade-up motion-safe:[animation-delay:85ms] motion-reduce:animate-none sm:p-5 lg:col-start-1 lg:row-start-2">
+          {/* relative z-20: la animación crea una capa propia; sin esto, la lista de ciudades queda debajo de la franja de abajo */}
+          <div id="ubicacion" className="surface relative z-20 min-w-0 p-4 shadow-soft motion-safe:animate-fade-up motion-safe:[animation-delay:85ms] motion-reduce:animate-none sm:p-5 lg:col-start-1 lg:row-start-2">
             <form onSubmit={(event) => {
               event.preventDefault()
               const q = ciudad.trim()
@@ -82,15 +74,7 @@ export function HomePage() {
               consultar({ q })
             }} className="@container" role="search" aria-label="Buscar ubicación">
               <label className="block font-bold text-foreground" htmlFor="ciudad">¿Dónde vas a cultivar?</label>
-              <div className="mt-2 flex min-h-12 items-center rounded-xl border border-border bg-cream px-3 focus-within:ring-2 focus-within:ring-primary">
-                <MapPin size={19} strokeWidth={1.75} className="shrink-0 text-primary" aria-hidden="true" />
-                <input className="min-h-12 min-w-0 flex-1 px-2 text-base text-foreground outline-none placeholder:text-muted-foreground focus-visible:outline-none"
-                  id="ciudad" aria-label="Ciudad o municipio" value={ciudad} onChange={(event) => setCiudad(event.target.value)}
-                  placeholder="Ciudad o municipio" inputMode="search" autoComplete="off" list="localidades-inicio" required maxLength={120} />
-                <datalist id="localidades-inicio">
-                  {localidades.map((nombre) => <option key={nombre} value={nombre} />)}
-                </datalist>
-              </div>
+              <BuscadorCiudad id="ciudad" valor={ciudad} onCambio={setCiudad} />
               <fieldset className="mt-3.5">
                 <legend className="mb-2 text-sm font-bold text-foreground">¿Qué espacio tienes?</legend>
                 <div className="grid grid-cols-2 gap-2 @xl:grid-cols-4">

@@ -1,4 +1,4 @@
-import type { Diagnostico, FichaCultivo } from '../types/api'
+import type { Diagnostico, FichaCultivo, SugerenciaCiudad } from '../types/api'
 import { esMes } from '../utils/consulta'
 
 export function objeto(valor: unknown): Record<string, unknown> | undefined {
@@ -98,3 +98,6 @@ export function validarDiagnostico(valor: unknown): Diagnostico {
   return datos
 }
 export const validarFicha = (valor: unknown) => validar<FichaCultivo>(valor, ficha)
+
+const sugerencias = lista(campos({ nombre: texto, estado: texto, municipio: texto, etiqueta: texto, lat: numero, lon: numero }))
+export const validarSugerencias = (valor: unknown) => validar<SugerenciaCiudad[]>(valor, sugerencias)

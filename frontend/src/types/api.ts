@@ -17,6 +17,12 @@ export interface Alternativa {
   lon: number
 }
 
+/** Opción del buscador (`GET /api/ciudades`). `etiqueta` ("Ciudad, Estado") se manda como `q`. */
+export interface SugerenciaCiudad extends Alternativa {
+  municipio: string
+  etiqueta: string
+}
+
 export interface MesClimatico {
   mes: number
   nombre: string

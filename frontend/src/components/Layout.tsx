@@ -3,6 +3,7 @@ import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
 import { Suspense, useEffect, useRef, useState } from 'react'
 import { CargaPantalla } from './Interfaz'
 import { ControlesPwa } from './ControlesPwa'
+import { BotonTema } from './BotonTema'
 import { modoDemo } from '../services/api'
 
 const navegacion = [
@@ -41,12 +42,15 @@ export function Layout() {
               `inline-flex min-h-11 items-center rounded-full px-3 text-sm font-bold lg:px-4 ${isActive ? 'bg-secondary text-primary' : 'text-muted-foreground hover:bg-secondary/60 hover:text-primary'}`
             }>{etiqueta}</NavLink>)}
           </nav>
+          <div className="flex items-center gap-2">
           <span className="hidden items-center gap-1.5 text-sm font-bold text-primary md:inline-flex"><MapPin size={16} aria-hidden="true" /> México</span>
+          <BotonTema />
           <button ref={botonMenu} type="button" aria-expanded={menu} aria-controls="menu-movil" aria-label={menu ? 'Cerrar menú' : 'Abrir menú'}
             className="grid size-11 place-items-center rounded-xl border border-border bg-card text-primary md:hidden"
             onClick={() => setMenu(!menu)}>
             {menu ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
           </button>
+          </div>
         </div>
         <nav id="menu-movil" aria-label="Menú móvil" onKeyDown={(event) => {
           if (event.key === 'Escape') {
@@ -78,11 +82,11 @@ export function Layout() {
       <main className={`w-full flex-1 ${inicio ? '' : 'app-frame py-5 sm:py-8'}`} id="contenido" ref={principal} tabIndex={-1}>
         <Suspense fallback={<CargaPantalla mensaje="Abriendo pantalla…" />}><Outlet /></Suspense>
       </main>
-      <footer className="w-full bg-primary text-primary-foreground">
+      <footer className="w-full bg-pie text-pie-texto">
         <div className="app-frame grid gap-5 py-8 sm:grid-cols-[1fr_auto] sm:items-center sm:py-10">
           <div>
             <Link to={{ pathname: '/', search }} className="inline-flex min-h-11 items-center gap-2 text-lg font-extrabold focus-visible:outline-white"><Sprout size={22} aria-hidden="true" /> QUESIEMBRO</Link>
-            <p className="mt-1 text-sm text-primary-foreground/90">Sin cuentas. Sin registro. Solo cultivar.</p>
+            <p className="mt-1 text-sm text-pie-texto/90">Sin cuentas. Sin registro. Solo cultivar.</p>
           </div>
           <nav aria-label="Enlaces del pie" className="flex flex-wrap items-center gap-x-5">
             {navegacion.slice(1).map(({ ruta, etiqueta }) => <Link key={ruta} to={{ pathname: ruta, search }}

@@ -30,9 +30,20 @@ CREATE TABLE IF NOT EXISTS clima_historico_cache (
     periodo_referencia TEXT NOT NULL,
     resumen_mensual_json TEXT NOT NULL,
     created_at TEXT NOT NULL,
+    origen TEXT NOT NULL DEFAULT 'open-meteo',
+    fuente_json TEXT,
     PRIMARY KEY (lat_grid, lon_grid)
 )
 """
+
+# Columnas agregadas después de crear la tabla: se añaden solas a las bases de datos que ya existen
+_COLUMNAS_CLIMA_NUEVAS = {
+    "origen": "TEXT NOT NULL DEFAULT 'open-meteo'",  # 'open-meteo' o 'conagua'
+    "fuente_json": "TEXT",  # con 'conagua': estación usada, distancia y si la helada es estimada
+}
+
+ORIGEN_OPEN_METEO = "open-meteo"
+ORIGEN_CONAGUA = "conagua"
 
 _CREATE_PRONOSTICO = """
 CREATE TABLE IF NOT EXISTS pronostico_7d_cache (
@@ -78,6 +89,11 @@ async def init_db() -> None:
         await db.execute(_CREATE_CULTIVOS)
         await db.execute(_CREATE_CLIMA)
         await db.execute(_CREATE_PRONOSTICO)
+        async with db.execute("PRAGMA table_info(clima_historico_cache)") as cursor:
+            existentes = {row["name"] for row in await cursor.fetchall()}
+        for columna, tipo in _COLUMNAS_CLIMA_NUEVAS.items():
+            if columna not in existentes:
+                await db.execute(f"ALTER TABLE clima_historico_cache ADD COLUMN {columna} {tipo}")
         await db.commit()
     logger.info("Tablas SQLite listas en %s", settings.DB_PATH)
 
@@ -106,7 +122,7 @@ async def get_clima_cache(lat_grid: float, lon_grid: float) -> dict[str, Any] | 
         async with db.execute(
             """
             SELECT lat_grid, lon_grid, altitud_m, periodo_referencia,
-                   resumen_mensual_json, created_at
+                   resumen_mensual_json, created_at, origen, fuente_json
             FROM clima_historico_cache
             WHERE lat_grid = ? AND lon_grid = ?
             """,
@@ -122,6 +138,8 @@ async def get_clima_cache(lat_grid: float, lon_grid: float) -> dict[str, Any] | 
         "periodo_referencia": row["periodo_referencia"],
         "resumen_mensual_json": _parse_json(row["resumen_mensual_json"]),
         "created_at": row["created_at"],
+        "origen": row["origen"] or ORIGEN_OPEN_METEO,
+        "fuente": _parse_json(row["fuente_json"]),
     }
 
 
@@ -131,18 +149,21 @@ async def save_clima_cache(
     altitud_m: int,
     periodo_referencia: str,
     resumen_mensual: list[dict[str, Any]],
+    origen: str = ORIGEN_OPEN_METEO,
+    fuente: dict[str, Any] | None = None,
 ) -> None:
     created_at = datetime.now(timezone.utc).isoformat()
     payload = json.dumps(resumen_mensual, ensure_ascii=False)
+    fuente_json = json.dumps(fuente, ensure_ascii=False) if fuente is not None else None
     async with get_connection() as db:
         await db.execute(
             """
             INSERT OR REPLACE INTO clima_historico_cache (
                 lat_grid, lon_grid, altitud_m, periodo_referencia,
-                resumen_mensual_json, created_at
-            ) VALUES (?, ?, ?, ?, ?, ?)
+                resumen_mensual_json, created_at, origen, fuente_json
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
             """,
-            (lat_grid, lon_grid, altitud_m, periodo_referencia, payload, created_at),
+            (lat_grid, lon_grid, altitud_m, periodo_referencia, payload, created_at, origen, fuente_json),
         )
         await db.commit()
 

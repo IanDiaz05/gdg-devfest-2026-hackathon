@@ -19,6 +19,7 @@
 | `clima_zona.sequia` (Monitor de Sequía) | `clima_zona.lluvia_reciente` (SMN-CONAGUA, estación más cercana) | `clima_zona` |
 | — | `clima_zona.lluvia_mes_mm` | `clima_zona` |
 | `alertas_7_dias[].tipo`: `helada`, `calor` | + `lluvia_fuerte`, `tormenta`, `viento`, `uv`; nuevos `fecha` y `cultivos_afectados` | `alertas_7_dias` |
+| — | `clima_zona.origen` (`"open-meteo"` o `"conagua"`) y `clima_zona.estacion_smn` (v3.2, campos nuevos opcionales: no rompen al frontend) | `clima_zona` |
 
 ---
 
@@ -58,6 +59,8 @@ Devuelve la información climática de la zona y la evaluación de todos los cul
     "mes_evaluado": 12,
     "mes_nombre": "Diciembre",
     "periodo_referencia": "1996-2025",
+    "origen": "open-meteo",
+    "estacion_smn": null,
     "temp_media_c": 11.1,
     "temp_min_promedio_c": 5.8,
     "temp_max_promedio_c": 17.9,
@@ -148,6 +151,15 @@ Devuelve la información climática de la zona y la evaluación de todos los cul
 
 * `clima_zona.lluvia_reciente`**:** Lluvia del **último mes publicado por el SMN** (CONAGUA) en la estación más cercana (máximo 30 km), comparada con el promedio de ese mes en la misma estación (2013 al año pasado). Es `null` si no hay estación cerca. `anomalia_pct` es `null` cuando lo normal del mes es menor a 5 mm.
 * `clima_zona.lluvia_mes_mm`**:** Lluvia típica del mes evaluado según 30 años de Open-Meteo.
+* `clima_zona.origen`**:** De dónde sale el clima típico de la zona (temperaturas, heladas y `lluvia_mes_mm`):
+  * `"open-meteo"`: 10 años de datos diarios en el punto exacto de la ciudad (`periodo_referencia`: `"2016-2025"`). `estacion_smn` es `null`.
+  * `"conagua"`: promedios mensuales de la **estación del SMN más cercana** (máximo 50 km; `periodo_referencia`: `"SMN-CONAGUA 2013-2025"`). Se usa cuando la zona no tiene datos de Open-Meteo y Open-Meteo no responde (límite de peticiones), o cuando se precargó con `scripts/precarga_conagua.py`. `estacion_smn` dice qué estación y a qué distancia:
+
+    ```json
+    "estacion_smn": { "estacion": "Fresnillo, Zac.", "clave": "FREZC", "distancia_km": 2.3, "heladas_estimadas": true }
+    ```
+
+    Con `heladas_estimadas: true`, `anios_con_helada_pct` es una **estimación** a partir de la mínima promedio del mes (el SMN no publica datos diarios en sus resúmenes). Sugerencia para el frontend: mostrar "Datos de la estación X (SMN-CONAGUA)" y "helada estimada".
 * `alertas_7_dias`**:** Arreglo con **una alerta por tipo como máximo** (la del peor día de los próximos 7). `[]` cuando no hay riesgo. `cultivos_afectados` son los `id` de los cultivos sensibles a esa alerta (campo `sensible_a` de la curación, más los que no toleran helada).
 
 * `meses_ideales` **vs.** `meses_posibles`**:** `meses_ideales` lista únicamente los meses donde el cultivo obtiene `optimo` (✅). `meses_posibles` incluye tanto los meses `optimo` (✅) como `con_cuidados` (⚠️).
@@ -234,6 +246,30 @@ Devuelve la ficha educativa y técnica completa de un cultivo específico a part
 | `luz_nivel`, `profundidad_maceta_cm`, `riego_frecuencia_dias`, `consumo_hidrico`, `pet_safe`, `atrae_polinizadores`, `es_nativa_region`, `guia_rapida.error_comun` | Escritos a mano en `backend/data/curacion/cultivos_curados.json` y copiados a la ficha por `generar_cultivos_base.py` |
 | `pet_safe` | Valores conservadores: **verificar** con la lista de plantas tóxicas de la ASPCA |
 | `consumo_hidrico` | Se escribe a mano: derivarlo de la lluvia ideal de ECOCROP da resultados absurdos en maceta (por ejemplo, romero "alto") |
+
+---
+
+## 2b. Endpoint de apoyo: `GET /api/ciudades` (buscador)
+
+Sugerencias para el campo de ciudad, a partir de `data/ciudades.json` (sin red). Lo usa `BuscadorCiudad` en el frontend.
+
+| Parámetro | Tipo | Descripción |
+| --- | --- | --- |
+| `q` | `string` (opcional, máx. 120) | Texto escrito. Sin acentos ni mayúsculas importan. Acepta `"ciudad, estado"` para filtrar por estado (`"san juan, jal"`). |
+| `limite` | `int` (opcional, 1 a 20, default 10) | Cuántas sugerencias devolver. |
+
+**Orden:**
+* Sin `q`: las primeras `limite` del catálogo **en orden alfabético** (Abalá, Abasolo…).
+* Con `q`: primero los nombres que **empiezan** con el texto, luego los que tienen una **palabra** que empieza así (`"carmen"` → Playa del Carmen) y al final los lugares del **estado** que coincide (`"yuc"` → ciudades de Yucatán). Alfabético dentro de cada grupo.
+* Un lugar aparece una sola vez por estado.
+
+```json
+[
+  { "nombre": "Tulum", "estado": "Quintana Roo", "municipio": "Tulum", "etiqueta": "Tulum, Quintana Roo", "lat": 20.2114, "lon": -87.4654 }
+]
+```
+
+`etiqueta` es lo que se muestra y lo que se manda como `q` a `/api/recomendaciones`. Sin coincidencias responde `[]` (no 404).
 
 ---
 
