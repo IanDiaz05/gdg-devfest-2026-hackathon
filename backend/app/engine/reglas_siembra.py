@@ -1,85 +1,62 @@
 from typing import Any
 
-_LUCES = {"pleno_sol", "media_sombra", "sombra"}
 _DIFICULTADES = {"facil", "media", "dificil"}
+_CONSUMOS = {"bajo", "medio", "alto"}
+_LUZ_TEXTO_A_NIVEL = {"sombra": 1, "luz_indirecta": 2, "media_sombra": 3, "pleno_sol": 4}
 _SEMAFORO = {"optimo": "verde", "con_cuidados": "amarillo", "no_ahora": "rojo"}
 _RANGO_ESTADO = {"optimo": 0, "con_cuidados": 1, "no_ahora": 2}
 
-# Muestra del contrato para Toluca en diciembre, sin iconos, mientras cultivos.json llega vacio.
+# Muestra del contrato para Toluca en diciembre, mientras cultivos.json llega vacío.
 _MUESTRA_VACIA: list[dict[str, Any]] = [
     {
         "id": "lechuga",
         "nombre": "Lechuga",
-        "icono": "",
-        "categoria": "Hortalizas",
+        "icono": "🥬",
+        "categoria": "Hortalizas de hoja",
         "estado": "con_cuidados",
         "semaforo": "amarillo",
-        "razon_corta": "Diciembre es algo frio (11 °C; lo ideal es 12-21 °C). Tolera heladas ligeras: cubrela en las noches mas frias.",
-        "etiqueta_clima": "Algo frio",
+        "razon_corta": "Diciembre es algo frío (11 °C; lo ideal es 12-21 °C). Tolera heladas ligeras: cúbrela en las noches más frías.",
+        "etiqueta_clima": "Algo frío",
         "meses_ideales": [],
         "meses_posibles": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
         "filtros_rapidos": {
             "maceta_min_litros": 5,
             "espacio_tipo": "maceta_chica",
-            "luz": "media_sombra",
+            "profundidad_maceta_cm": 15,
+            "luz_nivel": 3,
+            "riego_frecuencia_dias": 2,
+            "consumo_hidrico": "alto",
+            "pet_safe": True,
+            "atrae_polinizadores": False,
+            "es_nativa_region": False,
             "dias_cosecha_aprox": 55,
             "dificultad": "facil",
-        },
-        "finanzas_sniim": {
-            "mercado_referencia": "Central de Abasto CDMX",
-            "producto_sniim": "Lechuga Romanita grande",
-            "mes_cosecha_estimado": 2,
-            "variacion_precio_pct": -12,
-            "destacar_ahorro": False,
-            "mensaje_ahorro": None,
         },
     },
     {
         "id": "jitomate",
         "nombre": "Jitomate",
-        "icono": "",
-        "categoria": "Hortalizas",
+        "icono": "🍅",
+        "categoria": "Frutos",
         "estado": "no_ahora",
         "semaforo": "rojo",
-        "razon_corta": "En diciembre hay heladas en 57% de los anos y no las aguanta. Mejor siembralo entre marzo y julio.",
+        "razon_corta": "En diciembre hay heladas en 57% de los años y no las aguanta.",
         "etiqueta_clima": "Riesgo alto de helada",
         "meses_ideales": [],
         "meses_posibles": [3, 4, 5, 6, 7],
         "filtros_rapidos": {
             "maceta_min_litros": 20,
             "espacio_tipo": "maceta_grande",
-            "luz": "pleno_sol",
+            "profundidad_maceta_cm": 30,
+            "luz_nivel": 4,
+            "riego_frecuencia_dias": 2,
+            "consumo_hidrico": "alto",
+            "pet_safe": False,
+            "atrae_polinizadores": True,
+            "es_nativa_region": True,
             "dias_cosecha_aprox": 90,
             "dificultad": "media",
         },
-        "finanzas_sniim": {
-            "mercado_referencia": "Central de Abasto CDMX",
-            "producto_sniim": "Tomate Saladette",
-            "mes_cosecha_estimado": 10,
-            "variacion_precio_pct": 9,
-            "destacar_ahorro": False,
-            "mensaje_ahorro": None,
-        },
-    },
-    {
-        "id": "albahaca",
-        "nombre": "Albahaca",
-        "icono": "",
-        "categoria": "Hierbas",
-        "estado": "no_ahora",
-        "semaforo": "rojo",
-        "razon_corta": "En diciembre hay heladas en 57% de los anos y no las aguanta. Mejor siembrala entre marzo y julio.",
-        "etiqueta_clima": "Riesgo alto de helada",
-        "meses_ideales": [],
-        "meses_posibles": [3, 4, 5, 6, 7],
-        "filtros_rapidos": {
-            "maceta_min_litros": 3,
-            "espacio_tipo": "maceta_chica",
-            "luz": "pleno_sol",
-            "dias_cosecha_aprox": 60,
-            "dificultad": "facil",
-        },
-        "finanzas_sniim": None,
     },
 ]
 
@@ -91,8 +68,6 @@ def _copia_muestra() -> list[dict[str, Any]]:
         fila["meses_ideales"] = list(item["meses_ideales"])
         fila["meses_posibles"] = list(item["meses_posibles"])
         fila["filtros_rapidos"] = dict(item["filtros_rapidos"])
-        if item["finanzas_sniim"] is not None:
-            fila["finanzas_sniim"] = dict(item["finanzas_sniim"])
         copia.append(fila)
     return copia
 
@@ -115,14 +90,25 @@ def _entero(valor: Any, default: int) -> int:
     return int(round(valor))
 
 
+def _primero(*valores: Any) -> Any:
+    """Primer valor que no sea None (sirve para buscar un campo en varios bloques del JSON)."""
+    for valor in valores:
+        if valor is not None:
+            return valor
+    return None
+
+
+def _bloque(datos: dict[str, Any], clave: str) -> dict[str, Any]:
+    valor = datos.get(clave)
+    return valor if isinstance(valor, dict) else {}
+
+
 def _dias_cosecha(datos: dict[str, Any], reglas: dict[str, Any]) -> int:
-    for origen in (datos, datos.get("ficha_tecnica") if isinstance(datos.get("ficha_tecnica"), dict) else {}):
-        if isinstance(origen, dict) and isinstance(origen.get("dias_cosecha_aprox"), (int, float)):
-            return max(1, _entero(origen["dias_cosecha_aprox"], 60))
-    rango = reglas.get("dias_a_cosecha")
-    if not isinstance(rango, (list, tuple)) or not rango:
-        ficha = datos.get("ficha_tecnica")
-        rango = ficha.get("dias_a_cosecha") if isinstance(ficha, dict) else None
+    ficha = _bloque(datos, "ficha_tecnica")
+    directo = _primero(reglas.get("dias_cosecha_aprox"), datos.get("dias_cosecha_aprox"), ficha.get("dias_cosecha_aprox"))
+    if isinstance(directo, (int, float)) and not isinstance(directo, bool):
+        return max(1, _entero(directo, 60))
+    rango = reglas.get("dias_a_cosecha") or ficha.get("dias_a_cosecha")
     if isinstance(rango, (list, tuple)) and rango:
         numeros = [_numero(item, 0) for item in rango if isinstance(item, (int, float))]
         if numeros:
@@ -138,6 +124,74 @@ def _espacio(litros: int) -> str:
     return "patio"
 
 
+def atributos_cultivo(datos: dict[str, Any], reglas: dict[str, Any]) -> dict[str, Any]:
+    """Campos de maceta, cuidado e impacto ambiental de un cultivo (contrato v3).
+
+    Los busca en los bloques del contrato 2 (ficha_tecnica, restricciones, impacto_ambiental,
+    guia_rapida) y, si no están, en el nivel superior o en `reglas`, con valores por defecto seguros.
+    """
+    ficha = _bloque(datos, "ficha_tecnica")
+    restricciones = _bloque(datos, "restricciones")
+    impacto = _bloque(datos, "impacto_ambiental")
+    guia = _bloque(datos, "guia_rapida")
+
+    luz = _primero(ficha.get("luz_nivel"), datos.get("luz_nivel"), ficha.get("luz"))
+    if isinstance(luz, str):
+        luz = _LUZ_TEXTO_A_NIVEL.get(luz, 4)
+    luz_nivel = min(4, max(1, _entero(luz, 4)))
+
+    consumo = str(_primero(impacto.get("consumo_hidrico"), datos.get("consumo_hidrico")) or "medio")
+    dificultad = str(_primero(restricciones.get("dificultad"), reglas.get("dificultad"), datos.get("dificultad")) or "media")
+    maceta = _entero(_primero(ficha.get("maceta_min_litros"), reglas.get("maceta_min_litros"), datos.get("maceta_min_litros")), 5)
+
+    return {
+        "maceta_min_litros": maceta,
+        "espacio_tipo": _espacio(maceta),
+        "profundidad_maceta_cm": _entero(
+            _primero(ficha.get("profundidad_maceta_cm"), datos.get("profundidad_maceta_cm"), ficha.get("profundidad_min_cm")), 20
+        ),
+        "luz_nivel": luz_nivel,
+        "riego_frecuencia_dias": max(1, _entero(_primero(ficha.get("riego_frecuencia_dias"), datos.get("riego_frecuencia_dias")), 3)),
+        "consumo_hidrico": consumo if consumo in _CONSUMOS else "medio",
+        "pet_safe": bool(_primero(restricciones.get("pet_safe"), datos.get("pet_safe"), False)),
+        "atrae_polinizadores": bool(_primero(impacto.get("atrae_polinizadores"), datos.get("atrae_polinizadores"), False)),
+        "es_nativa_region": bool(_primero(datos.get("es_nativa_region"), False)),
+        "dias_cosecha_aprox": _dias_cosecha(datos, reglas),
+        "dificultad": dificultad if dificultad in _DIFICULTADES else "media",
+        "error_comun": str(_primero(guia.get("error_comun"), datos.get("error_comun")) or ""),
+    }
+
+
+_MESES_TXT = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto",
+              "septiembre", "octubre", "noviembre", "diciembre"]
+
+
+def _cuando_si(meses: list[int], datos: dict[str, Any]) -> str:
+    """'Mejor siémbralo entre marzo y julio.' a partir de los meses buenos (considera dic-ene seguidos)."""
+    if not meses:
+        return "En tu zona el clima no le acomoda en ningún mes."
+    if len(meses) == 12:
+        return ""
+    conjunto = set(meses)
+    # inicio de cada tramo: mes bueno cuyo mes anterior no es bueno (circular)
+    inicios = [m for m in sorted(conjunto) if ((m - 2) % 12) + 1 not in conjunto]
+    tramos = []
+    for ini in inicios:
+        fin = ini
+        while (fin % 12) + 1 in conjunto and (fin % 12) + 1 != ini:
+            fin = (fin % 12) + 1
+        tramos.append((ini, fin))
+    primera_palabra = (str(datos.get("nombre", "")).split() or [""])[0].lower()
+    pron = "la" if primera_palabra.endswith("a") else "lo"
+    if len(tramos) == 1:
+        ini, fin = tramos[0]
+        if ini == fin:
+            return f"Mejor siémbra{pron} en {_MESES_TXT[ini - 1]}."
+        return f"Mejor siémbra{pron} entre {_MESES_TXT[ini - 1]} y {_MESES_TXT[fin - 1]}."
+    textos = [_MESES_TXT[i - 1] if i == f else f"{_MESES_TXT[i - 1]} a {_MESES_TXT[f - 1]}" for i, f in tramos]
+    return f"Mejor siémbra{pron} en {', '.join(textos[:-1])} o {textos[-1]}."
+
+
 def _fmt_temp(valor: float) -> str:
     redondeado = round(valor, 1)
     if redondeado == int(redondeado):
@@ -149,72 +203,6 @@ def _meses_de_ciclo(dias: int, perenne: bool) -> int:
     if perenne:
         return 12
     return min(6, max(1, int(round(dias / 30))))
-
-
-def _serie_variacion(sniim: dict[str, Any], mes: int) -> int | None:
-    for clave in ("variacion_mensual", "variacion_pct_mensual", "perfil_mensual"):
-        serie = sniim.get(clave)
-        if isinstance(serie, dict):
-            crudo = serie.get(str(mes), serie.get(mes))
-            if isinstance(crudo, dict):
-                crudo = crudo.get("variacion_pct")
-            if isinstance(crudo, (int, float)) and not isinstance(crudo, bool):
-                return int(round(crudo))
-        if isinstance(serie, list):
-            if len(serie) == 12 and isinstance(serie[mes - 1], (int, float)):
-                return int(round(serie[mes - 1]))
-            for item in serie:
-                if isinstance(item, dict) and item.get("mes") == mes:
-                    crudo = item.get("variacion_pct", item.get("variacion_precio_pct"))
-                    if isinstance(crudo, (int, float)) and not isinstance(crudo, bool):
-                        return int(round(crudo))
-    for clave in ("mes_mas_caro", "mes_mas_barato"):
-        bloque = sniim.get(clave)
-        if isinstance(bloque, dict) and bloque.get("mes") == mes:
-            crudo = bloque.get("variacion_pct")
-            if isinstance(crudo, (int, float)) and not isinstance(crudo, bool):
-                return int(round(crudo))
-    return None
-
-
-def _finanzas(
-    datos: dict[str, Any],
-    sniim: Any,
-    nombre: str,
-    dias: int,
-    mes_evaluado: int,
-) -> dict[str, Any] | None:
-    if not isinstance(sniim, dict):
-        return None
-    perfil = sniim.get("contexto_economico_sniim") if "contexto_economico_sniim" in sniim else sniim
-    if not isinstance(perfil, dict):
-        return None
-    desplazamiento = int(round(dias / 30))
-    mes_cosecha = ((mes_evaluado - 1 + desplazamiento) % 12) + 1
-    variacion = _serie_variacion(perfil, mes_cosecha)
-    if variacion is None:
-        variacion = _serie_variacion(sniim, mes_cosecha)
-    if variacion is None and isinstance(perfil.get("variacion_precio_pct"), (int, float)):
-        variacion = int(round(perfil["variacion_precio_pct"]))
-    if variacion is None:
-        variacion = 0
-    destacar = variacion >= 15
-    producto = perfil.get("producto_sniim") or datos.get("producto_sniim") or nombre
-    mercado = perfil.get("mercado_referencia") or "Central de Abasto CDMX"
-    mensaje = None
-    if destacar:
-        mensaje = (
-            f"En la cosecha el precio suele estar {variacion}% por arriba del promedio. "
-            "Conviene producirlo en casa."
-        )
-    return {
-        "mercado_referencia": str(mercado),
-        "producto_sniim": str(producto),
-        "mes_cosecha_estimado": mes_cosecha,
-        "variacion_precio_pct": variacion,
-        "destacar_ahorro": destacar,
-        "mensaje_ahorro": mensaje,
-    }
 
 
 def _clasificar_mes(
@@ -234,22 +222,39 @@ def _clasificar_mes(
         return (
             "no_ahora",
             "Riesgo alto de helada",
-            f"En {mes_txt} hay heladas en {helada}% de los anos y no las aguanta.",
+            f"En {mes_txt} hay heladas en {helada}% de los años y no las aguanta.",
             0,
         )
     if not tolera_helada and helada >= 5:
         return (
             "con_cuidados",
             "Heladas ligeras",
-            f"{nombre} tiene heladas en {helada}% de los anos. Protege el cultivo en las noches frias.",
+            f"{nombre} tiene heladas en {helada}% de los años. Protege el cultivo en las noches frías.",
             0,
         )
-    # Sin % de noches <= -2 °C: una minima media bajo cero se toma como helada fuerte.
-    if tolera_helada and minima <= -2:
+    # Los que toleran heladas ligeras solo sufren con heladas fuertes (<= -2 °C)
+    helada_fuerte = mes_info.get("anios_con_helada_fuerte_pct")
+    if tolera_helada and isinstance(helada_fuerte, (int, float)):
+        if helada_fuerte >= 20:
+            return (
+                "no_ahora",
+                "Heladas fuertes",
+                f"En {mes_txt} hay heladas fuertes (-2 °C o menos) en {int(helada_fuerte)}% de los años.",
+                0,
+            )
+        if helada_fuerte >= 5:
+            return (
+                "con_cuidados",
+                "Heladas fuertes ocasionales",
+                f"{nombre} tiene heladas fuertes en {int(helada_fuerte)}% de los años. Cubre el cultivo en las noches más frías.",
+                0,
+            )
+    elif tolera_helada and minima <= -2:
+        # Caché vieja sin el % de heladas fuertes: una mínima media bajo cero se toma como helada fuerte
         return (
             "con_cuidados",
             "Heladas fuertes",
-            f"{nombre} puede tener heladas fuertes. Cubre el cultivo en las noches mas frias.",
+            f"{nombre} puede tener heladas fuertes. Cubre el cultivo en las noches más frías.",
             0,
         )
 
@@ -270,8 +275,8 @@ def _clasificar_mes(
     if media < ideal[0]:
         return (
             "con_cuidados",
-            "Algo frio",
-            f"{nombre} es algo frio ({media_txt} °C; lo ideal es {_fmt_temp(ideal[0])}-{_fmt_temp(ideal[1])} °C).",
+            "Algo frío",
+            f"{nombre} es algo frío ({media_txt} °C; lo ideal es {_fmt_temp(ideal[0])}-{_fmt_temp(ideal[1])} °C).",
             1,
         )
     if media > ideal[1]:
@@ -284,7 +289,7 @@ def _clasificar_mes(
     return (
         "optimo",
         "Clima ideal",
-        f"{nombre} esta dentro del clima ideal para sembrarlo.",
+        f"{nombre} está dentro del clima ideal para sembrarlo.",
         2,
     )
 
@@ -310,13 +315,14 @@ def _evaluar_uno(
 ) -> dict[str, Any]:
     datos = cultivo.get("datos_json") if isinstance(cultivo.get("datos_json"), dict) else {}
     reglas = cultivo.get("reglas_json") if isinstance(cultivo.get("reglas_json"), dict) else {}
-    ficha = datos.get("ficha_tecnica") if isinstance(datos.get("ficha_tecnica"), dict) else {}
+    ficha = _bloque(datos, "ficha_tecnica")
+    atributos = atributos_cultivo(datos, reglas)
 
     limite = _par(reglas.get("temp_limite_c") or ficha.get("temp_limite_c"), (0.0, 50.0))
     ideal = _par(reglas.get("temp_ideal_c") or ficha.get("temp_ideal_c"), limite)
     tolera = bool(reglas.get("tolera_helada") if "tolera_helada" in reglas else ficha.get("tolera_helada"))
     perenne = bool(reglas.get("perenne") if "perenne" in reglas else datos.get("perenne"))
-    dias = _dias_cosecha(datos, reglas)
+    dias = atributos["dias_cosecha_aprox"]
     ventana = _meses_de_ciclo(dias, perenne)
     altitud_max = reglas.get("altitud_max_m", ficha.get("altitud_max_m"))
     altitud_max_m = _entero(altitud_max, 10000) if altitud_max is not None else None
@@ -344,20 +350,12 @@ def _evaluar_uno(
     meses_posibles = [
         mes for mes, resultado in estados.items() if resultado[0] in {"optimo", "con_cuidados"}
     ]
-    maceta = _entero(
-        reglas.get("maceta_min_litros", ficha.get("maceta_min_litros", datos.get("maceta_min_litros"))),
-        5,
-    )
-    luz = str(reglas.get("luz") or ficha.get("luz") or datos.get("luz") or "pleno_sol")
-    if luz not in _LUCES:
-        luz = "pleno_sol"
-    dificultad = str(datos.get("dificultad") or "media")
-    if dificultad not in _DIFICULTADES:
-        dificultad = "media"
-    nombre = str(datos.get("nombre") or cultivo.get("nombre") or "")
+    if estado == "no_ahora":
+        razon = f"{razon} {_cuando_si(meses_ideales or meses_posibles, datos)}".strip()
+    filtros = {k: v for k, v in atributos.items() if k != "error_comun"}
     return {
         "id": str(datos.get("id") or cultivo.get("id") or ""),
-        "nombre": nombre,
+        "nombre": str(datos.get("nombre") or cultivo.get("nombre") or ""),
         "icono": str(datos.get("icono") if datos.get("icono") is not None else cultivo.get("icono") or ""),
         "categoria": str(datos.get("categoria") or cultivo.get("categoria") or ""),
         "estado": estado,
@@ -366,14 +364,7 @@ def _evaluar_uno(
         "etiqueta_clima": etiqueta,
         "meses_ideales": meses_ideales,
         "meses_posibles": meses_posibles,
-        "filtros_rapidos": {
-            "maceta_min_litros": maceta,
-            "espacio_tipo": _espacio(maceta),
-            "luz": luz,
-            "dias_cosecha_aprox": dias,
-            "dificultad": dificultad,
-        },
-        "finanzas_sniim": _finanzas(datos, cultivo.get("sniim_json"), nombre, dias, mes_evaluado),
+        "filtros_rapidos": filtros,
     }
 
 

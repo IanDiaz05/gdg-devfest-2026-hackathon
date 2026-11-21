@@ -11,12 +11,14 @@ from __future__ import annotations
 import argparse
 import csv
 import io
+import time
 import zipfile
 
-from comun import DATA, RAW, descargar, guardar_json, hoy, normalizar, preparar
+from comun import DATA, RAW, descargar, guardar_json, hoy, leer_json, normalizar, preparar, sesion
 
 URL_MX = "https://download.geonames.org/export/dump/MX.zip"
 URL_ADMIN1 = "https://download.geonames.org/export/dump/admin1CodesASCII.txt"
+URL_INEGI_MUN = "https://gaia.inegi.org.mx/wscatgeo/v2/mgem/{cve}"  # catálogo de municipios por estado
 POBLACION_MINIMA = 5000
 
 # Clave INEGI del estado -> (nombre para mostrar, nombres alternativos normalizados)
@@ -60,6 +62,31 @@ def mapa_estados(ruta_admin1) -> dict[str, str]:
     return mapa
 
 
+def nombres_municipios(forzar: bool) -> dict[str, str]:
+    """cvegeo (clave INEGI estado+municipio) -> nombre oficial del municipio, del catálogo del INEGI.
+
+    Se consulta una vez por estado (32 peticiones) y se guarda en data/raw/inegi/. Si el INEGI no
+    responde, el municipio se queda con el nombre del lugar de GeoNames.
+    """
+    ruta = RAW / "inegi" / "municipios.json"
+    if ruta.exists() and not forzar:
+        return leer_json(ruta)
+    http, salida = sesion(), {}
+    for cve in ESTADOS_INEGI:
+        try:
+            r = http.get(URL_INEGI_MUN.format(cve=cve), timeout=60)
+            r.raise_for_status()
+            for m in r.json().get("datos", []):
+                salida[m["cvegeo"]] = m["nomgeo"]
+        except Exception as e:  # noqa: BLE001
+            print(f"  ⚠️ INEGI no respondió para el estado {cve}: {e}")
+        time.sleep(0.3)
+    if salida:
+        guardar_json(salida, ruta)
+    print(f"  {len(salida):,} municipios con nombre oficial (INEGI)")
+    return salida
+
+
 def main() -> None:
     preparar()
     ap = argparse.ArgumentParser(description=__doc__)
@@ -70,6 +97,7 @@ def main() -> None:
     zip_mx = descargar(URL_MX, RAW / "geonames" / "MX.zip", forzar=args.forzar)
     admin1 = descargar(URL_ADMIN1, RAW / "geonames" / "admin1CodesASCII.txt", forzar=args.forzar)
     estados = mapa_estados(admin1)
+    municipios = nombres_municipios(args.forzar)
 
     ciudades, vistos = [], set()
     with zipfile.ZipFile(zip_mx) as z:
@@ -99,6 +127,7 @@ def main() -> None:
             "cve_ent": cve_ent,
             "cve_mun": cve_mun,
             "cvegeo": f"{cve_ent}{cve_mun}" if cve_mun else None,
+            "municipio": municipios.get(f"{cve_ent}{cve_mun}", r[1]) if cve_mun else r[1],
             "lat": round(float(r[4]), 4),
             "lon": round(float(r[5]), 4),
             "altitud_m": altitud,
@@ -118,7 +147,7 @@ def main() -> None:
     print(f"  {len(ciudades):,} lugares. Ejemplos:")
     for q in ("toluca", "merida", "monterrey"):
         c = next(c for c in ciudades if c["busqueda"].startswith(q))
-        print(f"    {q!r} -> {c['nombre']}, {c['estado']} | cvegeo {c['cvegeo']} | {c['altitud_m']} m | {c['poblacion']:,} hab.")
+        print(f"    {q!r} -> {c['nombre']} (mun. {c['municipio']}), {c['estado']} | cvegeo {c['cvegeo']} | {c['altitud_m']} m | {c['poblacion']:,} hab.")
 
 
 if __name__ == "__main__":

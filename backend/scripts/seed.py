@@ -4,7 +4,6 @@ import asyncio
 import json
 import logging
 import sys
-import unicodedata
 from pathlib import Path
 from typing import Any
 
@@ -16,23 +15,6 @@ from app.core.config import settings  # noqa: E402
 from app.core.database import get_connection, init_db  # noqa: E402
 
 logger = logging.getLogger("seed")
-
-_NIVELES = {
-    "D0": "Anormalmente seco",
-    "D1": "Sequia moderada",
-    "D2": "Sequia severa",
-    "D3": "Sequia extrema",
-    "D4": "Sequia excepcional",
-}
-
-
-def _normalizar(texto: str) -> str:
-    descompuesto = unicodedata.normalize("NFD", texto or "")
-    sin_marcas = "".join(
-        c for c in descompuesto if unicodedata.category(c) != "Mn"
-    )
-    return " ".join(sin_marcas.lower().split())
-
 
 def _cargar_json(ruta: Path) -> Any | None:
     if not ruta.is_file():
@@ -62,31 +44,6 @@ def _como_lista(payload: Any, clave: str) -> list[dict[str, Any]]:
     return []
 
 
-def _indice_sniim(payload: Any) -> dict[str, Any]:
-    if payload is None:
-        return {}
-    if isinstance(payload, dict):
-        interno = payload.get("perfiles")
-        if isinstance(interno, list):
-            payload = interno
-        elif all(isinstance(v, dict) for v in payload.values()):
-            return {
-                str(clave): valor
-                for clave, valor in payload.items()
-                if clave != "perfiles"
-            }
-    if isinstance(payload, list):
-        indice: dict[str, Any] = {}
-        for item in payload:
-            if not isinstance(item, dict):
-                continue
-            ident = item.get("id") or item.get("cultivo_id")
-            if ident:
-                indice[str(ident)] = item
-        return indice
-    return {}
-
-
 def _reglas_de_cultivo(cultivo: dict[str, Any]) -> dict[str, Any]:
     if isinstance(cultivo.get("reglas"), dict):
         return cultivo["reglas"]
@@ -105,35 +62,17 @@ def _reglas_de_cultivo(cultivo: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-def _sniim_de_cultivo(
-    cultivo: dict[str, Any], perfiles: dict[str, Any]
-) -> Any | None:
-    ident = str(cultivo.get("id") or "")
-    if ident and ident in perfiles:
-        perfil = perfiles[ident]
-        if perfil.get("contexto_economico_sniim") is not None:
-            return perfil.get("contexto_economico_sniim")
-        return perfil
-    if cultivo.get("contexto_economico_sniim") is not None:
-        return cultivo.get("contexto_economico_sniim")
-    if cultivo.get("sniim") is not None:
-        return cultivo.get("sniim")
-    return None
-
-
-def _clave_sequia(fila: dict[str, Any]) -> str:
-    if fila.get("clave_normalizada"):
-        return str(fila["clave_normalizada"])
-    estado = str(fila.get("estado") or "")
-    municipio = str(fila.get("municipio") or "")
-    return f"{_normalizar(estado)}|{_normalizar(municipio)}"
-
-
-async def _upsert_cultivos(perfiles: dict[str, Any]) -> int:
+async def _upsert_cultivos() -> int:
     data_dir = settings.DATA_DIR
     if data_dir is None:
         raise RuntimeError("DATA_DIR no esta configurado.")
-    payload = _cargar_json(data_dir / "cultivos.json")
+    # cultivos.json es el archivo curado a mano; si todavía no existe se usa el generado por
+    # scripts/descargas/generar_cultivos_base.py
+    ruta = data_dir / "cultivos.json"
+    if not ruta.is_file():
+        ruta = data_dir / "cultivos_base.json"
+    logger.info("Leyendo cultivos de %s", ruta.name)
+    payload = _cargar_json(ruta)
     if payload is None:
         return 0
     cultivos = _como_lista(payload, "cultivos")
@@ -144,12 +83,11 @@ async def _upsert_cultivos(perfiles: dict[str, Any]) -> int:
             if not cultivo_id:
                 logger.warning("Cultivo sin id; se omite.")
                 continue
-            sniim = _sniim_de_cultivo(cultivo, perfiles)
             await db.execute(
                 """
                 INSERT OR REPLACE INTO cultivos (
-                    id, nombre, icono, categoria, datos_json, reglas_json, sniim_json
-                ) VALUES (?, ?, ?, ?, ?, ?, ?)
+                    id, nombre, icono, categoria, datos_json, reglas_json
+                ) VALUES (?, ?, ?, ?, ?, ?)
                 """,
                 (
                     str(cultivo_id),
@@ -158,7 +96,6 @@ async def _upsert_cultivos(perfiles: dict[str, Any]) -> int:
                     str(cultivo.get("categoria") or ""),
                     json.dumps(cultivo, ensure_ascii=False),
                     json.dumps(_reglas_de_cultivo(cultivo), ensure_ascii=False),
-                    None if sniim is None else json.dumps(sniim, ensure_ascii=False),
                 ),
             )
             insertados += 1
@@ -167,52 +104,12 @@ async def _upsert_cultivos(perfiles: dict[str, Any]) -> int:
     return insertados
 
 
-async def _upsert_sequia() -> int:
-    data_dir = settings.DATA_DIR
-    if data_dir is None:
-        raise RuntimeError("DATA_DIR no esta configurado.")
-    payload = _cargar_json(data_dir / "sequia.json")
-    if payload is None:
-        return 0
-    filas = _como_lista(payload, "municipios")
-    if not filas:
-        filas = _como_lista(payload, "sequia")
-    insertados = 0
-    async with get_connection() as db:
-        for fila in filas:
-            estado = str(fila.get("estado") or "")
-            municipio = str(fila.get("municipio") or "")
-            nivel = str(fila.get("nivel") or "")
-            nivel_nombre = str(
-                fila.get("nivel_nombre") or _NIVELES.get(nivel, "")
-            )
-            fecha_dato = str(fila.get("fecha_dato") or "")
-            clave = _clave_sequia(fila)
-            if not clave or clave == "|":
-                logger.warning("Registro de sequia sin clave; se omite.")
-                continue
-            await db.execute(
-                """
-                INSERT OR REPLACE INTO sequia_municipios (
-                    clave_normalizada, estado, municipio, nivel, nivel_nombre, fecha_dato
-                ) VALUES (?, ?, ?, ?, ?, ?)
-                """,
-                (clave, estado, municipio, nivel, nivel_nombre, fecha_dato),
-            )
-            insertados += 1
-        await db.commit()
-    logger.info("Cargados %s municipios de sequia.", insertados)
-    return insertados
-
-
 async def seed() -> None:
     await init_db()
     data_dir = settings.DATA_DIR
     if data_dir is None:
         raise RuntimeError("DATA_DIR no esta configurado.")
-    perfiles = _indice_sniim(_cargar_json(data_dir / "sniim_perfiles.json"))
-    await _upsert_cultivos(perfiles)
-    await _upsert_sequia()
+    await _upsert_cultivos()
     logger.info("Seed completado.")
 
 

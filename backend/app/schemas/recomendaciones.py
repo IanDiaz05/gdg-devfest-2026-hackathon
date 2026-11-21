@@ -2,13 +2,12 @@ from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, Field
 
-NivelSequia = Literal["D0", "D1", "D2", "D3", "D4"]
 EstadoCultivo = Literal["optimo", "con_cuidados", "no_ahora"]
 Semaforo = Literal["verde", "amarillo", "rojo"]
 EspacioTipo = Literal["maceta_chica", "maceta_grande", "patio"]
-Luz = Literal["pleno_sol", "media_sombra", "sombra"]
 Dificultad = Literal["facil", "media", "dificil"]
-TipoAlerta = Literal["helada", "calor"]
+ConsumoHidrico = Literal["bajo", "medio", "alto"]
+TipoAlerta = Literal["helada", "calor", "lluvia_fuerte", "tormenta", "viento", "uv"]
 SeveridadAlerta = Literal["media", "alta"]
 
 
@@ -42,11 +41,19 @@ class MesTemperatura(BaseModel):
     temp_media_c: float
 
 
-class SequiaInfo(BaseModel):
-    activa: bool
-    nivel: NivelSequia
-    nivel_nombre: str
-    fecha_dato: str
+class LluviaReciente(BaseModel):
+    """Último mes publicado por el SMN (CONAGUA) en la estación más cercana."""
+
+    fuente: str
+    estacion: str
+    distancia_km: float
+    mes: str = Field(description="AAAA-MM")
+    lluvia_mm: float
+    normal_mm: float | None = None
+    anomalia_pct: int | None = None
+    temp_min_c: float | None = None
+    temp_max_c: float | None = None
+    mensaje: str
     consejo: str
 
 
@@ -58,33 +65,33 @@ class ClimaZona(BaseModel):
     temp_min_promedio_c: float
     temp_max_promedio_c: float
     anios_con_helada_pct: int
+    lluvia_mes_mm: float | None = None
     mes_mas_frio: MesTemperatura
     mes_mas_caluroso: MesTemperatura
-    sequia: SequiaInfo | None = None
+    lluvia_reciente: LluviaReciente | None = None
 
 
 class Alerta7Dias(BaseModel):
     tipo: TipoAlerta
     severidad: SeveridadAlerta
+    fecha: str
     titulo: str
     mensaje: str
+    cultivos_afectados: list[str] = Field(default_factory=list)
 
 
 class FiltrosRapidos(BaseModel):
     maceta_min_litros: int
     espacio_tipo: EspacioTipo
-    luz: Luz
+    profundidad_maceta_cm: int
+    luz_nivel: int = Field(ge=1, le=4, description="1 sombra, 2 luz indirecta, 3 sol parcial, 4 pleno sol")
+    riego_frecuencia_dias: int = Field(ge=1)
+    consumo_hidrico: ConsumoHidrico
+    pet_safe: bool
+    atrae_polinizadores: bool
+    es_nativa_region: bool
     dias_cosecha_aprox: int
     dificultad: Dificultad
-
-
-class FinanzasSniimSummary(BaseModel):
-    mercado_referencia: str
-    producto_sniim: str
-    mes_cosecha_estimado: int = Field(ge=1, le=12)
-    variacion_precio_pct: int
-    destacar_ahorro: bool
-    mensaje_ahorro: str | None = None
 
 
 class CultivoRecomendado(BaseModel):
@@ -99,7 +106,6 @@ class CultivoRecomendado(BaseModel):
     meses_ideales: list[int]
     meses_posibles: list[int]
     filtros_rapidos: FiltrosRapidos
-    finanzas_sniim: FinanzasSniimSummary | None = None
 
 
 class RecomendacionesResponse(BaseModel):

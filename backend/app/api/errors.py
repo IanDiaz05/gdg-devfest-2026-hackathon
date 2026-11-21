@@ -25,7 +25,7 @@ def register_exception_handlers(app: FastAPI) -> None:
             status_code=400,
             content={
                 "error": "ubicacion_invalida",
-                "detail": "Debes enviar el parametro 'q' o el par 'lat' y 'lon'.",
+                "detail": "Debes enviar el parámetro 'q' o el par 'lat' y 'lon'.",
             },
         )
 
@@ -35,7 +35,7 @@ def register_exception_handlers(app: FastAPI) -> None:
             status_code=404,
             content={
                 "error": "ciudad_no_encontrada",
-                "detail": "No encontramos esa ubicacion en Mexico.",
+                "detail": "No encontramos esa ubicación en México.",
             },
         )
 
@@ -45,7 +45,7 @@ def register_exception_handlers(app: FastAPI) -> None:
             status_code=404,
             content={
                 "error": "cultivo_no_encontrado",
-                "detail": "El cultivo solicitado no existe en el catalogo.",
+                "detail": "El cultivo solicitado no existe en el catálogo.",
             },
         )
 
@@ -55,7 +55,7 @@ def register_exception_handlers(app: FastAPI) -> None:
             status_code=503,
             content={
                 "error": "clima_no_disponible",
-                "detail": "El servicio meteorologico esta saturado.",
+                "detail": "El servicio meteorológico está saturado.",
                 "reintentar_en_s": 60,
             },
         )

@@ -1,20 +1,64 @@
-# Medias mensuales de Toluca, 1996-2025. Diciembre, enero y mayo salen del contrato;
-# el resto sigue la misma curva hasta que el agregado de Open-Meteo lo reemplace.
-_TOLUCA_MENSUAL: list[dict] = [
-    {"mes": 1, "nombre": "Enero", "temp_media_c": 10.7, "temp_min_promedio_c": 4.2, "temp_max_promedio_c": 18.4, "anios_con_helada_pct": 72},
-    {"mes": 2, "nombre": "Febrero", "temp_media_c": 11.6, "temp_min_promedio_c": 5.0, "temp_max_promedio_c": 19.2, "anios_con_helada_pct": 58},
-    {"mes": 3, "nombre": "Marzo", "temp_media_c": 13.1, "temp_min_promedio_c": 6.4, "temp_max_promedio_c": 20.6, "anios_con_helada_pct": 32},
-    {"mes": 4, "nombre": "Abril", "temp_media_c": 14.5, "temp_min_promedio_c": 7.8, "temp_max_promedio_c": 21.8, "anios_con_helada_pct": 12},
-    {"mes": 5, "nombre": "Mayo", "temp_media_c": 15.5, "temp_min_promedio_c": 8.9, "temp_max_promedio_c": 22.4, "anios_con_helada_pct": 4},
-    {"mes": 6, "nombre": "Junio", "temp_media_c": 15.0, "temp_min_promedio_c": 9.2, "temp_max_promedio_c": 21.2, "anios_con_helada_pct": 1},
-    {"mes": 7, "nombre": "Julio", "temp_media_c": 14.1, "temp_min_promedio_c": 8.6, "temp_max_promedio_c": 20.2, "anios_con_helada_pct": 2},
-    {"mes": 8, "nombre": "Agosto", "temp_media_c": 14.0, "temp_min_promedio_c": 8.4, "temp_max_promedio_c": 20.1, "anios_con_helada_pct": 3},
-    {"mes": 9, "nombre": "Septiembre", "temp_media_c": 13.9, "temp_min_promedio_c": 8.0, "temp_max_promedio_c": 19.8, "anios_con_helada_pct": 6},
-    {"mes": 10, "nombre": "Octubre", "temp_media_c": 13.2, "temp_min_promedio_c": 7.0, "temp_max_promedio_c": 19.6, "anios_con_helada_pct": 18},
-    {"mes": 11, "nombre": "Noviembre", "temp_media_c": 11.9, "temp_min_promedio_c": 5.6, "temp_max_promedio_c": 18.8, "anios_con_helada_pct": 40},
-    {"mes": 12, "nombre": "Diciembre", "temp_media_c": 11.1, "temp_min_promedio_c": 5.8, "temp_max_promedio_c": 17.9, "anios_con_helada_pct": 57},
-]
+"""Convierte 30 años de clima diario (Open-Meteo) en 12 resúmenes mensuales."""
+from datetime import date
+from statistics import mean
+from typing import Any
+
+MESES = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto",
+         "Septiembre", "Octubre", "Noviembre", "Diciembre"]
+UMBRAL_HELADA_C = 2.0  # aire a 2 m; a ras de suelo ya puede helar
+UMBRAL_HELADA_FUERTE_C = -2.0  # daña también a los cultivos que toleran heladas ligeras
 
 
-def procesar_clima_30_anios(datos_diarios: list[dict]) -> list[dict]:
-    return [dict(mes) for mes in _TOLUCA_MENSUAL]
+def _pct(anios_con_evento: set[int], anios: set[int]) -> int:
+    return int(round(100 * len(anios_con_evento) / len(anios))) if anios else 0
+
+
+def procesar_clima_30_anios(datos_diarios: dict[str, list]) -> list[dict[str, Any]]:
+    """`datos_diarios` es el bloque `daily` de Open-Meteo Historical.
+
+    Por mes calcula: temperatura media, mínima y máxima promedio, % de años con al menos una
+    noche de helada (<= 2 °C) y de helada fuerte (<= -2 °C), y lluvia promedio del mes.
+    """
+    fechas = datos_diarios.get("time") or []
+    medias = datos_diarios.get("temperature_2m_mean") or []
+    minimas = datos_diarios.get("temperature_2m_min") or []
+    maximas = datos_diarios.get("temperature_2m_max") or []
+    lluvias = datos_diarios.get("precipitation_sum") or []
+
+    por_mes: dict[int, dict[str, Any]] = {
+        m: {"media": [], "min": [], "max": [], "anios": set(), "helada": set(), "helada_fuerte": set(), "lluvia": {}}
+        for m in range(1, 13)
+    }
+    for i, texto in enumerate(fechas):
+        d = date.fromisoformat(texto)
+        b = por_mes[d.month]
+        b["anios"].add(d.year)
+        if i < len(medias) and medias[i] is not None:
+            b["media"].append(medias[i])
+        if i < len(maximas) and maximas[i] is not None:
+            b["max"].append(maximas[i])
+        if i < len(minimas) and minimas[i] is not None:
+            b["min"].append(minimas[i])
+            if minimas[i] <= UMBRAL_HELADA_C:
+                b["helada"].add(d.year)
+            if minimas[i] <= UMBRAL_HELADA_FUERTE_C:
+                b["helada_fuerte"].add(d.year)
+        if i < len(lluvias) and lluvias[i] is not None:
+            b["lluvia"][d.year] = b["lluvia"].get(d.year, 0.0) + lluvias[i]
+
+    resumen = []
+    for m in range(1, 13):
+        b = por_mes[m]
+        if not b["media"]:
+            continue
+        resumen.append({
+            "mes": m,
+            "nombre": MESES[m - 1],
+            "temp_media_c": round(mean(b["media"]), 1),
+            "temp_min_promedio_c": round(mean(b["min"]), 1) if b["min"] else round(mean(b["media"]), 1),
+            "temp_max_promedio_c": round(mean(b["max"]), 1) if b["max"] else round(mean(b["media"]), 1),
+            "anios_con_helada_pct": _pct(b["helada"], b["anios"]),
+            "anios_con_helada_fuerte_pct": _pct(b["helada_fuerte"], b["anios"]),
+            "lluvia_mm": round(mean(b["lluvia"].values()), 1) if b["lluvia"] else None,
+        })
+    return resumen

@@ -2,8 +2,9 @@ from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, Field
 
-Luz = Literal["pleno_sol", "media_sombra", "sombra"]
 Evidencia = Literal["comprobada", "popular"]
+Dificultad = Literal["facil", "media", "dificil"]
+ConsumoHidrico = Literal["bajo", "medio", "alto"]
 
 
 class FichaTecnica(BaseModel):
@@ -13,10 +14,25 @@ class FichaTecnica(BaseModel):
     altitud_max_m: int
     dias_a_cosecha: list[int] = Field(min_length=2, max_length=2)
     maceta_min_litros: int
-    profundidad_min_cm: int
-    luz: Luz
+    profundidad_maceta_cm: int
+    luz_nivel: int = Field(ge=1, le=4, description="1 sombra, 2 luz indirecta, 3 sol parcial, 4 pleno sol")
+    riego_frecuencia_dias: int = Field(ge=1)
     riego: str
     sustrato_recomendado: str
+
+
+class Restricciones(BaseModel):
+    pet_safe: bool
+    dificultad: Dificultad
+
+
+class ImpactoAmbiental(BaseModel):
+    consumo_hidrico: ConsumoHidrico
+    atrae_polinizadores: bool
+
+
+class GuiaRapida(BaseModel):
+    error_comun: str
 
 
 class CompaneroCultivo(BaseModel):
@@ -24,26 +40,6 @@ class CompaneroCultivo(BaseModel):
     nombre: str
     beneficio: str
     evidencia: Evidencia
-
-
-class MesPrecioSniim(BaseModel):
-    mes: int = Field(ge=1, le=12)
-    nombre: str
-    variacion_pct: int
-
-
-class EstadoProductor(BaseModel):
-    estado: str
-    participacion_pct: int
-
-
-class ContextoEconomicoSniim(BaseModel):
-    mercado_referencia: str
-    producto_sniim: str
-    mes_mas_caro: MesPrecioSniim
-    mes_mas_barato: MesPrecioSniim
-    estados_productores: list[EstadoProductor]
-    tip_ahorro: str
 
 
 class CultivoDetalleResponse(BaseModel):
@@ -56,10 +52,13 @@ class CultivoDetalleResponse(BaseModel):
     categoria: str
     icono: str
     resumen: str
+    es_nativa_region: bool
     ficha_tecnica: FichaTecnica
+    restricciones: Restricciones
+    impacto_ambiental: ImpactoAmbiental
+    guia_rapida: GuiaRapida
     tutorial: list[str]
     companeros_cultivo: list[CompaneroCultivo]
     curiosidades: list[str]
     ojo: list[str]
-    contexto_economico_sniim: ContextoEconomicoSniim | None = None
     fuentes: list[str]

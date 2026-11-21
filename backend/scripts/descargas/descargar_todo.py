@@ -22,6 +22,7 @@ PASOS = [
     ("ecocrop", "descargar_ecocrop.py", "FAO ECOCROP -> data/ecocrop_cultivos.json"),
     ("wikipedia", "descargar_wikipedia.py", "Wikipedia -> data/wikipedia_resumenes.json"),
     ("siap", "descargar_siap.py", "SIAP -> data/siap_municipio.json"),
+    ("smn", "descargar_smn.py", "SMN CONAGUA -> data/smn_estaciones.json (incremental; ~3 min la primera vez)"),
     ("base", "generar_cultivos_base.py", "Todo -> data/cultivos_base.json"),
 ]
 

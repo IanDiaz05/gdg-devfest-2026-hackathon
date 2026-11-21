@@ -2,17 +2,19 @@ from datetime import datetime
 from typing import Any
 
 from fastapi import APIRouter, Query
-from pydantic import ValidationError
 
-from app.api.errors import CultivoNoEncontradoError, UbicacionInvalidaError
+from app.api.errors import ClimaNoDisponibleError, CultivoNoEncontradoError, UbicacionInvalidaError
 from app.core import database
 from app.core.config import settings
-from app.engine import clima_processor, reglas_siembra, sequia_matcher
+from app.engine import alertas as motor_alertas
+from app.engine import clima_processor, lluvia_reciente, reglas_siembra
 from app.schemas.cultivos import (
     CompaneroCultivo,
-    ContextoEconomicoSniim,
     CultivoDetalleResponse,
     FichaTecnica,
+    GuiaRapida,
+    ImpactoAmbiental,
+    Restricciones,
 )
 from app.schemas.recomendaciones import (
     ClimaZona,
@@ -26,7 +28,6 @@ from app.services import open_meteo
 router = APIRouter(prefix="/api")
 
 _PERIODO_REFERENCIA = "1996-2025"
-_LUCES = {"pleno_sol", "media_sombra", "sombra"}
 _EVIDENCIAS = {"comprobada", "popular"}
 
 
@@ -45,7 +46,7 @@ def _clima_zona(
     resumen: list[dict[str, Any]],
     mes: int,
     periodo: str,
-    sequia: dict[str, Any] | None,
+    lluvia: dict[str, Any] | None,
 ) -> ClimaZona:
     actual = next(item for item in resumen if int(item["mes"]) == mes)
     return ClimaZona(
@@ -56,9 +57,10 @@ def _clima_zona(
         temp_min_promedio_c=float(actual["temp_min_promedio_c"]),
         temp_max_promedio_c=float(actual["temp_max_promedio_c"]),
         anios_con_helada_pct=int(actual["anios_con_helada_pct"]),
+        lluvia_mes_mm=actual.get("lluvia_mm"),
         mes_mas_frio=_mes_extremo(resumen, mas_frio=True),
         mes_mas_caluroso=_mes_extremo(resumen, mas_frio=False),
-        sequia=sequia,
+        lluvia_reciente=lluvia,
     )
 
 
@@ -88,12 +90,9 @@ def _par_enteros(valor: Any, default: list[int]) -> list[int]:
     return [int(round(numeros[0])), int(round(numeros[1]))]
 
 
-def _ficha_tecnica(datos: dict[str, Any], reglas: Any) -> FichaTecnica:
+def _ficha_tecnica(datos: dict[str, Any], reglas: Any, atributos: dict[str, Any]) -> FichaTecnica:
     ficha = datos.get("ficha_tecnica") if isinstance(datos.get("ficha_tecnica"), dict) else {}
     reglas_dict = reglas if isinstance(reglas, dict) else {}
-    luz = str(ficha.get("luz") or reglas_dict.get("luz") or "pleno_sol")
-    if luz not in _LUCES:
-        luz = "pleno_sol"
     return FichaTecnica(
         temp_ideal_c=_par_numeros(
             ficha.get("temp_ideal_c", reglas_dict.get("temp_ideal_c")),
@@ -113,8 +112,9 @@ def _ficha_tecnica(datos: dict[str, Any], reglas: Any) -> FichaTecnica:
             ficha.get("maceta_min_litros", reglas_dict.get("maceta_min_litros")),
             0,
         ),
-        profundidad_min_cm=_entero(ficha.get("profundidad_min_cm"), 0),
-        luz=luz,
+        profundidad_maceta_cm=atributos["profundidad_maceta_cm"],
+        luz_nivel=atributos["luz_nivel"],
+        riego_frecuencia_dias=atributos["riego_frecuencia_dias"],
         riego=str(ficha.get("riego") or ""),
         sustrato_recomendado=str(ficha.get("sustrato_recomendado") or ""),
     )
@@ -141,22 +141,10 @@ def _companeros(valor: Any) -> list[CompaneroCultivo]:
     return companeros
 
 
-def _contexto_sniim(datos: dict[str, Any], fila: dict[str, Any]) -> ContextoEconomicoSniim | None:
-    crudo = datos.get("contexto_economico_sniim")
-    if crudo is None:
-        crudo = fila.get("sniim_json")
-        if isinstance(crudo, dict) and "contexto_economico_sniim" in crudo:
-            crudo = crudo.get("contexto_economico_sniim")
-    if not isinstance(crudo, dict):
-        return None
-    try:
-        return ContextoEconomicoSniim.model_validate(crudo)
-    except ValidationError:
-        return None
-
-
 def _detalle_desde_fila(fila: dict[str, Any]) -> CultivoDetalleResponse:
     datos = fila.get("datos_json") if isinstance(fila.get("datos_json"), dict) else {}
+    reglas = fila.get("reglas_json") if isinstance(fila.get("reglas_json"), dict) else {}
+    atributos = reglas_siembra.atributos_cultivo(datos, reglas)
     icono = datos.get("icono") if datos.get("icono") is not None else fila.get("icono")
     return CultivoDetalleResponse(
         id=str(datos.get("id") or fila.get("id") or ""),
@@ -166,12 +154,18 @@ def _detalle_desde_fila(fila: dict[str, Any]) -> CultivoDetalleResponse:
         categoria=str(datos.get("categoria") or fila.get("categoria") or ""),
         icono=str(icono or ""),
         resumen=str(datos.get("resumen") or ""),
-        ficha_tecnica=_ficha_tecnica(datos, fila.get("reglas_json")),
+        es_nativa_region=atributos["es_nativa_region"],
+        ficha_tecnica=_ficha_tecnica(datos, reglas, atributos),
+        restricciones=Restricciones(pet_safe=atributos["pet_safe"], dificultad=atributos["dificultad"]),
+        impacto_ambiental=ImpactoAmbiental(
+            consumo_hidrico=atributos["consumo_hidrico"],
+            atrae_polinizadores=atributos["atrae_polinizadores"],
+        ),
+        guia_rapida=GuiaRapida(error_comun=atributos["error_comun"]),
         tutorial=_textos(datos.get("tutorial")),
         companeros_cultivo=_companeros(datos.get("companeros_cultivo")),
         curiosidades=_textos(datos.get("curiosidades")),
         ojo=_textos(datos.get("ojo")),
-        contexto_economico_sniim=_contexto_sniim(datos, fila),
         fuentes=_textos(datos.get("fuentes")),
     )
 
@@ -213,6 +207,8 @@ async def recomendaciones(
     else:
         diarios = await open_meteo.obtener_diario_30_anios(lat_resuelta, lon_resuelta)
         resumen = clima_processor.procesar_clima_30_anios(diarios)
+        if len(resumen) < 12:  # respuesta incompleta: no se guarda en caché
+            raise ClimaNoDisponibleError()
         periodo = _PERIODO_REFERENCIA
         await database.save_clima_cache(
             lat_grid,
@@ -233,11 +229,12 @@ async def recomendaciones(
             settings.PRONOSTICO_TTL_SECONDS,
         )
 
-    sequia = await sequia_matcher.obtener_sequia_zona(
-        str(lugar["estado"]),
-        str(lugar["municipio"]),
-    )
+    lluvia = lluvia_reciente.obtener_lluvia_reciente(lat_resuelta, lon_resuelta)
     cultivos_db = await database.get_all_cultivos()
+    alertas = [
+        {**alerta, "cultivos_afectados": motor_alertas.cultivos_afectados(alerta["tipo"], cultivos_db)}
+        for alerta in alertas
+    ]
     cultivos = reglas_siembra.evaluar_cultivos(
         cultivos_db,
         resumen,
@@ -256,7 +253,7 @@ async def recomendaciones(
             desde_cache=desde_cache,
             alternativas=lugar.get("alternativas") or [],
         ),
-        clima_zona=_clima_zona(resumen, mes_evaluado, periodo, sequia),
+        clima_zona=_clima_zona(resumen, mes_evaluado, periodo, lluvia),
         alertas_7_dias=alertas,
         cultivos=cultivos,
     )

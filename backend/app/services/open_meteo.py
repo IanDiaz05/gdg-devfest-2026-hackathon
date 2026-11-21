@@ -1,50 +1,120 @@
-from app.api.errors import CiudadNoEncontradaError
+"""Ubicación (data/ciudades.json) y clima (Open-Meteo).
 
-_TOLUCA_LAT = 19.288
-_TOLUCA_LON = -99.653
-_TOLUCA_ALTITUD_M = 2671
+- Búsqueda de ciudades: sin API, en data/ciudades.json (GeoNames + nombres de municipio del INEGI).
+- Clima de 30 años: Open-Meteo Historical (archive-api.open-meteo.com).
+- Pronóstico de 7 días: Open-Meteo Forecast (api.open-meteo.com).
+"""
+from typing import Any
 
-_ALTERNATIVAS_TOLUCA = [
-    {
-        "nombre": "Toluca",
-        "estado": "Estado de Chiapas",
-        "lat": 15.029,
-        "lon": -92.245,
-    },
-    {
-        "nombre": "Toluca",
-        "estado": "Estado de Puebla",
-        "lat": 18.893,
-        "lon": -97.250,
-    },
-]
+import httpx
+
+from app.api.errors import CiudadNoEncontradaError, ClimaNoDisponibleError
+from app.engine import alertas as motor_alertas
+from app.services.datos_locales import ciudades, distancia_km, normalizar
+
+URL_HISTORICO = "https://archive-api.open-meteo.com/v1/archive"
+URL_PRONOSTICO = "https://api.open-meteo.com/v1/forecast"
+PERIODO_INICIO, PERIODO_FIN = "1996-01-01", "2025-12-31"
+TIMEOUT_S = 90
+MAX_ALTERNATIVAS = 3
+RADIO_GPS_KM = 20  # si la ciudad más cercana está más lejos, se muestra "Tu ubicación"
 
 
-def _ubicacion(lat: float, lon: float, alternativas: list[dict]) -> dict:
+def _ubicacion(c: dict[str, Any], alternativas: list[dict[str, Any]], nombre: str | None = None,
+               lat: float | None = None, lon: float | None = None) -> dict[str, Any]:
     return {
-        "nombre": "Toluca de Lerdo",
-        "municipio": "Toluca de Lerdo",
-        "estado": "Estado de Mexico",
-        "lat": lat,
-        "lon": lon,
-        "altitud_m": _TOLUCA_ALTITUD_M,
+        "nombre": nombre or c["nombre"],
+        "municipio": c.get("municipio") or c["nombre"],
+        "estado": c["estado"],
+        "cvegeo": c.get("cvegeo"),
+        "lat": lat if lat is not None else c["lat"],
+        "lon": lon if lon is not None else c["lon"],
+        "altitud_m": int(c.get("altitud_m") or 0),
         "alternativas": alternativas,
     }
 
 
+def _alternativa(c: dict[str, Any]) -> dict[str, Any]:
+    return {"nombre": c["nombre"], "estado": c["estado"], "lat": c["lat"], "lon": c["lon"]}
+
+
 async def buscar_ubicacion(q: str) -> dict:
+    """Busca `q` en data/ciudades.json. Acepta 'Toluca' o 'Toluca, Estado de México'."""
     if q is None or not str(q).strip():
         raise CiudadNoEncontradaError()
-    return _ubicacion(_TOLUCA_LAT, _TOLUCA_LON, [dict(item) for item in _ALTERNATIVAS_TOLUCA])
+    partes = [normalizar(p) for p in str(q).split(",")]
+    texto, filtro_estado = partes[0], (partes[1] if len(partes) > 1 else "")
+    if not texto:
+        raise CiudadNoEncontradaError()
+
+    candidatos = []
+    for c in ciudades():
+        if filtro_estado and filtro_estado not in normalizar(c["estado"]):
+            continue
+        nombre = c["busqueda"]
+        if nombre == texto:
+            rango = 0
+        elif nombre.startswith(texto):
+            rango = 1
+        elif f" {texto}" in f" {nombre}":
+            rango = 2
+        else:
+            continue
+        candidatos.append((rango, -int(c.get("poblacion") or 0), c))
+    if not candidatos:
+        raise CiudadNoEncontradaError()
+    candidatos.sort(key=lambda x: (x[0], x[1]))
+    principal = candidatos[0][2]
+    alternativas, vistos = [], {(principal["nombre"], principal["estado"])}
+    for _, _, c in candidatos[1:]:
+        if (c["nombre"], c["estado"]) in vistos:
+            continue
+        vistos.add((c["nombre"], c["estado"]))
+        alternativas.append(_alternativa(c))
+        if len(alternativas) == MAX_ALTERNATIVAS:
+            break
+    return _ubicacion(principal, alternativas)
 
 
 async def resolver_coordenadas(lat: float, lon: float) -> dict:
-    return _ubicacion(lat, lon, [])
+    """Para el GPS del navegador: toma los datos de la ciudad más cercana en data/ciudades.json."""
+    lista = ciudades()
+    if not lista:
+        raise CiudadNoEncontradaError()
+    cercana = min(lista, key=lambda c: distancia_km(lat, lon, c["lat"], c["lon"]))
+    km = distancia_km(lat, lon, cercana["lat"], cercana["lon"])
+    nombre = cercana["nombre"] if km <= RADIO_GPS_KM else "Tu ubicación"
+    return _ubicacion(cercana, [], nombre=nombre, lat=lat, lon=lon)
 
 
-async def obtener_diario_30_anios(lat: float, lon: float) -> list[dict]:
-    return []
+async def _get(url: str, params: dict[str, Any]) -> dict[str, Any]:
+    try:
+        async with httpx.AsyncClient(timeout=TIMEOUT_S) as cliente:
+            r = await cliente.get(url, params=params)
+    except httpx.HTTPError as e:
+        raise ClimaNoDisponibleError() from e
+    if r.status_code == 429 or r.status_code >= 500:
+        raise ClimaNoDisponibleError()
+    r.raise_for_status()
+    return r.json()
+
+
+async def obtener_diario_30_anios(lat: float, lon: float) -> dict[str, list]:
+    """Clima diario de 1996 a 2025 (una sola petición). Devuelve el bloque `daily` de Open-Meteo."""
+    datos = await _get(URL_HISTORICO, {
+        "latitude": lat, "longitude": lon,
+        "start_date": PERIODO_INICIO, "end_date": PERIODO_FIN,
+        "daily": "temperature_2m_mean,temperature_2m_min,temperature_2m_max,precipitation_sum",
+        "timezone": "auto",
+    })
+    return datos.get("daily", {})
 
 
 async def obtener_pronostico_7d(lat: float, lon: float) -> list[dict]:
-    return []
+    """Pronóstico de 7 días convertido en alertas (helada, calor, lluvia fuerte, tormenta, viento, UV)."""
+    datos = await _get(URL_PRONOSTICO, {
+        "latitude": lat, "longitude": lon, "forecast_days": 7, "timezone": "auto",
+        "daily": "weather_code,temperature_2m_min,temperature_2m_max,precipitation_sum,"
+                 "wind_gusts_10m_max,uv_index_max",
+    })
+    return motor_alertas.construir_alertas(datos.get("daily", {}))

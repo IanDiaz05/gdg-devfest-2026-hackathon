@@ -4,6 +4,7 @@ Mezcla:
 - data/curacion/cultivos_curados.json  (a mano: maceta, luz, tolerancia, etc.)
 - data/ecocrop_cultivos.json           (temperaturas, altitud)
 - data/wikipedia_resumenes.json        (referencia para escribir resumen y curiosidades)
+- data/curacion/contenido_cultivos.json (a mano: resumen, riego, sustrato, tutorial, compañeros, curiosidades, ojo)
 
 NO sobrescribe data/cultivos.json (el archivo que edita el equipo). Los campos de contenido
 (resumen, riego, sustrato, tutorial, compañeros, curiosidades, ojo) quedan vacíos y se listan
@@ -13,7 +14,7 @@ Uso: backend\\.venv\\Scripts\\python backend\\scripts\\descargas\\generar_cultiv
 """
 from __future__ import annotations
 
-from comun import DATA, cultivos_curados, guardar_json, hoy, leer_json, preparar
+from comun import CURACION, DATA, cultivos_curados, guardar_json, hoy, leer_json, preparar
 
 
 def opcional(nombre: str) -> dict:
@@ -41,12 +42,23 @@ def main() -> None:
     preparar()
     print("Generando data/cultivos_base.json")
     eco, wiki = opcional("ecocrop_cultivos.json"), opcional("wikipedia_resumenes.json")
+    ruta_contenido = CURACION / "contenido_cultivos.json"
+    contenido = leer_json(ruta_contenido).get("cultivos", {}) if ruta_contenido.exists() else {}
+    nombres = {c["id"]: c["nombre"] for c in cultivos_curados()}
 
     salida = []
     for c in cultivos_curados():
-        e, w = eco.get(c["id"], {}), wiki.get(c["id"], {})
-        pendiente = ["resumen", "ficha_tecnica.riego", "ficha_tecnica.sustrato_recomendado", "tutorial",
-                     "companeros_cultivo", "curiosidades", "ojo"]
+        e, w, k = eco.get(c["id"], {}), wiki.get(c["id"], {}), contenido.get(c["id"], {})
+        campos = {"resumen": k.get("resumen"), "ficha_tecnica.riego": k.get("riego"),
+                  "ficha_tecnica.sustrato_recomendado": k.get("sustrato"), "tutorial": k.get("tutorial"),
+                  "companeros_cultivo": k.get("companeros") if "companeros" in k else None,
+                  "curiosidades": k.get("curiosidades") if "curiosidades" in k else None,
+                  "ojo": k.get("ojo") if "ojo" in k else None}
+        pendiente = [campo for campo, valor in campos.items() if valor is None or valor == ""]
+        if k:
+            pendiente.append("revisar el borrador de contenido_cultivos.json contra los manuales")
+        companeros = [{"id": x["id"], "nombre": nombres.get(x["id"], x["id"]), "beneficio": x["beneficio"],
+                       "evidencia": x.get("evidencia", "popular")} for x in k.get("companeros", [])]
         if not e:
             pendiente.append("ficha_tecnica.temp_* (no está en ECOCROP)")
         fuentes = []
@@ -62,7 +74,8 @@ def main() -> None:
             "ecocrop_nombre": e.get("ecocrop_nombre", c["ecocrop_nombre"]),
             "categoria": c["categoria"],
             "icono": c["icono"],
-            "resumen": "",
+            "resumen": k.get("resumen", ""),
+            "es_nativa_region": c["es_nativa_region"],
             "ficha_tecnica": {
                 "temp_ideal_c": e.get("temp_ideal_c"),
                 "temp_limite_c": e.get("temp_limite_c"),
@@ -70,15 +83,27 @@ def main() -> None:
                 "altitud_max_m": e.get("altitud_max_m"),
                 "dias_a_cosecha": rango_cosecha(c["dias_cosecha_aprox"], e.get("dias_ciclo")),
                 "maceta_min_litros": c["maceta_min_litros"],
-                "profundidad_min_cm": c["profundidad_min_cm"],
-                "luz": c["luz"],
-                "riego": "",
-                "sustrato_recomendado": "",
+                "profundidad_maceta_cm": c["profundidad_maceta_cm"],
+                "luz_nivel": c["luz_nivel"],
+                "riego_frecuencia_dias": c["riego_frecuencia_dias"],
+                "riego": k.get("riego", ""),
+                "sustrato_recomendado": k.get("sustrato", ""),
             },
-            "tutorial": [],
-            "companeros_cultivo": [],
-            "curiosidades": [],
-            "ojo": [],
+            "restricciones": {
+                "pet_safe": c["pet_safe"],
+                "dificultad": c["dificultad"],
+            },
+            "impacto_ambiental": {
+                "consumo_hidrico": c["consumo_hidrico"],
+                "atrae_polinizadores": c["atrae_polinizadores"],
+            },
+            "guia_rapida": {
+                "error_comun": c["guia_rapida"]["error_comun"],
+            },
+            "tutorial": k.get("tutorial", []),
+            "companeros_cultivo": companeros,
+            "curiosidades": k.get("curiosidades", []),
+            "ojo": k.get("ojo", []),
             "fuentes": fuentes,
             # --- Campos internos para el motor de reglas (no van tal cual al frontend) ---
             "reglas": {

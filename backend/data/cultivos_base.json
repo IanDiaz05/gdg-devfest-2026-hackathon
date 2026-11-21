@@ -9,7 +9,8 @@
       "ecocrop_nombre": "Lactuca sativa var. capitata",
       "categoria": "Hortalizas de hoja",
       "icono": "🥬",
-      "resumen": "",
+      "resumen": "Hoja rápida y fácil para maceta chica; prefiere el clima fresco y algo de sombra en las horas de más calor.",
+      "es_nativa_region": false,
       "ficha_tecnica": {
         "temp_ideal_c": [
           12.0,
@@ -26,14 +27,40 @@
           85
         ],
         "maceta_min_litros": 5,
-        "profundidad_min_cm": 15,
-        "luz": "media_sombra",
-        "riego": "",
-        "sustrato_recomendado": ""
+        "profundidad_maceta_cm": 15,
+        "luz_nivel": 3,
+        "riego_frecuencia_dias": 2,
+        "riego": "Mantén la tierra húmeda todo el tiempo, sin encharcar; riega en la base para no mojar las hojas.",
+        "sustrato_recomendado": "Tierra negra con 30% de composta, suelta y con buen drenaje."
       },
-      "tutorial": [],
-      "companeros_cultivo": [],
-      "curiosidades": [],
+      "restricciones": {
+        "pet_safe": true,
+        "dificultad": "facil"
+      },
+      "impacto_ambiental": {
+        "consumo_hidrico": "alto",
+        "atrae_polinizadores": false
+      },
+      "guia_rapida": {
+        "error_comun": "Sembrarla en pleno calor: se espiga (echa flor) y las hojas se amargan."
+      },
+      "tutorial": [
+        "Siembra las semillas a 0.5 cm de profundidad; germinan en 7 a 10 días.",
+        "Cuando tengan 4 hojas, deja una planta cada 20 cm.",
+        "Ponla donde le dé sol en la mañana y sombra a mediodía.",
+        "Cosecha las hojas de afuera conforme crezcan o la planta completa a los 50-60 días."
+      ],
+      "companeros_cultivo": [
+        {
+          "id": "rabano",
+          "nombre": "Rábano",
+          "beneficio": "Se cosechan en tiempos distintos y aprovechan el mismo espacio.",
+          "evidencia": "popular"
+        }
+      ],
+      "curiosidades": [
+        "Es de la misma familia que el girasol y el diente de león (Asteráceas)."
+      ],
       "ojo": [],
       "fuentes": [
         "FAO ECOCROP: Lactuca sativa var. capitata",
@@ -59,13 +86,7 @@
         "notas": null
       },
       "_pendiente": [
-        "resumen",
-        "ficha_tecnica.riego",
-        "ficha_tecnica.sustrato_recomendado",
-        "tutorial",
-        "companeros_cultivo",
-        "curiosidades",
-        "ojo"
+        "revisar el borrador de contenido_cultivos.json contra los manuales"
       ]
     },
     {
@@ -75,7 +96,8 @@
       "ecocrop_nombre": "Spinacia oleracea",
       "categoria": "Hortalizas de hoja",
       "icono": "🥬",
-      "resumen": "",
+      "resumen": "Hoja de clima fresco que crece rápido en maceta; con calor florece y deja de producir.",
+      "es_nativa_region": false,
       "ficha_tecnica": {
         "temp_ideal_c": [
           13.0,
@@ -92,14 +114,40 @@
           90
         ],
         "maceta_min_litros": 5,
-        "profundidad_min_cm": 15,
-        "luz": "media_sombra",
-        "riego": "",
-        "sustrato_recomendado": ""
+        "profundidad_maceta_cm": 15,
+        "luz_nivel": 3,
+        "riego_frecuencia_dias": 2,
+        "riego": "Riego frecuente y parejo: la tierra no debe secarse.",
+        "sustrato_recomendado": "Tierra negra con 30% de composta y buen drenaje."
       },
-      "tutorial": [],
-      "companeros_cultivo": [],
-      "curiosidades": [],
+      "restricciones": {
+        "pet_safe": true,
+        "dificultad": "facil"
+      },
+      "impacto_ambiental": {
+        "consumo_hidrico": "alto",
+        "atrae_polinizadores": false
+      },
+      "guia_rapida": {
+        "error_comun": "Sembrarla en temporada caliente: florece pronto y deja de dar hojas."
+      },
+      "tutorial": [
+        "Siembra a 1 cm de profundidad; germina en 7 a 14 días.",
+        "Deja una planta cada 10-15 cm.",
+        "Prefiere sol de mañana y media sombra en las horas de calor.",
+        "Corta las hojas exteriores desde los 40 días; la planta sigue produciendo."
+      ],
+      "companeros_cultivo": [
+        {
+          "id": "fresa",
+          "nombre": "Fresa",
+          "beneficio": "Comparten maceta grande sin competir mucho por la luz.",
+          "evidencia": "popular"
+        }
+      ],
+      "curiosidades": [
+        "Es de la misma familia que la acelga y el betabel."
+      ],
       "ojo": [],
       "fuentes": [
         "FAO ECOCROP: Spinacia oleracea",
@@ -125,13 +173,7 @@
         "notas": null
       },
       "_pendiente": [
-        "resumen",
-        "ficha_tecnica.riego",
-        "ficha_tecnica.sustrato_recomendado",
-        "tutorial",
-        "companeros_cultivo",
-        "curiosidades",
-        "ojo"
+        "revisar el borrador de contenido_cultivos.json contra los manuales"
       ]
     },
     {
@@ -141,7 +183,8 @@
       "ecocrop_nombre": "Beta vulgaris",
       "categoria": "Hortalizas de hoja",
       "icono": "🥬",
-      "resumen": "",
+      "resumen": "Hoja muy productiva y resistente; se corta muchas veces durante meses.",
+      "es_nativa_region": false,
       "ficha_tecnica": {
         "temp_ideal_c": [
           15.0,
@@ -158,14 +201,40 @@
           120
         ],
         "maceta_min_litros": 10,
-        "profundidad_min_cm": 25,
-        "luz": "media_sombra",
-        "riego": "",
-        "sustrato_recomendado": ""
+        "profundidad_maceta_cm": 25,
+        "luz_nivel": 3,
+        "riego_frecuencia_dias": 3,
+        "riego": "Riego regular; aguanta un poco de sequía pero da hojas más tiernas con humedad constante.",
+        "sustrato_recomendado": "Tierra negra con 30% de composta y buen drenaje."
       },
-      "tutorial": [],
-      "companeros_cultivo": [],
-      "curiosidades": [],
+      "restricciones": {
+        "pet_safe": true,
+        "dificultad": "facil"
+      },
+      "impacto_ambiental": {
+        "consumo_hidrico": "medio",
+        "atrae_polinizadores": false
+      },
+      "guia_rapida": {
+        "error_comun": "Cortar todas las hojas a la vez; corta solo las de afuera y deja crecer el centro."
+      },
+      "tutorial": [
+        "Siembra las semillas a 2 cm de profundidad; cada 'semilla' puede dar varias plantas.",
+        "Deja la planta más fuerte cada 25 cm.",
+        "Ponla a pleno sol o media sombra.",
+        "Corta las hojas de afuera desde los 60 días y deja el centro para que siga creciendo."
+      ],
+      "companeros_cultivo": [
+        {
+          "id": "cebolla",
+          "nombre": "Cebolla cambray",
+          "beneficio": "Ocupan distinta profundidad de la maceta.",
+          "evidencia": "popular"
+        }
+      ],
+      "curiosidades": [
+        "Es la misma especie que el betabel (Beta vulgaris): una se cultiva por la hoja y la otra por la raíz."
+      ],
       "ojo": [],
       "fuentes": [
         "FAO ECOCROP: Beta vulgaris",
@@ -190,13 +259,7 @@
         "notas": null
       },
       "_pendiente": [
-        "resumen",
-        "ficha_tecnica.riego",
-        "ficha_tecnica.sustrato_recomendado",
-        "tutorial",
-        "companeros_cultivo",
-        "curiosidades",
-        "ojo"
+        "revisar el borrador de contenido_cultivos.json contra los manuales"
       ]
     },
     {
@@ -206,7 +269,8 @@
       "ecocrop_nombre": "Raphanus sativus",
       "categoria": "Raíces y bulbos",
       "icono": "🌱",
-      "resumen": "",
+      "resumen": "El cultivo más rápido para empezar: en unas 4 semanas ya se cosecha.",
+      "es_nativa_region": false,
       "ficha_tecnica": {
         "temp_ideal_c": [
           12.0,
@@ -223,14 +287,40 @@
           60
         ],
         "maceta_min_litros": 3,
-        "profundidad_min_cm": 15,
-        "luz": "pleno_sol",
-        "riego": "",
-        "sustrato_recomendado": ""
+        "profundidad_maceta_cm": 15,
+        "luz_nivel": 4,
+        "riego_frecuencia_dias": 2,
+        "riego": "Humedad constante; si la tierra se seca y luego se moja de golpe, la raíz se raja.",
+        "sustrato_recomendado": "Tierra suelta, sin piedras, con 20% de arena o tepojal."
       },
-      "tutorial": [],
-      "companeros_cultivo": [],
-      "curiosidades": [],
+      "restricciones": {
+        "pet_safe": true,
+        "dificultad": "facil"
+      },
+      "impacto_ambiental": {
+        "consumo_hidrico": "medio",
+        "atrae_polinizadores": false
+      },
+      "guia_rapida": {
+        "error_comun": "Sembrar las semillas muy juntas y no ralear: las raíces no engordan."
+      },
+      "tutorial": [
+        "Siembra a 1 cm de profundidad; germina en 3 a 5 días.",
+        "Ralea a una planta cada 5 cm.",
+        "Ponlo a pleno sol.",
+        "Cosecha a los 25-35 días, cuando asome la raíz; si esperas de más se pone fofo."
+      ],
+      "companeros_cultivo": [
+        {
+          "id": "lechuga",
+          "nombre": "Lechuga",
+          "beneficio": "El rábano sale antes y deja espacio a la lechuga.",
+          "evidencia": "popular"
+        }
+      ],
+      "curiosidades": [
+        "Es pariente de la col y la mostaza (Brasicáceas); por eso pica."
+      ],
       "ojo": [],
       "fuentes": [
         "FAO ECOCROP: Raphanus sativus",
@@ -256,13 +346,7 @@
         "notas": null
       },
       "_pendiente": [
-        "resumen",
-        "ficha_tecnica.riego",
-        "ficha_tecnica.sustrato_recomendado",
-        "tutorial",
-        "companeros_cultivo",
-        "curiosidades",
-        "ojo"
+        "revisar el borrador de contenido_cultivos.json contra los manuales"
       ]
     },
     {
@@ -272,7 +356,8 @@
       "ecocrop_nombre": "Daucus carota",
       "categoria": "Raíces y bulbos",
       "icono": "🥕",
-      "resumen": "",
+      "resumen": "Raíz dulce que en maceta da mejor con variedades cortas y una maceta profunda.",
+      "es_nativa_region": false,
       "ficha_tecnica": {
         "temp_ideal_c": [
           15.0,
@@ -289,14 +374,40 @@
           150
         ],
         "maceta_min_litros": 10,
-        "profundidad_min_cm": 30,
-        "luz": "pleno_sol",
-        "riego": "",
-        "sustrato_recomendado": ""
+        "profundidad_maceta_cm": 30,
+        "luz_nivel": 4,
+        "riego_frecuencia_dias": 3,
+        "riego": "Riego regular y ligero; que la tierra no forme costra.",
+        "sustrato_recomendado": "Tierra muy suelta y sin piedras, con 30% de arena o tepojal, para que la raíz crezca recta."
       },
-      "tutorial": [],
-      "companeros_cultivo": [],
-      "curiosidades": [],
+      "restricciones": {
+        "pet_safe": true,
+        "dificultad": "media"
+      },
+      "impacto_ambiental": {
+        "consumo_hidrico": "medio",
+        "atrae_polinizadores": false
+      },
+      "guia_rapida": {
+        "error_comun": "Usar una maceta poco profunda o tierra con piedras: la raíz sale torcida o corta."
+      },
+      "tutorial": [
+        "Siembra directo a 0.5-1 cm de profundidad (no se trasplanta); germina en 10 a 20 días.",
+        "Ralea a una planta cada 5 cm cuando midan 5 cm.",
+        "Ponla a pleno sol.",
+        "Cosecha a los 70-90 días, cuando el cuello de la raíz tenga 2 cm."
+      ],
+      "companeros_cultivo": [
+        {
+          "id": "cebolla",
+          "nombre": "Cebolla cambray",
+          "beneficio": "Se dice que el olor de la cebolla aleja a la mosca de la zanahoria.",
+          "evidencia": "popular"
+        }
+      ],
+      "curiosidades": [
+        "Las primeras zanahorias cultivadas eran moradas o amarillas; la naranja se popularizó en Europa siglos después."
+      ],
       "ojo": [],
       "fuentes": [
         "FAO ECOCROP: Daucus carota",
@@ -321,13 +432,7 @@
         "notas": null
       },
       "_pendiente": [
-        "resumen",
-        "ficha_tecnica.riego",
-        "ficha_tecnica.sustrato_recomendado",
-        "tutorial",
-        "companeros_cultivo",
-        "curiosidades",
-        "ojo"
+        "revisar el borrador de contenido_cultivos.json contra los manuales"
       ]
     },
     {
@@ -337,7 +442,8 @@
       "ecocrop_nombre": "Allium cepa",
       "categoria": "Raíces y bulbos",
       "icono": "🧅",
-      "resumen": "",
+      "resumen": "Cebolla cambray o de bulbo chico, fácil en maceta mediana.",
+      "es_nativa_region": false,
       "ficha_tecnica": {
         "temp_ideal_c": [
           12.0,
@@ -354,15 +460,43 @@
           175
         ],
         "maceta_min_litros": 5,
-        "profundidad_min_cm": 20,
-        "luz": "pleno_sol",
-        "riego": "",
-        "sustrato_recomendado": ""
+        "profundidad_maceta_cm": 20,
+        "luz_nivel": 4,
+        "riego_frecuencia_dias": 3,
+        "riego": "Riego moderado; reduce el riego cuando las hojas empiecen a doblarse.",
+        "sustrato_recomendado": "Tierra suelta con 20% de arena y poca composta."
       },
-      "tutorial": [],
-      "companeros_cultivo": [],
-      "curiosidades": [],
-      "ojo": [],
+      "restricciones": {
+        "pet_safe": false,
+        "dificultad": "media"
+      },
+      "impacto_ambiental": {
+        "consumo_hidrico": "medio",
+        "atrae_polinizadores": false
+      },
+      "guia_rapida": {
+        "error_comun": "Seguir regando al final: el bulbo se pudre. Deja de regar cuando las hojas empiezan a doblarse."
+      },
+      "tutorial": [
+        "Siembra en semillero a 0.5 cm o compra plántula.",
+        "Trasplanta cuando midan 10-15 cm, una cada 8-10 cm.",
+        "Ponla a pleno sol.",
+        "Cosecha como cambray a los 60-90 días o espera a que doblen las hojas para bulbo."
+      ],
+      "companeros_cultivo": [
+        {
+          "id": "zanahoria",
+          "nombre": "Zanahoria",
+          "beneficio": "Ocupan distinta profundidad de la maceta.",
+          "evidencia": "popular"
+        }
+      ],
+      "curiosidades": [
+        "Hace llorar porque al cortarla libera un gas que irrita los ojos."
+      ],
+      "ojo": [
+        "Es tóxica para perros y gatos: no la dejes a su alcance."
+      ],
       "fuentes": [
         "FAO ECOCROP: Allium cepa",
         "Wikipedia: https://es.wikipedia.org/wiki/Allium_cepa"
@@ -386,13 +520,7 @@
         "notas": null
       },
       "_pendiente": [
-        "resumen",
-        "ficha_tecnica.riego",
-        "ficha_tecnica.sustrato_recomendado",
-        "tutorial",
-        "companeros_cultivo",
-        "curiosidades",
-        "ojo"
+        "revisar el borrador de contenido_cultivos.json contra los manuales"
       ]
     },
     {
@@ -402,7 +530,8 @@
       "ecocrop_nombre": "Allium sativum",
       "categoria": "Raíces y bulbos",
       "icono": "🧄",
-      "resumen": "",
+      "resumen": "Se siembra de un diente y pide paciencia: tarda varios meses, pero casi no da trabajo.",
+      "es_nativa_region": false,
       "ficha_tecnica": {
         "temp_ideal_c": [
           18.0,
@@ -419,15 +548,43 @@
           180
         ],
         "maceta_min_litros": 5,
-        "profundidad_min_cm": 20,
-        "luz": "pleno_sol",
-        "riego": "",
-        "sustrato_recomendado": ""
+        "profundidad_maceta_cm": 20,
+        "luz_nivel": 4,
+        "riego_frecuencia_dias": 4,
+        "riego": "Riego escaso; deja secar la superficie entre riegos y suspende el riego al final.",
+        "sustrato_recomendado": "Tierra suelta con 30% de arena o tepojal; sin encharcamiento."
       },
-      "tutorial": [],
-      "companeros_cultivo": [],
-      "curiosidades": [],
-      "ojo": [],
+      "restricciones": {
+        "pet_safe": false,
+        "dificultad": "media"
+      },
+      "impacto_ambiental": {
+        "consumo_hidrico": "bajo",
+        "atrae_polinizadores": false
+      },
+      "guia_rapida": {
+        "error_comun": "Sembrar el diente al revés o muy hondo: la punta va hacia arriba, a unos 3 cm de profundidad."
+      },
+      "tutorial": [
+        "Separa los dientes de una cabeza sana y siembra cada uno con la punta hacia arriba, a 3-5 cm de profundidad.",
+        "Deja 10 cm entre dientes.",
+        "Ponlo a pleno sol; en climas templados se siembra en otoño.",
+        "Cosecha cuando la mayoría de las hojas estén amarillas y deja secar la cabeza a la sombra."
+      ],
+      "companeros_cultivo": [
+        {
+          "id": "fresa",
+          "nombre": "Fresa",
+          "beneficio": "Se dice que su olor aleja algunas plagas.",
+          "evidencia": "popular"
+        }
+      ],
+      "curiosidades": [
+        "Su olor viene de la alicina, una defensa de la planta que se forma al cortar o machacar el diente."
+      ],
+      "ojo": [
+        "Es tóxico para perros y gatos."
+      ],
       "fuentes": [
         "FAO ECOCROP: Allium sativum",
         "Wikipedia: https://es.wikipedia.org/wiki/Allium_sativum"
@@ -451,13 +608,7 @@
         "notas": null
       },
       "_pendiente": [
-        "resumen",
-        "ficha_tecnica.riego",
-        "ficha_tecnica.sustrato_recomendado",
-        "tutorial",
-        "companeros_cultivo",
-        "curiosidades",
-        "ojo"
+        "revisar el borrador de contenido_cultivos.json contra los manuales"
       ]
     },
     {
@@ -467,7 +618,8 @@
       "ecocrop_nombre": "Solanum tuberosum",
       "categoria": "Raíces y bulbos",
       "icono": "🥔",
-      "resumen": "",
+      "resumen": "Se puede cultivar en costal o bolsa de cultivo grande, cubriendo la planta con tierra conforme crece.",
+      "es_nativa_region": false,
       "ficha_tecnica": {
         "temp_ideal_c": [
           15.0,
@@ -484,15 +636,38 @@
           160
         ],
         "maceta_min_litros": 40,
-        "profundidad_min_cm": 40,
-        "luz": "pleno_sol",
-        "riego": "",
-        "sustrato_recomendado": ""
+        "profundidad_maceta_cm": 40,
+        "luz_nivel": 4,
+        "riego_frecuencia_dias": 3,
+        "riego": "Riego regular sin encharcar; reduce el riego cuando la planta empiece a secarse.",
+        "sustrato_recomendado": "Tierra suelta con 30% de composta en un costal o bolsa de al menos 40 L."
       },
-      "tutorial": [],
+      "restricciones": {
+        "pet_safe": false,
+        "dificultad": "media"
+      },
+      "impacto_ambiental": {
+        "consumo_hidrico": "medio",
+        "atrae_polinizadores": false
+      },
+      "guia_rapida": {
+        "error_comun": "Dejar las papas expuestas a la luz: se ponen verdes y ya no se deben comer. Cúbrelas con tierra."
+      },
+      "tutorial": [
+        "Corta una papa con brotes en trozos de 2 yemas y déjalos secar un día.",
+        "Pon 15 cm de tierra en el costal y siembra los trozos a 10 cm de profundidad.",
+        "Cuando la planta mida 20 cm, cúbrela con tierra dejando solo las puntas (aporcar); repite 2 o 3 veces.",
+        "Cosecha cuando la planta se seque, a los 90-120 días."
+      ],
       "companeros_cultivo": [],
-      "curiosidades": [],
-      "ojo": [],
+      "curiosidades": [
+        "Viene de los Andes de Sudamérica y llegó a Europa en el siglo XVI."
+      ],
+      "ojo": [
+        "No comas papas verdes ni brotes: tienen solanina, que es tóxica.",
+        "No la siembres junto al jitomate: comparten el tizón tardío.",
+        "Las hojas y tallos son tóxicos para perros y gatos."
+      ],
       "fuentes": [
         "FAO ECOCROP: Solanum tuberosum",
         "Wikipedia: https://es.wikipedia.org/wiki/Solanum_tuberosum"
@@ -517,13 +692,7 @@
         "notas": null
       },
       "_pendiente": [
-        "resumen",
-        "ficha_tecnica.riego",
-        "ficha_tecnica.sustrato_recomendado",
-        "tutorial",
-        "companeros_cultivo",
-        "curiosidades",
-        "ojo"
+        "revisar el borrador de contenido_cultivos.json contra los manuales"
       ]
     },
     {
@@ -533,7 +702,8 @@
       "ecocrop_nombre": "Lycopersicon esculentum",
       "categoria": "Frutos",
       "icono": "🍅",
-      "resumen": "",
+      "resumen": "El cultivo estrella del huerto en casa; requiere sol directo y soporte para crecer vertical.",
+      "es_nativa_region": true,
       "ficha_tecnica": {
         "temp_ideal_c": [
           20.0,
@@ -550,15 +720,51 @@
           150
         ],
         "maceta_min_litros": 20,
-        "profundidad_min_cm": 30,
-        "luz": "pleno_sol",
-        "riego": "",
-        "sustrato_recomendado": ""
+        "profundidad_maceta_cm": 30,
+        "luz_nivel": 4,
+        "riego_frecuencia_dias": 2,
+        "riego": "Constante en la base, sin mojar las hojas ni encharcar; en calor puede necesitar riego diario.",
+        "sustrato_recomendado": "50% tierra negra, 30% composta o humus de lombriz, 20% perlita o tepojal."
       },
-      "tutorial": [],
-      "companeros_cultivo": [],
-      "curiosidades": [],
-      "ojo": [],
+      "restricciones": {
+        "pet_safe": false,
+        "dificultad": "media"
+      },
+      "impacto_ambiental": {
+        "consumo_hidrico": "alto",
+        "atrae_polinizadores": true
+      },
+      "guia_rapida": {
+        "error_comun": "Regar de forma irregular: el fruto se raja y aparecen hongos."
+      },
+      "tutorial": [
+        "Siembra 2 semillas a 0.5 cm de profundidad en un semillero húmedo; germinan en 6 a 10 días.",
+        "Cuando la plántula mida 10-15 cm y tenga 4 hojas verdaderas, trasplántala a una maceta de al menos 20 L.",
+        "Coloca un tutor desde el inicio y quita los brotes que salen entre el tallo y las ramas.",
+        "Cosecha cuando el fruto tenga color rojo uniforme pero siga firme."
+      ],
+      "companeros_cultivo": [
+        {
+          "id": "albahaca",
+          "nombre": "Albahaca",
+          "beneficio": "Se dice que ayuda a repeler mosca blanca y pulgones.",
+          "evidencia": "popular"
+        },
+        {
+          "id": "zanahoria",
+          "nombre": "Zanahoria",
+          "beneficio": "Aprovecha la parte baja de la maceta sin competir por luz.",
+          "evidencia": "popular"
+        }
+      ],
+      "curiosidades": [
+        "Su nombre viene del náhuatl xitomatl.",
+        "Aunque en la cocina se usa como verdura, botánicamente es una fruta."
+      ],
+      "ojo": [
+        "Las hojas y los tallos no se comen y son tóxicos para perros y gatos.",
+        "No lo siembres junto a la papa: comparten el tizón tardío."
+      ],
       "fuentes": [
         "FAO ECOCROP: Lycopersicon esculentum",
         "Wikipedia: https://es.wikipedia.org/wiki/Solanum_lycopersicum"
@@ -584,13 +790,7 @@
         "notas": null
       },
       "_pendiente": [
-        "resumen",
-        "ficha_tecnica.riego",
-        "ficha_tecnica.sustrato_recomendado",
-        "tutorial",
-        "companeros_cultivo",
-        "curiosidades",
-        "ojo"
+        "revisar el borrador de contenido_cultivos.json contra los manuales"
       ]
     },
     {
@@ -600,7 +800,8 @@
       "ecocrop_nombre": "Physalis philadelphica",
       "categoria": "Frutos",
       "icono": "🍅",
-      "resumen": "",
+      "resumen": "Base de la salsa verde; crece rápido y produce mucho si tiene compañía de otra planta.",
+      "es_nativa_region": true,
       "ficha_tecnica": {
         "temp_ideal_c": [
           15.0,
@@ -617,15 +818,44 @@
           120
         ],
         "maceta_min_litros": 20,
-        "profundidad_min_cm": 30,
-        "luz": "pleno_sol",
-        "riego": "",
-        "sustrato_recomendado": ""
+        "profundidad_maceta_cm": 30,
+        "luz_nivel": 4,
+        "riego_frecuencia_dias": 3,
+        "riego": "Riego regular; tolera algo de sequía cuando ya está grande.",
+        "sustrato_recomendado": "50% tierra negra, 30% composta, 20% tepojal."
       },
-      "tutorial": [],
-      "companeros_cultivo": [],
-      "curiosidades": [],
-      "ojo": [],
+      "restricciones": {
+        "pet_safe": false,
+        "dificultad": "media"
+      },
+      "impacto_ambiental": {
+        "consumo_hidrico": "medio",
+        "atrae_polinizadores": true
+      },
+      "guia_rapida": {
+        "error_comun": "Sembrar una sola planta: necesita otra cerca para polinizarse y dar fruto."
+      },
+      "tutorial": [
+        "Siembra en semillero a 0.5 cm; germina en 7 a 10 días.",
+        "Trasplanta cuando mida 15 cm; siembra al menos dos plantas cerca.",
+        "Ponle tutor: las ramas se abren y se quiebran con el peso.",
+        "Cosecha cuando el fruto llene y empiece a romper la cáscara de papel."
+      ],
+      "companeros_cultivo": [
+        {
+          "id": "albahaca",
+          "nombre": "Albahaca",
+          "beneficio": "Comparte sol y riego parecido.",
+          "evidencia": "popular"
+        }
+      ],
+      "curiosidades": [
+        "Su nombre viene del náhuatl tomatl.",
+        "Casi no se poliniza solo: necesita otra planta cerca para dar fruto."
+      ],
+      "ojo": [
+        "Las hojas no se comen y son tóxicas para mascotas."
+      ],
       "fuentes": [
         "FAO ECOCROP: Physalis philadelphica",
         "Wikipedia: https://es.wikipedia.org/wiki/Physalis_philadelphica"
@@ -650,13 +880,7 @@
         "notas": null
       },
       "_pendiente": [
-        "resumen",
-        "ficha_tecnica.riego",
-        "ficha_tecnica.sustrato_recomendado",
-        "tutorial",
-        "companeros_cultivo",
-        "curiosidades",
-        "ojo"
+        "revisar el borrador de contenido_cultivos.json contra los manuales"
       ]
     },
     {
@@ -666,7 +890,8 @@
       "ecocrop_nombre": "Capsicum annuum",
       "categoria": "Frutos",
       "icono": "🌶️",
-      "resumen": "",
+      "resumen": "Chile muy productivo en maceta mediana; necesita calor y mucho sol.",
+      "es_nativa_region": true,
       "ficha_tecnica": {
         "temp_ideal_c": [
           17.0,
@@ -683,15 +908,44 @@
           180
         ],
         "maceta_min_litros": 15,
-        "profundidad_min_cm": 25,
-        "luz": "pleno_sol",
-        "riego": "",
-        "sustrato_recomendado": ""
+        "profundidad_maceta_cm": 25,
+        "luz_nivel": 4,
+        "riego_frecuencia_dias": 3,
+        "riego": "Riego moderado; deja secar un poco la superficie entre riegos.",
+        "sustrato_recomendado": "50% tierra negra, 30% composta, 20% tepojal."
       },
-      "tutorial": [],
-      "companeros_cultivo": [],
-      "curiosidades": [],
-      "ojo": [],
+      "restricciones": {
+        "pet_safe": false,
+        "dificultad": "media"
+      },
+      "impacto_ambiental": {
+        "consumo_hidrico": "medio",
+        "atrae_polinizadores": true
+      },
+      "guia_rapida": {
+        "error_comun": "Regar de más: se pudren las raíces y se caen las flores."
+      },
+      "tutorial": [
+        "Siembra en semillero a 0.5 cm en un lugar cálido; germina en 10 a 20 días.",
+        "Trasplanta cuando tenga 4 a 6 hojas.",
+        "Ponlo a pleno sol.",
+        "Cosecha los chiles verdes o espera a que maduren rojos (pican más)."
+      ],
+      "companeros_cultivo": [
+        {
+          "id": "albahaca",
+          "nombre": "Albahaca",
+          "beneficio": "Comparte sol y riego parecido.",
+          "evidencia": "popular"
+        }
+      ],
+      "curiosidades": [
+        "El picor (capsaicina) aleja a los mamíferos, pero las aves no lo sienten y dispersan las semillas.",
+        "El chile (Capsicum annuum) se domesticó en México."
+      ],
+      "ojo": [
+        "Lávate las manos después de manipularlo y no te toques los ojos."
+      ],
       "fuentes": [
         "FAO ECOCROP: Capsicum annuum",
         "Wikipedia: https://es.wikipedia.org/wiki/Capsicum_annuum"
@@ -715,13 +969,7 @@
         "notas": null
       },
       "_pendiente": [
-        "resumen",
-        "ficha_tecnica.riego",
-        "ficha_tecnica.sustrato_recomendado",
-        "tutorial",
-        "companeros_cultivo",
-        "curiosidades",
-        "ojo"
+        "revisar el borrador de contenido_cultivos.json contra los manuales"
       ]
     },
     {
@@ -731,7 +979,8 @@
       "ecocrop_nombre": "Capsicum chinense",
       "categoria": "Frutos",
       "icono": "🌶️",
-      "resumen": "",
+      "resumen": "Uno de los chiles más picosos; necesita calor constante y es ideal para zonas cálidas.",
+      "es_nativa_region": false,
       "ficha_tecnica": {
         "temp_ideal_c": [
           20.0,
@@ -748,15 +997,44 @@
           150
         ],
         "maceta_min_litros": 15,
-        "profundidad_min_cm": 25,
-        "luz": "pleno_sol",
-        "riego": "",
-        "sustrato_recomendado": ""
+        "profundidad_maceta_cm": 25,
+        "luz_nivel": 4,
+        "riego_frecuencia_dias": 3,
+        "riego": "Riego moderado; sin encharcar.",
+        "sustrato_recomendado": "50% tierra negra, 30% composta, 20% tepojal."
       },
-      "tutorial": [],
-      "companeros_cultivo": [],
-      "curiosidades": [],
-      "ojo": [],
+      "restricciones": {
+        "pet_safe": false,
+        "dificultad": "dificil"
+      },
+      "impacto_ambiental": {
+        "consumo_hidrico": "medio",
+        "atrae_polinizadores": true
+      },
+      "guia_rapida": {
+        "error_comun": "Esperar frutos en temporada fría: necesita calor constante para crecer y madurar."
+      },
+      "tutorial": [
+        "Siembra en semillero a 0.5 cm en un lugar muy cálido (25-30 °C); puede tardar 2 a 4 semanas en germinar.",
+        "Trasplanta cuando tenga 4 a 6 hojas.",
+        "Ponlo a pleno sol y protégelo del frío.",
+        "Cosecha cuando los frutos tomen su color final (naranja o rojo)."
+      ],
+      "companeros_cultivo": [
+        {
+          "id": "albahaca",
+          "nombre": "Albahaca",
+          "beneficio": "Comparte sol y riego parecido.",
+          "evidencia": "popular"
+        }
+      ],
+      "curiosidades": [
+        "El chile habanero de la Península de Yucatán tiene denominación de origen.",
+        "Su especie (Capsicum chinense) viene de la Amazonía, no de México."
+      ],
+      "ojo": [
+        "Usa guantes al cortarlo y no te toques los ojos."
+      ],
       "fuentes": [
         "FAO ECOCROP: Capsicum chinense",
         "Wikipedia: https://es.wikipedia.org/wiki/Capsicum_chinense"
@@ -780,13 +1058,7 @@
         "notas": null
       },
       "_pendiente": [
-        "resumen",
-        "ficha_tecnica.riego",
-        "ficha_tecnica.sustrato_recomendado",
-        "tutorial",
-        "companeros_cultivo",
-        "curiosidades",
-        "ojo"
+        "revisar el borrador de contenido_cultivos.json contra los manuales"
       ]
     },
     {
@@ -796,7 +1068,8 @@
       "ecocrop_nombre": "Cucurbita pepo",
       "categoria": "Frutos",
       "icono": "🥒",
-      "resumen": "",
+      "resumen": "Muy productiva pero ocupa espacio: necesita una maceta grande o un costal.",
+      "es_nativa_region": true,
       "ficha_tecnica": {
         "temp_ideal_c": [
           17.0,
@@ -813,15 +1086,43 @@
           100
         ],
         "maceta_min_litros": 40,
-        "profundidad_min_cm": 35,
-        "luz": "pleno_sol",
-        "riego": "",
-        "sustrato_recomendado": ""
+        "profundidad_maceta_cm": 35,
+        "luz_nivel": 4,
+        "riego_frecuencia_dias": 2,
+        "riego": "Riego abundante en la base, sin mojar las hojas (les sale cenicilla).",
+        "sustrato_recomendado": "50% tierra negra, 40% composta, 10% tepojal, en maceta de 40 L o más."
       },
-      "tutorial": [],
-      "companeros_cultivo": [],
-      "curiosidades": [],
-      "ojo": [],
+      "restricciones": {
+        "pet_safe": true,
+        "dificultad": "media"
+      },
+      "impacto_ambiental": {
+        "consumo_hidrico": "alto",
+        "atrae_polinizadores": true
+      },
+      "guia_rapida": {
+        "error_comun": "Usar una maceta chica: necesita al menos 40 L para dar frutos."
+      },
+      "tutorial": [
+        "Siembra 2 semillas directo a 2-3 cm de profundidad y deja la más fuerte.",
+        "Ponla a pleno sol.",
+        "Si no da fruto, pasa con un pincel el polen de la flor macho a la hembra (la que tiene la calabacita chiquita).",
+        "Cosecha cuando mida 15-20 cm; si las dejas crecer, la planta produce menos."
+      ],
+      "companeros_cultivo": [
+        {
+          "id": "frijol_ejote",
+          "nombre": "Frijol de mata (ejote)",
+          "beneficio": "Juntos forman parte de la milpa: el frijol aporta nitrógeno al suelo.",
+          "evidencia": "comprobada"
+        }
+      ],
+      "curiosidades": [
+        "La calabaza (Cucurbita pepo) fue de las primeras plantas domesticadas en México, hace unos 10,000 años."
+      ],
+      "ojo": [
+        "Si una calabacita sabe muy amarga, no la comas: puede tener cucurbitacinas."
+      ],
       "fuentes": [
         "FAO ECOCROP: Cucurbita pepo",
         "Wikipedia: https://es.wikipedia.org/wiki/Cucurbita_pepo"
@@ -846,13 +1147,7 @@
         "notas": null
       },
       "_pendiente": [
-        "resumen",
-        "ficha_tecnica.riego",
-        "ficha_tecnica.sustrato_recomendado",
-        "tutorial",
-        "companeros_cultivo",
-        "curiosidades",
-        "ojo"
+        "revisar el borrador de contenido_cultivos.json contra los manuales"
       ]
     },
     {
@@ -862,7 +1157,8 @@
       "ecocrop_nombre": "Cucumis sativus",
       "categoria": "Frutos",
       "icono": "🥒",
-      "resumen": "",
+      "resumen": "Trepador y rápido; con una guía vertical cabe bien en balcón.",
+      "es_nativa_region": false,
       "ficha_tecnica": {
         "temp_ideal_c": [
           18.0,
@@ -879,15 +1175,36 @@
           120
         ],
         "maceta_min_litros": 20,
-        "profundidad_min_cm": 30,
-        "luz": "pleno_sol",
-        "riego": "",
-        "sustrato_recomendado": ""
+        "profundidad_maceta_cm": 30,
+        "luz_nivel": 4,
+        "riego_frecuencia_dias": 1,
+        "riego": "Riego abundante y constante; con sequía el fruto sale amargo.",
+        "sustrato_recomendado": "50% tierra negra, 40% composta, 10% tepojal."
       },
-      "tutorial": [],
+      "restricciones": {
+        "pet_safe": true,
+        "dificultad": "media"
+      },
+      "impacto_ambiental": {
+        "consumo_hidrico": "alto",
+        "atrae_polinizadores": true
+      },
+      "guia_rapida": {
+        "error_comun": "No ponerle guía: los frutos se deforman y se pudren al tocar la tierra."
+      },
+      "tutorial": [
+        "Siembra 2 semillas directo a 2 cm de profundidad.",
+        "Coloca una malla o guía para que trepe.",
+        "Ponlo a pleno sol.",
+        "Cosecha seguido, cuando el fruto sea firme y verde; así la planta da más."
+      ],
       "companeros_cultivo": [],
-      "curiosidades": [],
-      "ojo": [],
+      "curiosidades": [
+        "Es alrededor de 95% agua."
+      ],
+      "ojo": [
+        "Si sabe muy amargo, no lo comas."
+      ],
       "fuentes": [
         "FAO ECOCROP: Cucumis sativus",
         "Wikipedia: https://es.wikipedia.org/wiki/Cucumis_sativus"
@@ -912,13 +1229,7 @@
         "notas": null
       },
       "_pendiente": [
-        "resumen",
-        "ficha_tecnica.riego",
-        "ficha_tecnica.sustrato_recomendado",
-        "tutorial",
-        "companeros_cultivo",
-        "curiosidades",
-        "ojo"
+        "revisar el borrador de contenido_cultivos.json contra los manuales"
       ]
     },
     {
@@ -928,7 +1239,8 @@
       "ecocrop_nombre": "Phaseolus vulgaris",
       "categoria": "Frutos",
       "icono": "🫘",
-      "resumen": "",
+      "resumen": "Frijol de mata para cosechar ejotes tiernos; no necesita guía y mejora el suelo.",
+      "es_nativa_region": true,
       "ficha_tecnica": {
         "temp_ideal_c": [
           16.0,
@@ -945,15 +1257,44 @@
           120
         ],
         "maceta_min_litros": 10,
-        "profundidad_min_cm": 20,
-        "luz": "pleno_sol",
-        "riego": "",
-        "sustrato_recomendado": ""
+        "profundidad_maceta_cm": 20,
+        "luz_nivel": 4,
+        "riego_frecuencia_dias": 3,
+        "riego": "Riego moderado; evita mojar las hojas y las flores.",
+        "sustrato_recomendado": "Tierra negra con 20% de composta; no necesita mucho abono."
       },
-      "tutorial": [],
-      "companeros_cultivo": [],
-      "curiosidades": [],
-      "ojo": [],
+      "restricciones": {
+        "pet_safe": true,
+        "dificultad": "facil"
+      },
+      "impacto_ambiental": {
+        "consumo_hidrico": "medio",
+        "atrae_polinizadores": true
+      },
+      "guia_rapida": {
+        "error_comun": "Abonar con mucho nitrógeno: da muchas hojas y pocas vainas."
+      },
+      "tutorial": [
+        "Siembra 2 o 3 semillas directo a 3 cm de profundidad (no le gusta el trasplante).",
+        "Deja una planta cada 10-15 cm.",
+        "Ponlo a pleno sol.",
+        "Cosecha los ejotes tiernos a los 55-65 días, antes de que se marquen los granos."
+      ],
+      "companeros_cultivo": [
+        {
+          "id": "calabacita",
+          "nombre": "Calabacita",
+          "beneficio": "Juntos forman parte de la milpa.",
+          "evidencia": "comprobada"
+        }
+      ],
+      "curiosidades": [
+        "El frijol se domesticó en Mesoamérica y es parte de la milpa, junto con el maíz y la calabaza.",
+        "Sus raíces se asocian con bacterias que fijan nitrógeno del aire."
+      ],
+      "ojo": [
+        "No comas el frijol crudo: tiene lectinas. Cuécelo bien."
+      ],
       "fuentes": [
         "FAO ECOCROP: Phaseolus vulgaris",
         "Wikipedia: https://es.wikipedia.org/wiki/Phaseolus_vulgaris"
@@ -979,13 +1320,7 @@
         "notas": null
       },
       "_pendiente": [
-        "resumen",
-        "ficha_tecnica.riego",
-        "ficha_tecnica.sustrato_recomendado",
-        "tutorial",
-        "companeros_cultivo",
-        "curiosidades",
-        "ojo"
+        "revisar el borrador de contenido_cultivos.json contra los manuales"
       ]
     },
     {
@@ -995,7 +1330,8 @@
       "ecocrop_nombre": "Pisum sativum",
       "categoria": "Frutos",
       "icono": "🫛",
-      "resumen": "",
+      "resumen": "Trepador de clima fresco; da vainas dulces y casi no pide abono.",
+      "es_nativa_region": false,
       "ficha_tecnica": {
         "temp_ideal_c": [
           10.0,
@@ -1012,14 +1348,40 @@
           140
         ],
         "maceta_min_litros": 10,
-        "profundidad_min_cm": 20,
-        "luz": "pleno_sol",
-        "riego": "",
-        "sustrato_recomendado": ""
+        "profundidad_maceta_cm": 20,
+        "luz_nivel": 4,
+        "riego_frecuencia_dias": 3,
+        "riego": "Riego moderado; más cuando florece y forma vainas.",
+        "sustrato_recomendado": "Tierra negra con 20% de composta y buen drenaje."
       },
-      "tutorial": [],
-      "companeros_cultivo": [],
-      "curiosidades": [],
+      "restricciones": {
+        "pet_safe": true,
+        "dificultad": "media"
+      },
+      "impacto_ambiental": {
+        "consumo_hidrico": "medio",
+        "atrae_polinizadores": false
+      },
+      "guia_rapida": {
+        "error_comun": "Sembrarlo en pleno calor: la planta se seca antes de dar vainas."
+      },
+      "tutorial": [
+        "Remoja las semillas una noche y siémbralas a 3 cm de profundidad.",
+        "Coloca una malla o hilos para que trepe.",
+        "Siémbralo en la temporada fresca.",
+        "Cosecha las vainas cuando se llenen los granos y sigan verdes."
+      ],
+      "companeros_cultivo": [
+        {
+          "id": "zanahoria",
+          "nombre": "Zanahoria",
+          "beneficio": "Ocupan distinta profundidad de la maceta.",
+          "evidencia": "popular"
+        }
+      ],
+      "curiosidades": [
+        "Gregor Mendel usó chícharos en sus experimentos para descubrir las leyes de la herencia."
+      ],
       "ojo": [],
       "fuentes": [
         "FAO ECOCROP: Pisum sativum",
@@ -1045,13 +1407,7 @@
         "notas": null
       },
       "_pendiente": [
-        "resumen",
-        "ficha_tecnica.riego",
-        "ficha_tecnica.sustrato_recomendado",
-        "tutorial",
-        "companeros_cultivo",
-        "curiosidades",
-        "ojo"
+        "revisar el borrador de contenido_cultivos.json contra los manuales"
       ]
     },
     {
@@ -1061,7 +1417,8 @@
       "ecocrop_nombre": "Fragaria x ananassa",
       "categoria": "Frutos",
       "icono": "🍓",
-      "resumen": "",
+      "resumen": "Perenne que vive varios años en maceta y da fruto en la temporada fresca.",
+      "es_nativa_region": false,
       "ficha_tecnica": {
         "temp_ideal_c": [
           11.0,
@@ -1078,14 +1435,46 @@
           180
         ],
         "maceta_min_litros": 3,
-        "profundidad_min_cm": 15,
-        "luz": "pleno_sol",
-        "riego": "",
-        "sustrato_recomendado": ""
+        "profundidad_maceta_cm": 15,
+        "luz_nivel": 4,
+        "riego_frecuencia_dias": 2,
+        "riego": "Riego frecuente sin mojar los frutos.",
+        "sustrato_recomendado": "Tierra negra con 30% de composta y 20% de tepojal; un poco ácida."
       },
-      "tutorial": [],
-      "companeros_cultivo": [],
-      "curiosidades": [],
+      "restricciones": {
+        "pet_safe": true,
+        "dificultad": "media"
+      },
+      "impacto_ambiental": {
+        "consumo_hidrico": "medio",
+        "atrae_polinizadores": true
+      },
+      "guia_rapida": {
+        "error_comun": "Enterrar la corona (el centro de la planta): se pudre. Déjala al ras de la tierra."
+      },
+      "tutorial": [
+        "Compra una planta o un estolón enraizado (de semilla es lento).",
+        "Plántala con la corona (el centro) al ras de la tierra.",
+        "Ponla a pleno sol.",
+        "Quita los estolones si quieres más fruto; cosecha cuando estén rojas por completo."
+      ],
+      "companeros_cultivo": [
+        {
+          "id": "espinaca",
+          "nombre": "Espinaca",
+          "beneficio": "Comparten maceta sin competir mucho por la luz.",
+          "evidencia": "popular"
+        },
+        {
+          "id": "ajo",
+          "nombre": "Ajo",
+          "beneficio": "Se dice que su olor aleja algunas plagas.",
+          "evidencia": "popular"
+        }
+      ],
+      "curiosidades": [
+        "Los puntitos de afuera no son semillas: cada uno es un pequeño fruto (aquenio)."
+      ],
       "ojo": [],
       "fuentes": [
         "FAO ECOCROP: Fragaria x ananassa",
@@ -1111,13 +1500,7 @@
         "notas": null
       },
       "_pendiente": [
-        "resumen",
-        "ficha_tecnica.riego",
-        "ficha_tecnica.sustrato_recomendado",
-        "tutorial",
-        "companeros_cultivo",
-        "curiosidades",
-        "ojo"
+        "revisar el borrador de contenido_cultivos.json contra los manuales"
       ]
     },
     {
@@ -1127,7 +1510,8 @@
       "ecocrop_nombre": "Coriandrum sativum",
       "categoria": "Hierbas",
       "icono": "🌿",
-      "resumen": "",
+      "resumen": "Hierba rápida de clima fresco; con calor florece pronto, así que conviene sembrarlo seguido.",
+      "es_nativa_region": false,
       "ficha_tecnica": {
         "temp_ideal_c": [
           15.0,
@@ -1144,14 +1528,34 @@
           90
         ],
         "maceta_min_litros": 5,
-        "profundidad_min_cm": 20,
-        "luz": "media_sombra",
-        "riego": "",
-        "sustrato_recomendado": ""
+        "profundidad_maceta_cm": 20,
+        "luz_nivel": 3,
+        "riego_frecuencia_dias": 2,
+        "riego": "Humedad constante sin encharcar.",
+        "sustrato_recomendado": "Tierra negra con 20% de composta, suelta."
       },
-      "tutorial": [],
+      "restricciones": {
+        "pet_safe": true,
+        "dificultad": "facil"
+      },
+      "impacto_ambiental": {
+        "consumo_hidrico": "medio",
+        "atrae_polinizadores": true
+      },
+      "guia_rapida": {
+        "error_comun": "Trasplantarlo: no le gusta que le muevan la raíz. Siémbralo directo en su maceta."
+      },
+      "tutorial": [
+        "Frota las semillas para partirlas en dos; así germinan mejor.",
+        "Siembra directo a 1 cm de profundidad (no le gusta el trasplante).",
+        "Ponlo con sol de mañana y sombra en la tarde.",
+        "Corta las hojas desde los 40 días y vuelve a sembrar cada 3 semanas para tener siempre."
+      ],
       "companeros_cultivo": [],
-      "curiosidades": [],
+      "curiosidades": [
+        "La semilla seca es una especia llamada coriandro.",
+        "A algunas personas les sabe a jabón por una variante genética en su olfato."
+      ],
       "ojo": [],
       "fuentes": [
         "FAO ECOCROP: Coriandrum sativum",
@@ -1177,13 +1581,7 @@
         "notas": null
       },
       "_pendiente": [
-        "resumen",
-        "ficha_tecnica.riego",
-        "ficha_tecnica.sustrato_recomendado",
-        "tutorial",
-        "companeros_cultivo",
-        "curiosidades",
-        "ojo"
+        "revisar el borrador de contenido_cultivos.json contra los manuales"
       ]
     },
     {
@@ -1193,7 +1591,8 @@
       "ecocrop_nombre": "Petroselinum crispum",
       "categoria": "Hierbas",
       "icono": "🌿",
-      "resumen": "",
+      "resumen": "Hierba de crecimiento lento al inicio pero que da hojas durante muchos meses.",
+      "es_nativa_region": false,
       "ficha_tecnica": {
         "temp_ideal_c": [
           11.0,
@@ -1210,15 +1609,43 @@
           150
         ],
         "maceta_min_litros": 5,
-        "profundidad_min_cm": 20,
-        "luz": "media_sombra",
-        "riego": "",
-        "sustrato_recomendado": ""
+        "profundidad_maceta_cm": 20,
+        "luz_nivel": 3,
+        "riego_frecuencia_dias": 3,
+        "riego": "Riego regular; la tierra no debe secarse por completo.",
+        "sustrato_recomendado": "Tierra negra con 30% de composta."
       },
-      "tutorial": [],
-      "companeros_cultivo": [],
-      "curiosidades": [],
-      "ojo": [],
+      "restricciones": {
+        "pet_safe": false,
+        "dificultad": "media"
+      },
+      "impacto_ambiental": {
+        "consumo_hidrico": "medio",
+        "atrae_polinizadores": false
+      },
+      "guia_rapida": {
+        "error_comun": "Desesperarse: la semilla tarda de 2 a 4 semanas en germinar."
+      },
+      "tutorial": [
+        "Remoja la semilla 24 horas y siémbrala a 0.5 cm de profundidad.",
+        "Ten paciencia: tarda de 2 a 4 semanas en germinar.",
+        "Ponlo con sol de mañana o media sombra.",
+        "Corta los tallos de afuera desde la base."
+      ],
+      "companeros_cultivo": [
+        {
+          "id": "jitomate",
+          "nombre": "Jitomate",
+          "beneficio": "Comparten maceta grande sin competir mucho.",
+          "evidencia": "popular"
+        }
+      ],
+      "curiosidades": [
+        "Es bianual: el segundo año florece y deja de dar tantas hojas."
+      ],
+      "ojo": [
+        "Es tóxico para perros y gatos en cantidad."
+      ],
       "fuentes": [
         "FAO ECOCROP: Petroselinum crispum",
         "Wikipedia: https://es.wikipedia.org/wiki/Petroselinum_crispum"
@@ -1242,13 +1669,7 @@
         "notas": null
       },
       "_pendiente": [
-        "resumen",
-        "ficha_tecnica.riego",
-        "ficha_tecnica.sustrato_recomendado",
-        "tutorial",
-        "companeros_cultivo",
-        "curiosidades",
-        "ojo"
+        "revisar el borrador de contenido_cultivos.json contra los manuales"
       ]
     },
     {
@@ -1258,7 +1679,8 @@
       "ecocrop_nombre": "Ocimum basilicum",
       "categoria": "Hierbas",
       "icono": "🌿",
-      "resumen": "",
+      "resumen": "Hierba aromática de clima cálido; si la despuntas, se pone frondosa.",
+      "es_nativa_region": false,
       "ficha_tecnica": {
         "temp_ideal_c": [
           18.0,
@@ -1275,15 +1697,49 @@
           120
         ],
         "maceta_min_litros": 3,
-        "profundidad_min_cm": 15,
-        "luz": "pleno_sol",
-        "riego": "",
-        "sustrato_recomendado": ""
+        "profundidad_maceta_cm": 15,
+        "luz_nivel": 4,
+        "riego_frecuencia_dias": 2,
+        "riego": "Riego frecuente en la base; no tolera encharcamiento.",
+        "sustrato_recomendado": "Tierra negra con 30% de composta y 10% de tepojal."
       },
-      "tutorial": [],
-      "companeros_cultivo": [],
-      "curiosidades": [],
-      "ojo": [],
+      "restricciones": {
+        "pet_safe": true,
+        "dificultad": "facil"
+      },
+      "impacto_ambiental": {
+        "consumo_hidrico": "medio",
+        "atrae_polinizadores": true
+      },
+      "guia_rapida": {
+        "error_comun": "Dejar que florezca: corta las puntas para que dé más hojas."
+      },
+      "tutorial": [
+        "Siembra a 0.5 cm de profundidad con calor; germina en 5 a 10 días.",
+        "Trasplanta cuando tenga 4 hojas.",
+        "Ponla a pleno sol.",
+        "Corta las puntas por encima de un par de hojas y quita las flores para que dé más hojas."
+      ],
+      "companeros_cultivo": [
+        {
+          "id": "jitomate",
+          "nombre": "Jitomate",
+          "beneficio": "Se dice que ayuda a repeler mosca blanca y pulgones.",
+          "evidencia": "popular"
+        },
+        {
+          "id": "chile_serrano",
+          "nombre": "Chile serrano / jalapeño",
+          "beneficio": "Comparte sol y riego parecido.",
+          "evidencia": "popular"
+        }
+      ],
+      "curiosidades": [
+        "Es de la misma familia que la menta y el romero (Lamiáceas)."
+      ],
+      "ojo": [
+        "No resiste heladas: métela en noches frías."
+      ],
       "fuentes": [
         "FAO ECOCROP: Ocimum basilicum",
         "Wikipedia: https://es.wikipedia.org/wiki/Ocimum_basilicum"
@@ -1308,13 +1764,7 @@
         "notas": null
       },
       "_pendiente": [
-        "resumen",
-        "ficha_tecnica.riego",
-        "ficha_tecnica.sustrato_recomendado",
-        "tutorial",
-        "companeros_cultivo",
-        "curiosidades",
-        "ojo"
+        "revisar el borrador de contenido_cultivos.json contra los manuales"
       ]
     },
     {
@@ -1324,7 +1774,8 @@
       "ecocrop_nombre": "Chenopodium ambrosioides",
       "categoria": "Hierbas",
       "icono": "🌿",
-      "resumen": "",
+      "resumen": "Hierba mexicana para los frijoles y los esquites; crece sola y resiste casi todo.",
+      "es_nativa_region": true,
       "ficha_tecnica": {
         "temp_ideal_c": [
           15.0,
@@ -1341,15 +1792,38 @@
           120
         ],
         "maceta_min_litros": 10,
-        "profundidad_min_cm": 20,
-        "luz": "pleno_sol",
-        "riego": "",
-        "sustrato_recomendado": ""
+        "profundidad_maceta_cm": 20,
+        "luz_nivel": 4,
+        "riego_frecuencia_dias": 4,
+        "riego": "Riego escaso; aguanta la sequía.",
+        "sustrato_recomendado": "Cualquier tierra con buen drenaje."
       },
-      "tutorial": [],
+      "restricciones": {
+        "pet_safe": false,
+        "dificultad": "facil"
+      },
+      "impacto_ambiental": {
+        "consumo_hidrico": "bajo",
+        "atrae_polinizadores": false
+      },
+      "guia_rapida": {
+        "error_comun": "Dejar que tire semilla: se vuelve invasivo en las demás macetas."
+      },
+      "tutorial": [
+        "Esparce las semillas en la superficie y cúbrelas apenas.",
+        "Ralea a una planta cada 20 cm.",
+        "Ponlo a pleno sol.",
+        "Corta las puntas tiernas; quita las flores para que no se riegue por todas las macetas."
+      ],
       "companeros_cultivo": [],
-      "curiosidades": [],
-      "ojo": [],
+      "curiosidades": [
+        "Su nombre viene del náhuatl epazotl.",
+        "Tradicionalmente se le pone a los frijoles."
+      ],
+      "ojo": [
+        "Úsalo solo como condimento: en grandes cantidades es tóxico.",
+        "Es tóxico para mascotas."
+      ],
       "fuentes": [
         "FAO ECOCROP: Chenopodium ambrosioides",
         "Wikipedia: https://es.wikipedia.org/wiki/Dysphania_ambrosioides"
@@ -1373,13 +1847,7 @@
         "notas": null
       },
       "_pendiente": [
-        "resumen",
-        "ficha_tecnica.riego",
-        "ficha_tecnica.sustrato_recomendado",
-        "tutorial",
-        "companeros_cultivo",
-        "curiosidades",
-        "ojo"
+        "revisar el borrador de contenido_cultivos.json contra los manuales"
       ]
     },
     {
@@ -1389,7 +1857,8 @@
       "ecocrop_nombre": "Mentha arvensis var. piperascens",
       "categoria": "Hierbas",
       "icono": "🌿",
-      "resumen": "",
+      "resumen": "Menta muy fácil de propagar; crece tanto que conviene tenerla sola en su maceta.",
+      "es_nativa_region": false,
       "ficha_tecnica": {
         "temp_ideal_c": [
           10.0,
@@ -1406,15 +1875,36 @@
           120
         ],
         "maceta_min_litros": 5,
-        "profundidad_min_cm": 15,
-        "luz": "media_sombra",
-        "riego": "",
-        "sustrato_recomendado": ""
+        "profundidad_maceta_cm": 15,
+        "luz_nivel": 3,
+        "riego_frecuencia_dias": 2,
+        "riego": "Riego frecuente; le gusta la tierra húmeda.",
+        "sustrato_recomendado": "Tierra negra con 30% de composta."
       },
-      "tutorial": [],
+      "restricciones": {
+        "pet_safe": false,
+        "dificultad": "facil"
+      },
+      "impacto_ambiental": {
+        "consumo_hidrico": "alto",
+        "atrae_polinizadores": true
+      },
+      "guia_rapida": {
+        "error_comun": "Sembrarla junto a otras plantas: sus raíces invaden toda la maceta."
+      },
+      "tutorial": [
+        "Pon un tallo de 10 cm en un vaso con agua; echa raíces en 1 a 2 semanas.",
+        "Plántalo en su propia maceta.",
+        "Ponla con media sombra.",
+        "Corta las puntas seguido para que se ramifique."
+      ],
       "companeros_cultivo": [],
-      "curiosidades": [],
-      "ojo": [],
+      "curiosidades": [
+        "Se extiende por tallos subterráneos y puede invadir toda una maceta."
+      ],
+      "ojo": [
+        "Es tóxica para perros y gatos en cantidad."
+      ],
       "fuentes": [
         "FAO ECOCROP: Mentha arvensis var. piperascens",
         "Wikipedia: https://es.wikipedia.org/wiki/Mentha_spicata"
@@ -1437,13 +1927,7 @@
         "notas": "ECOCROP no tiene Mentha spicata; se usan los rangos de Mentha arvensis como aproximación."
       },
       "_pendiente": [
-        "resumen",
-        "ficha_tecnica.riego",
-        "ficha_tecnica.sustrato_recomendado",
-        "tutorial",
-        "companeros_cultivo",
-        "curiosidades",
-        "ojo"
+        "revisar el borrador de contenido_cultivos.json contra los manuales"
       ]
     },
     {
@@ -1453,7 +1937,8 @@
       "ecocrop_nombre": "Rosmarinus officinalis",
       "categoria": "Hierbas",
       "icono": "🌿",
-      "resumen": "",
+      "resumen": "Arbusto aromático perenne que aguanta sequía y vive años en maceta.",
+      "es_nativa_region": false,
       "ficha_tecnica": {
         "temp_ideal_c": [
           18.0,
@@ -1470,14 +1955,40 @@
           240
         ],
         "maceta_min_litros": 15,
-        "profundidad_min_cm": 25,
-        "luz": "pleno_sol",
-        "riego": "",
-        "sustrato_recomendado": ""
+        "profundidad_maceta_cm": 25,
+        "luz_nivel": 4,
+        "riego_frecuencia_dias": 7,
+        "riego": "Riego escaso; deja secar la tierra entre riegos.",
+        "sustrato_recomendado": "Tierra con 40% de arena o tepojal; poco abono."
       },
-      "tutorial": [],
-      "companeros_cultivo": [],
-      "curiosidades": [],
+      "restricciones": {
+        "pet_safe": true,
+        "dificultad": "facil"
+      },
+      "impacto_ambiental": {
+        "consumo_hidrico": "bajo",
+        "atrae_polinizadores": true
+      },
+      "guia_rapida": {
+        "error_comun": "Regarlo de más: se pudre la raíz. Deja secar la tierra entre riegos."
+      },
+      "tutorial": [
+        "Lo más fácil es enraizar un esqueje de 10 cm en tierra húmeda (de semilla es lento).",
+        "Trasplanta a una maceta de 15 L con buen drenaje.",
+        "Ponlo a pleno sol.",
+        "Corta ramitas cuando lo necesites, sin quitar más de un tercio de la planta."
+      ],
+      "companeros_cultivo": [
+        {
+          "id": "zanahoria",
+          "nombre": "Zanahoria",
+          "beneficio": "Se dice que su aroma confunde a algunas plagas.",
+          "evidencia": "popular"
+        }
+      ],
+      "curiosidades": [
+        "En 2017 se cambió su nombre científico a Salvia rosmarinus: es pariente de la salvia."
+      ],
       "ojo": [],
       "fuentes": [
         "FAO ECOCROP: Rosmarinus officinalis",
@@ -1502,13 +2013,7 @@
         "notas": null
       },
       "_pendiente": [
-        "resumen",
-        "ficha_tecnica.riego",
-        "ficha_tecnica.sustrato_recomendado",
-        "tutorial",
-        "companeros_cultivo",
-        "curiosidades",
-        "ojo"
+        "revisar el borrador de contenido_cultivos.json contra los manuales"
       ]
     },
     {
@@ -1518,7 +2023,8 @@
       "ecocrop_nombre": "Origanum vulgare",
       "categoria": "Hierbas",
       "icono": "🌿",
-      "resumen": "",
+      "resumen": "Hierba perenne y resistente; su sabor es más intenso con sol y poco riego.",
+      "es_nativa_region": false,
       "ficha_tecnica": {
         "temp_ideal_c": [
           17.0,
@@ -1535,15 +2041,36 @@
           180
         ],
         "maceta_min_litros": 5,
-        "profundidad_min_cm": 15,
-        "luz": "pleno_sol",
-        "riego": "",
-        "sustrato_recomendado": ""
+        "profundidad_maceta_cm": 15,
+        "luz_nivel": 4,
+        "riego_frecuencia_dias": 5,
+        "riego": "Riego escaso; no tolera el encharcamiento.",
+        "sustrato_recomendado": "Tierra con 30% de arena o tepojal; poco abono."
       },
-      "tutorial": [],
+      "restricciones": {
+        "pet_safe": false,
+        "dificultad": "facil"
+      },
+      "impacto_ambiental": {
+        "consumo_hidrico": "bajo",
+        "atrae_polinizadores": true
+      },
+      "guia_rapida": {
+        "error_comun": "Usar tierra muy húmeda o muy abonada: pierde aroma y se pudre."
+      },
+      "tutorial": [
+        "Esparce la semilla en la superficie sin enterrarla, o divide una mata ya hecha.",
+        "Trasplanta cuando mida 5 cm.",
+        "Ponlo a pleno sol.",
+        "Corta las ramas antes de que florezca para más aroma."
+      ],
       "companeros_cultivo": [],
-      "curiosidades": [],
-      "ojo": [],
+      "curiosidades": [
+        "El 'orégano mexicano' (Lippia graveolens) es otra planta distinta, aunque se use igual."
+      ],
+      "ojo": [
+        "Es tóxico para perros y gatos en cantidad."
+      ],
       "fuentes": [
         "FAO ECOCROP: Origanum vulgare",
         "Wikipedia: https://es.wikipedia.org/wiki/Origanum_vulgare"
@@ -1567,13 +2094,7 @@
         "notas": null
       },
       "_pendiente": [
-        "resumen",
-        "ficha_tecnica.riego",
-        "ficha_tecnica.sustrato_recomendado",
-        "tutorial",
-        "companeros_cultivo",
-        "curiosidades",
-        "ojo"
+        "revisar el borrador de contenido_cultivos.json contra los manuales"
       ]
     },
     {
@@ -1583,7 +2104,8 @@
       "ecocrop_nombre": "Allium schoenoprasum",
       "categoria": "Hierbas",
       "icono": "🌱",
-      "resumen": "",
+      "resumen": "Hierba perenne de hojas finas que rebrota cada vez que se corta.",
+      "es_nativa_region": false,
       "ficha_tecnica": {
         "temp_ideal_c": [
           10.0,
@@ -1600,15 +2122,43 @@
           100
         ],
         "maceta_min_litros": 3,
-        "profundidad_min_cm": 15,
-        "luz": "pleno_sol",
-        "riego": "",
-        "sustrato_recomendado": ""
+        "profundidad_maceta_cm": 15,
+        "luz_nivel": 4,
+        "riego_frecuencia_dias": 3,
+        "riego": "Riego regular.",
+        "sustrato_recomendado": "Tierra negra con 20% de composta."
       },
-      "tutorial": [],
-      "companeros_cultivo": [],
-      "curiosidades": [],
-      "ojo": [],
+      "restricciones": {
+        "pet_safe": false,
+        "dificultad": "facil"
+      },
+      "impacto_ambiental": {
+        "consumo_hidrico": "medio",
+        "atrae_polinizadores": true
+      },
+      "guia_rapida": {
+        "error_comun": "Cortarlo hasta la base: deja de 3 a 5 cm para que vuelva a crecer."
+      },
+      "tutorial": [
+        "Siembra la semilla a 0.5 cm o divide una mata.",
+        "Deja grupos de plantas cada 10 cm.",
+        "Ponlo a pleno sol.",
+        "Corta las hojas dejando 3 a 5 cm para que vuelvan a crecer."
+      ],
+      "companeros_cultivo": [
+        {
+          "id": "zanahoria",
+          "nombre": "Zanahoria",
+          "beneficio": "Se dice que su olor aleja a la mosca de la zanahoria.",
+          "evidencia": "popular"
+        }
+      ],
+      "curiosidades": [
+        "Sus flores moradas también se comen."
+      ],
+      "ojo": [
+        "Es tóxico para perros y gatos."
+      ],
       "fuentes": [
         "FAO ECOCROP: Allium schoenoprasum",
         "Wikipedia: https://es.wikipedia.org/wiki/Allium_schoenoprasum"
@@ -1628,13 +2178,7 @@
         "notas": null
       },
       "_pendiente": [
-        "resumen",
-        "ficha_tecnica.riego",
-        "ficha_tecnica.sustrato_recomendado",
-        "tutorial",
-        "companeros_cultivo",
-        "curiosidades",
-        "ojo"
+        "revisar el borrador de contenido_cultivos.json contra los manuales"
       ]
     },
     {
@@ -1644,7 +2188,8 @@
       "ecocrop_nombre": "Portulaca oleracea",
       "categoria": "Quelites y mexicanos",
       "icono": "🌱",
-      "resumen": "",
+      "resumen": "Quelite suculento y nutritivo, casi imposible de matar; ideal para calor y poca agua.",
+      "es_nativa_region": false,
       "ficha_tecnica": {
         "temp_ideal_c": [
           18.0,
@@ -1661,15 +2206,36 @@
           80
         ],
         "maceta_min_litros": 3,
-        "profundidad_min_cm": 15,
-        "luz": "pleno_sol",
-        "riego": "",
-        "sustrato_recomendado": ""
+        "profundidad_maceta_cm": 15,
+        "luz_nivel": 4,
+        "riego_frecuencia_dias": 5,
+        "riego": "Riego escaso; es suculenta y guarda agua.",
+        "sustrato_recomendado": "Tierra con 40% de arena o tepojal."
       },
-      "tutorial": [],
+      "restricciones": {
+        "pet_safe": false,
+        "dificultad": "facil"
+      },
+      "impacto_ambiental": {
+        "consumo_hidrico": "bajo",
+        "atrae_polinizadores": false
+      },
+      "guia_rapida": {
+        "error_comun": "Regarla como hortaliza: es suculenta y aguanta la sequía, con poco riego basta."
+      },
+      "tutorial": [
+        "Esparce la semilla en la superficie sin enterrarla, o planta un tallo directamente.",
+        "Ponla a pleno sol.",
+        "Riega poco.",
+        "Corta las puntas tiernas desde los 30-40 días; rebrota."
+      ],
       "companeros_cultivo": [],
-      "curiosidades": [],
-      "ojo": [],
+      "curiosidades": [
+        "Es de las verduras de hoja con más omega-3."
+      ],
+      "ojo": [
+        "Tiene oxalatos: es tóxica para perros y gatos."
+      ],
       "fuentes": [
         "FAO ECOCROP: Portulaca oleracea",
         "Wikipedia: https://es.wikipedia.org/wiki/Portulaca_oleracea"
@@ -1693,13 +2259,7 @@
         "notas": null
       },
       "_pendiente": [
-        "resumen",
-        "ficha_tecnica.riego",
-        "ficha_tecnica.sustrato_recomendado",
-        "tutorial",
-        "companeros_cultivo",
-        "curiosidades",
-        "ojo"
+        "revisar el borrador de contenido_cultivos.json contra los manuales"
       ]
     },
     {
@@ -1709,7 +2269,8 @@
       "ecocrop_nombre": "Amaranthus hypochondriacus",
       "categoria": "Quelites y mexicanos",
       "icono": "🌾",
-      "resumen": "",
+      "resumen": "Quelite y grano prehispánico; sus hojas tiernas se comen como verdura.",
+      "es_nativa_region": true,
       "ficha_tecnica": {
         "temp_ideal_c": [
           19.0,
@@ -1726,15 +2287,44 @@
           90
         ],
         "maceta_min_litros": 20,
-        "profundidad_min_cm": 30,
-        "luz": "pleno_sol",
-        "riego": "",
-        "sustrato_recomendado": ""
+        "profundidad_maceta_cm": 30,
+        "luz_nivel": 4,
+        "riego_frecuencia_dias": 4,
+        "riego": "Riego moderado; aguanta la sequía cuando ya está grande.",
+        "sustrato_recomendado": "Tierra negra con 20% de composta y buen drenaje."
       },
-      "tutorial": [],
-      "companeros_cultivo": [],
-      "curiosidades": [],
-      "ojo": [],
+      "restricciones": {
+        "pet_safe": false,
+        "dificultad": "media"
+      },
+      "impacto_ambiental": {
+        "consumo_hidrico": "bajo",
+        "atrae_polinizadores": false
+      },
+      "guia_rapida": {
+        "error_comun": "Sembrar la semilla muy hondo: es diminuta y debe ir casi en la superficie."
+      },
+      "tutorial": [
+        "Esparce la semilla (es diminuta) casi en la superficie.",
+        "Ralea a una planta cada 20 cm.",
+        "Ponlo a pleno sol y en un lugar protegido del viento.",
+        "Cosecha las hojas tiernas a los 30-45 días o espera la espiga para el grano."
+      ],
+      "companeros_cultivo": [
+        {
+          "id": "frijol_ejote",
+          "nombre": "Frijol de mata (ejote)",
+          "beneficio": "Se cultivaban juntos en la milpa tradicional.",
+          "evidencia": "popular"
+        }
+      ],
+      "curiosidades": [
+        "Con su grano reventado y miel se hacen las alegrías.",
+        "En náhuatl se llama huauhtli."
+      ],
+      "ojo": [
+        "Cocina las hojas antes de comerlas."
+      ],
       "fuentes": [
         "FAO ECOCROP: Amaranthus hypochondriacus",
         "Wikipedia: https://es.wikipedia.org/wiki/Amaranthus_hypochondriacus"
@@ -1759,13 +2349,7 @@
         "notas": null
       },
       "_pendiente": [
-        "resumen",
-        "ficha_tecnica.riego",
-        "ficha_tecnica.sustrato_recomendado",
-        "tutorial",
-        "companeros_cultivo",
-        "curiosidades",
-        "ojo"
+        "revisar el borrador de contenido_cultivos.json contra los manuales"
       ]
     },
     {
@@ -1775,7 +2359,8 @@
       "ecocrop_nombre": "Opuntia ficus-indica",
       "categoria": "Quelites y mexicanos",
       "icono": "🌵",
-      "resumen": "",
+      "resumen": "Cactácea mexicana muy resistente; de una penca salen nopalitos para cocinar.",
+      "es_nativa_region": true,
       "ficha_tecnica": {
         "temp_ideal_c": [
           18.0,
@@ -1792,15 +2377,36 @@
           240
         ],
         "maceta_min_litros": 20,
-        "profundidad_min_cm": 25,
-        "luz": "pleno_sol",
-        "riego": "",
-        "sustrato_recomendado": ""
+        "profundidad_maceta_cm": 25,
+        "luz_nivel": 4,
+        "riego_frecuencia_dias": 14,
+        "riego": "Riego muy escaso; deja secar por completo la tierra entre riegos.",
+        "sustrato_recomendado": "Mezcla para cactáceas: tierra con 50% de arena o tepojal."
       },
-      "tutorial": [],
+      "restricciones": {
+        "pet_safe": false,
+        "dificultad": "facil"
+      },
+      "impacto_ambiental": {
+        "consumo_hidrico": "bajo",
+        "atrae_polinizadores": true
+      },
+      "guia_rapida": {
+        "error_comun": "Plantar la penca recién cortada: déjala cicatrizar 1 a 2 semanas antes de plantarla."
+      },
+      "tutorial": [
+        "Corta una penca y déjala cicatrizar 1 a 2 semanas a la sombra.",
+        "Entierra un tercio de la penca en tierra seca y no riegues la primera semana.",
+        "Ponlo a pleno sol.",
+        "Corta los nopalitos tiernos cuando midan 15-20 cm."
+      ],
       "companeros_cultivo": [],
-      "curiosidades": [],
-      "ojo": [],
+      "curiosidades": [
+        "Aparece en el escudo nacional de México."
+      ],
+      "ojo": [
+        "Usa guantes: tiene espinas y ahuates (espinas finitas)."
+      ],
       "fuentes": [
         "FAO ECOCROP: Opuntia ficus-indica",
         "Wikipedia: https://es.wikipedia.org/wiki/Opuntia_ficus-indica"
@@ -1824,13 +2430,7 @@
         "notas": "ECOCROP lo marca con límite de 10 °C, pero se cultiva en Milpa Alta (2,400 m). Revisar a mano sus rangos."
       },
       "_pendiente": [
-        "resumen",
-        "ficha_tecnica.riego",
-        "ficha_tecnica.sustrato_recomendado",
-        "tutorial",
-        "companeros_cultivo",
-        "curiosidades",
-        "ojo"
+        "revisar el borrador de contenido_cultivos.json contra los manuales"
       ]
     }
   ]

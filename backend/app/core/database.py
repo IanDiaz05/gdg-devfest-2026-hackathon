@@ -18,19 +18,7 @@ CREATE TABLE IF NOT EXISTS cultivos (
     icono TEXT NOT NULL,
     categoria TEXT NOT NULL,
     datos_json TEXT NOT NULL,
-    reglas_json TEXT NOT NULL,
-    sniim_json TEXT
-)
-"""
-
-_CREATE_SEQUIA = """
-CREATE TABLE IF NOT EXISTS sequia_municipios (
-    clave_normalizada TEXT PRIMARY KEY,
-    estado TEXT NOT NULL,
-    municipio TEXT NOT NULL,
-    nivel TEXT NOT NULL,
-    nivel_nombre TEXT NOT NULL,
-    fecha_dato TEXT NOT NULL
+    reglas_json TEXT NOT NULL
 )
 """
 
@@ -71,7 +59,6 @@ def _cultivo_from_row(row: aiosqlite.Row) -> dict[str, Any]:
         "categoria": row["categoria"],
         "datos_json": _parse_json(row["datos_json"]),
         "reglas_json": _parse_json(row["reglas_json"]),
-        "sniim_json": _parse_json(row["sniim_json"]),
     }
 
 
@@ -89,7 +76,6 @@ async def get_connection() -> AsyncIterator[aiosqlite.Connection]:
 async def init_db() -> None:
     async with get_connection() as db:
         await db.execute(_CREATE_CULTIVOS)
-        await db.execute(_CREATE_SEQUIA)
         await db.execute(_CREATE_CLIMA)
         await db.execute(_CREATE_PRONOSTICO)
         await db.commit()
@@ -113,18 +99,6 @@ async def get_cultivo_by_id(cultivo_id: str) -> dict[str, Any] | None:
     if row is None:
         return None
     return _cultivo_from_row(row)
-
-
-async def get_sequia_by_clave(clave_normalizada: str) -> dict[str, Any] | None:
-    async with get_connection() as db:
-        async with db.execute(
-            "SELECT * FROM sequia_municipios WHERE clave_normalizada = ?",
-            (clave_normalizada,),
-        ) as cursor:
-            row = await cursor.fetchone()
-    if row is None:
-        return None
-    return dict(row)
 
 
 async def get_clima_cache(lat_grid: float, lon_grid: float) -> dict[str, Any] | None:
