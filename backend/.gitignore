@@ -1,0 +1,12 @@
+# Entorno virtual (cada quien lo crea con python -m venv backend/.venv)
+.venv/
+
+# Descargas originales: se regeneran con scripts/descargas/descargar_todo.py
+data/raw/
+
+# Base de datos generada por scripts/seed.py
+quesiembro.db
+
+__pycache__/
+*.pyc
+*.parcial

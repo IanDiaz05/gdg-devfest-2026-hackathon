@@ -1,0 +1,1837 @@
+{
+  "generado": "2026-11-20",
+  "nota": "Generado automáticamente. Copiar a cultivos.json y completar los campos de _pendiente a mano.",
+  "cultivos": [
+    {
+      "id": "lechuga",
+      "nombre": "Lechuga",
+      "nombre_cientifico": "Lactuca sativa",
+      "ecocrop_nombre": "Lactuca sativa var. capitata",
+      "categoria": "Hortalizas de hoja",
+      "icono": "🥬",
+      "resumen": "",
+      "ficha_tecnica": {
+        "temp_ideal_c": [
+          12.0,
+          21.0
+        ],
+        "temp_limite_c": [
+          5.0,
+          30.0
+        ],
+        "tolera_helada": true,
+        "altitud_max_m": 3000,
+        "dias_a_cosecha": [
+          35,
+          85
+        ],
+        "maceta_min_litros": 5,
+        "profundidad_min_cm": 15,
+        "luz": "media_sombra",
+        "riego": "",
+        "sustrato_recomendado": ""
+      },
+      "tutorial": [],
+      "companeros_cultivo": [],
+      "curiosidades": [],
+      "ojo": [],
+      "fuentes": [
+        "FAO ECOCROP: Lactuca sativa var. capitata",
+        "Wikipedia: https://es.wikipedia.org/wiki/Lactuca_sativa"
+      ],
+      "reglas": {
+        "perenne": false,
+        "dias_cosecha_aprox": 55,
+        "dificultad": "facil",
+        "espacio_tipo": "maceta_chica",
+        "necesita_tutor": false,
+        "sensible_a": [
+          "calor",
+          "lluvia_fuerte"
+        ],
+        "siap_nombres": [
+          "Lechuga"
+        ]
+      },
+      "_referencia": {
+        "wikipedia_extracto": "La lechuga es una planta anual de la familia Asteraceae. Se cultiva sobre todo como verdura de hoja, pero a veces también por su tallo. La lechuga se utiliza sobre todo para las ensaladas, aunque también se ve en otros tipos de comida, como sopas, emparedados, sándwiches y envoltorios; también se puede asar a la parrilla. Una variedad, la lechuga china, se cultiva por sus tallos, que se consumen crudos o cocidos. Además de su uso principal como hoja verde, también ha adquirido un significado religioso y medicinal durante siglos de consumo humano. Originalmente, Europa y América del Norte dominaban el mercado de la lechuga, pero a finales del siglo XX el consumo de lechuga se había extendido por todo el mundo. En 2021, la producción mundial de lechuga y achicoria era de 27 millones de toneladas, el 53 % de las cuales procedía de China.",
+        "wikipedia_imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Romaine_lettuce.jpg/330px-Romaine_lettuce.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "notas": null
+      },
+      "_pendiente": [
+        "resumen",
+        "ficha_tecnica.riego",
+        "ficha_tecnica.sustrato_recomendado",
+        "tutorial",
+        "companeros_cultivo",
+        "curiosidades",
+        "ojo"
+      ]
+    },
+    {
+      "id": "espinaca",
+      "nombre": "Espinaca",
+      "nombre_cientifico": "Spinacia oleracea",
+      "ecocrop_nombre": "Spinacia oleracea",
+      "categoria": "Hortalizas de hoja",
+      "icono": "🥬",
+      "resumen": "",
+      "ficha_tecnica": {
+        "temp_ideal_c": [
+          13.0,
+          20.0
+        ],
+        "temp_limite_c": [
+          2.0,
+          27.0
+        ],
+        "tolera_helada": true,
+        "altitud_max_m": 3600,
+        "dias_a_cosecha": [
+          40,
+          90
+        ],
+        "maceta_min_litros": 5,
+        "profundidad_min_cm": 15,
+        "luz": "media_sombra",
+        "riego": "",
+        "sustrato_recomendado": ""
+      },
+      "tutorial": [],
+      "companeros_cultivo": [],
+      "curiosidades": [],
+      "ojo": [],
+      "fuentes": [
+        "FAO ECOCROP: Spinacia oleracea",
+        "Wikipedia: https://es.wikipedia.org/wiki/Spinacia_oleracea"
+      ],
+      "reglas": {
+        "perenne": false,
+        "dias_cosecha_aprox": 45,
+        "dificultad": "facil",
+        "espacio_tipo": "maceta_chica",
+        "necesita_tutor": false,
+        "sensible_a": [
+          "calor",
+          "lluvia_fuerte"
+        ],
+        "siap_nombres": [
+          "Espinaca"
+        ]
+      },
+      "_referencia": {
+        "wikipedia_extracto": "La espinaca es una planta anual, dioica, de la familia de las amarantáceas, cultivada como verdura por sus hojas comestibles, grandes y de color verde muy oscuro. Su cultivo se puede realizar en cualquier época del año y se puede consumir fresca, cocida o frita. En la actualidad es una de las verduras que más habitualmente se encuentra helada o congelada.",
+        "wikipedia_imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Illustration_Spinacia_oleracea0.jpg/330px-Illustration_Spinacia_oleracea0.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "notas": null
+      },
+      "_pendiente": [
+        "resumen",
+        "ficha_tecnica.riego",
+        "ficha_tecnica.sustrato_recomendado",
+        "tutorial",
+        "companeros_cultivo",
+        "curiosidades",
+        "ojo"
+      ]
+    },
+    {
+      "id": "acelga",
+      "nombre": "Acelga",
+      "nombre_cientifico": "Beta vulgaris var. cicla",
+      "ecocrop_nombre": "Beta vulgaris",
+      "categoria": "Hortalizas de hoja",
+      "icono": "🥬",
+      "resumen": "",
+      "ficha_tecnica": {
+        "temp_ideal_c": [
+          15.0,
+          25.0
+        ],
+        "temp_limite_c": [
+          4.0,
+          35.0
+        ],
+        "tolera_helada": true,
+        "altitud_max_m": null,
+        "dias_a_cosecha": [
+          60,
+          120
+        ],
+        "maceta_min_litros": 10,
+        "profundidad_min_cm": 25,
+        "luz": "media_sombra",
+        "riego": "",
+        "sustrato_recomendado": ""
+      },
+      "tutorial": [],
+      "companeros_cultivo": [],
+      "curiosidades": [],
+      "ojo": [],
+      "fuentes": [
+        "FAO ECOCROP: Beta vulgaris",
+        "Wikipedia: https://es.wikipedia.org/wiki/Beta_vulgaris_var._cicla"
+      ],
+      "reglas": {
+        "perenne": false,
+        "dias_cosecha_aprox": 60,
+        "dificultad": "facil",
+        "espacio_tipo": "maceta_grande",
+        "necesita_tutor": false,
+        "sensible_a": [
+          "lluvia_fuerte"
+        ],
+        "siap_nombres": [
+          "Acelga"
+        ]
+      },
+      "_referencia": {
+        "wikipedia_extracto": "Beta vulgaris var. cicla, la acelga, es una subespecie de Beta vulgaris, al igual que las remolachas, betarragas y el betabel, aunque a diferencia de estas se cultiva para aprovechar sus hojas en lugar de sus raíces y sirve para el consumo en cualquier etapa de su período vegetativo.",
+        "wikipedia_imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Swiss_Chard.jpg/330px-Swiss_Chard.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "notas": null
+      },
+      "_pendiente": [
+        "resumen",
+        "ficha_tecnica.riego",
+        "ficha_tecnica.sustrato_recomendado",
+        "tutorial",
+        "companeros_cultivo",
+        "curiosidades",
+        "ojo"
+      ]
+    },
+    {
+      "id": "rabano",
+      "nombre": "Rábano",
+      "nombre_cientifico": "Raphanus sativus",
+      "ecocrop_nombre": "Raphanus sativus",
+      "categoria": "Raíces y bulbos",
+      "icono": "🌱",
+      "resumen": "",
+      "ficha_tecnica": {
+        "temp_ideal_c": [
+          12.0,
+          26.0
+        ],
+        "temp_limite_c": [
+          10.0,
+          37.0
+        ],
+        "tolera_helada": true,
+        "altitud_max_m": null,
+        "dias_a_cosecha": [
+          30,
+          60
+        ],
+        "maceta_min_litros": 3,
+        "profundidad_min_cm": 15,
+        "luz": "pleno_sol",
+        "riego": "",
+        "sustrato_recomendado": ""
+      },
+      "tutorial": [],
+      "companeros_cultivo": [],
+      "curiosidades": [],
+      "ojo": [],
+      "fuentes": [
+        "FAO ECOCROP: Raphanus sativus",
+        "Wikipedia: https://es.wikipedia.org/wiki/Raphanus_sativus"
+      ],
+      "reglas": {
+        "perenne": false,
+        "dias_cosecha_aprox": 30,
+        "dificultad": "facil",
+        "espacio_tipo": "maceta_chica",
+        "necesita_tutor": false,
+        "sensible_a": [
+          "calor",
+          "lluvia_fuerte"
+        ],
+        "siap_nombres": [
+          "Rábano"
+        ]
+      },
+      "_referencia": {
+        "wikipedia_extracto": "Raphanus sativus, el rábano, es una especie de la familia Brassicaceae que se cultiva por sus raíces comestibles. Otro uso del rábano es como cobertura o cultivo intermedio en invierno, o como cultivo de forraje.",
+        "wikipedia_imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/26_Raphanus_sativus_L.jpg/330px-26_Raphanus_sativus_L.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "notas": null
+      },
+      "_pendiente": [
+        "resumen",
+        "ficha_tecnica.riego",
+        "ficha_tecnica.sustrato_recomendado",
+        "tutorial",
+        "companeros_cultivo",
+        "curiosidades",
+        "ojo"
+      ]
+    },
+    {
+      "id": "zanahoria",
+      "nombre": "Zanahoria",
+      "nombre_cientifico": "Daucus carota subsp. sativus",
+      "ecocrop_nombre": "Daucus carota",
+      "categoria": "Raíces y bulbos",
+      "icono": "🥕",
+      "resumen": "",
+      "ficha_tecnica": {
+        "temp_ideal_c": [
+          15.0,
+          24.0
+        ],
+        "temp_limite_c": [
+          3.0,
+          30.0
+        ],
+        "tolera_helada": true,
+        "altitud_max_m": 2600,
+        "dias_a_cosecha": [
+          40,
+          150
+        ],
+        "maceta_min_litros": 10,
+        "profundidad_min_cm": 30,
+        "luz": "pleno_sol",
+        "riego": "",
+        "sustrato_recomendado": ""
+      },
+      "tutorial": [],
+      "companeros_cultivo": [],
+      "curiosidades": [],
+      "ojo": [],
+      "fuentes": [
+        "FAO ECOCROP: Daucus carota",
+        "Wikipedia: https://es.wikipedia.org/wiki/Daucus_carota"
+      ],
+      "reglas": {
+        "perenne": false,
+        "dias_cosecha_aprox": 75,
+        "dificultad": "media",
+        "espacio_tipo": "maceta_grande",
+        "necesita_tutor": false,
+        "sensible_a": [
+          "lluvia_fuerte"
+        ],
+        "siap_nombres": [
+          "Zanahoria"
+        ]
+      },
+      "_referencia": {
+        "wikipedia_extracto": "La zanahoria silvestre o carrota es una especie de planta herbácea de la familia Apiaceae. Es la forma silvestre de la zanahoria.",
+        "wikipedia_imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Daucus_Carota.jpg/330px-Daucus_Carota.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "notas": null
+      },
+      "_pendiente": [
+        "resumen",
+        "ficha_tecnica.riego",
+        "ficha_tecnica.sustrato_recomendado",
+        "tutorial",
+        "companeros_cultivo",
+        "curiosidades",
+        "ojo"
+      ]
+    },
+    {
+      "id": "cebolla",
+      "nombre": "Cebolla cambray",
+      "nombre_cientifico": "Allium cepa",
+      "ecocrop_nombre": "Allium cepa",
+      "categoria": "Raíces y bulbos",
+      "icono": "🧅",
+      "resumen": "",
+      "ficha_tecnica": {
+        "temp_ideal_c": [
+          12.0,
+          25.0
+        ],
+        "temp_limite_c": [
+          4.0,
+          30.0
+        ],
+        "tolera_helada": true,
+        "altitud_max_m": 2000,
+        "dias_a_cosecha": [
+          85,
+          175
+        ],
+        "maceta_min_litros": 5,
+        "profundidad_min_cm": 20,
+        "luz": "pleno_sol",
+        "riego": "",
+        "sustrato_recomendado": ""
+      },
+      "tutorial": [],
+      "companeros_cultivo": [],
+      "curiosidades": [],
+      "ojo": [],
+      "fuentes": [
+        "FAO ECOCROP: Allium cepa",
+        "Wikipedia: https://es.wikipedia.org/wiki/Allium_cepa"
+      ],
+      "reglas": {
+        "perenne": false,
+        "dias_cosecha_aprox": 90,
+        "dificultad": "media",
+        "espacio_tipo": "maceta_chica",
+        "necesita_tutor": false,
+        "sensible_a": [
+          "lluvia_fuerte"
+        ],
+        "siap_nombres": [
+          "Cebolla"
+        ]
+      },
+      "_referencia": {
+        "wikipedia_extracto": "Allium cepa, comúnmente conocida como cebolla, es una planta herbácea bienal perteneciente a la familia de las amarilidáceas. Es la especie más cultivada del género Allium, que, por otro lado, contiene varias especies que se denominan «cebollas» y que se cultivan como alimento. Ejemplos de las mismas son la cebolla de verdeo, la cebolla escalonia y la cebolla de hoja.",
+        "wikipedia_imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/ARS_red_onion.jpg/330px-ARS_red_onion.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "notas": null
+      },
+      "_pendiente": [
+        "resumen",
+        "ficha_tecnica.riego",
+        "ficha_tecnica.sustrato_recomendado",
+        "tutorial",
+        "companeros_cultivo",
+        "curiosidades",
+        "ojo"
+      ]
+    },
+    {
+      "id": "ajo",
+      "nombre": "Ajo",
+      "nombre_cientifico": "Allium sativum",
+      "ecocrop_nombre": "Allium sativum",
+      "categoria": "Raíces y bulbos",
+      "icono": "🧄",
+      "resumen": "",
+      "ficha_tecnica": {
+        "temp_ideal_c": [
+          18.0,
+          30.0
+        ],
+        "temp_limite_c": [
+          7.0,
+          35.0
+        ],
+        "tolera_helada": true,
+        "altitud_max_m": 2200,
+        "dias_a_cosecha": [
+          90,
+          180
+        ],
+        "maceta_min_litros": 5,
+        "profundidad_min_cm": 20,
+        "luz": "pleno_sol",
+        "riego": "",
+        "sustrato_recomendado": ""
+      },
+      "tutorial": [],
+      "companeros_cultivo": [],
+      "curiosidades": [],
+      "ojo": [],
+      "fuentes": [
+        "FAO ECOCROP: Allium sativum",
+        "Wikipedia: https://es.wikipedia.org/wiki/Allium_sativum"
+      ],
+      "reglas": {
+        "perenne": false,
+        "dias_cosecha_aprox": 180,
+        "dificultad": "media",
+        "espacio_tipo": "maceta_chica",
+        "necesita_tutor": false,
+        "sensible_a": [
+          "lluvia_fuerte"
+        ],
+        "siap_nombres": [
+          "Ajo"
+        ]
+      },
+      "_referencia": {
+        "wikipedia_extracto": "El ajo es una especie tradicionalmente clasificada dentro de la familia de las liliáceas pero que actualmente se ubica en la de las amarilidáceas, aunque este extremo es muy discutido. Al igual que la cebolla, el puerro y la cebolla de invierno o cebollino, es una especie de importancia económica ampliamente cultivada y desconocida en estado silvestre.",
+        "wikipedia_imagen": "https://upload.wikimedia.org/wikipedia/commons/3/39/Allium_sativum_Woodwill_1793.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "notas": null
+      },
+      "_pendiente": [
+        "resumen",
+        "ficha_tecnica.riego",
+        "ficha_tecnica.sustrato_recomendado",
+        "tutorial",
+        "companeros_cultivo",
+        "curiosidades",
+        "ojo"
+      ]
+    },
+    {
+      "id": "papa",
+      "nombre": "Papa (en costal)",
+      "nombre_cientifico": "Solanum tuberosum",
+      "ecocrop_nombre": "Solanum tuberosum",
+      "categoria": "Raíces y bulbos",
+      "icono": "🥔",
+      "resumen": "",
+      "ficha_tecnica": {
+        "temp_ideal_c": [
+          15.0,
+          25.0
+        ],
+        "temp_limite_c": [
+          7.0,
+          30.0
+        ],
+        "tolera_helada": false,
+        "altitud_max_m": 2800,
+        "dias_a_cosecha": [
+          90,
+          160
+        ],
+        "maceta_min_litros": 40,
+        "profundidad_min_cm": 40,
+        "luz": "pleno_sol",
+        "riego": "",
+        "sustrato_recomendado": ""
+      },
+      "tutorial": [],
+      "companeros_cultivo": [],
+      "curiosidades": [],
+      "ojo": [],
+      "fuentes": [
+        "FAO ECOCROP: Solanum tuberosum",
+        "Wikipedia: https://es.wikipedia.org/wiki/Solanum_tuberosum"
+      ],
+      "reglas": {
+        "perenne": false,
+        "dias_cosecha_aprox": 100,
+        "dificultad": "media",
+        "espacio_tipo": "patio",
+        "necesita_tutor": false,
+        "sensible_a": [
+          "helada",
+          "lluvia_fuerte"
+        ],
+        "siap_nombres": [
+          "Papa"
+        ]
+      },
+      "_referencia": {
+        "wikipedia_extracto": "Solanum tuberosum, de nombre común papa, patata, o pataca es una especie herbácea perteneciente al género Solanum de la familia de las solanáceas, originaria de la región que comprende el altiplano de los Andes centrales. Fue domesticada en el altiplano andino y en las cercanías del lago Titicaca por los habitantes de esta región hace unos ocho mil años. Luego de extenderse por diversos lugares del continente americano, incluida la isla Grande de Chiloé, en el siglo XVI comenzó a ser trasladada a Europa por los conquistadores españoles, que la consideraban una curiosidad botánica y no una planta alimenticia. Su consumo fue creciendo, aunque al principio como planta forrajera y de jardín por sus flores; su uso gastronómico se expandió a todo el mundo desde el siglo XVIII gracias a los escritos agronómicos del francés Antoine Parmentier y del irlandés afincado en España Enrique Doyle, hasta convertirse en uno de los principales alimentos del ser humano.",
+        "wikipedia_imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/S._tuberosum-5.JPG/330px-S._tuberosum-5.JPG?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "notas": null
+      },
+      "_pendiente": [
+        "resumen",
+        "ficha_tecnica.riego",
+        "ficha_tecnica.sustrato_recomendado",
+        "tutorial",
+        "companeros_cultivo",
+        "curiosidades",
+        "ojo"
+      ]
+    },
+    {
+      "id": "jitomate",
+      "nombre": "Jitomate",
+      "nombre_cientifico": "Solanum lycopersicum",
+      "ecocrop_nombre": "Lycopersicon esculentum",
+      "categoria": "Frutos",
+      "icono": "🍅",
+      "resumen": "",
+      "ficha_tecnica": {
+        "temp_ideal_c": [
+          20.0,
+          27.0
+        ],
+        "temp_limite_c": [
+          7.0,
+          35.0
+        ],
+        "tolera_helada": false,
+        "altitud_max_m": 2400,
+        "dias_a_cosecha": [
+          70,
+          150
+        ],
+        "maceta_min_litros": 20,
+        "profundidad_min_cm": 30,
+        "luz": "pleno_sol",
+        "riego": "",
+        "sustrato_recomendado": ""
+      },
+      "tutorial": [],
+      "companeros_cultivo": [],
+      "curiosidades": [],
+      "ojo": [],
+      "fuentes": [
+        "FAO ECOCROP: Lycopersicon esculentum",
+        "Wikipedia: https://es.wikipedia.org/wiki/Solanum_lycopersicum"
+      ],
+      "reglas": {
+        "perenne": false,
+        "dias_cosecha_aprox": 90,
+        "dificultad": "media",
+        "espacio_tipo": "maceta_grande",
+        "necesita_tutor": true,
+        "sensible_a": [
+          "helada",
+          "lluvia_fuerte",
+          "viento"
+        ],
+        "siap_nombres": [
+          "Tomate rojo (jitomate)"
+        ]
+      },
+      "_referencia": {
+        "wikipedia_extracto": "Solanum lycopersicum, conocida comúnmente como tomate o tomatera, es una especie de planta herbácea del género Solanum de la familia Solanaceae. Es una planta de importancia global por su uso como alimento. La planta es cultivada en el mundo entero para el consumo de su fruto, el tomate o jitomate, tanto fresco como procesado de diferentes maneras: salsa, puré, zumo, deshidratado, enlatado, etc.",
+        "wikipedia_imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Bright_red_tomato_and_cross_section02.jpg/330px-Bright_red_tomato_and_cross_section02.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "notas": null
+      },
+      "_pendiente": [
+        "resumen",
+        "ficha_tecnica.riego",
+        "ficha_tecnica.sustrato_recomendado",
+        "tutorial",
+        "companeros_cultivo",
+        "curiosidades",
+        "ojo"
+      ]
+    },
+    {
+      "id": "tomate_verde",
+      "nombre": "Tomate verde",
+      "nombre_cientifico": "Physalis philadelphica",
+      "ecocrop_nombre": "Physalis philadelphica",
+      "categoria": "Frutos",
+      "icono": "🍅",
+      "resumen": "",
+      "ficha_tecnica": {
+        "temp_ideal_c": [
+          15.0,
+          25.0
+        ],
+        "temp_limite_c": [
+          8.0,
+          31.0
+        ],
+        "tolera_helada": false,
+        "altitud_max_m": 2600,
+        "dias_a_cosecha": [
+          80,
+          120
+        ],
+        "maceta_min_litros": 20,
+        "profundidad_min_cm": 30,
+        "luz": "pleno_sol",
+        "riego": "",
+        "sustrato_recomendado": ""
+      },
+      "tutorial": [],
+      "companeros_cultivo": [],
+      "curiosidades": [],
+      "ojo": [],
+      "fuentes": [
+        "FAO ECOCROP: Physalis philadelphica",
+        "Wikipedia: https://es.wikipedia.org/wiki/Physalis_philadelphica"
+      ],
+      "reglas": {
+        "perenne": false,
+        "dias_cosecha_aprox": 80,
+        "dificultad": "media",
+        "espacio_tipo": "maceta_grande",
+        "necesita_tutor": true,
+        "sensible_a": [
+          "helada",
+          "viento"
+        ],
+        "siap_nombres": [
+          "Tomate verde"
+        ]
+      },
+      "_referencia": {
+        "wikipedia_extracto": "Physalis philadelphica es una especie de planta fanerógama de la familia Solanaceae. La palabra miltomate procede del náhuatl “milli”, milpa, sembrado, y “tomatl”, tomate. También conocido como tomate verde. Se conoce en México desde tiempos precolombinos. Los aztecas lo cultivaban extensivamente y lo llamaban \"miltomatl\" que significa tomate cultivado.",
+        "wikipedia_imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Tomatillo.jpg/330px-Tomatillo.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "notas": null
+      },
+      "_pendiente": [
+        "resumen",
+        "ficha_tecnica.riego",
+        "ficha_tecnica.sustrato_recomendado",
+        "tutorial",
+        "companeros_cultivo",
+        "curiosidades",
+        "ojo"
+      ]
+    },
+    {
+      "id": "chile_serrano",
+      "nombre": "Chile serrano / jalapeño",
+      "nombre_cientifico": "Capsicum annuum",
+      "ecocrop_nombre": "Capsicum annuum",
+      "categoria": "Frutos",
+      "icono": "🌶️",
+      "resumen": "",
+      "ficha_tecnica": {
+        "temp_ideal_c": [
+          17.0,
+          30.0
+        ],
+        "temp_limite_c": [
+          8.0,
+          35.0
+        ],
+        "tolera_helada": false,
+        "altitud_max_m": 3000,
+        "dias_a_cosecha": [
+          60,
+          180
+        ],
+        "maceta_min_litros": 15,
+        "profundidad_min_cm": 25,
+        "luz": "pleno_sol",
+        "riego": "",
+        "sustrato_recomendado": ""
+      },
+      "tutorial": [],
+      "companeros_cultivo": [],
+      "curiosidades": [],
+      "ojo": [],
+      "fuentes": [
+        "FAO ECOCROP: Capsicum annuum",
+        "Wikipedia: https://es.wikipedia.org/wiki/Capsicum_annuum"
+      ],
+      "reglas": {
+        "perenne": false,
+        "dias_cosecha_aprox": 90,
+        "dificultad": "media",
+        "espacio_tipo": "maceta_grande",
+        "necesita_tutor": false,
+        "sensible_a": [
+          "helada"
+        ],
+        "siap_nombres": [
+          "Chile verde"
+        ]
+      },
+      "_referencia": {
+        "wikipedia_extracto": "Capsicum annuum, llamado comúnmente pimiento morrón, pimiento dulce, chile morrón, ají morrón, ají dulce, locote o en algunos países pimentón, entre una multitud de localismos, es la especie más conocida, extendida y cultivada del género Capsicum, de la familia de las solanáceas. Todas las innumerables formas, tamaños, colores y sabores de sus frutos, descritos y nombrados en la cultura popular, corresponden en realidad a esta misma especie. Los mismos nombres se utilizan también para el fruto de esta especie vegetal.",
+        "wikipedia_imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Pimiento_morr%C3%B3n_%28Capsicum_annuum%29.jpg/330px-Pimiento_morr%C3%B3n_%28Capsicum_annuum%29.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "notas": null
+      },
+      "_pendiente": [
+        "resumen",
+        "ficha_tecnica.riego",
+        "ficha_tecnica.sustrato_recomendado",
+        "tutorial",
+        "companeros_cultivo",
+        "curiosidades",
+        "ojo"
+      ]
+    },
+    {
+      "id": "chile_habanero",
+      "nombre": "Chile habanero",
+      "nombre_cientifico": "Capsicum chinense",
+      "ecocrop_nombre": "Capsicum chinense",
+      "categoria": "Frutos",
+      "icono": "🌶️",
+      "resumen": "",
+      "ficha_tecnica": {
+        "temp_ideal_c": [
+          20.0,
+          26.0
+        ],
+        "temp_limite_c": [
+          15.0,
+          32.0
+        ],
+        "tolera_helada": false,
+        "altitud_max_m": null,
+        "dias_a_cosecha": [
+          120,
+          150
+        ],
+        "maceta_min_litros": 15,
+        "profundidad_min_cm": 25,
+        "luz": "pleno_sol",
+        "riego": "",
+        "sustrato_recomendado": ""
+      },
+      "tutorial": [],
+      "companeros_cultivo": [],
+      "curiosidades": [],
+      "ojo": [],
+      "fuentes": [
+        "FAO ECOCROP: Capsicum chinense",
+        "Wikipedia: https://es.wikipedia.org/wiki/Capsicum_chinense"
+      ],
+      "reglas": {
+        "perenne": false,
+        "dias_cosecha_aprox": 120,
+        "dificultad": "dificil",
+        "espacio_tipo": "maceta_grande",
+        "necesita_tutor": false,
+        "sensible_a": [
+          "helada"
+        ],
+        "siap_nombres": [
+          "Chile verde"
+        ]
+      },
+      "_referencia": {
+        "wikipedia_extracto": "Capsicum chinense es una de las cinco especies domesticadas de chiles o ajíes. Variedades importantes de Capsicum chinense incluyen el chile habanero, el ají panca, el ají mochero y el ají limo. Las variedades de ají panca, ají mochero y ají limo se cultivan en Perú.",
+        "wikipedia_imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Habanero_chile_-_fruits_%28aka%29.jpg/330px-Habanero_chile_-_fruits_%28aka%29.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "notas": null
+      },
+      "_pendiente": [
+        "resumen",
+        "ficha_tecnica.riego",
+        "ficha_tecnica.sustrato_recomendado",
+        "tutorial",
+        "companeros_cultivo",
+        "curiosidades",
+        "ojo"
+      ]
+    },
+    {
+      "id": "calabacita",
+      "nombre": "Calabacita",
+      "nombre_cientifico": "Cucurbita pepo",
+      "ecocrop_nombre": "Cucurbita pepo",
+      "categoria": "Frutos",
+      "icono": "🥒",
+      "resumen": "",
+      "ficha_tecnica": {
+        "temp_ideal_c": [
+          17.0,
+          30.0
+        ],
+        "temp_limite_c": [
+          6.0,
+          40.0
+        ],
+        "tolera_helada": false,
+        "altitud_max_m": 1000,
+        "dias_a_cosecha": [
+          40,
+          100
+        ],
+        "maceta_min_litros": 40,
+        "profundidad_min_cm": 35,
+        "luz": "pleno_sol",
+        "riego": "",
+        "sustrato_recomendado": ""
+      },
+      "tutorial": [],
+      "companeros_cultivo": [],
+      "curiosidades": [],
+      "ojo": [],
+      "fuentes": [
+        "FAO ECOCROP: Cucurbita pepo",
+        "Wikipedia: https://es.wikipedia.org/wiki/Cucurbita_pepo"
+      ],
+      "reglas": {
+        "perenne": false,
+        "dias_cosecha_aprox": 50,
+        "dificultad": "media",
+        "espacio_tipo": "patio",
+        "necesita_tutor": false,
+        "sensible_a": [
+          "helada",
+          "viento"
+        ],
+        "siap_nombres": [
+          "Calabacita"
+        ]
+      },
+      "_referencia": {
+        "wikipedia_extracto": "Cucurbita pepo es el nombre científico de una especie de plantas cucurbitáceas originaria de Mesoamérica y sur de Estados Unidos, que junto con otras especies emparentadas forman un grupo de especies de calabazas cuyas variedades cultivadas, de las que se cosecha su fruto maduro o inmaduro, poseen usos culinarios indistinguibles. En su región de origen posee variedades silvestres de las que incluso desde varios kilómetros puede llegar el polen a las variedades cultivadas de su propia especie haciendo que sus semillas se desarrollen como plantas de frutos amargos y no comestibles. No hibrida con las demás especies.",
+        "wikipedia_imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/0.2014_Cucurbita_pepo_subsp._pepo_convar._giromontiina_-_Sanok.JPG/330px-0.2014_Cucurbita_pepo_subsp._pepo_convar._giromontiina_-_Sanok.JPG?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "notas": null
+      },
+      "_pendiente": [
+        "resumen",
+        "ficha_tecnica.riego",
+        "ficha_tecnica.sustrato_recomendado",
+        "tutorial",
+        "companeros_cultivo",
+        "curiosidades",
+        "ojo"
+      ]
+    },
+    {
+      "id": "pepino",
+      "nombre": "Pepino",
+      "nombre_cientifico": "Cucumis sativus",
+      "ecocrop_nombre": "Cucumis sativus",
+      "categoria": "Frutos",
+      "icono": "🥒",
+      "resumen": "",
+      "ficha_tecnica": {
+        "temp_ideal_c": [
+          18.0,
+          32.0
+        ],
+        "temp_limite_c": [
+          6.0,
+          38.0
+        ],
+        "tolera_helada": false,
+        "altitud_max_m": 2000,
+        "dias_a_cosecha": [
+          40,
+          120
+        ],
+        "maceta_min_litros": 20,
+        "profundidad_min_cm": 30,
+        "luz": "pleno_sol",
+        "riego": "",
+        "sustrato_recomendado": ""
+      },
+      "tutorial": [],
+      "companeros_cultivo": [],
+      "curiosidades": [],
+      "ojo": [],
+      "fuentes": [
+        "FAO ECOCROP: Cucumis sativus",
+        "Wikipedia: https://es.wikipedia.org/wiki/Cucumis_sativus"
+      ],
+      "reglas": {
+        "perenne": false,
+        "dias_cosecha_aprox": 60,
+        "dificultad": "media",
+        "espacio_tipo": "maceta_grande",
+        "necesita_tutor": true,
+        "sensible_a": [
+          "helada",
+          "viento"
+        ],
+        "siap_nombres": [
+          "Pepino"
+        ]
+      },
+      "_referencia": {
+        "wikipedia_extracto": "Cucumis sativus, conocido popularmente como el pepino, es una planta anual de la familia de las cucurbitáceas.",
+        "wikipedia_imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Cucumis_sativus_0002.JPG/330px-Cucumis_sativus_0002.JPG?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "notas": null
+      },
+      "_pendiente": [
+        "resumen",
+        "ficha_tecnica.riego",
+        "ficha_tecnica.sustrato_recomendado",
+        "tutorial",
+        "companeros_cultivo",
+        "curiosidades",
+        "ojo"
+      ]
+    },
+    {
+      "id": "frijol_ejote",
+      "nombre": "Frijol de mata (ejote)",
+      "nombre_cientifico": "Phaseolus vulgaris",
+      "ecocrop_nombre": "Phaseolus vulgaris",
+      "categoria": "Frutos",
+      "icono": "🫘",
+      "resumen": "",
+      "ficha_tecnica": {
+        "temp_ideal_c": [
+          16.0,
+          25.0
+        ],
+        "temp_limite_c": [
+          7.0,
+          32.0
+        ],
+        "tolera_helada": false,
+        "altitud_max_m": 3000,
+        "dias_a_cosecha": [
+          50,
+          120
+        ],
+        "maceta_min_litros": 10,
+        "profundidad_min_cm": 20,
+        "luz": "pleno_sol",
+        "riego": "",
+        "sustrato_recomendado": ""
+      },
+      "tutorial": [],
+      "companeros_cultivo": [],
+      "curiosidades": [],
+      "ojo": [],
+      "fuentes": [
+        "FAO ECOCROP: Phaseolus vulgaris",
+        "Wikipedia: https://es.wikipedia.org/wiki/Phaseolus_vulgaris"
+      ],
+      "reglas": {
+        "perenne": false,
+        "dias_cosecha_aprox": 60,
+        "dificultad": "facil",
+        "espacio_tipo": "maceta_grande",
+        "necesita_tutor": false,
+        "sensible_a": [
+          "helada",
+          "lluvia_fuerte"
+        ],
+        "siap_nombres": [
+          "Ejote",
+          "Frijol"
+        ]
+      },
+      "_referencia": {
+        "wikipedia_extracto": "Phaseolus vulgaris es la especie más conocida del género Phaseolus en la familia Fabaceae. Sus semillas y, por extensión, la propia planta, reciben diversos nombres según la región; entre los más comunes están: alubia, judía, frijol, fríjol, frísol, frejol, habichuela, caraota, poroto, etc.",
+        "wikipedia_imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Snijboon_peulen_Phaseolus_vulgaris.jpg/330px-Snijboon_peulen_Phaseolus_vulgaris.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "notas": null
+      },
+      "_pendiente": [
+        "resumen",
+        "ficha_tecnica.riego",
+        "ficha_tecnica.sustrato_recomendado",
+        "tutorial",
+        "companeros_cultivo",
+        "curiosidades",
+        "ojo"
+      ]
+    },
+    {
+      "id": "chicharo",
+      "nombre": "Chícharo",
+      "nombre_cientifico": "Pisum sativum",
+      "ecocrop_nombre": "Pisum sativum",
+      "categoria": "Frutos",
+      "icono": "🫛",
+      "resumen": "",
+      "ficha_tecnica": {
+        "temp_ideal_c": [
+          10.0,
+          24.0
+        ],
+        "temp_limite_c": [
+          4.0,
+          30.0
+        ],
+        "tolera_helada": true,
+        "altitud_max_m": 2700,
+        "dias_a_cosecha": [
+          60,
+          140
+        ],
+        "maceta_min_litros": 10,
+        "profundidad_min_cm": 20,
+        "luz": "pleno_sol",
+        "riego": "",
+        "sustrato_recomendado": ""
+      },
+      "tutorial": [],
+      "companeros_cultivo": [],
+      "curiosidades": [],
+      "ojo": [],
+      "fuentes": [
+        "FAO ECOCROP: Pisum sativum",
+        "Wikipedia: https://es.wikipedia.org/wiki/Pisum_sativum"
+      ],
+      "reglas": {
+        "perenne": false,
+        "dias_cosecha_aprox": 70,
+        "dificultad": "media",
+        "espacio_tipo": "maceta_grande",
+        "necesita_tutor": true,
+        "sensible_a": [
+          "calor",
+          "viento"
+        ],
+        "siap_nombres": [
+          "Chícharo"
+        ]
+      },
+      "_referencia": {
+        "wikipedia_extracto": "Pisum sativum es una planta herbácea de la familia de las leguminosas (Fabaceae), más o menos trepadora, propia de la cuenca mediterránea, aunque muy extendida en todo el mundo. Se cultiva para consumir las semillas. Recibe diferentes nombres dependiendo de la región: chícharo, petipuás, arveja, alverja o guisante, las vainas tiernas son comestibles y se conocen como miracielo, cometodo o tirabeque.",
+        "wikipedia_imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Illustration_Pisum_sativum0_clean.jpg/330px-Illustration_Pisum_sativum0_clean.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "notas": null
+      },
+      "_pendiente": [
+        "resumen",
+        "ficha_tecnica.riego",
+        "ficha_tecnica.sustrato_recomendado",
+        "tutorial",
+        "companeros_cultivo",
+        "curiosidades",
+        "ojo"
+      ]
+    },
+    {
+      "id": "fresa",
+      "nombre": "Fresa",
+      "nombre_cientifico": "Fragaria × ananassa",
+      "ecocrop_nombre": "Fragaria x ananassa",
+      "categoria": "Frutos",
+      "icono": "🍓",
+      "resumen": "",
+      "ficha_tecnica": {
+        "temp_ideal_c": [
+          11.0,
+          24.0
+        ],
+        "temp_limite_c": [
+          6.0,
+          28.0
+        ],
+        "tolera_helada": true,
+        "altitud_max_m": 2000,
+        "dias_a_cosecha": [
+          90,
+          180
+        ],
+        "maceta_min_litros": 3,
+        "profundidad_min_cm": 15,
+        "luz": "pleno_sol",
+        "riego": "",
+        "sustrato_recomendado": ""
+      },
+      "tutorial": [],
+      "companeros_cultivo": [],
+      "curiosidades": [],
+      "ojo": [],
+      "fuentes": [
+        "FAO ECOCROP: Fragaria x ananassa",
+        "Wikipedia: https://es.wikipedia.org/wiki/Fragaria_%C3%97_ananassa"
+      ],
+      "reglas": {
+        "perenne": true,
+        "dias_cosecha_aprox": 90,
+        "dificultad": "media",
+        "espacio_tipo": "maceta_chica",
+        "necesita_tutor": false,
+        "sensible_a": [
+          "calor",
+          "lluvia_fuerte"
+        ],
+        "siap_nombres": [
+          "Fresa"
+        ]
+      },
+      "_referencia": {
+        "wikipedia_extracto": "Fragaria × ananassa, llamada comúnmente frutilla, fresón, fresibaya o fresa, y sus cultivares emparentados, es la variedad más común de Fragaria cultivada mundialmente. Como todas las fresas, es de la familia Rosaceae; su fruta es técnicamente conocida como infrutescencia, ya que la parte carnosa no se deriva del ovario de la planta (aquenio), sino del hipantio que sostiene los ovarios.",
+        "wikipedia_imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Strawberries.JPG/330px-Strawberries.JPG?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "notas": null
+      },
+      "_pendiente": [
+        "resumen",
+        "ficha_tecnica.riego",
+        "ficha_tecnica.sustrato_recomendado",
+        "tutorial",
+        "companeros_cultivo",
+        "curiosidades",
+        "ojo"
+      ]
+    },
+    {
+      "id": "cilantro",
+      "nombre": "Cilantro",
+      "nombre_cientifico": "Coriandrum sativum",
+      "ecocrop_nombre": "Coriandrum sativum",
+      "categoria": "Hierbas",
+      "icono": "🌿",
+      "resumen": "",
+      "ficha_tecnica": {
+        "temp_ideal_c": [
+          15.0,
+          25.0
+        ],
+        "temp_limite_c": [
+          4.0,
+          32.0
+        ],
+        "tolera_helada": true,
+        "altitud_max_m": 2200,
+        "dias_a_cosecha": [
+          35,
+          90
+        ],
+        "maceta_min_litros": 5,
+        "profundidad_min_cm": 20,
+        "luz": "media_sombra",
+        "riego": "",
+        "sustrato_recomendado": ""
+      },
+      "tutorial": [],
+      "companeros_cultivo": [],
+      "curiosidades": [],
+      "ojo": [],
+      "fuentes": [
+        "FAO ECOCROP: Coriandrum sativum",
+        "Wikipedia: https://es.wikipedia.org/wiki/Coriandrum_sativum"
+      ],
+      "reglas": {
+        "perenne": false,
+        "dias_cosecha_aprox": 45,
+        "dificultad": "facil",
+        "espacio_tipo": "maceta_chica",
+        "necesita_tutor": false,
+        "sensible_a": [
+          "calor",
+          "lluvia_fuerte"
+        ],
+        "siap_nombres": [
+          "Cilantro"
+        ]
+      },
+      "_referencia": {
+        "wikipedia_extracto": "Coriandrum sativum, llamado comúnmente cilantro, coriandro, culantro europeo, perejil chino, dannia, culantro Castilla, y uansóy o wansóy, es una hierba anual de la familia de las apiáceas. Es una de dos especies aceptadas del género Coriandrum, que es el único miembro de la tribu Coriandreae.",
+        "wikipedia_imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Coriandrum_sativum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-193.jpg/330px-Coriandrum_sativum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-193.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "notas": null
+      },
+      "_pendiente": [
+        "resumen",
+        "ficha_tecnica.riego",
+        "ficha_tecnica.sustrato_recomendado",
+        "tutorial",
+        "companeros_cultivo",
+        "curiosidades",
+        "ojo"
+      ]
+    },
+    {
+      "id": "perejil",
+      "nombre": "Perejil",
+      "nombre_cientifico": "Petroselinum crispum",
+      "ecocrop_nombre": "Petroselinum crispum",
+      "categoria": "Hierbas",
+      "icono": "🌿",
+      "resumen": "",
+      "ficha_tecnica": {
+        "temp_ideal_c": [
+          11.0,
+          20.0
+        ],
+        "temp_limite_c": [
+          7.0,
+          28.0
+        ],
+        "tolera_helada": true,
+        "altitud_max_m": 2400,
+        "dias_a_cosecha": [
+          70,
+          150
+        ],
+        "maceta_min_litros": 5,
+        "profundidad_min_cm": 20,
+        "luz": "media_sombra",
+        "riego": "",
+        "sustrato_recomendado": ""
+      },
+      "tutorial": [],
+      "companeros_cultivo": [],
+      "curiosidades": [],
+      "ojo": [],
+      "fuentes": [
+        "FAO ECOCROP: Petroselinum crispum",
+        "Wikipedia: https://es.wikipedia.org/wiki/Petroselinum_crispum"
+      ],
+      "reglas": {
+        "perenne": false,
+        "dias_cosecha_aprox": 75,
+        "dificultad": "media",
+        "espacio_tipo": "maceta_chica",
+        "necesita_tutor": false,
+        "sensible_a": [
+          "calor"
+        ],
+        "siap_nombres": [
+          "Perejil"
+        ]
+      },
+      "_referencia": {
+        "wikipedia_extracto": "El perejil es una planta herbácea de la familia Apiaceae nativa de la zona central de la región mediterránea e introducida y naturalizada en el resto de Europa y distribuida ampliamente por todo el mundo. Se cultiva generalmente como condimento.",
+        "wikipedia_imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Petroselinum_crispum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-103.jpg/330px-Petroselinum_crispum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-103.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "notas": null
+      },
+      "_pendiente": [
+        "resumen",
+        "ficha_tecnica.riego",
+        "ficha_tecnica.sustrato_recomendado",
+        "tutorial",
+        "companeros_cultivo",
+        "curiosidades",
+        "ojo"
+      ]
+    },
+    {
+      "id": "albahaca",
+      "nombre": "Albahaca",
+      "nombre_cientifico": "Ocimum basilicum",
+      "ecocrop_nombre": "Ocimum basilicum",
+      "categoria": "Hierbas",
+      "icono": "🌿",
+      "resumen": "",
+      "ficha_tecnica": {
+        "temp_ideal_c": [
+          18.0,
+          27.0
+        ],
+        "temp_limite_c": [
+          7.0,
+          36.0
+        ],
+        "tolera_helada": false,
+        "altitud_max_m": null,
+        "dias_a_cosecha": [
+          60,
+          120
+        ],
+        "maceta_min_litros": 3,
+        "profundidad_min_cm": 15,
+        "luz": "pleno_sol",
+        "riego": "",
+        "sustrato_recomendado": ""
+      },
+      "tutorial": [],
+      "companeros_cultivo": [],
+      "curiosidades": [],
+      "ojo": [],
+      "fuentes": [
+        "FAO ECOCROP: Ocimum basilicum",
+        "Wikipedia: https://es.wikipedia.org/wiki/Ocimum_basilicum"
+      ],
+      "reglas": {
+        "perenne": false,
+        "dias_cosecha_aprox": 60,
+        "dificultad": "facil",
+        "espacio_tipo": "maceta_chica",
+        "necesita_tutor": false,
+        "sensible_a": [
+          "helada",
+          "lluvia_fuerte"
+        ],
+        "siap_nombres": [
+          "Albahaca"
+        ]
+      },
+      "_referencia": {
+        "wikipedia_extracto": "Ocimum basilicum es una hierba aromática anual de la familia de las lamiáceas nativa de las regiones tropicales de África Central y el sudeste asiático, que se cultiva desde hace milenios. Es una planta tierna y se utiliza en cocinas de todo el mundo. Hay muchas variedades de Ocimum basilicum, así como varias especies relacionadas. El tipo que se usa comúnmente para dar sabor se llama popularmente hierba real, albahaca, basílico o alhábega, a diferencia de la variedad tailandesa, Ocimum × citriodorum y el tulsí. Las variedades más comunes de Ocimum basilicum son cultivos anuales, pero algunas son perennes en climas cálidos y tropicales, como algunos híbridos.",
+        "wikipedia_imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Ocimum_basilicum_Blanco2.407-cropped.jpg/330px-Ocimum_basilicum_Blanco2.407-cropped.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "notas": null
+      },
+      "_pendiente": [
+        "resumen",
+        "ficha_tecnica.riego",
+        "ficha_tecnica.sustrato_recomendado",
+        "tutorial",
+        "companeros_cultivo",
+        "curiosidades",
+        "ojo"
+      ]
+    },
+    {
+      "id": "epazote",
+      "nombre": "Epazote",
+      "nombre_cientifico": "Dysphania ambrosioides",
+      "ecocrop_nombre": "Chenopodium ambrosioides",
+      "categoria": "Hierbas",
+      "icono": "🌿",
+      "resumen": "",
+      "ficha_tecnica": {
+        "temp_ideal_c": [
+          15.0,
+          22.0
+        ],
+        "temp_limite_c": [
+          4.0,
+          31.0
+        ],
+        "tolera_helada": false,
+        "altitud_max_m": 1500,
+        "dias_a_cosecha": [
+          60,
+          120
+        ],
+        "maceta_min_litros": 10,
+        "profundidad_min_cm": 20,
+        "luz": "pleno_sol",
+        "riego": "",
+        "sustrato_recomendado": ""
+      },
+      "tutorial": [],
+      "companeros_cultivo": [],
+      "curiosidades": [],
+      "ojo": [],
+      "fuentes": [
+        "FAO ECOCROP: Chenopodium ambrosioides",
+        "Wikipedia: https://es.wikipedia.org/wiki/Dysphania_ambrosioides"
+      ],
+      "reglas": {
+        "perenne": false,
+        "dias_cosecha_aprox": 60,
+        "dificultad": "facil",
+        "espacio_tipo": "maceta_grande",
+        "necesita_tutor": false,
+        "sensible_a": [
+          "helada"
+        ],
+        "siap_nombres": [
+          "Epazote"
+        ]
+      },
+      "_referencia": {
+        "wikipedia_extracto": "Dysphania ambrosioides, llamada popularmente epazote, apazote, pasote, paico o ka'are, es una especie de planta aromática, antiparasitario, que se usa como condimento y como planta medicinal en México y muchos otros países de Hispanoamérica, como Argentina, Bolivia, Chile, Colombia, Ecuador, Guatemala, El Salvador, Paraguay, Perú y Venezuela, así como en el sur de los Estados Unidos. En México se le llama también acahualillo o té de milpa.",
+        "wikipedia_imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Dysphania_ambrosioides_NRCS-1.jpg/330px-Dysphania_ambrosioides_NRCS-1.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "notas": null
+      },
+      "_pendiente": [
+        "resumen",
+        "ficha_tecnica.riego",
+        "ficha_tecnica.sustrato_recomendado",
+        "tutorial",
+        "companeros_cultivo",
+        "curiosidades",
+        "ojo"
+      ]
+    },
+    {
+      "id": "hierbabuena",
+      "nombre": "Hierbabuena",
+      "nombre_cientifico": "Mentha spicata",
+      "ecocrop_nombre": "Mentha arvensis var. piperascens",
+      "categoria": "Hierbas",
+      "icono": "🌿",
+      "resumen": "",
+      "ficha_tecnica": {
+        "temp_ideal_c": [
+          10.0,
+          25.0
+        ],
+        "temp_limite_c": [
+          3.0,
+          30.0
+        ],
+        "tolera_helada": true,
+        "altitud_max_m": 1500,
+        "dias_a_cosecha": [
+          60,
+          120
+        ],
+        "maceta_min_litros": 5,
+        "profundidad_min_cm": 15,
+        "luz": "media_sombra",
+        "riego": "",
+        "sustrato_recomendado": ""
+      },
+      "tutorial": [],
+      "companeros_cultivo": [],
+      "curiosidades": [],
+      "ojo": [],
+      "fuentes": [
+        "FAO ECOCROP: Mentha arvensis var. piperascens",
+        "Wikipedia: https://es.wikipedia.org/wiki/Mentha_spicata"
+      ],
+      "reglas": {
+        "perenne": true,
+        "dias_cosecha_aprox": 60,
+        "dificultad": "facil",
+        "espacio_tipo": "maceta_chica",
+        "necesita_tutor": false,
+        "sensible_a": [],
+        "siap_nombres": [
+          "Hierbabuena",
+          "Menta"
+        ]
+      },
+      "_referencia": {
+        "wikipedia_extracto": "Mentha spicata, conocida popularmente como hierbabuena, yerbabuena o menta de jardín, es una especie del género Mentha, una hierba aromática muy empleada en gastronomía y perfumería por su aroma intenso y fresco.",
+        "wikipedia_imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Mentha_viridis_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-096.jpg/330px-Mentha_viridis_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-096.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "notas": "ECOCROP no tiene Mentha spicata; se usan los rangos de Mentha arvensis como aproximación."
+      },
+      "_pendiente": [
+        "resumen",
+        "ficha_tecnica.riego",
+        "ficha_tecnica.sustrato_recomendado",
+        "tutorial",
+        "companeros_cultivo",
+        "curiosidades",
+        "ojo"
+      ]
+    },
+    {
+      "id": "romero",
+      "nombre": "Romero",
+      "nombre_cientifico": "Salvia rosmarinus",
+      "ecocrop_nombre": "Rosmarinus officinalis",
+      "categoria": "Hierbas",
+      "icono": "🌿",
+      "resumen": "",
+      "ficha_tecnica": {
+        "temp_ideal_c": [
+          18.0,
+          30.0
+        ],
+        "temp_limite_c": [
+          8.0,
+          38.0
+        ],
+        "tolera_helada": true,
+        "altitud_max_m": 1500,
+        "dias_a_cosecha": [
+          120,
+          240
+        ],
+        "maceta_min_litros": 15,
+        "profundidad_min_cm": 25,
+        "luz": "pleno_sol",
+        "riego": "",
+        "sustrato_recomendado": ""
+      },
+      "tutorial": [],
+      "companeros_cultivo": [],
+      "curiosidades": [],
+      "ojo": [],
+      "fuentes": [
+        "FAO ECOCROP: Rosmarinus officinalis",
+        "Wikipedia: https://es.wikipedia.org/wiki/Salvia_rosmarinus"
+      ],
+      "reglas": {
+        "perenne": true,
+        "dias_cosecha_aprox": 120,
+        "dificultad": "facil",
+        "espacio_tipo": "maceta_grande",
+        "necesita_tutor": false,
+        "sensible_a": [
+          "lluvia_fuerte"
+        ],
+        "siap_nombres": [
+          "Romero"
+        ]
+      },
+      "_referencia": {
+        "wikipedia_extracto": "Salvia rosmarinus, conocida popularmente como romero, es una hierba leñosa perenne, con follaje siempre verde y flores blancas, rosas, púrpuras o azules, perteneciente a la familia Lamiaceae, nativa de la región mediterránea. Hasta el año 2017 la especie era conocida por el nombre científico Rosmarinus officinalis, ahora un sinónimo. Es utilizada por sus propiedades aromáticas y medicinales.",
+        "wikipedia_imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Rosmarinus_officinalis_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-258.jpg/330px-Rosmarinus_officinalis_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-258.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "notas": null
+      },
+      "_pendiente": [
+        "resumen",
+        "ficha_tecnica.riego",
+        "ficha_tecnica.sustrato_recomendado",
+        "tutorial",
+        "companeros_cultivo",
+        "curiosidades",
+        "ojo"
+      ]
+    },
+    {
+      "id": "oregano",
+      "nombre": "Orégano",
+      "nombre_cientifico": "Origanum vulgare",
+      "ecocrop_nombre": "Origanum vulgare",
+      "categoria": "Hierbas",
+      "icono": "🌿",
+      "resumen": "",
+      "ficha_tecnica": {
+        "temp_ideal_c": [
+          17.0,
+          28.0
+        ],
+        "temp_limite_c": [
+          4.0,
+          32.0
+        ],
+        "tolera_helada": true,
+        "altitud_max_m": null,
+        "dias_a_cosecha": [
+          90,
+          180
+        ],
+        "maceta_min_litros": 5,
+        "profundidad_min_cm": 15,
+        "luz": "pleno_sol",
+        "riego": "",
+        "sustrato_recomendado": ""
+      },
+      "tutorial": [],
+      "companeros_cultivo": [],
+      "curiosidades": [],
+      "ojo": [],
+      "fuentes": [
+        "FAO ECOCROP: Origanum vulgare",
+        "Wikipedia: https://es.wikipedia.org/wiki/Origanum_vulgare"
+      ],
+      "reglas": {
+        "perenne": true,
+        "dias_cosecha_aprox": 90,
+        "dificultad": "facil",
+        "espacio_tipo": "maceta_chica",
+        "necesita_tutor": false,
+        "sensible_a": [
+          "lluvia_fuerte"
+        ],
+        "siap_nombres": [
+          "Orégano"
+        ]
+      },
+      "_referencia": {
+        "wikipedia_extracto": "Origanum vulgare, comúnmente conocida como orégano, es una especie de la familia Lamiaceae, nativa de la región mediterránea y el oeste o suroeste de Eurasia. Se usa como condimento y en la preparación de infusiones herbales. Las partes utilizadas son las brácteas de la inflorescencia, tanto frescas como secas, aunque secas poseen mucho más sabor y aroma.[cita requerida]",
+        "wikipedia_imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Oregano-spice.jpg/330px-Oregano-spice.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "notas": null
+      },
+      "_pendiente": [
+        "resumen",
+        "ficha_tecnica.riego",
+        "ficha_tecnica.sustrato_recomendado",
+        "tutorial",
+        "companeros_cultivo",
+        "curiosidades",
+        "ojo"
+      ]
+    },
+    {
+      "id": "cebollin",
+      "nombre": "Cebollín",
+      "nombre_cientifico": "Allium schoenoprasum",
+      "ecocrop_nombre": "Allium schoenoprasum",
+      "categoria": "Hierbas",
+      "icono": "🌱",
+      "resumen": "",
+      "ficha_tecnica": {
+        "temp_ideal_c": [
+          10.0,
+          20.0
+        ],
+        "temp_limite_c": [
+          2.0,
+          35.0
+        ],
+        "tolera_helada": true,
+        "altitud_max_m": 2000,
+        "dias_a_cosecha": [
+          70,
+          100
+        ],
+        "maceta_min_litros": 3,
+        "profundidad_min_cm": 15,
+        "luz": "pleno_sol",
+        "riego": "",
+        "sustrato_recomendado": ""
+      },
+      "tutorial": [],
+      "companeros_cultivo": [],
+      "curiosidades": [],
+      "ojo": [],
+      "fuentes": [
+        "FAO ECOCROP: Allium schoenoprasum",
+        "Wikipedia: https://es.wikipedia.org/wiki/Allium_schoenoprasum"
+      ],
+      "reglas": {
+        "perenne": true,
+        "dias_cosecha_aprox": 70,
+        "dificultad": "facil",
+        "espacio_tipo": "maceta_chica",
+        "necesita_tutor": false,
+        "sensible_a": [],
+        "siap_nombres": []
+      },
+      "_referencia": {
+        "wikipedia_extracto": "Allium schoenoprasum, también conocido como cebollino, cebolla de hoja, cebolla china, ciboulette, chonacate, xonacatl, cebolleta, cebollina, cebollín o cebolla aromática, y kucháy, es una hierba de la familia de las aliáceas, de la que se utilizan solo las hojas picadas como hierba aromática. Su bulbo tiene un sabor muy similar al de la cebolla blanca o común pero es de menores dimensiones y no tiene uso alimenticio. Se diferencia de la cebolla de verdeo o china por ser de menor tamaño y su diferente uso culinario.",
+        "wikipedia_imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Allium_schoenoprasum_W.jpg/330px-Allium_schoenoprasum_W.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "notas": null
+      },
+      "_pendiente": [
+        "resumen",
+        "ficha_tecnica.riego",
+        "ficha_tecnica.sustrato_recomendado",
+        "tutorial",
+        "companeros_cultivo",
+        "curiosidades",
+        "ojo"
+      ]
+    },
+    {
+      "id": "verdolaga",
+      "nombre": "Verdolaga",
+      "nombre_cientifico": "Portulaca oleracea",
+      "ecocrop_nombre": "Portulaca oleracea",
+      "categoria": "Quelites y mexicanos",
+      "icono": "🌱",
+      "resumen": "",
+      "ficha_tecnica": {
+        "temp_ideal_c": [
+          18.0,
+          32.0
+        ],
+        "temp_limite_c": [
+          7.0,
+          36.0
+        ],
+        "tolera_helada": false,
+        "altitud_max_m": 1700,
+        "dias_a_cosecha": [
+          21,
+          80
+        ],
+        "maceta_min_litros": 3,
+        "profundidad_min_cm": 15,
+        "luz": "pleno_sol",
+        "riego": "",
+        "sustrato_recomendado": ""
+      },
+      "tutorial": [],
+      "companeros_cultivo": [],
+      "curiosidades": [],
+      "ojo": [],
+      "fuentes": [
+        "FAO ECOCROP: Portulaca oleracea",
+        "Wikipedia: https://es.wikipedia.org/wiki/Portulaca_oleracea"
+      ],
+      "reglas": {
+        "perenne": false,
+        "dias_cosecha_aprox": 40,
+        "dificultad": "facil",
+        "espacio_tipo": "maceta_chica",
+        "necesita_tutor": false,
+        "sensible_a": [
+          "helada"
+        ],
+        "siap_nombres": [
+          "Verdolaga"
+        ]
+      },
+      "_referencia": {
+        "wikipedia_extracto": "Portulaca oleracea, llamada popularmente verdolaga común, es una especie de planta perteneciente la familia Portulacaceae. Es originaria de la India, Oriente Medio y el sur de Europa, mientras que en América se considera exótica antigua o nativa, aunque se ha naturalizado en todo el mundo. Se utiliza como ornamental, con fines alimentarios y medicinales.",
+        "wikipedia_imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Portulaca_oleracea_MHNT.jpg/330px-Portulaca_oleracea_MHNT.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "notas": null
+      },
+      "_pendiente": [
+        "resumen",
+        "ficha_tecnica.riego",
+        "ficha_tecnica.sustrato_recomendado",
+        "tutorial",
+        "companeros_cultivo",
+        "curiosidades",
+        "ojo"
+      ]
+    },
+    {
+      "id": "amaranto",
+      "nombre": "Amaranto (quelite)",
+      "nombre_cientifico": "Amaranthus hypochondriacus",
+      "ecocrop_nombre": "Amaranthus hypochondriacus",
+      "categoria": "Quelites y mexicanos",
+      "icono": "🌾",
+      "resumen": "",
+      "ficha_tecnica": {
+        "temp_ideal_c": [
+          19.0,
+          23.0
+        ],
+        "temp_limite_c": [
+          10.0,
+          32.0
+        ],
+        "tolera_helada": false,
+        "altitud_max_m": null,
+        "dias_a_cosecha": [
+          30,
+          90
+        ],
+        "maceta_min_litros": 20,
+        "profundidad_min_cm": 30,
+        "luz": "pleno_sol",
+        "riego": "",
+        "sustrato_recomendado": ""
+      },
+      "tutorial": [],
+      "companeros_cultivo": [],
+      "curiosidades": [],
+      "ojo": [],
+      "fuentes": [
+        "FAO ECOCROP: Amaranthus hypochondriacus",
+        "Wikipedia: https://es.wikipedia.org/wiki/Amaranthus_hypochondriacus"
+      ],
+      "reglas": {
+        "perenne": false,
+        "dias_cosecha_aprox": 45,
+        "dificultad": "media",
+        "espacio_tipo": "maceta_grande",
+        "necesita_tutor": false,
+        "sensible_a": [
+          "helada",
+          "viento"
+        ],
+        "siap_nombres": [
+          "Amaranto"
+        ]
+      },
+      "_referencia": {
+        "wikipedia_extracto": "Amaranthus hypochondriacus es una especie de planta ornamental y medicinal perteneciente a la familia de las amarantáceas.",
+        "wikipedia_imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/%28MHNT%29_Amaranthus_hypochondriacus_-_Mature_inflorescence_-_Les_Martels%2C_Giroussens_Tarn.jpg/330px-%28MHNT%29_Amaranthus_hypochondriacus_-_Mature_inflorescence_-_Les_Martels%2C_Giroussens_Tarn.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "notas": null
+      },
+      "_pendiente": [
+        "resumen",
+        "ficha_tecnica.riego",
+        "ficha_tecnica.sustrato_recomendado",
+        "tutorial",
+        "companeros_cultivo",
+        "curiosidades",
+        "ojo"
+      ]
+    },
+    {
+      "id": "nopal",
+      "nombre": "Nopal",
+      "nombre_cientifico": "Opuntia ficus-indica",
+      "ecocrop_nombre": "Opuntia ficus-indica",
+      "categoria": "Quelites y mexicanos",
+      "icono": "🌵",
+      "resumen": "",
+      "ficha_tecnica": {
+        "temp_ideal_c": [
+          18.0,
+          26.0
+        ],
+        "temp_limite_c": [
+          10.0,
+          30.0
+        ],
+        "tolera_helada": true,
+        "altitud_max_m": null,
+        "dias_a_cosecha": [
+          120,
+          240
+        ],
+        "maceta_min_litros": 20,
+        "profundidad_min_cm": 25,
+        "luz": "pleno_sol",
+        "riego": "",
+        "sustrato_recomendado": ""
+      },
+      "tutorial": [],
+      "companeros_cultivo": [],
+      "curiosidades": [],
+      "ojo": [],
+      "fuentes": [
+        "FAO ECOCROP: Opuntia ficus-indica",
+        "Wikipedia: https://es.wikipedia.org/wiki/Opuntia_ficus-indica"
+      ],
+      "reglas": {
+        "perenne": true,
+        "dias_cosecha_aprox": 120,
+        "dificultad": "facil",
+        "espacio_tipo": "maceta_grande",
+        "necesita_tutor": false,
+        "sensible_a": [
+          "lluvia_fuerte"
+        ],
+        "siap_nombres": [
+          "Nopalitos"
+        ]
+      },
+      "_referencia": {
+        "wikipedia_extracto": "Opuntia ficus-indica, comúnmente conocida, entre otros nombres, como nopal, higuera (de pala), palera, pera de cactus, penca, tuna, tuno, tunera, chumbera e higo, es una especie arbustiva del género Opuntia de la familia de las cactáceas.",
+        "wikipedia_imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Opuntia16_filtered.jpg/330px-Opuntia16_filtered.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "notas": "ECOCROP lo marca con límite de 10 °C, pero se cultiva en Milpa Alta (2,400 m). Revisar a mano sus rangos."
+      },
+      "_pendiente": [
+        "resumen",
+        "ficha_tecnica.riego",
+        "ficha_tecnica.sustrato_recomendado",
+        "tutorial",
+        "companeros_cultivo",
+        "curiosidades",
+        "ojo"
+      ]
+    }
+  ]
+}
