@@ -163,7 +163,7 @@ async def _get(url: str, params: dict[str, Any]) -> dict[str, Any]:
     return r.json()
 
 
-async def obtener_diario_30_anios(lat: float, lon: float) -> dict[str, list]:
+async def obtener_clima_diario(lat: float, lon: float) -> dict[str, list]:
     """Clima diario de 2016 a 2025 (una sola petición). Devuelve el bloque `daily` de Open-Meteo."""
     datos = await _get(URL_HISTORICO, {
         "latitude": lat, "longitude": lon,
@@ -175,16 +175,18 @@ async def obtener_diario_30_anios(lat: float, lon: float) -> dict[str, list]:
 
 
 async def obtener_pronostico_7d(lat: float, lon: float) -> list[dict]:
-    """Pronóstico de 7 días convertido en alertas.
+    """Pronóstico de 7 días convertido en alertas. `[]` significa que de verdad no hay riesgo.
 
-    Si Open-Meteo falla (429, timeout o red), devuelve lista vacía para no tumbar la API.
+    Si Open-Meteo falla (429, timeout, red) o responde sin días, lanza ClimaNoDisponibleError:
+    así /api/alertas responde 503 (el frontend muestra "Reintentar") y no se guarda nada en caché.
+    Antes devolvía `[]` y la app decía "Sin alertas" aunque no hubiera pronóstico.
     """
-    try:
-        datos = await _get(URL_PRONOSTICO, {
-            "latitude": lat, "longitude": lon, "forecast_days": 7, "timezone": "auto",
-            "daily": "weather_code,temperature_2m_min,temperature_2m_max,precipitation_sum,"
-                     "wind_gusts_10m_max,uv_index_max",
-        })
-    except ClimaNoDisponibleError:
-        return []
-    return motor_alertas.construir_alertas(datos.get("daily", {}))
+    datos = await _get(URL_PRONOSTICO, {
+        "latitude": lat, "longitude": lon, "forecast_days": 7, "timezone": "auto",
+        "daily": "weather_code,temperature_2m_min,temperature_2m_max,precipitation_sum,"
+                 "wind_gusts_10m_max,uv_index_max",
+    })
+    diario = datos.get("daily") or {}
+    if not diario.get("time"):
+        raise ClimaNoDisponibleError()
+    return motor_alertas.construir_alertas(diario)

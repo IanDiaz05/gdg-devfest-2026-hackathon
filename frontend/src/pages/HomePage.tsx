@@ -60,7 +60,7 @@ export function HomePage() {
               </span> en tu patio o macetas
             </h1>
             <p className="mt-4 max-w-[48ch] leading-7 text-muted-foreground sm:text-lg">
-              Elige qué cultivar con 30 años de datos climáticos de tu localidad.
+              Elige qué cultivar con 10 años de datos climáticos de tu localidad.
             </p>
           </div>
 
@@ -118,7 +118,7 @@ export function HomePage() {
 
           <div className="grid gap-5 border-t border-border pt-4 motion-safe:animate-fade-up motion-safe:[animation-delay:200ms] motion-reduce:animate-none lg:col-span-2 lg:grid-cols-[1fr_auto] lg:items-center">
             <ul className="flex flex-wrap gap-x-4 gap-y-2 text-sm font-semibold text-primary sm:gap-x-6" aria-label="Resumen de QUESIEMBRO">
-              <li className="flex items-center gap-2"><CalendarDays size={17} aria-hidden="true" /> 30 años de datos climáticos</li>
+              <li className="flex items-center gap-2"><CalendarDays size={17} aria-hidden="true" /> 10 años de datos climáticos</li>
               <li className="flex items-center gap-2"><Sprout size={17} aria-hidden="true" /> {datos?.cultivos.length ? `${datos.cultivos.length} cultivos evaluados` : 'Cultivos para casa'}</li>
               <li className="flex items-center gap-2"><UserRound size={17} aria-hidden="true" /> Sin registro</li>
             </ul>

@@ -115,7 +115,7 @@ def test_recomendaciones_fallback_smn_cuando_open_meteo_falla(
 
     with (
         patch(
-            "app.api.routes.open_meteo.obtener_diario_30_anios",
+            "app.api.routes.open_meteo.obtener_clima_diario",
             new=AsyncMock(side_effect=exc),
         ),
         patch(

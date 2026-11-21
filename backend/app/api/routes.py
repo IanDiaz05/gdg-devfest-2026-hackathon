@@ -17,11 +17,13 @@ from app.schemas.cultivos import (
     Restricciones,
 )
 from app.schemas.recomendaciones import (
+    AlertasResponse,
     ClimaZona,
     ErrorResponse,
     MesTemperatura,
     RecomendacionesResponse,
     SugerenciaCiudad,
+    UbicacionAlertas,
     UbicacionInfo,
 )
 from app.services import open_meteo
@@ -175,6 +177,21 @@ def _detalle_desde_fila(fila: dict[str, Any]) -> CultivoDetalleResponse:
     )
 
 
+async def _resolver_lugar(q: str | None, lat: float | None, lon: float | None) -> dict[str, Any]:
+    if lat is not None and lon is not None:
+        return await open_meteo.resolver_coordenadas(lat, lon)
+    if q is not None:
+        return await open_meteo.buscar_ubicacion(q)
+    raise UbicacionInvalidaError()
+
+
+def _con_cultivos_afectados(alertas: list[dict[str, Any]], cultivos_db: list[dict]) -> list[dict[str, Any]]:
+    return [
+        {**alerta, "cultivos_afectados": motor_alertas.cultivos_afectados(alerta["tipo"], cultivos_db)}
+        for alerta in alertas
+    ]
+
+
 @router.get(
     "/recomendaciones",
     response_model=RecomendacionesResponse,
@@ -190,12 +207,7 @@ async def recomendaciones(
     lon: float | None = None,
     mes: int | None = Query(default=None, ge=1, le=12),
 ) -> RecomendacionesResponse:
-    if lat is not None and lon is not None:
-        lugar = await open_meteo.resolver_coordenadas(lat, lon)
-    elif q is not None:
-        lugar = await open_meteo.buscar_ubicacion(q)
-    else:
-        raise UbicacionInvalidaError()
+    lugar = await _resolver_lugar(q, lat, lon)
 
     mes_evaluado = mes if mes is not None else datetime.now().month
     lat_resuelta = float(lugar["lat"])
@@ -213,8 +225,8 @@ async def recomendaciones(
         desde_cache = True
     else:
         try:
-            diarios = await open_meteo.obtener_diario_30_anios(lat_resuelta, lon_resuelta)
-            resumen = clima_processor.procesar_clima_30_anios(diarios)
+            diarios = await open_meteo.obtener_clima_diario(lat_resuelta, lon_resuelta)
+            resumen = clima_processor.procesar_clima_diario(diarios)
             if len(resumen) < 12:  # respuesta incompleta: no se guarda en caché
                 raise ClimaNoDisponibleError()
             periodo = _PERIODO_REFERENCIA
@@ -246,23 +258,13 @@ async def recomendaciones(
             )
             desde_cache = False
 
-    alertas = await database.get_pronostico_cache(lat_grid, lon_grid)
-    if alertas is None:
-        alertas = await open_meteo.obtener_pronostico_7d(lat_resuelta, lon_resuelta)
-        if alertas:
-            await database.save_pronostico_cache(
-                lat_grid,
-                lon_grid,
-                alertas,
-                settings.PRONOSTICO_TTL_SECONDS,
-            )
+    # El pronóstico se pide aparte en GET /api/alertas (el frontend lo carga con su propio "cargando").
+    # Aquí solo se incluye si ya está en caché, para no esperar a Open-Meteo ni fallar si no responde.
+    alertas = await database.get_pronostico_cache(lat_grid, lon_grid) or []
 
     lluvia = lluvia_reciente.obtener_lluvia_reciente(lat_resuelta, lon_resuelta)
     cultivos_db = await database.get_all_cultivos()
-    alertas = [
-        {**alerta, "cultivos_afectados": motor_alertas.cultivos_afectados(alerta["tipo"], cultivos_db)}
-        for alerta in alertas
-    ]
+    alertas = _con_cultivos_afectados(alertas, cultivos_db)
     cultivos = reglas_siembra.evaluar_cultivos(
         cultivos_db,
         resumen,
@@ -284,6 +286,40 @@ async def recomendaciones(
         clima_zona=_clima_zona(resumen, mes_evaluado, periodo, lluvia, origen, fuente),
         alertas_7_dias=alertas,
         cultivos=cultivos,
+    )
+
+
+@router.get(
+    "/alertas",
+    response_model=AlertasResponse,
+    responses={
+        400: {"model": ErrorResponse},
+        404: {"model": ErrorResponse},
+        503: {"model": ErrorResponse},
+    },
+)
+async def alertas(
+    q: str | None = None,
+    lat: float | None = None,
+    lon: float | None = None,
+) -> AlertasResponse:
+    """Alertas de los próximos 7 días (Open-Meteo Forecast), con los cultivos que afecta cada una.
+
+    Mismos parámetros de ubicación que /api/recomendaciones. Se guarda 1 hora por zona (celda de 0.1°).
+    """
+    lugar = await _resolver_lugar(q, lat, lon)
+    lat_resuelta, lon_resuelta = float(lugar["lat"]), float(lugar["lon"])
+    lat_grid, lon_grid = round(lat_resuelta, 1), round(lon_resuelta, 1)
+    pronostico = await database.get_pronostico_cache(lat_grid, lon_grid)
+    desde_cache = pronostico is not None
+    if pronostico is None:
+        pronostico = await open_meteo.obtener_pronostico_7d(lat_resuelta, lon_resuelta)
+        # También se guarda una semana sin alertas, para no volver a preguntar en la siguiente hora
+        await database.save_pronostico_cache(lat_grid, lon_grid, pronostico, settings.PRONOSTICO_TTL_SECONDS)
+    return AlertasResponse(
+        ubicacion=UbicacionAlertas(nombre=str(lugar["nombre"]), estado=str(lugar["estado"]), lat=lat_resuelta, lon=lon_resuelta),
+        alertas_7_dias=_con_cultivos_afectados(pronostico, await database.get_all_cultivos()),
+        desde_cache=desde_cache,
     )
 
 

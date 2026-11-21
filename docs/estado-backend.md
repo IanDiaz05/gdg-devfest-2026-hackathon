@@ -10,7 +10,7 @@
 | | Estado |
 |---|---|
 | Buscar ciudad (texto o GPS) | ✅ Funciona, sin API (`data/ciudades.json`) |
-| Clima típico de 30 años | ✅ Funciona con **Open-Meteo en vivo** (con caché). ⚠️ Riesgo de límite en la demo (sección 5) |
+| Clima típico de 10 años (2016-2025) | ✅ Funciona con **Open-Meteo en vivo** (con caché). ⚠️ Riesgo de límite en la demo (sección 5) |
 | Pronóstico y alertas de 7 días | ✅ Funciona con **Open-Meteo en vivo** (ligero, con caché de 1 hora) |
 | Lluvia del mes pasado (oficial) | ✅ Funciona con **SMN-CONAGUA** descargado |
 | Recomendación ✅ ⚠️ ❌ y "cuándo sí" | ✅ Funciona |
@@ -88,7 +88,7 @@
 
 | API | Para qué | Peso |
 |---|---|---|
-| Open-Meteo Historical | Clima típico de 30 años | **Pesada**: cuenta como cientos de llamadas por ciudad nueva. Se guarda para siempre en SQLite (por celda de ~10 km) |
+| Open-Meteo Historical | Clima típico de 10 años (2016-2025) | **Pesada**: cuenta como cientos de llamadas por ciudad nueva. Se guarda para siempre en SQLite (por celda de ~10 km) |
 | Open-Meteo Forecast | Pronóstico y alertas de 7 días | Ligera (≈ 1 llamada), caché de 1 hora |
 
 ### Descargados (en `backend/data/`, sin límites)
@@ -138,7 +138,7 @@ cd backend; .\.venv\Scripts\python scripts\seed.py; .\.venv\Scripts\python -m uv
 ### El problema
 
 - El plan gratis de Open-Meteo permite **10,000 llamadas al día, 5,000 por hora y 600 por minuto**, **para todo el servidor** (no por usuario).
-- Una consulta de **30 años de clima cuenta como cientos de llamadas**.
+- Una consulta de **10 años de clima cuenta como unas 100 llamadas** (antes eran 30 años; se redujo por el límite).
 - Durante las pruebas se hicieron muchas seguidas y se rebasó el límite.
 
 ### ¿Pasaría en producción?

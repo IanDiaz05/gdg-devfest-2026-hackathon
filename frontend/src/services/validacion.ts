@@ -1,4 +1,4 @@
-import type { Diagnostico, FichaCultivo, SugerenciaCiudad } from '../types/api'
+import type { Diagnostico, FichaCultivo, RespuestaAlertas, SugerenciaCiudad } from '../types/api'
 import { esMes } from '../utils/consulta'
 
 export function objeto(valor: unknown): Record<string, unknown> | undefined {
@@ -28,6 +28,11 @@ const consumoHidrico = unoDe('bajo', 'medio', 'alto')
 const dificultad = unoDe('facil', 'media', 'dificil')
 const alternativa = { nombre: texto, estado: texto, lat: numero, lon: numero }
 const mesClimatico = campos({ mes: esMes, nombre: texto, temp_media_c: numero })
+const alerta = campos({
+  tipo: unoDe('helada', 'calor', 'lluvia_fuerte', 'tormenta', 'viento', 'uv'),
+  severidad: unoDe('media', 'alta'), fecha: texto, titulo: texto, mensaje: texto,
+  cultivos_afectados: opcional(lista(texto)),
+})
 const diagnostico = campos({
   ubicacion: campos({
     ...alternativa, municipio: texto, altitud_m: numero, desde_cache: booleano, alternativas: lista(campos(alternativa)),
@@ -53,11 +58,7 @@ const diagnostico = campos({
       mensaje: texto, consejo: texto,
     }))),
   }),
-  alertas_7_dias: lista(campos({
-    tipo: unoDe('helada', 'calor', 'lluvia_fuerte', 'tormenta', 'viento', 'uv'),
-    severidad: unoDe('media', 'alta'), fecha: texto, titulo: texto, mensaje: texto,
-    cultivos_afectados: opcional(lista(texto)),
-  })),
+  alertas_7_dias: lista((valor) => alerta(valor)),
   cultivos: lista(campos({
     id: texto, nombre: texto, icono: texto, categoria: texto,
     estado: unoDe('optimo', 'con_cuidados', 'no_ahora'), semaforo: unoDe('verde', 'amarillo', 'rojo'),
@@ -105,4 +106,11 @@ export function validarDiagnostico(valor: unknown): Diagnostico {
 export const validarFicha = (valor: unknown) => validar<FichaCultivo>(valor, ficha)
 
 const sugerencias = lista(campos({ nombre: texto, estado: texto, municipio: texto, etiqueta: texto, lat: numero, lon: numero }))
+const respuestaAlertas = campos({
+  ubicacion: campos({ nombre: texto, estado: texto, lat: numero, lon: numero }),
+  alertas_7_dias: lista(alerta),
+  desde_cache: booleano,
+})
+export const validarAlertas = (valor: unknown) => validar<RespuestaAlertas>(valor, respuestaAlertas)
+
 export const validarSugerencias = (valor: unknown) => validar<SugerenciaCiudad[]>(valor, sugerencias)

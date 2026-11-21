@@ -54,6 +54,11 @@
   --c-rueda-ideal: #5E9B5A;
   --c-rueda-cuidados: #F0D592;
   --c-rueda-cuidados-texto: #6B4E12;
+  /* Mes elegido en la rueda: el mismo color, más oscuro */
+  --c-rueda-ideal-activo: #2F6B3A;
+  --c-rueda-cuidados-activo: #B8862E;
+  --c-rueda-no-activo: #8F897D;
+  --c-rueda-activo-texto: #FFFFFF;
   --c-barra: rgb(38 78 54 / 22%);
 }
 
@@ -104,6 +109,10 @@
   --c-rueda-ideal: #4FA38A;
   --c-rueda-cuidados: #E2B67E;
   --c-rueda-cuidados-texto: #3A2E10;
+  --c-rueda-ideal-activo: #2B7A63;
+  --c-rueda-cuidados-activo: #B9844A;
+  --c-rueda-no-activo: #3F4F49;
+  --c-rueda-activo-texto: #FFFFFF;
   --c-pie: #08100E;
   --c-pie-texto: #DDE8E4;
   --c-barra: rgb(166 216 198 / 25%);

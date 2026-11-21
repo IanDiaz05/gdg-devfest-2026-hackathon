@@ -24,7 +24,7 @@ cd backend; .\.venv\Scripts\python scripts\seed.py; .\.venv\Scripts\python -m uv
 
 - API en `http://localhost:8000`, documentación interactiva en `http://localhost:8000/docs`.
 - `seed.py` carga los cultivos en `quesiembro.db` (usa `data/cultivos.json` y, si no existe, `data/cultivos_base.json`).
-- La primera consulta de una ciudad tarda de 5 a 20 s (30 años de clima de Open-Meteo); después sale de la caché en milisegundos.
+- La primera consulta de una ciudad tarda de 2 a 10 s (10 años de clima de Open-Meteo, 2016-2025); después sale de la caché en milisegundos.
 - Si Open-Meteo limita las peticiones (error 429), la API responde **503 `clima_no_disponible`** y no guarda nada en la caché.
 
 ## 3. Descargar y generar los datos
@@ -108,7 +108,7 @@ backend/data/
 |---|---|
 | Búsqueda de ciudad y GPS | `data/ciudades.json` (sin red) |
 | Clima típico (temperaturas, % de heladas, lluvia del mes) | **Open-Meteo Historical**, 10 años (en vivo, con caché en SQLite por celda de 0.1°). Si Open-Meteo no responde: **estación del SMN más cercana que cumpla el criterio de calidad** (≤ 30 km y ≤ 150 m de diferencia de altura). La respuesta lo indica en `clima_zona.origen` (`open-meteo` o `conagua`) |
-| Alertas de 7 días: helada, calor, lluvia fuerte, tormenta, viento y UV | **Open-Meteo Forecast** (en vivo, caché de 1 hora) |
+| Alertas de 7 días: helada, calor, lluvia fuerte, tormenta, viento y UV | **Open-Meteo Forecast** en `GET /api/alertas` (en vivo, caché de 1 hora; separado de `/api/recomendaciones`). Lógica en `app/engine/alertas.py` |
 | Lluvia del último mes y su comparación con lo normal | **SMN-CONAGUA**, estación más cercana (≤ 30 km) en `data/smn_estaciones.json` |
 | Estado ✅ ⚠️ ❌, razón y meses buenos | Motor de reglas (`app/engine/reglas_siembra.py`) |
 | Ficha del cultivo | `data/cultivos_base.json` (o `cultivos.json`) |

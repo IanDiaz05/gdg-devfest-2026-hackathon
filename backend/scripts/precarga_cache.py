@@ -67,8 +67,8 @@ async def _ya_en_cache(lat_grid: float, lon_grid: float) -> bool:
 
 
 async def _precargar_celda(celda: dict[str, Any]) -> bool:
-    diarios = await open_meteo.obtener_diario_30_anios(celda["lat"], celda["lon"])
-    resumen = clima_processor.procesar_clima_30_anios(diarios)
+    diarios = await open_meteo.obtener_clima_diario(celda["lat"], celda["lon"])
+    resumen = clima_processor.procesar_clima_diario(diarios)
     if len(resumen) < 12:
         raise ClimaNoDisponibleError()
     await database.save_clima_cache(

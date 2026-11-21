@@ -9,6 +9,7 @@ import { BarraUbicacion } from '../components/BarraUbicacion'
 import { ClimaCard } from '../components/ClimaCard'
 import { CargaPantalla, ElegirZona } from '../components/Interfaz'
 import { SelectorLocalidad } from '../components/SelectorLocalidad'
+import { useAlertas } from '../hooks/useAlertas'
 import { useRecomendaciones } from '../hooks/useRecomendaciones'
 import type { Recomendacion, Ubicacion } from '../types/api'
 import { parametros } from '../utils/consulta'
@@ -20,12 +21,15 @@ export function ZonaRecomendacionesPage() {
   const { consulta, ubicacion, busqueda } = useRecomendaciones()
   const conectado = useConexion()
   const [params, setParams] = useSearchParams()
+  // Las alertas se piden al mismo tiempo que las recomendaciones, pero cada una se muestra cuando llega
+  const pronostico = useAlertas(ubicacion, conectado)
 
   if (!ubicacion) return <ElegirZona />
   if (consulta.isPending) return <CargaPantalla mensaje="Consultando el clima histórico…" />
   if (consulta.isError) return <ErrorConsulta error={consulta.error} busqueda={busqueda} reintentar={() => void consulta.refetch()} />
 
-  const { ubicacion: zona, clima_zona: clima, alertas_7_dias: alertas, cultivos } = consulta.data
+  const { ubicacion: zona, clima_zona: clima, cultivos } = consulta.data
+  const enLinea = conectado && !fechaGuardada(consulta.data)
   const destacados = [...cultivos].filter((cultivo) => cultivo.estado !== 'no_ahora')
     .sort((a, b) => prioridad(b) - prioridad(a)).slice(0, 4)
 
@@ -43,9 +47,10 @@ export function ZonaRecomendacionesPage() {
       <BarraUbicacion ubicacion={zona} mes={clima.mes_evaluado} busqueda={busqueda} onMes={(mes) => cambiar(ubicacion, mes)} />
     </div>
     <SelectorLocalidad alternativas={zona.alternativas} elegir={({ lat, lon }) => cambiar({ lat, lon }, clima.mes_evaluado)} />
-    <div className={conectado && !fechaGuardada(consulta.data) && alertas.length ? 'grid gap-5 lg:grid-cols-[minmax(0,1.65fr)_minmax(0,1fr)]' : undefined}>
+    <div className={enLinea ? 'grid gap-5 lg:grid-cols-[minmax(0,1.65fr)_minmax(0,1fr)]' : undefined}>
       <ClimaCard clima={clima} altitud={zona.altitud_m} />
-      {conectado && !fechaGuardada(consulta.data) && <AlertasClima alertas={alertas} />}
+      {enLinea && <AlertasClima alertas={pronostico.data?.alertas_7_dias} cargando={pronostico.isPending}
+        error={pronostico.isError} reintentar={() => void pronostico.refetch()} />}
     </div>
 
     {destacados.length > 0 && <section className="mt-8" aria-labelledby="destacados">

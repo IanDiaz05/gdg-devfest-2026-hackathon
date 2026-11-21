@@ -150,7 +150,7 @@ Devuelve la información climática de la zona y la evaluación de todos los cul
 ### Notas de Implementación para `GET /api/recomendaciones`
 
 * `clima_zona.lluvia_reciente`**:** Lluvia del **último mes publicado por el SMN** (CONAGUA) en la estación más cercana (máximo 30 km), comparada con el promedio de ese mes en la misma estación (2013 al año pasado). Es `null` si no hay estación cerca. `anomalia_pct` es `null` cuando lo normal del mes es menor a 5 mm.
-* `clima_zona.lluvia_mes_mm`**:** Lluvia típica del mes evaluado según 30 años de Open-Meteo.
+* `clima_zona.lluvia_mes_mm`**:** Lluvia típica del mes evaluado según 10 años de Open-Meteo (2016-2025) o los promedios de la estación del SMN.
 * `clima_zona.origen`**:** De dónde sale el clima típico de la zona (temperaturas, heladas y `lluvia_mes_mm`):
   * `"open-meteo"`: 10 años de datos diarios en el punto exacto de la ciudad (`periodo_referencia`: `"2016-2025"`). `estacion_smn` es `null`.
   * `"conagua"`: promedios mensuales de la **estación del SMN más cercana que represente bien la zona**: a 30 km o menos y a no más de 150 m de diferencia de altura (15 km si no se conoce la altura de la estación). `periodo_referencia`: `"SMN-CONAGUA 2013-2025"`. Se usa cuando la zona no tiene datos de Open-Meteo y Open-Meteo no responde (límite de peticiones), o cuando se precargó con `scripts/precarga_conagua.py`. `estacion_smn` dice qué estación y a qué distancia:
@@ -162,7 +162,7 @@ Devuelve la información climática de la zona y la evaluación de todos los cul
     `diferencia_altitud_m` es la altura de la zona menos la de la estación (positivo: la estación está más abajo); `altitud_estacion_m` y `diferencia_altitud_m` son `null` si el catálogo del SMN no trae la altura. El frontend lo muestra en "Fuente del clima".
 
     Con `heladas_estimadas: true`, `anios_con_helada_pct` es una **estimación** a partir de la mínima promedio del mes (el SMN no publica datos diarios en sus resúmenes). Sugerencia para el frontend: mostrar "Datos de la estación X (SMN-CONAGUA)" y "helada estimada".
-* `alertas_7_dias`**:** Arreglo con **una alerta por tipo como máximo** (la del peor día de los próximos 7). `[]` cuando no hay riesgo. `cultivos_afectados` son los `id` de los cultivos sensibles a esa alerta (campo `sensible_a` de la curación, más los que no toleran helada).
+* `alertas_7_dias`**:** En `/api/recomendaciones` **solo trae lo que ya está en caché** (puede venir `[]` aunque haya alertas): el pronóstico se pide aparte en `GET /api/alertas` (sección 2c), para que la página no espere a Open-Meteo ni falle si no responde. Arreglo con **una alerta por tipo como máximo** (la del peor día de los próximos 7). `[]` cuando no hay riesgo. `cultivos_afectados` son los `id` de los cultivos sensibles a esa alerta (campo `sensible_a` de la curación, más los que no toleran helada).
 
 * `meses_ideales` **vs.** `meses_posibles`**:** `meses_ideales` lista únicamente los meses donde el cultivo obtiene `optimo` (✅). `meses_posibles` incluye tanto los meses `optimo` (✅) como `con_cuidados` (⚠️).
 * `filtros_rapidos`**:** Trae todo lo necesario para filtrar en el frontend sin pedir la ficha: espacio, profundidad, luz, riego, consumo de agua, si es segura para mascotas, si atrae polinizadores y si es nativa de México.
@@ -272,6 +272,27 @@ Sugerencias para el campo de ciudad, a partir de `data/ciudades.json` (sin red).
 ```
 
 `etiqueta` es lo que se muestra y lo que se manda como `q` a `/api/recomendaciones`. Sin coincidencias responde `[]` (no 404).
+
+---
+
+## 2c. Endpoint de apoyo: `GET /api/alertas` (pronóstico de 7 días)
+
+Mismos parámetros de ubicación que `/api/recomendaciones` (`q`, o `lat` y `lon`). El frontend lo pide en paralelo y muestra un *skeleton* mientras llega.
+
+```json
+{
+  "ubicacion": { "nombre": "Bacalar", "estado": "Quintana Roo", "lat": 18.6811, "lon": -88.3933 },
+  "alertas_7_dias": [
+    { "tipo": "lluvia_fuerte", "severidad": "alta", "fecha": "2026-11-24", "titulo": "Lluvia fuerte esta semana",
+      "mensaje": "Se esperan 51.5 mm de lluvia el martes. Mueve bajo techo las macetas sensibles, vacía los platos y no riegues ese día.",
+      "cultivos_afectados": ["acelga", "ajo", "albahaca"] }
+  ],
+  "desde_cache": false
+}
+```
+
+* Fuente: Open-Meteo Forecast, 7 días. Se guarda **1 hora** por zona (celda de 0.1°), también cuando no hay alertas.
+* Errores: `400` sin ubicación, `404` ciudad no encontrada, `503` si Open-Meteo no responde (el frontend muestra "Reintentar"; las recomendaciones no se afectan).
 
 ---
 
