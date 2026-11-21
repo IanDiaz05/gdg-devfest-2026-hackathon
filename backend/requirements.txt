@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Todas las dependencias del backend. Instalar SIEMPRE dentro de backend/.venv:
 #   backend\.venv\Scripts\python -m pip install -r backend\requirements.txt
 
@@ -12,3 +13,11 @@ aiosqlite==0.22.1
 # Scripts de descarga y procesamiento de datos (scripts/descargas/)
 requests==2.32.3
 pandas==2.2.3
+=======
+fastapi
+uvicorn
+pydantic
+pydantic-settings
+httpx
+aiosqlite
+>>>>>>> 1d9590353e13cfb5194062a2dfed0a9d7921c750

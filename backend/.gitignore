@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Entorno virtual (cada quien lo crea con python -m venv backend/.venv)
 .venv/
 
@@ -10,3 +11,24 @@ quesiembro.db
 __pycache__/
 *.pyc
 *.parcial
+=======
+# Python bytecode / caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.ruff_cache/
+
+# Virtualenvs and env files
+.venv/
+venv/
+.env
+.env.*
+
+# SQLite
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+*.db-wal
+>>>>>>> 1d9590353e13cfb5194062a2dfed0a9d7921c750
