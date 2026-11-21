@@ -6,6 +6,8 @@ COPY frontend/package*.json ./
 RUN npm ci
 
 COPY frontend/ ./
+# Import is ../../../backend/data/ciudades.json from /app/src/services.
+COPY backend/data/ciudades.json /backend/data/ciudades.json
 
 # Client paths already include /api. An empty base keeps requests same-origin for nginx.
 ARG VITE_API_BASE_URL=
