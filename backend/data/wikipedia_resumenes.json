@@ -1,0 +1,203 @@
+{
+  "fuente": "Wikipedia en español (API REST de resúmenes)",
+  "licencia": "Texto CC BY-SA 4.0; cada imagen tiene su propia licencia en Wikimedia Commons",
+  "generado": "2026-11-20",
+  "cultivos": {
+    "lechuga": {
+      "titulo": "Lactuca sativa",
+      "extracto": "La lechuga es una planta anual de la familia Asteraceae. Se cultiva sobre todo como verdura de hoja, pero a veces también por su tallo. La lechuga se utiliza sobre todo para las ensaladas, aunque también se ve en otros tipos de comida, como sopas, emparedados, sándwiches y envoltorios; también se puede asar a la parrilla. Una variedad, la lechuga china, se cultiva por sus tallos, que se consumen crudos o cocidos. Además de su uso principal como hoja verde, también ha adquirido un significado religioso y medicinal durante siglos de consumo humano. Originalmente, Europa y América del Norte dominaban el mercado de la lechuga, pero a finales del siglo XX el consumo de lechuga se había extendido por todo el mundo. En 2021, la producción mundial de lechuga y achicoria era de 27 millones de toneladas, el 53 % de las cuales procedía de China.",
+      "url": "https://es.wikipedia.org/wiki/Lactuca_sativa",
+      "imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Romaine_lettuce.jpg/330px-Romaine_lettuce.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "imagen_original": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Romaine_lettuce.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+    },
+    "espinaca": {
+      "titulo": "Spinacia oleracea",
+      "extracto": "La espinaca es una planta anual, dioica, de la familia de las amarantáceas, cultivada como verdura por sus hojas comestibles, grandes y de color verde muy oscuro. Su cultivo se puede realizar en cualquier época del año y se puede consumir fresca, cocida o frita. En la actualidad es una de las verduras que más habitualmente se encuentra helada o congelada.",
+      "url": "https://es.wikipedia.org/wiki/Spinacia_oleracea",
+      "imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Illustration_Spinacia_oleracea0.jpg/330px-Illustration_Spinacia_oleracea0.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "imagen_original": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Illustration_Spinacia_oleracea0.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+    },
+    "acelga": {
+      "titulo": "Beta vulgaris var. cicla",
+      "extracto": "Beta vulgaris var. cicla, la acelga, es una subespecie de Beta vulgaris, al igual que las remolachas, betarragas y el betabel, aunque a diferencia de estas se cultiva para aprovechar sus hojas en lugar de sus raíces y sirve para el consumo en cualquier etapa de su período vegetativo.",
+      "url": "https://es.wikipedia.org/wiki/Beta_vulgaris_var._cicla",
+      "imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Swiss_Chard.jpg/330px-Swiss_Chard.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "imagen_original": "https://upload.wikimedia.org/wikipedia/commons/b/be/Swiss_Chard.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+    },
+    "rabano": {
+      "titulo": "Raphanus sativus",
+      "extracto": "Raphanus sativus, el rábano, es una especie de la familia Brassicaceae que se cultiva por sus raíces comestibles. Otro uso del rábano es como cobertura o cultivo intermedio en invierno, o como cultivo de forraje.",
+      "url": "https://es.wikipedia.org/wiki/Raphanus_sativus",
+      "imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/26_Raphanus_sativus_L.jpg/330px-26_Raphanus_sativus_L.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "imagen_original": "https://upload.wikimedia.org/wikipedia/commons/2/28/26_Raphanus_sativus_L.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+    },
+    "zanahoria": {
+      "titulo": "Daucus carota",
+      "extracto": "La zanahoria silvestre o carrota es una especie de planta herbácea de la familia Apiaceae. Es la forma silvestre de la zanahoria.",
+      "url": "https://es.wikipedia.org/wiki/Daucus_carota",
+      "imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Daucus_Carota.jpg/330px-Daucus_Carota.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "imagen_original": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Daucus_Carota.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+    },
+    "cebolla": {
+      "titulo": "Allium cepa",
+      "extracto": "Allium cepa, comúnmente conocida como cebolla, es una planta herbácea bienal perteneciente a la familia de las amarilidáceas. Es la especie más cultivada del género Allium, que, por otro lado, contiene varias especies que se denominan «cebollas» y que se cultivan como alimento. Ejemplos de las mismas son la cebolla de verdeo, la cebolla escalonia y la cebolla de hoja.",
+      "url": "https://es.wikipedia.org/wiki/Allium_cepa",
+      "imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/ARS_red_onion.jpg/330px-ARS_red_onion.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "imagen_original": "https://upload.wikimedia.org/wikipedia/commons/9/93/ARS_red_onion.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+    },
+    "ajo": {
+      "titulo": "Allium sativum",
+      "extracto": "El ajo es una especie tradicionalmente clasificada dentro de la familia de las liliáceas pero que actualmente se ubica en la de las amarilidáceas, aunque este extremo es muy discutido. Al igual que la cebolla, el puerro y la cebolla de invierno o cebollino, es una especie de importancia económica ampliamente cultivada y desconocida en estado silvestre.",
+      "url": "https://es.wikipedia.org/wiki/Allium_sativum",
+      "imagen": "https://upload.wikimedia.org/wikipedia/commons/3/39/Allium_sativum_Woodwill_1793.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "imagen_original": "https://upload.wikimedia.org/wikipedia/commons/3/39/Allium_sativum_Woodwill_1793.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+    },
+    "papa": {
+      "titulo": "Solanum tuberosum",
+      "extracto": "Solanum tuberosum, de nombre común papa, patata, o pataca es una especie herbácea perteneciente al género Solanum de la familia de las solanáceas, originaria de la región que comprende el altiplano de los Andes centrales. Fue domesticada en el altiplano andino y en las cercanías del lago Titicaca por los habitantes de esta región hace unos ocho mil años. Luego de extenderse por diversos lugares del continente americano, incluida la isla Grande de Chiloé, en el siglo XVI comenzó a ser trasladada a Europa por los conquistadores españoles, que la consideraban una curiosidad botánica y no una planta alimenticia. Su consumo fue creciendo, aunque al principio como planta forrajera y de jardín por sus flores; su uso gastronómico se expandió a todo el mundo desde el siglo XVIII gracias a los escritos agronómicos del francés Antoine Parmentier y del irlandés afincado en España Enrique Doyle, hasta convertirse en uno de los principales alimentos del ser humano.",
+      "url": "https://es.wikipedia.org/wiki/Solanum_tuberosum",
+      "imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/S._tuberosum-5.JPG/330px-S._tuberosum-5.JPG?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "imagen_original": "https://upload.wikimedia.org/wikipedia/commons/2/2a/S._tuberosum-5.JPG?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+    },
+    "jitomate": {
+      "titulo": "Solanum lycopersicum",
+      "extracto": "Solanum lycopersicum, conocida comúnmente como tomate o tomatera, es una especie de planta herbácea del género Solanum de la familia Solanaceae. Es una planta de importancia global por su uso como alimento. La planta es cultivada en el mundo entero para el consumo de su fruto, el tomate o jitomate, tanto fresco como procesado de diferentes maneras: salsa, puré, zumo, deshidratado, enlatado, etc.",
+      "url": "https://es.wikipedia.org/wiki/Solanum_lycopersicum",
+      "imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Bright_red_tomato_and_cross_section02.jpg/330px-Bright_red_tomato_and_cross_section02.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "imagen_original": "https://upload.wikimedia.org/wikipedia/commons/8/88/Bright_red_tomato_and_cross_section02.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+    },
+    "tomate_verde": {
+      "titulo": "Physalis philadelphica",
+      "extracto": "Physalis philadelphica es una especie de planta fanerógama de la familia Solanaceae. La palabra miltomate procede del náhuatl “milli”, milpa, sembrado, y “tomatl”, tomate. También conocido como tomate verde. Se conoce en México desde tiempos precolombinos. Los aztecas lo cultivaban extensivamente y lo llamaban \"miltomatl\" que significa tomate cultivado.",
+      "url": "https://es.wikipedia.org/wiki/Physalis_philadelphica",
+      "imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Tomatillo.jpg/330px-Tomatillo.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "imagen_original": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Tomatillo.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+    },
+    "chile_serrano": {
+      "titulo": "Capsicum annuum",
+      "extracto": "Capsicum annuum, llamado comúnmente pimiento morrón, pimiento dulce, chile morrón, ají morrón, ají dulce, locote o en algunos países pimentón, entre una multitud de localismos, es la especie más conocida, extendida y cultivada del género Capsicum, de la familia de las solanáceas. Todas las innumerables formas, tamaños, colores y sabores de sus frutos, descritos y nombrados en la cultura popular, corresponden en realidad a esta misma especie. Los mismos nombres se utilizan también para el fruto de esta especie vegetal.",
+      "url": "https://es.wikipedia.org/wiki/Capsicum_annuum",
+      "imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Pimiento_morr%C3%B3n_%28Capsicum_annuum%29.jpg/330px-Pimiento_morr%C3%B3n_%28Capsicum_annuum%29.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "imagen_original": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Pimiento_morr%C3%B3n_%28Capsicum_annuum%29.jpg/3840px-Pimiento_morr%C3%B3n_%28Capsicum_annuum%29.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+    },
+    "chile_habanero": {
+      "titulo": "Capsicum chinense",
+      "extracto": "Capsicum chinense es una de las cinco especies domesticadas de chiles o ajíes. Variedades importantes de Capsicum chinense incluyen el chile habanero, el ají panca, el ají mochero y el ají limo. Las variedades de ají panca, ají mochero y ají limo se cultivan en Perú.",
+      "url": "https://es.wikipedia.org/wiki/Capsicum_chinense",
+      "imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Habanero_chile_-_fruits_%28aka%29.jpg/330px-Habanero_chile_-_fruits_%28aka%29.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "imagen_original": "https://upload.wikimedia.org/wikipedia/commons/d/da/Habanero_chile_-_fruits_%28aka%29.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+    },
+    "calabacita": {
+      "titulo": "Cucurbita pepo",
+      "extracto": "Cucurbita pepo es el nombre científico de una especie de plantas cucurbitáceas originaria de Mesoamérica y sur de Estados Unidos, que junto con otras especies emparentadas forman un grupo de especies de calabazas cuyas variedades cultivadas, de las que se cosecha su fruto maduro o inmaduro, poseen usos culinarios indistinguibles. En su región de origen posee variedades silvestres de las que incluso desde varios kilómetros puede llegar el polen a las variedades cultivadas de su propia especie haciendo que sus semillas se desarrollen como plantas de frutos amargos y no comestibles. No hibrida con las demás especies.",
+      "url": "https://es.wikipedia.org/wiki/Cucurbita_pepo",
+      "imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/0.2014_Cucurbita_pepo_subsp._pepo_convar._giromontiina_-_Sanok.JPG/330px-0.2014_Cucurbita_pepo_subsp._pepo_convar._giromontiina_-_Sanok.JPG?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "imagen_original": "https://upload.wikimedia.org/wikipedia/commons/3/30/0.2014_Cucurbita_pepo_subsp._pepo_convar._giromontiina_-_Sanok.JPG?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+    },
+    "pepino": {
+      "titulo": "Cucumis sativus",
+      "extracto": "Cucumis sativus, conocido popularmente como el pepino, es una planta anual de la familia de las cucurbitáceas.",
+      "url": "https://es.wikipedia.org/wiki/Cucumis_sativus",
+      "imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Cucumis_sativus_0002.JPG/330px-Cucumis_sativus_0002.JPG?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "imagen_original": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Cucumis_sativus_0002.JPG?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+    },
+    "frijol_ejote": {
+      "titulo": "Phaseolus vulgaris",
+      "extracto": "Phaseolus vulgaris es la especie más conocida del género Phaseolus en la familia Fabaceae. Sus semillas y, por extensión, la propia planta, reciben diversos nombres según la región; entre los más comunes están: alubia, judía, frijol, fríjol, frísol, frejol, habichuela, caraota, poroto, etc.",
+      "url": "https://es.wikipedia.org/wiki/Phaseolus_vulgaris",
+      "imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Snijboon_peulen_Phaseolus_vulgaris.jpg/330px-Snijboon_peulen_Phaseolus_vulgaris.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "imagen_original": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Snijboon_peulen_Phaseolus_vulgaris.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+    },
+    "chicharo": {
+      "titulo": "Pisum sativum",
+      "extracto": "Pisum sativum es una planta herbácea de la familia de las leguminosas (Fabaceae), más o menos trepadora, propia de la cuenca mediterránea, aunque muy extendida en todo el mundo. Se cultiva para consumir las semillas. Recibe diferentes nombres dependiendo de la región: chícharo, petipuás, arveja, alverja o guisante, las vainas tiernas son comestibles y se conocen como miracielo, cometodo o tirabeque.",
+      "url": "https://es.wikipedia.org/wiki/Pisum_sativum",
+      "imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Illustration_Pisum_sativum0_clean.jpg/330px-Illustration_Pisum_sativum0_clean.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "imagen_original": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Illustration_Pisum_sativum0_clean.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+    },
+    "fresa": {
+      "titulo": "Fragaria × ananassa",
+      "extracto": "Fragaria × ananassa, llamada comúnmente frutilla, fresón, fresibaya o fresa, y sus cultivares emparentados, es la variedad más común de Fragaria cultivada mundialmente. Como todas las fresas, es de la familia Rosaceae; su fruta es técnicamente conocida como infrutescencia, ya que la parte carnosa no se deriva del ovario de la planta (aquenio), sino del hipantio que sostiene los ovarios.",
+      "url": "https://es.wikipedia.org/wiki/Fragaria_%C3%97_ananassa",
+      "imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Strawberries.JPG/330px-Strawberries.JPG?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "imagen_original": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Strawberries.JPG?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+    },
+    "cilantro": {
+      "titulo": "Coriandrum sativum",
+      "extracto": "Coriandrum sativum, llamado comúnmente cilantro, coriandro, culantro europeo, perejil chino, dannia, culantro Castilla, y uansóy o wansóy, es una hierba anual de la familia de las apiáceas. Es una de dos especies aceptadas del género Coriandrum, que es el único miembro de la tribu Coriandreae.",
+      "url": "https://es.wikipedia.org/wiki/Coriandrum_sativum",
+      "imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Coriandrum_sativum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-193.jpg/330px-Coriandrum_sativum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-193.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "imagen_original": "https://upload.wikimedia.org/wikipedia/commons/1/13/Coriandrum_sativum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-193.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+    },
+    "perejil": {
+      "titulo": "Petroselinum crispum",
+      "extracto": "El perejil es una planta herbácea de la familia Apiaceae nativa de la zona central de la región mediterránea e introducida y naturalizada en el resto de Europa y distribuida ampliamente por todo el mundo. Se cultiva generalmente como condimento.",
+      "url": "https://es.wikipedia.org/wiki/Petroselinum_crispum",
+      "imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Petroselinum_crispum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-103.jpg/330px-Petroselinum_crispum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-103.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "imagen_original": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Petroselinum_crispum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-103.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+    },
+    "albahaca": {
+      "titulo": "Ocimum basilicum",
+      "extracto": "Ocimum basilicum es una hierba aromática anual de la familia de las lamiáceas nativa de las regiones tropicales de África Central y el sudeste asiático, que se cultiva desde hace milenios. Es una planta tierna y se utiliza en cocinas de todo el mundo. Hay muchas variedades de Ocimum basilicum, así como varias especies relacionadas. El tipo que se usa comúnmente para dar sabor se llama popularmente hierba real, albahaca, basílico o alhábega, a diferencia de la variedad tailandesa, Ocimum × citriodorum y el tulsí. Las variedades más comunes de Ocimum basilicum son cultivos anuales, pero algunas son perennes en climas cálidos y tropicales, como algunos híbridos.",
+      "url": "https://es.wikipedia.org/wiki/Ocimum_basilicum",
+      "imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Ocimum_basilicum_Blanco2.407-cropped.jpg/330px-Ocimum_basilicum_Blanco2.407-cropped.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "imagen_original": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Ocimum_basilicum_Blanco2.407-cropped.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+    },
+    "epazote": {
+      "titulo": "Dysphania ambrosioides",
+      "extracto": "Dysphania ambrosioides, llamada popularmente epazote, apazote, pasote, paico o ka'are, es una especie de planta aromática, antiparasitario, que se usa como condimento y como planta medicinal en México y muchos otros países de Hispanoamérica, como Argentina, Bolivia, Chile, Colombia, Ecuador, Guatemala, El Salvador, Paraguay, Perú y Venezuela, así como en el sur de los Estados Unidos. En México se le llama también acahualillo o té de milpa.",
+      "url": "https://es.wikipedia.org/wiki/Dysphania_ambrosioides",
+      "imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Dysphania_ambrosioides_NRCS-1.jpg/330px-Dysphania_ambrosioides_NRCS-1.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "imagen_original": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Dysphania_ambrosioides_NRCS-1.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+    },
+    "hierbabuena": {
+      "titulo": "Mentha spicata",
+      "extracto": "Mentha spicata, conocida popularmente como hierbabuena, yerbabuena o menta de jardín, es una especie del género Mentha, una hierba aromática muy empleada en gastronomía y perfumería por su aroma intenso y fresco.",
+      "url": "https://es.wikipedia.org/wiki/Mentha_spicata",
+      "imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Mentha_viridis_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-096.jpg/330px-Mentha_viridis_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-096.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "imagen_original": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Mentha_viridis_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-096.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+    },
+    "romero": {
+      "titulo": "Salvia rosmarinus",
+      "extracto": "Salvia rosmarinus, conocida popularmente como romero, es una hierba leñosa perenne, con follaje siempre verde y flores blancas, rosas, púrpuras o azules, perteneciente a la familia Lamiaceae, nativa de la región mediterránea. Hasta el año 2017 la especie era conocida por el nombre científico Rosmarinus officinalis, ahora un sinónimo. Es utilizada por sus propiedades aromáticas y medicinales.",
+      "url": "https://es.wikipedia.org/wiki/Salvia_rosmarinus",
+      "imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Rosmarinus_officinalis_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-258.jpg/330px-Rosmarinus_officinalis_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-258.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "imagen_original": "https://upload.wikimedia.org/wikipedia/commons/0/00/Rosmarinus_officinalis_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-258.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+    },
+    "oregano": {
+      "titulo": "Origanum vulgare",
+      "extracto": "Origanum vulgare, comúnmente conocida como orégano, es una especie de la familia Lamiaceae, nativa de la región mediterránea y el oeste o suroeste de Eurasia. Se usa como condimento y en la preparación de infusiones herbales. Las partes utilizadas son las brácteas de la inflorescencia, tanto frescas como secas, aunque secas poseen mucho más sabor y aroma.[cita requerida]",
+      "url": "https://es.wikipedia.org/wiki/Origanum_vulgare",
+      "imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Oregano-spice.jpg/330px-Oregano-spice.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "imagen_original": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Oregano-spice.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+    },
+    "cebollin": {
+      "titulo": "Allium schoenoprasum",
+      "extracto": "Allium schoenoprasum, también conocido como cebollino, cebolla de hoja, cebolla china, ciboulette, chonacate, xonacatl, cebolleta, cebollina, cebollín o cebolla aromática, y kucháy, es una hierba de la familia de las aliáceas, de la que se utilizan solo las hojas picadas como hierba aromática. Su bulbo tiene un sabor muy similar al de la cebolla blanca o común pero es de menores dimensiones y no tiene uso alimenticio. Se diferencia de la cebolla de verdeo o china por ser de menor tamaño y su diferente uso culinario.",
+      "url": "https://es.wikipedia.org/wiki/Allium_schoenoprasum",
+      "imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Allium_schoenoprasum_W.jpg/330px-Allium_schoenoprasum_W.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "imagen_original": "https://upload.wikimedia.org/wikipedia/commons/9/95/Allium_schoenoprasum_W.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+    },
+    "verdolaga": {
+      "titulo": "Portulaca oleracea",
+      "extracto": "Portulaca oleracea, llamada popularmente verdolaga común, es una especie de planta perteneciente la familia Portulacaceae. Es originaria de la India, Oriente Medio y el sur de Europa, mientras que en América se considera exótica antigua o nativa, aunque se ha naturalizado en todo el mundo. Se utiliza como ornamental, con fines alimentarios y medicinales.",
+      "url": "https://es.wikipedia.org/wiki/Portulaca_oleracea",
+      "imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Portulaca_oleracea_MHNT.jpg/330px-Portulaca_oleracea_MHNT.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "imagen_original": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Portulaca_oleracea_MHNT.jpg/3840px-Portulaca_oleracea_MHNT.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+    },
+    "amaranto": {
+      "titulo": "Amaranthus hypochondriacus",
+      "extracto": "Amaranthus hypochondriacus es una especie de planta ornamental y medicinal perteneciente a la familia de las amarantáceas.",
+      "url": "https://es.wikipedia.org/wiki/Amaranthus_hypochondriacus",
+      "imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/%28MHNT%29_Amaranthus_hypochondriacus_-_Mature_inflorescence_-_Les_Martels%2C_Giroussens_Tarn.jpg/330px-%28MHNT%29_Amaranthus_hypochondriacus_-_Mature_inflorescence_-_Les_Martels%2C_Giroussens_Tarn.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "imagen_original": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/%28MHNT%29_Amaranthus_hypochondriacus_-_Mature_inflorescence_-_Les_Martels%2C_Giroussens_Tarn.jpg/3840px-%28MHNT%29_Amaranthus_hypochondriacus_-_Mature_inflorescence_-_Les_Martels%2C_Giroussens_Tarn.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+    },
+    "nopal": {
+      "titulo": "Opuntia ficus-indica",
+      "extracto": "Opuntia ficus-indica, comúnmente conocida, entre otros nombres, como nopal, higuera (de pala), palera, pera de cactus, penca, tuna, tuno, tunera, chumbera e higo, es una especie arbustiva del género Opuntia de la familia de las cactáceas.",
+      "url": "https://es.wikipedia.org/wiki/Opuntia_ficus-indica",
+      "imagen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Opuntia16_filtered.jpg/330px-Opuntia16_filtered.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "imagen_original": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Opuntia16_filtered.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+    }
+  }
+}

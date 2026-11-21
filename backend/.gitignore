@@ -1,0 +1,23 @@
+# Python bytecode / caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.ruff_cache/
+
+# Virtualenvs and env files (cada quien crea backend/.venv)
+.venv/
+venv/
+.env
+.env.*
+
+# SQLite (lo genera scripts/seed.py)
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+*.db-wal
+
+# Descargas originales: se regeneran con scripts/descargas/descargar_todo.py
+data/raw/
+*.parcial

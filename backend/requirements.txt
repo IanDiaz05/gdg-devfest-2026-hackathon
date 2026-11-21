@@ -1,0 +1,14 @@
+# Todas las dependencias del backend. Instalar SIEMPRE dentro de backend/.venv:
+#   backend\.venv\Scripts\python -m pip install -r backend\requirements.txt
+
+# API (app/)
+fastapi==0.165.0
+uvicorn==0.54.0
+pydantic==2.14.4
+pydantic-settings==2.16.3
+httpx==0.28.1
+aiosqlite==0.22.1
+
+# Scripts de descarga y procesamiento de datos (scripts/descargas/)
+requests==2.32.3
+pandas==2.2.3

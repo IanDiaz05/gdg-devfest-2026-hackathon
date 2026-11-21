@@ -1,7 +1,24 @@
-# Contratos JSON Oficiales (v2) — QUESIEMBRO
+# Contratos JSON Oficiales (v3) — QUESIEMBRO
 
-> **Estado:** Oficial (incluye las correcciones validadas en [`revision-contratos.md`](revision-contratos.md) con datos reales de Open-Meteo, CONAGUA, ECOCROP y SNIIM).  
+> **Estado:** Oficial (v3.1). La v3 agrega los campos de maceta, cuidado e impacto ambiental (`luz_nivel`, `pet_safe`, `atrae_polinizadores`, `es_nativa_region`, `consumo_hidrico`, `riego_frecuencia_dias`, `guia_rapida.error_comun`, `profundidad_maceta_cm`) y **quita los precios de SNIIM** (`finanzas_sniim` y `contexto_economico_sniim`). La v3.1 cambia `sequia` por `lluvia_reciente` (SMN-CONAGUA), agrega `lluvia_mes_mm` y amplía las alertas (lluvia fuerte, tormenta, viento y UV, con `fecha` y `cultivos_afectados`).
 > **Convención:** Ningún campo usa caracteres especiales ni `ñ` (`companeros_cultivo`, `anios_con_helada_pct`).
+> **Implementación:** `backend/app/schemas/` sigue exactamente este contrato; los ejemplos salen de la API real.
+
+---
+
+## Cambios de v2 a v3
+
+| Antes (v2) | Ahora (v3) | Dónde |
+| --- | --- | --- |
+| `luz` (`pleno_sol`, `media_sombra`, `sombra`) | `luz_nivel` (1 a 4) | `filtros_rapidos` y `ficha_tecnica` |
+| `profundidad_min_cm` | `profundidad_maceta_cm` | `ficha_tecnica` (y nuevo en `filtros_rapidos`) |
+| — | `riego_frecuencia_dias` | `filtros_rapidos` y `ficha_tecnica` |
+| — | `consumo_hidrico`, `pet_safe`, `atrae_polinizadores`, `es_nativa_region` | `filtros_rapidos` |
+| — | `es_nativa_region`, `restricciones`, `impacto_ambiental`, `guia_rapida` | Ficha del cultivo |
+| `finanzas_sniim`, `contexto_economico_sniim` | **Eliminados** | — |
+| `clima_zona.sequia` (Monitor de Sequía) | `clima_zona.lluvia_reciente` (SMN-CONAGUA, estación más cercana) | `clima_zona` |
+| — | `clima_zona.lluvia_mes_mm` | `clima_zona` |
+| `alertas_7_dias[].tipo`: `helada`, `calor` | + `lluvia_fuerte`, `tormenta`, `viento`, `uv`; nuevos `fecha` y `cultivos_afectados` | `alertas_7_dias` |
 
 ---
 
@@ -20,7 +37,7 @@ Devuelve la información climática de la zona y la evaluación de todos los cul
 
 *Se debe enviar* `q` *o el par* `lat` *+* `lon`*. Si se envían ambos, tiene prioridad* `lat` *+* `lon`*.*
 
-### Respuesta `200 OK` (Datos reales: Toluca de Lerdo, Diciembre)
+### Respuesta `200 OK` (Toluca de Lerdo, Diciembre)
 
 ```json
 {
@@ -45,50 +62,64 @@ Devuelve la información climática de la zona y la evaluación de todos los cul
     "temp_min_promedio_c": 5.8,
     "temp_max_promedio_c": 17.9,
     "anios_con_helada_pct": 57,
+    "lluvia_mes_mm": 15.0,
     "mes_mas_frio": { "mes": 1, "nombre": "Enero", "temp_media_c": 10.7 },
     "mes_mas_caluroso": { "mes": 5, "nombre": "Mayo", "temp_media_c": 15.5 },
-    "sequia": {
-      "activa": true,
-      "nivel": "D1",
-      "nivel_nombre": "Sequía moderada",
-      "fecha_dato": "2026-11-15",
-      "consejo": "Usa acolchado (hojas secas) en tus macetas para que no se evapore el agua."
+    "lluvia_reciente": {
+      "fuente": "SMN - CONAGUA",
+      "estacion": "Observatorio de Toluca, Méx.",
+      "distancia_km": 6.4,
+      "mes": "2026-10",
+      "lluvia_mm": 71.0,
+      "normal_mm": 52.4,
+      "anomalia_pct": 35,
+      "temp_min_c": 9.0,
+      "temp_max_c": 21.7,
+      "mensaje": "En octubre de 2026 llovieron 71 mm en Observatorio de Toluca, Méx. (6 km): 35% más de lo normal.",
+      "consejo": "Ha llovido más de lo normal: revisa que tus macetas drenen bien y no dejes agua en los platos."
     }
   },
-  "alertas_7_dias": [],
+  "alertas_7_dias": [
+    {
+      "tipo": "tormenta",
+      "severidad": "media",
+      "fecha": "2026-11-22",
+      "titulo": "Tormenta eléctrica en el pronóstico",
+      "mensaje": "Hay pronóstico de tormenta el domingo. Asegura las macetas altas, amarra los tutores y cosecha los frutos maduros antes.",
+      "cultivos_afectados": ["jitomate", "pepino", "chicharo", "lechuga"]
+    }
+  ],
   "cultivos": [
     {
       "id": "lechuga",
       "nombre": "Lechuga",
       "icono": "🥬",
-      "categoria": "Hortalizas",
+      "categoria": "Hortalizas de hoja",
       "estado": "con_cuidados",
       "semaforo": "amarillo",
-      "razon_corta": "Diciembre es algo frío (11 °C; lo ideal es 12-21 °C). Tolera heladas ligeras: cúbrela en las noches más frías.",
+      "razon_corta": "Diciembre es algo frío (11.1 °C; lo ideal es 12-21 °C).",
       "etiqueta_clima": "Algo frío",
       "meses_ideales": [],
       "meses_posibles": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
       "filtros_rapidos": {
         "maceta_min_litros": 5,
         "espacio_tipo": "maceta_chica",
-        "luz": "media_sombra",
+        "profundidad_maceta_cm": 15,
+        "luz_nivel": 3,
+        "riego_frecuencia_dias": 2,
+        "consumo_hidrico": "alto",
+        "pet_safe": true,
+        "atrae_polinizadores": false,
+        "es_nativa_region": false,
         "dias_cosecha_aprox": 55,
         "dificultad": "facil"
-      },
-      "finanzas_sniim": {
-        "mercado_referencia": "Central de Abasto CDMX",
-        "producto_sniim": "Lechuga Romanita grande",
-        "mes_cosecha_estimado": 2,
-        "variacion_precio_pct": -12,
-        "destacar_ahorro": false,
-        "mensaje_ahorro": null
       }
     },
     {
       "id": "jitomate",
       "nombre": "Jitomate",
       "icono": "🍅",
-      "categoria": "Hortalizas",
+      "categoria": "Frutos",
       "estado": "no_ahora",
       "semaforo": "rojo",
       "razon_corta": "En diciembre hay heladas en 57% de los años y no las aguanta. Mejor siémbralo entre marzo y julio.",
@@ -98,38 +129,16 @@ Devuelve la información climática de la zona y la evaluación de todos los cul
       "filtros_rapidos": {
         "maceta_min_litros": 20,
         "espacio_tipo": "maceta_grande",
-        "luz": "pleno_sol",
+        "profundidad_maceta_cm": 30,
+        "luz_nivel": 4,
+        "riego_frecuencia_dias": 2,
+        "consumo_hidrico": "alto",
+        "pet_safe": false,
+        "atrae_polinizadores": true,
+        "es_nativa_region": true,
         "dias_cosecha_aprox": 90,
         "dificultad": "media"
-      },
-      "finanzas_sniim": {
-        "mercado_referencia": "Central de Abasto CDMX",
-        "producto_sniim": "Tomate Saladette",
-        "mes_cosecha_estimado": 10,
-        "variacion_precio_pct": 9,
-        "destacar_ahorro": false,
-        "mensaje_ahorro": null
       }
-    },
-    {
-      "id": "albahaca",
-      "nombre": "Albahaca",
-      "icono": "🌿",
-      "categoria": "Hierbas",
-      "estado": "no_ahora",
-      "semaforo": "rojo",
-      "razon_corta": "En diciembre hay heladas en 57% de los años y no las aguanta. Mejor siémbrala entre marzo y julio.",
-      "etiqueta_clima": "Riesgo alto de helada",
-      "meses_ideales": [],
-      "meses_posibles": [3, 4, 5, 6, 7],
-      "filtros_rapidos": {
-        "maceta_min_litros": 3,
-        "espacio_tipo": "maceta_chica",
-        "luz": "pleno_sol",
-        "dias_cosecha_aprox": 60,
-        "dificultad": "facil"
-      },
-      "finanzas_sniim": null
     }
   ]
 }
@@ -137,32 +146,25 @@ Devuelve la información climática de la zona y la evaluación de todos los cul
 
 ### Notas de Implementación para `GET /api/recomendaciones`
 
-* `clima_zona.sequia`**:** Puede ser `null` si el municipio no coincide en el padrón de CONAGUA o no presenta sequía. Cuando el nivel es `D0` ("Anormalmente seco"), `activa` es `false`.
-* `alertas_7_dias`**:** Es un arreglo de objetos (`[]` cuando no hay riesgo). Cada alerta sigue el esquema:
-
-```json
-{
-  "tipo": "helada",
-  "severidad": "alta",
-  "titulo": "Riesgo de helada esta semana",
-  "mensaje": "Se pronostican 0.5 °C el jueves por la madrugada. Resguarda tus macetas."
-}
-```
+* `clima_zona.lluvia_reciente`**:** Lluvia del **último mes publicado por el SMN** (CONAGUA) en la estación más cercana (máximo 30 km), comparada con el promedio de ese mes en la misma estación (2013 al año pasado). Es `null` si no hay estación cerca. `anomalia_pct` es `null` cuando lo normal del mes es menor a 5 mm.
+* `clima_zona.lluvia_mes_mm`**:** Lluvia típica del mes evaluado según 30 años de Open-Meteo.
+* `alertas_7_dias`**:** Arreglo con **una alerta por tipo como máximo** (la del peor día de los próximos 7). `[]` cuando no hay riesgo. `cultivos_afectados` son los `id` de los cultivos sensibles a esa alerta (campo `sensible_a` de la curación, más los que no toleran helada).
 
 * `meses_ideales` **vs.** `meses_posibles`**:** `meses_ideales` lista únicamente los meses donde el cultivo obtiene `optimo` (✅). `meses_posibles` incluye tanto los meses `optimo` (✅) como `con_cuidados` (⚠️).
-* `finanzas_sniim`**:** Es `null` para los 7 cultivos sin cobertura en SNIIM (rábano, perejil, albahaca, romero, hierbabuena, frijol y amaranto). Cuando `variacion_precio_pct >= 15`, `destacar_ahorro` es `true` y `mensaje_ahorro` contiene el texto explicativo.
+* `filtros_rapidos`**:** Trae todo lo necesario para filtrar en el frontend sin pedir la ficha: espacio, profundidad, luz, riego, consumo de agua, si es segura para mascotas, si atrae polinizadores y si es nativa de México.
+* `riego_frecuencia_dias`**:** Es un valor **base para clima templado**. Más adelante la API puede ajustarlo por zona y mes con la evapotranspiración de Open-Meteo.
 
 ---
 
 ## 2. Endpoint 2: `GET /api/cultivos/{id}`
 
-Devuelve la ficha educativa, técnica y económica completa de un cultivo específico a partir del catálogo curado.
+Devuelve la ficha educativa y técnica completa de un cultivo específico a partir del catálogo curado.
 
 ### Parámetro de Ruta (`Path Param`)
 
-* `id` (`string`): Identificador único (*slug*) del cultivo (ej. `jitomate`, `lechuga`, `epazote`).
+* `id` (`string`): Identificador único (*slug*, con guion bajo) del cultivo (ej. `jitomate`, `tomate_verde`, `epazote`).
 
-### Respuesta `200 OK` (Ejemplo real: `GET /api/cultivos/jitomate`)
+### Respuesta `200 OK` (`GET /api/cultivos/jitomate`)
 
 ```json
 {
@@ -170,27 +172,39 @@ Devuelve la ficha educativa, técnica y económica completa de un cultivo espec�
   "nombre": "Jitomate",
   "nombre_cientifico": "Solanum lycopersicum",
   "ecocrop_nombre": "Lycopersicon esculentum",
-  "categoria": "Hortalizas",
+  "categoria": "Frutos",
   "icono": "🍅",
   "resumen": "El cultivo estrella del huerto en casa; requiere sol directo y soporte para crecer vertical.",
+  "es_nativa_region": true,
   "ficha_tecnica": {
     "temp_ideal_c": [20, 27],
     "temp_limite_c": [7, 35],
     "tolera_helada": false,
     "altitud_max_m": 2400,
-    "dias_a_cosecha": [70, 110],
+    "dias_a_cosecha": [70, 150],
     "maceta_min_litros": 20,
-    "profundidad_min_cm": 30,
-    "luz": "pleno_sol",
+    "profundidad_maceta_cm": 30,
+    "luz_nivel": 4,
+    "riego_frecuencia_dias": 2,
     "riego": "Constante en la base, sin mojar las hojas ni encharcar",
     "sustrato_recomendado": "50% tierra negra, 30% composta o humus de lombriz, 20% perlita o tepojal"
+  },
+  "restricciones": {
+    "pet_safe": false,
+    "dificultad": "media"
+  },
+  "impacto_ambiental": {
+    "consumo_hidrico": "alto",
+    "atrae_polinizadores": true
+  },
+  "guia_rapida": {
+    "error_comun": "Regar de forma irregular: el fruto se raja y aparecen hongos."
   },
   "tutorial": [
     "Siembra 2 semillas a 0.5 cm de profundidad en un semillero húmedo.",
     "Cuando la plántula mida 10-15 cm y tenga 4 hojas verdaderas, trasplántala a una maceta de al menos 20 litros.",
     "Coloca un tutor o vara desde el inicio para sostener el tallo conforme crezca.",
-    "Riega cada 2 días en clima templado y a diario en calor, siempre directo a la tierra.",
-    "Cosecha entre 70 y 110 días después, cuando el fruto tenga color rojo uniforme."
+    "Cosecha cuando el fruto tenga color rojo uniforme."
   ],
   "companeros_cultivo": [
     {
@@ -198,42 +212,28 @@ Devuelve la ficha educativa, técnica y económica completa de un cultivo espec�
       "nombre": "Albahaca",
       "beneficio": "Ayuda a repeler mosca blanca y pulgones.",
       "evidencia": "popular"
-    },
-    {
-      "id": "zanahoria",
-      "nombre": "Zanahoria",
-      "beneficio": "Aprovecha la parte baja de la maceta sin competir por luz.",
-      "evidencia": "popular"
     }
   ],
   "curiosidades": [
-    "Su nombre viene del náhuatl xictomatl, que significa 'tomate con ombligo'.",
-    "México es centro de domesticación del jitomate y conserva decenas de variedades criollas."
+    "Su nombre viene del náhuatl xictomatl, que significa 'tomate con ombligo'."
   ],
   "ojo": [
-    "No lo siembres junto a papa: comparten plagas como el tizón tardío."
+    "Las hojas y los tallos no se comen y son tóxicos para perros y gatos."
   ],
-  "contexto_economico_sniim": {
-    "mercado_referencia": "Central de Abasto CDMX",
-    "producto_sniim": "Tomate Saladette",
-    "mes_mas_caro": { "mes": 12, "nombre": "Diciembre", "variacion_pct": 33 },
-    "mes_mas_barato": { "mes": 2, "nombre": "Febrero", "variacion_pct": -28 },
-    "estados_productores": [
-      { "estado": "Sinaloa", "participacion_pct": 45 },
-      { "estado": "Puebla", "participacion_pct": 33 },
-      { "estado": "Sonora", "participacion_pct": 14 },
-      { "estado": "Michoacán", "participacion_pct": 8 }
-    ],
-    "tip_ahorro": "Una planta bien cuidada en maceta grande puede rendir hasta 3 kg por ciclo, evitando los picos de precio de fin de año."
-  },
   "fuentes": [
-    "Manual de Huerto en Casa - Universidad Veracruzana (UV)",
-    "Base de datos FAO ECOCROP"
+    "FAO ECOCROP: Lycopersicon esculentum",
+    "Wikipedia: https://es.wikipedia.org/wiki/Solanum_lycopersicum"
   ]
 }
 ```
 
-*(Nota: Para los 7 cultivos que no cotizan en SNIIM,* `contexto_economico_sniim` *se devuelve como* `null`*).*
+### De dónde sale cada campo nuevo
+
+| Campo | Origen |
+| --- | --- |
+| `luz_nivel`, `profundidad_maceta_cm`, `riego_frecuencia_dias`, `consumo_hidrico`, `pet_safe`, `atrae_polinizadores`, `es_nativa_region`, `guia_rapida.error_comun` | Escritos a mano en `backend/data/curacion/cultivos_curados.json` y copiados a la ficha por `generar_cultivos_base.py` |
+| `pet_safe` | Valores conservadores: **verificar** con la lista de plantas tóxicas de la ASPCA |
+| `consumo_hidrico` | Se escribe a mano: derivarlo de la lluvia ideal de ECOCROP da resultados absurdos en maceta (por ejemplo, romero "alto") |
 
 ---
 
@@ -241,8 +241,9 @@ Devuelve la ficha educativa, técnica y económica completa de un cultivo espec�
 
 | Código HTTP | Error (`error`) | Payload JSON | Cuándo ocurre |
 | --- | --- | --- | --- |
-| `404 Not Found` | `ciudad_no_encontrada` | `{"error": "ciudad_no_encontrada", "detail": "No encontramos esa ubicación en México."}` | Open-Meteo Geocoding no devuelve resultados en `MX` para `q`. |
-| `404 Not Found` | `cultivo_no_encontrado` | `{"error": "cultivo_no_encontrado", "detail": "El cultivo solicitado no existe en el catálogo."}` | El `id` recibido en `/api/cultivos/{id}` no está en `cultivos.json`. |
+| `400 Bad Request` | `ubicacion_invalida` | `{"error": "ubicacion_invalida", "detail": "Debes enviar el parametro 'q' o el par 'lat' y 'lon'."}` | No se envió `q` ni el par `lat` + `lon`. |
+| `404 Not Found` | `ciudad_no_encontrada` | `{"error": "ciudad_no_encontrada", "detail": "No encontramos esa ubicación en México."}` | La búsqueda en `data/ciudades.json` no devuelve resultados para `q`. |
+| `404 Not Found` | `cultivo_no_encontrado` | `{"error": "cultivo_no_encontrado", "detail": "El cultivo solicitado no existe en el catálogo."}` | El `id` recibido en `/api/cultivos/{id}` no está en el catálogo. |
 | `503 Service Unavailable` | `clima_no_disponible` | `{"error": "clima_no_disponible", "detail": "El servicio meteorológico está saturado.", "reintentar_en_s": 60}` | Open-Meteo responde `429` y la celda `0.1°` aún no está en SQLite. |
 
 ---
@@ -253,9 +254,14 @@ Devuelve la ficha educativa, técnica y económica completa de un cultivo espec�
 | --- | --- | --- |
 | `cultivos[].estado` | `"optimo"`, `"con_cuidados"`, `"no_ahora"` | Resultado principal del motor de reglas para el mes consultado. |
 | `cultivos[].semaforo` | `"verde"`, `"amarillo"`, `"rojo"` | Mapeo visual directo de `estado`. |
-| `filtros_rapidos.espacio_tipo` | `"maceta_chica"`, `"maceta_grande"`, `"patio"` | Derivado de `maceta_min_litros`: $\le 8\text{ L}$, $9\text{–}25\text{ L}$, $> 25\text{ L}$. |
-| `filtros_rapidos.luz` / `ficha_tecnica.luz` | `"pleno_sol"`, `"media_sombra"`, `"sombra"` | Requerimiento lumínico del cultivo. |
-| `filtros_rapidos.dificultad` | `"facil"`, `"media"`, `"dificil"` | Nivel de experiencia recomendado. |
+| `filtros_rapidos.espacio_tipo` | `"maceta_chica"`, `"maceta_grande"`, `"patio"` | Derivado de `maceta_min_litros`: ≤ 8 L, 9–25 L, > 25 L. |
+| `luz_nivel` | `1`, `2`, `3`, `4` | 1 sombra, 2 luz indirecta brillante, 3 sol parcial (media sombra), 4 pleno sol. |
+| `riego_frecuencia_dias` | Entero ≥ 1 | Cada cuántos días regar en clima templado. |
+| `consumo_hidrico` | `"bajo"`, `"medio"`, `"alto"` | Agua que pide en maceta. |
+| `pet_safe` | `true`, `false` | `true` = no es tóxica para perros y gatos. |
+| `atrae_polinizadores` | `true`, `false` | Sus flores atraen abejas u otros polinizadores. |
+| `es_nativa_region` | `true`, `false` | Nativa o domesticada en México. |
+| `dificultad` | `"facil"`, `"media"`, `"dificil"` | Nivel de experiencia recomendado. |
 | `companeros_cultivo[].evidencia` | `"comprobada"`, `"popular"` | Sustento agronómico de la asociación de cultivos. |
-| `alertas_7_dias[].tipo` | `"helada"`, `"calor"` | Helada si mínima $\le 2\text{ }^\circ\text{C}$; calor si máxima $\ge 35\text{ }^\circ\text{C}$. |
-| `alertas_7_dias[].severidad` | `"media"`, `"alta"` | `alta` si mínima $\le 0\text{ }^\circ\text{C}$ o máxima $\ge 38\text{ }^\circ\text{C}$. |
+| `alertas_7_dias[].tipo` | `"helada"`, `"calor"`, `"lluvia_fuerte"`, `"tormenta"`, `"viento"`, `"uv"` | Helada: mínima ≤ 2 °C. Calor: máxima ≥ 35 °C. Lluvia fuerte: ≥ 25 mm en el día (escala del SMN). Tormenta: código WMO 95, 96 o 99. Viento: rachas ≥ 50 km/h. UV: índice ≥ 11. |
+| `alertas_7_dias[].severidad` | `"media"`, `"alta"` | `alta` si mínima ≤ 0 °C, máxima ≥ 38 °C, lluvia ≥ 50 mm o rachas ≥ 70 km/h. |

@@ -1,0 +1,875 @@
+{
+  "fuente": "FAO ECOCROP (EcoCrop_DB.csv, copia de OpenCLIM)",
+  "generado": "2026-11-20",
+  "nota": "Rangos de temperatura en °C sobre la temperatura media del periodo de cultivo. Revisar a mano los marcados en las notas de cultivos_curados.json.",
+  "cultivos": {
+    "lechuga": {
+      "ecocrop_nombre": "Lactuca sativa var. capitata",
+      "temp_ideal_c": [
+        12.0,
+        21.0
+      ],
+      "temp_limite_c": [
+        5.0,
+        30.0
+      ],
+      "temp_muerte_c": 0.0,
+      "dias_ciclo": [
+        35.0,
+        85.0
+      ],
+      "altitud_max_m": 3000,
+      "lluvia_anual_ideal_mm": [
+        1100.0,
+        1400.0
+      ],
+      "ph_ideal": [
+        6.0,
+        7.0
+      ],
+      "ciclo_vida": "annual, biennial",
+      "luz_ideal": [
+        "clear skies",
+        "clear skies"
+      ],
+      "coincidencias_en_ecocrop": 1
+    },
+    "espinaca": {
+      "ecocrop_nombre": "Spinacia oleracea",
+      "temp_ideal_c": [
+        13.0,
+        20.0
+      ],
+      "temp_limite_c": [
+        2.0,
+        27.0
+      ],
+      "temp_muerte_c": 0.0,
+      "dias_ciclo": [
+        40.0,
+        120.0
+      ],
+      "altitud_max_m": 3600,
+      "lluvia_anual_ideal_mm": [
+        800.0,
+        1200.0
+      ],
+      "ph_ideal": [
+        6.0,
+        7.5
+      ],
+      "ciclo_vida": "annual",
+      "luz_ideal": [
+        "very bright",
+        "clear skies"
+      ],
+      "coincidencias_en_ecocrop": 1
+    },
+    "acelga": {
+      "ecocrop_nombre": "Beta vulgaris",
+      "temp_ideal_c": [
+        15.0,
+        25.0
+      ],
+      "temp_limite_c": [
+        4.0,
+        35.0
+      ],
+      "temp_muerte_c": 0.0,
+      "dias_ciclo": [
+        160.0,
+        240.0
+      ],
+      "altitud_max_m": null,
+      "lluvia_anual_ideal_mm": [
+        600.0,
+        800.0
+      ],
+      "ph_ideal": [
+        6.0,
+        7.0
+      ],
+      "ciclo_vida": "biennial",
+      "luz_ideal": [
+        "very bright",
+        "light shade"
+      ],
+      "coincidencias_en_ecocrop": 1
+    },
+    "rabano": {
+      "ecocrop_nombre": "Raphanus sativus",
+      "temp_ideal_c": [
+        12.0,
+        26.0
+      ],
+      "temp_limite_c": [
+        10.0,
+        37.0
+      ],
+      "temp_muerte_c": null,
+      "dias_ciclo": [
+        50.0,
+        80.0
+      ],
+      "altitud_max_m": null,
+      "lluvia_anual_ideal_mm": [
+        1000.0,
+        1500.0
+      ],
+      "ph_ideal": [
+        6.0,
+        7.0
+      ],
+      "ciclo_vida": "annual",
+      "luz_ideal": [
+        "clear skies",
+        "clear skies"
+      ],
+      "coincidencias_en_ecocrop": 1
+    },
+    "zanahoria": {
+      "ecocrop_nombre": "Daucus carota",
+      "temp_ideal_c": [
+        15.0,
+        24.0
+      ],
+      "temp_limite_c": [
+        3.0,
+        30.0
+      ],
+      "temp_muerte_c": 0.0,
+      "dias_ciclo": [
+        40.0,
+        150.0
+      ],
+      "altitud_max_m": 2600,
+      "lluvia_anual_ideal_mm": [
+        600.0,
+        1200.0
+      ],
+      "ph_ideal": [
+        5.8,
+        6.8
+      ],
+      "ciclo_vida": "biennial",
+      "luz_ideal": [
+        "clear skies",
+        "cloudy skies"
+      ],
+      "coincidencias_en_ecocrop": 1
+    },
+    "cebolla": {
+      "ecocrop_nombre": "Allium cepa",
+      "temp_ideal_c": [
+        12.0,
+        25.0
+      ],
+      "temp_limite_c": [
+        4.0,
+        30.0
+      ],
+      "temp_muerte_c": null,
+      "dias_ciclo": [
+        85.0,
+        175.0
+      ],
+      "altitud_max_m": 2000,
+      "lluvia_anual_ideal_mm": [
+        350.0,
+        600.0
+      ],
+      "ph_ideal": [
+        6.0,
+        7.0
+      ],
+      "ciclo_vida": "biennial",
+      "luz_ideal": [
+        "clear skies",
+        "clear skies"
+      ],
+      "coincidencias_en_ecocrop": 1
+    },
+    "ajo": {
+      "ecocrop_nombre": "Allium sativum",
+      "temp_ideal_c": [
+        18.0,
+        30.0
+      ],
+      "temp_limite_c": [
+        7.0,
+        35.0
+      ],
+      "temp_muerte_c": -5.0,
+      "dias_ciclo": [
+        90.0,
+        120.0
+      ],
+      "altitud_max_m": 2200,
+      "lluvia_anual_ideal_mm": [
+        750.0,
+        1600.0
+      ],
+      "ph_ideal": [
+        6.0,
+        6.6
+      ],
+      "ciclo_vida": "biennial",
+      "luz_ideal": [
+        "clear skies",
+        "clear skies"
+      ],
+      "coincidencias_en_ecocrop": 1
+    },
+    "papa": {
+      "ecocrop_nombre": "Solanum tuberosum",
+      "temp_ideal_c": [
+        15.0,
+        25.0
+      ],
+      "temp_limite_c": [
+        7.0,
+        30.0
+      ],
+      "temp_muerte_c": 0.0,
+      "dias_ciclo": [
+        90.0,
+        160.0
+      ],
+      "altitud_max_m": 2800,
+      "lluvia_anual_ideal_mm": [
+        500.0,
+        800.0
+      ],
+      "ph_ideal": [
+        5.0,
+        6.2
+      ],
+      "ciclo_vida": "annual",
+      "luz_ideal": [
+        "very bright",
+        "very bright"
+      ],
+      "coincidencias_en_ecocrop": 1
+    },
+    "jitomate": {
+      "ecocrop_nombre": "Lycopersicon esculentum",
+      "temp_ideal_c": [
+        20.0,
+        27.0
+      ],
+      "temp_limite_c": [
+        7.0,
+        35.0
+      ],
+      "temp_muerte_c": null,
+      "dias_ciclo": [
+        70.0,
+        150.0
+      ],
+      "altitud_max_m": 2400,
+      "lluvia_anual_ideal_mm": [
+        600.0,
+        1300.0
+      ],
+      "ph_ideal": [
+        5.5,
+        6.8
+      ],
+      "ciclo_vida": "annual",
+      "luz_ideal": [
+        "clear skies",
+        "clear skies"
+      ],
+      "coincidencias_en_ecocrop": 1
+    },
+    "tomate_verde": {
+      "ecocrop_nombre": "Physalis philadelphica",
+      "temp_ideal_c": [
+        15.0,
+        25.0
+      ],
+      "temp_limite_c": [
+        8.0,
+        31.0
+      ],
+      "temp_muerte_c": null,
+      "dias_ciclo": [
+        80.0,
+        120.0
+      ],
+      "altitud_max_m": 2600,
+      "lluvia_anual_ideal_mm": [
+        700.0,
+        1000.0
+      ],
+      "ph_ideal": [
+        6.0,
+        7.0
+      ],
+      "ciclo_vida": "annual",
+      "luz_ideal": [
+        "very bright",
+        "clear skies"
+      ],
+      "coincidencias_en_ecocrop": 1
+    },
+    "chile_serrano": {
+      "ecocrop_nombre": "Capsicum annuum",
+      "temp_ideal_c": [
+        17.0,
+        30.0
+      ],
+      "temp_limite_c": [
+        8.0,
+        35.0
+      ],
+      "temp_muerte_c": null,
+      "dias_ciclo": [
+        60.0,
+        180.0
+      ],
+      "altitud_max_m": 3000,
+      "lluvia_anual_ideal_mm": [
+        600.0,
+        1250.0
+      ],
+      "ph_ideal": [
+        5.5,
+        6.8
+      ],
+      "ciclo_vida": "annual",
+      "luz_ideal": [
+        "very bright",
+        "very bright"
+      ],
+      "coincidencias_en_ecocrop": 1
+    },
+    "chile_habanero": {
+      "ecocrop_nombre": "Capsicum chinense",
+      "temp_ideal_c": [
+        20.0,
+        26.0
+      ],
+      "temp_limite_c": [
+        15.0,
+        32.0
+      ],
+      "temp_muerte_c": null,
+      "dias_ciclo": [
+        120.0,
+        150.0
+      ],
+      "altitud_max_m": null,
+      "lluvia_anual_ideal_mm": [
+        600.0,
+        1250.0
+      ],
+      "ph_ideal": [
+        6.0,
+        6.5
+      ],
+      "ciclo_vida": "annual",
+      "luz_ideal": [
+        "very bright",
+        "very bright"
+      ],
+      "coincidencias_en_ecocrop": 1
+    },
+    "calabacita": {
+      "ecocrop_nombre": "Cucurbita pepo",
+      "temp_ideal_c": [
+        17.0,
+        30.0
+      ],
+      "temp_limite_c": [
+        6.0,
+        40.0
+      ],
+      "temp_muerte_c": null,
+      "dias_ciclo": [
+        40.0,
+        100.0
+      ],
+      "altitud_max_m": 1000,
+      "lluvia_anual_ideal_mm": [
+        600.0,
+        1500.0
+      ],
+      "ph_ideal": [
+        5.5,
+        6.8
+      ],
+      "ciclo_vida": "annual",
+      "luz_ideal": [
+        "very bright",
+        "very bright"
+      ],
+      "coincidencias_en_ecocrop": 1
+    },
+    "pepino": {
+      "ecocrop_nombre": "Cucumis sativus",
+      "temp_ideal_c": [
+        18.0,
+        32.0
+      ],
+      "temp_limite_c": [
+        6.0,
+        38.0
+      ],
+      "temp_muerte_c": null,
+      "dias_ciclo": [
+        40.0,
+        180.0
+      ],
+      "altitud_max_m": 2000,
+      "lluvia_anual_ideal_mm": [
+        1000.0,
+        1200.0
+      ],
+      "ph_ideal": [
+        6.0,
+        7.5
+      ],
+      "ciclo_vida": "annual",
+      "luz_ideal": [
+        "very bright",
+        "very bright"
+      ],
+      "coincidencias_en_ecocrop": 1
+    },
+    "frijol_ejote": {
+      "ecocrop_nombre": "Phaseolus vulgaris",
+      "temp_ideal_c": [
+        16.0,
+        25.0
+      ],
+      "temp_limite_c": [
+        7.0,
+        32.0
+      ],
+      "temp_muerte_c": null,
+      "dias_ciclo": [
+        50.0,
+        270.0
+      ],
+      "altitud_max_m": 3000,
+      "lluvia_anual_ideal_mm": [
+        500.0,
+        2000.0
+      ],
+      "ph_ideal": [
+        5.5,
+        7.5
+      ],
+      "ciclo_vida": "annual",
+      "luz_ideal": [
+        "very bright",
+        "clear skies"
+      ],
+      "coincidencias_en_ecocrop": 1
+    },
+    "chicharo": {
+      "ecocrop_nombre": "Pisum sativum",
+      "temp_ideal_c": [
+        10.0,
+        24.0
+      ],
+      "temp_limite_c": [
+        4.0,
+        30.0
+      ],
+      "temp_muerte_c": 0.0,
+      "dias_ciclo": [
+        60.0,
+        140.0
+      ],
+      "altitud_max_m": 2700,
+      "lluvia_anual_ideal_mm": [
+        800.0,
+        1200.0
+      ],
+      "ph_ideal": [
+        5.5,
+        7.0
+      ],
+      "ciclo_vida": "annual",
+      "luz_ideal": [
+        "very bright",
+        "very bright"
+      ],
+      "coincidencias_en_ecocrop": 1
+    },
+    "fresa": {
+      "ecocrop_nombre": "Fragaria x ananassa",
+      "temp_ideal_c": [
+        11.0,
+        24.0
+      ],
+      "temp_limite_c": [
+        6.0,
+        28.0
+      ],
+      "temp_muerte_c": null,
+      "dias_ciclo": [
+        180.0,
+        270.0
+      ],
+      "altitud_max_m": 2000,
+      "lluvia_anual_ideal_mm": [
+        600.0,
+        900.0
+      ],
+      "ph_ideal": [
+        6.0,
+        6.8
+      ],
+      "ciclo_vida": "perennial",
+      "luz_ideal": [
+        "very bright",
+        "clear skies"
+      ],
+      "coincidencias_en_ecocrop": 1
+    },
+    "cilantro": {
+      "ecocrop_nombre": "Coriandrum sativum",
+      "temp_ideal_c": [
+        15.0,
+        25.0
+      ],
+      "temp_limite_c": [
+        4.0,
+        32.0
+      ],
+      "temp_muerte_c": 0.0,
+      "dias_ciclo": [
+        35.0,
+        140.0
+      ],
+      "altitud_max_m": 2200,
+      "lluvia_anual_ideal_mm": [
+        500.0,
+        1400.0
+      ],
+      "ph_ideal": [
+        5.5,
+        7.5
+      ],
+      "ciclo_vida": "annual",
+      "luz_ideal": [
+        "clear skies",
+        "clear skies"
+      ],
+      "coincidencias_en_ecocrop": 1
+    },
+    "perejil": {
+      "ecocrop_nombre": "Petroselinum crispum",
+      "temp_ideal_c": [
+        11.0,
+        20.0
+      ],
+      "temp_limite_c": [
+        7.0,
+        28.0
+      ],
+      "temp_muerte_c": 0.0,
+      "dias_ciclo": [
+        70.0,
+        365.0
+      ],
+      "altitud_max_m": 2400,
+      "lluvia_anual_ideal_mm": [
+        900.0,
+        1500.0
+      ],
+      "ph_ideal": [
+        6.0,
+        7.5
+      ],
+      "ciclo_vida": "perennial",
+      "luz_ideal": [
+        "clear skies",
+        "cloudy skies"
+      ],
+      "coincidencias_en_ecocrop": 1
+    },
+    "albahaca": {
+      "ecocrop_nombre": "Ocimum basilicum",
+      "temp_ideal_c": [
+        18.0,
+        27.0
+      ],
+      "temp_limite_c": [
+        7.0,
+        36.0
+      ],
+      "temp_muerte_c": null,
+      "dias_ciclo": [
+        80.0,
+        270.0
+      ],
+      "altitud_max_m": null,
+      "lluvia_anual_ideal_mm": [
+        1000.0,
+        1600.0
+      ],
+      "ph_ideal": [
+        6.0,
+        7.0
+      ],
+      "ciclo_vida": "annual",
+      "luz_ideal": [
+        "very bright",
+        "very bright"
+      ],
+      "coincidencias_en_ecocrop": 1
+    },
+    "epazote": {
+      "ecocrop_nombre": "Chenopodium ambrosioides",
+      "temp_ideal_c": [
+        15.0,
+        22.0
+      ],
+      "temp_limite_c": [
+        4.0,
+        31.0
+      ],
+      "temp_muerte_c": -1.0,
+      "dias_ciclo": [
+        150.0,
+        210.0
+      ],
+      "altitud_max_m": 1500,
+      "lluvia_anual_ideal_mm": [
+        800.0,
+        1500.0
+      ],
+      "ph_ideal": [
+        6.5,
+        7.5
+      ],
+      "ciclo_vida": "annual, perennial",
+      "luz_ideal": [
+        "very bright",
+        "clear skies"
+      ],
+      "coincidencias_en_ecocrop": 1
+    },
+    "hierbabuena": {
+      "ecocrop_nombre": "Mentha arvensis var. piperascens",
+      "temp_ideal_c": [
+        10.0,
+        25.0
+      ],
+      "temp_limite_c": [
+        3.0,
+        30.0
+      ],
+      "temp_muerte_c": -1.0,
+      "dias_ciclo": [
+        120.0,
+        365.0
+      ],
+      "altitud_max_m": 1500,
+      "lluvia_anual_ideal_mm": [
+        800.0,
+        1100.0
+      ],
+      "ph_ideal": [
+        5.5,
+        6.4
+      ],
+      "ciclo_vida": "perennial",
+      "luz_ideal": [
+        "very bright",
+        "clear skies"
+      ],
+      "coincidencias_en_ecocrop": 1
+    },
+    "romero": {
+      "ecocrop_nombre": "Rosmarinus officinalis",
+      "temp_ideal_c": [
+        18.0,
+        30.0
+      ],
+      "temp_limite_c": [
+        8.0,
+        38.0
+      ],
+      "temp_muerte_c": null,
+      "dias_ciclo": [
+        120.0,
+        270.0
+      ],
+      "altitud_max_m": 1500,
+      "lluvia_anual_ideal_mm": [
+        600.0,
+        1400.0
+      ],
+      "ph_ideal": [
+        6.0,
+        7.5
+      ],
+      "ciclo_vida": "perennial",
+      "luz_ideal": [
+        "very bright",
+        "very bright"
+      ],
+      "coincidencias_en_ecocrop": 1
+    },
+    "oregano": {
+      "ecocrop_nombre": "Origanum vulgare",
+      "temp_ideal_c": [
+        17.0,
+        28.0
+      ],
+      "temp_limite_c": [
+        4.0,
+        32.0
+      ],
+      "temp_muerte_c": 0.0,
+      "dias_ciclo": [
+        180.0,
+        300.0
+      ],
+      "altitud_max_m": null,
+      "lluvia_anual_ideal_mm": [
+        700.0,
+        1300.0
+      ],
+      "ph_ideal": [
+        5.5,
+        7.0
+      ],
+      "ciclo_vida": "perennial",
+      "luz_ideal": [
+        "very bright",
+        "very bright"
+      ],
+      "coincidencias_en_ecocrop": 1
+    },
+    "cebollin": {
+      "ecocrop_nombre": "Allium schoenoprasum",
+      "temp_ideal_c": [
+        10.0,
+        20.0
+      ],
+      "temp_limite_c": [
+        2.0,
+        35.0
+      ],
+      "temp_muerte_c": null,
+      "dias_ciclo": [
+        70.0,
+        100.0
+      ],
+      "altitud_max_m": 2000,
+      "lluvia_anual_ideal_mm": [
+        450.0,
+        1600.0
+      ],
+      "ph_ideal": [
+        6.0,
+        6.6
+      ],
+      "ciclo_vida": "annual, perennial",
+      "luz_ideal": [
+        "very bright",
+        "very bright"
+      ],
+      "coincidencias_en_ecocrop": 1
+    },
+    "verdolaga": {
+      "ecocrop_nombre": "Portulaca oleracea",
+      "temp_ideal_c": [
+        18.0,
+        32.0
+      ],
+      "temp_limite_c": [
+        7.0,
+        36.0
+      ],
+      "temp_muerte_c": null,
+      "dias_ciclo": [
+        21.0,
+        120.0
+      ],
+      "altitud_max_m": 1700,
+      "lluvia_anual_ideal_mm": [
+        1000.0,
+        2000.0
+      ],
+      "ph_ideal": [
+        5.5,
+        7.0
+      ],
+      "ciclo_vida": "annual",
+      "luz_ideal": [
+        "very bright",
+        "very bright"
+      ],
+      "coincidencias_en_ecocrop": 1
+    },
+    "amaranto": {
+      "ecocrop_nombre": "Amaranthus hypochondriacus",
+      "temp_ideal_c": [
+        19.0,
+        23.0
+      ],
+      "temp_limite_c": [
+        10.0,
+        32.0
+      ],
+      "temp_muerte_c": 0.0,
+      "dias_ciclo": [
+        30.0,
+        300.0
+      ],
+      "altitud_max_m": null,
+      "lluvia_anual_ideal_mm": [
+        1000.0,
+        1600.0
+      ],
+      "ph_ideal": [
+        6.0,
+        7.0
+      ],
+      "ciclo_vida": "annual",
+      "luz_ideal": [
+        "clear skies",
+        "clear skies"
+      ],
+      "coincidencias_en_ecocrop": 1
+    },
+    "nopal": {
+      "ecocrop_nombre": "Opuntia ficus-indica",
+      "temp_ideal_c": [
+        18.0,
+        26.0
+      ],
+      "temp_limite_c": [
+        10.0,
+        30.0
+      ],
+      "temp_muerte_c": null,
+      "dias_ciclo": [
+        140.0,
+        270.0
+      ],
+      "altitud_max_m": null,
+      "lluvia_anual_ideal_mm": [
+        700.0,
+        1300.0
+      ],
+      "ph_ideal": [
+        7.0,
+        7.5
+      ],
+      "ciclo_vida": "perennial",
+      "luz_ideal": [
+        "very bright",
+        "clear skies"
+      ],
+      "coincidencias_en_ecocrop": 1
+    }
+  }
+}
