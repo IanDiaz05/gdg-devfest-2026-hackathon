@@ -32,6 +32,10 @@ function generarWorker(): Plugin {
   }
 }
 
+const proxy = { '/api/': 'http://127.0.0.1:8000' }
+
 export default defineConfig({
   plugins: [react(), tailwindcss(), generarWorker()],
+  server: { proxy },
+  preview: { proxy },
 })

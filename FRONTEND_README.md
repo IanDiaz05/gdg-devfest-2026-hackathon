@@ -38,16 +38,18 @@ npm run preview
 
 ## Entorno y contratos
 
-Usa `frontend/.env.local` y reinicia Vite después de editarlo. Las variables `VITE_` son públicas en el cliente.
+En desarrollo y en la vista previa, Vite reenvía `/api` a `http://127.0.0.1:8000`. Para cambiar el comportamiento, usa `frontend/.env.local` y reinicia Vite. Las variables `VITE_` son públicas en el cliente.
 
 | Variable | Comportamiento |
 | --- | --- |
-| `VITE_USE_MOCKS` | `true` fuerza ejemplos. `false` fuerza HTTP. Si falta, la demo se activa cuando no se configura URL. |
-| `VITE_API_BASE_URL` | Origen o raíz de FastAPI, por ejemplo `http://localhost:8000`, sin sufijo `/api`. Si se fuerza HTTP sin URL, se usa el mismo origen. |
+| `VITE_USE_MOCKS` | `true` activa la demo. Por defecto se consulta la API real. |
+| `VITE_API_BASE_URL` | Origen o raíz de FastAPI, sin sufijo `/api`. Por defecto el frontend consulta `/api` en su propio origen. En producción, configura el alojamiento para reenviar esa ruta o especifica aquí el origen de la API antes de compilar. |
 
 El modo demo incluye Toluca, Mérida y Monterrey y fichas de jitomate, lechuga y albahaca. El modo demo se limita a los diagnósticos de diciembre y el banner lo identifica.
 
 El contrato oficial v3.1 está en [docs/json-contracts.md](docs/json-contracts.md). El frontend consulta `GET /api/recomendaciones` por ciudad o par GPS, con mes opcional. La respuesta alimenta clima, alertas, recomendación y calendario. `GET /api/cultivos/{id}` se consulta al abrir una ficha. Si la API usa otro origen, debe permitir el origen de la SPA mediante CORS.
+
+Si el backend responde 404 en `GET /api/ciudades`, el autocompletado usa el catálogo GeoNames del repositorio (CC BY 4.0).
 
 ## PWA
 

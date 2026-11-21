@@ -2,7 +2,6 @@ import assert from 'node:assert/strict'
 import { after, test } from 'node:test'
 import { createServer } from 'vite'
 
-process.env.VITE_USE_MOCKS = 'false'
 const vite = await createServer({
   configFile: false,
   envFile: false,
@@ -119,4 +118,17 @@ test('el buscador pide sugerencias con y sin texto y valida la respuesta', async
   assert.deepEqual(rutas, ['/api/ciudades?limite=10', '/api/ciudades?limite=10&q=tul'])
   respuesta = [{ ...tulum, etiqueta: undefined }]
   await assert.rejects(sugerirCiudades('tul', signal), /formato inesperado/)
+})
+
+test('el buscador usa el catálogo local si la API no ofrece sugerencias', async (t) => {
+  let status = 404
+  t.mock.method(globalThis, 'fetch', async () => Response.json({ detail: 'Not Found' }, { status }))
+
+  assert.equal((await sugerirCiudades('', signal)).length, 10)
+  const [toluca] = await sugerirCiudades('tolúca, estado de méx', signal)
+  assert.equal(toluca.etiqueta, 'Toluca, Estado de México')
+  assert.deepEqual(await sugerirCiudades('zzzzz', signal), [])
+
+  status = 503
+  await assert.rejects(sugerirCiudades('Toluca', signal), { status: 503 })
 })

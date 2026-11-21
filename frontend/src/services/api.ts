@@ -6,7 +6,6 @@ import { objeto, validarDiagnostico, validarFicha, validarSugerencias } from './
 
 const baseUrl = (import.meta.env.VITE_API_BASE_URL ?? '').trim().replace(/\/+$/, '')
 export const modoDemo = import.meta.env.VITE_USE_MOCKS === 'true'
-  || (import.meta.env.VITE_USE_MOCKS !== 'false' && !baseUrl)
 
 async function pedir<T extends object>(ruta: string, signal: AbortSignal, validar: (datos: unknown) => T): Promise<T> {
   const clave = import.meta.env.PROD && typeof window !== 'undefined'
@@ -73,7 +72,14 @@ export async function sugerirCiudades(texto: string, signal: AbortSignal): Promi
   }
   const consulta = new URLSearchParams({ limite: '10' })
   if (q) consulta.set('q', q)
-  return pedir(`/api/ciudades?${consulta}`, signal, validarSugerencias)
+  try {
+    return await pedir(`/api/ciudades?${consulta}`, signal, validarSugerencias)
+  } catch (error) {
+    if (!(error instanceof ErrorApi) || error.status !== 404) throw error
+    const { sugerirCiudadesLocales } = await import('./ciudadesLocales')
+    signal.throwIfAborted()
+    return sugerirCiudadesLocales(q, 10)
+  }
 }
 
 export async function obtenerFicha(id: string, signal: AbortSignal) {
