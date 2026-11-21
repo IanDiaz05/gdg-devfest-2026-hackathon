@@ -75,6 +75,10 @@ class EstacionClima(BaseModel):
     estacion: str
     clave: str
     distancia_km: float
+    altitud_estacion_m: int | None = None
+    diferencia_altitud_m: int | None = Field(
+        default=None, description="Altura de la zona menos altura de la estación (positivo: la zona está más alta)",
+    )
     heladas_estimadas: bool = Field(
         description="El SMN solo publica promedios mensuales: el % de heladas se estima con la mínima promedio",
     )

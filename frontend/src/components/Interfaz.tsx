@@ -2,6 +2,7 @@ import { CircleCheck, CircleX, Leaf, TriangleAlert } from 'lucide-react'
 import type { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import type { EstadoSiembra } from '../types/api'
+import { IconoCultivo } from './IconoCultivo'
 
 export const estados = {
   optimo: {
@@ -30,10 +31,10 @@ export function Estado({ estado, texto }: { estado: EstadoSiembra; texto?: strin
   )
 }
 
-export function CultivoIcono({ icono }: { icono?: string }) {
+export function CultivoIcono({ id, icono }: { id?: string; icono?: string }) {
   return (
-    <span className="grid size-12 shrink-0 place-items-center rounded-2xl bg-earth-soft text-2xl text-primary" aria-hidden="true">
-      {icono ?? <Leaf size={26} strokeWidth={1.75} />}
+    <span className="grid size-12 shrink-0 place-items-center rounded-2xl bg-earth-soft text-2xl text-foreground" aria-hidden="true">
+      {id ? <IconoCultivo id={id} icono={icono} size={40} /> : icono ?? <Leaf size={26} strokeWidth={1.75} />}
     </span>
   )
 }

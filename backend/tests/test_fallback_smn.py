@@ -165,3 +165,23 @@ def test_recomendaciones_open_meteo_marca_origen(cliente_api: TestClient) -> Non
     clima = respuesta.json()["clima_zona"]
     assert clima["origen"] == "open-meteo"
     assert clima["estacion_smn"] is None
+
+
+def test_estacion_adecuada_distancia_y_altura() -> None:
+    # Cerca y a la misma altura: sí. Lejos (más de 30 km) o a otra altura (más de 150 m): no.
+    assert clima_processor.estacion_adecuada(10, 2000, 2050)
+    assert not clima_processor.estacion_adecuada(35, 2000, 2000)
+    assert not clima_processor.estacion_adecuada(10, 2000, 2300)
+    # Sin altura conocida solo vale muy cerca (15 km)
+    assert clima_processor.estacion_adecuada(12, None, 2000)
+    assert not clima_processor.estacion_adecuada(20, 2000, None)
+
+
+def test_fallback_respeta_la_altura_de_la_zona() -> None:
+    # Toluca (2,670 m): la estación usada debe estar a una altura parecida
+    resultado = clima_processor.resumen_smn_fallback(19.29, -99.66, altitud_m=2670)
+    if resultado is not None:
+        fuente = resultado[2]
+        assert fuente["distancia_km"] <= clima_processor.MAX_KM_ESTACION
+        if fuente["diferencia_altitud_m"] is not None:
+            assert abs(fuente["diferencia_altitud_m"]) <= clima_processor.MAX_DIF_ALTITUD_M

@@ -10,7 +10,13 @@ MESES = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto
          "Septiembre", "Octubre", "Noviembre", "Diciembre"]
 UMBRAL_HELADA_C = 2.0  # aire a 2 m; a ras de suelo ya puede helar
 UMBRAL_HELADA_FUERTE_C = -2.0  # daña también a los cultivos que toleran heladas ligeras
-RADIO_SMN_FALLBACK_KM = 50.0  # más lejos, la estación ya no representa bien la zona
+# Cuándo una estación del SMN representa bien una zona. Medido contra Open-Meteo en 145 zonas que
+# tienen ambas fuentes: hasta 30 km el error de la temperatura media es de 1.2-1.5 °C; entre 30 y
+# 50 km sube a 3 °C, y con más de 100 m de diferencia de altura, a 2.7-4.2 °C.
+MAX_KM_ESTACION = 30.0
+MAX_DIF_ALTITUD_M = 150  # ~1 °C de diferencia de temperatura por altura
+MAX_KM_SIN_ALTITUD = 15.0  # si no se conoce la altura de la estación o de la zona, solo muy cerca
+RADIO_SMN_FALLBACK_KM = MAX_KM_ESTACION
 
 # Curvas para estimar el % de años con helada a partir de la mínima promedio del mes, cuando
 # solo hay datos mensuales (SMN). Ajustadas con 1,740 meses de las zonas descargadas de Open-Meteo
@@ -93,38 +99,44 @@ def _lista_mes(normal: dict[str, Any], clave: str) -> list[Any]:
     return list(valor) + [None] * (12 - len(valor))
 
 
+def estacion_adecuada(km: float, altitud_zona: float | None, altitud_estacion: float | None) -> bool:
+    """True si la estación está lo bastante cerca y a una altura parecida a la de la zona."""
+    if altitud_zona is None or altitud_estacion is None:
+        return km <= MAX_KM_SIN_ALTITUD
+    return km <= MAX_KM_ESTACION and abs(altitud_zona - altitud_estacion) <= MAX_DIF_ALTITUD_M
+
+
 def estacion_smn_cercana(
     lat: float,
     lon: float,
     radio_max_km: float = RADIO_SMN_FALLBACK_KM,
+    altitud_m: float | None = None,
 ) -> tuple[dict[str, Any], float, str] | None:
-    """Estación SMN más cercana con temperatura de los 12 meses.
+    """La estación del SMN más cercana que cumpla `estacion_adecuada` y tenga temperatura de los 12 meses.
 
-    Prefiere las que también traen mínima, máxima y lluvia completas (la mínima es la que
-    permite estimar heladas); entre ellas, la más cercana.
+    Si la más cercana está a otra altura, se busca la siguiente que sí cumpla. Sin ninguna, None.
     """
     datos = smn()
     if not datos:
         return None
     periodo = str(datos.get("periodo_normal") or "SMN-CONAGUA")
-    candidatas: list[tuple[int, float, dict[str, Any]]] = []
+    mejor: tuple[float, dict[str, Any]] | None = None
     for e in datos.get("estaciones", []):
+        km = distancia_km(lat, lon, float(e["lat"]), float(e["lon"]))
+        if km > radio_max_km or (mejor is not None and km >= mejor[0]):
+            continue
+        if not estacion_adecuada(km, altitud_m, e.get("altitud_m")):
+            continue
         normal = e.get("normal") or {}
         tmed = _lista_mes(normal, "tmed_c")
         tmin = _lista_mes(normal, "tmin_c")
         tmax = _lista_mes(normal, "tmax_c")
         if any(m is None and (a is None or b is None) for m, a, b in zip(tmed, tmin, tmax)):
             continue
-        km = distancia_km(lat, lon, float(e["lat"]), float(e["lon"]))
-        if km > radio_max_km:
-            continue
-        lluvia = _lista_mes(normal, "lluvia_mm")
-        incompleto = sum(1 for v in (tmin + tmax + lluvia) if v is None)
-        candidatas.append((incompleto, km, e))
-    if not candidatas:
+        mejor = (km, e)
+    if mejor is None:
         return None
-    _, km, estacion = min(candidatas, key=lambda c: (c[0], c[1]))
-    return estacion, km, periodo
+    return mejor[1], mejor[0], periodo
 
 
 def resumen_desde_estacion_smn(estacion: dict[str, Any]) -> list[dict[str, Any]]:
@@ -163,13 +175,14 @@ def resumen_smn_fallback(
     lat: float,
     lon: float,
     radio_max_km: float = RADIO_SMN_FALLBACK_KM,
+    altitud_m: float | None = None,
 ) -> tuple[list[dict[str, Any]], str, dict[str, Any]] | None:
     """Clima de la zona con la estación del SMN más cercana, para cuando no hay Open-Meteo.
 
     Devuelve (resumen de 12 meses, periodo, fuente). `fuente` describe la estación usada; el % de
     heladas es estimado porque el SMN solo publica promedios mensuales.
     """
-    hallada = estacion_smn_cercana(lat, lon, radio_max_km)
+    hallada = estacion_smn_cercana(lat, lon, radio_max_km, altitud_m)
     if hallada is None:
         return None
     estacion, km, periodo_normal = hallada
@@ -180,6 +193,11 @@ def resumen_smn_fallback(
         "estacion": str(estacion.get("nombre") or estacion.get("clave") or ""),
         "clave": str(estacion.get("clave") or ""),
         "distancia_km": round(km, 1),
+        "altitud_estacion_m": estacion.get("altitud_m"),
+        "diferencia_altitud_m": (
+            int(round(altitud_m - estacion["altitud_m"]))
+            if altitud_m is not None and estacion.get("altitud_m") is not None else None
+        ),
         "heladas_estimadas": True,
     }
     periodo = f"SMN-CONAGUA {periodo_normal}" if periodo_normal != "SMN-CONAGUA" else "SMN-CONAGUA"

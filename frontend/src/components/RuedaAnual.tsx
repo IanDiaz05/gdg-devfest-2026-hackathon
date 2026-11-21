@@ -2,6 +2,7 @@ import { useId, useRef, useState } from 'react'
 import { ArrowRight, CalendarDays } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import type { Recomendacion } from '../types/api'
+import { IconoCultivo } from './IconoCultivo'
 import { meses, textoTemporada } from '../utils/consulta'
 
 const centro = 160
@@ -82,7 +83,7 @@ export function RuedaAnual({ cultivos, elegido, elegir, mes, busqueda }: {
             </g>
           })}
           <g key={`${elegido.id}-${mesVisible}`} className="motion-safe:animate-fade-up motion-safe:[animation-duration:180ms] motion-reduce:animate-none">
-            <text x={centro} y={centro + 1} textAnchor="middle" fontSize="37">{elegido.icono}</text>
+            <IconoCultivo id={elegido.id} icono={elegido.icono} size={44} x={centro - 22} y={centro - 36} className="text-foreground" />
             <text x={centro} y={centro + 25} textAnchor="middle" fontSize="16" fontWeight="700" className="fill-primary">{meses[mesVisible - 1]}</text>
             <text x={centro} y={centro + 44} textAnchor="middle" fontSize="11" fontWeight="600" className="fill-muted-foreground">{estadoVisible.texto}</text>
           </g>
@@ -158,7 +159,7 @@ export function RuedaAnual({ cultivos, elegido, elegir, mes, busqueda }: {
           className={`min-h-11 shrink-0 snap-start rounded-full border px-4 text-sm font-semibold whitespace-nowrap focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 motion-safe:transition-colors motion-safe:duration-200 motion-reduce:transition-none ${cultivo.id === elegido.id
             ? 'border-primary bg-primary text-primary-foreground'
             : 'border-border bg-card text-foreground hover:bg-secondary'}`}>
-          <span aria-hidden="true">{cultivo.icono}</span> {cultivo.nombre}
+          <IconoCultivo id={cultivo.id} icono={cultivo.icono} size={22} className="-my-1 inline-block align-middle" /> {cultivo.nombre}
         </button>)}
       </div>
     </div>

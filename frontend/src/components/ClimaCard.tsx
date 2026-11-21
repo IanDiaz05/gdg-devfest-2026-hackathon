@@ -1,4 +1,4 @@
-import { CloudSun, Droplets, Mountain, Snowflake, Sun, ThermometerSnowflake, ThermometerSun } from "lucide-react";
+import { CloudSun, Droplets, Mountain, RadioTower, Satellite, Snowflake, Sun, ThermometerSnowflake, ThermometerSun } from "lucide-react";
 
 import type { ReactNode } from "react";
 
@@ -31,6 +31,35 @@ function Metrica({ icono, etiqueta, valor }: { icono: ReactNode; etiqueta: strin
       </div>
       <p className="mt-1 text-sm font-semibold">{valor}</p>
     </div>
+  );
+}
+
+/** De dónde sale el clima típico de la zona, para que se pueda verificar */
+function FuenteClima({ clima }: { clima: ClimaZona }) {
+  const estacion = clima.origen === "conagua" ? clima.estacion_smn : null;
+  if (!estacion) {
+    return (
+      <p className="mt-4 flex gap-2 rounded-xl border border-border px-3 py-2 text-sm text-muted-foreground">
+        <Satellite className="mt-0.5 size-4 shrink-0 text-primary" strokeWidth={1.75} aria-hidden />
+        <span>
+          <strong className="text-foreground">Fuente del clima: Open-Meteo.</strong> Datos diarios {clima.periodo_referencia} calculados
+          para el punto exacto de tu ciudad.
+        </span>
+      </p>
+    );
+  }
+  const dif = estacion.diferencia_altitud_m;
+  const altura = dif == null ? "" : dif === 0 ? ", a la misma altura que tu zona"
+    : `, ${formatoNumero.format(Math.abs(dif))} m más ${dif > 0 ? "abajo" : "arriba"} que tu zona`;
+  return (
+    <p className="mt-4 flex gap-2 rounded-xl border border-border px-3 py-2 text-sm text-muted-foreground">
+      <RadioTower className="mt-0.5 size-4 shrink-0 text-primary" strokeWidth={1.75} aria-hidden />
+      <span>
+        <strong className="text-foreground">Fuente del clima: estación {estacion.estacion} del SMN-CONAGUA</strong>, a{" "}
+        {formatoNumero.format(estacion.distancia_km)} km{altura}. Promedios mensuales {clima.periodo_referencia.replace("SMN-CONAGUA ", "")}
+        {estacion.heladas_estimadas && "; los años con helada son una estimación a partir de la mínima promedio"}.
+      </span>
+    </p>
   );
 }
 
@@ -97,6 +126,7 @@ export function ClimaCard({ clima, altitud }: { clima: ClimaZona; altitud: numbe
             </span>
           )}
         </div>
+        <FuenteClima clima={clima} />
         {clima.sequia && (
           <p className="mt-3 rounded-xl border border-warning-border bg-warning-soft px-3 py-2 text-xs text-warning">
             {clima.sequia.consejo}

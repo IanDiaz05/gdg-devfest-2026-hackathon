@@ -153,11 +153,13 @@ Devuelve la información climática de la zona y la evaluación de todos los cul
 * `clima_zona.lluvia_mes_mm`**:** Lluvia típica del mes evaluado según 30 años de Open-Meteo.
 * `clima_zona.origen`**:** De dónde sale el clima típico de la zona (temperaturas, heladas y `lluvia_mes_mm`):
   * `"open-meteo"`: 10 años de datos diarios en el punto exacto de la ciudad (`periodo_referencia`: `"2016-2025"`). `estacion_smn` es `null`.
-  * `"conagua"`: promedios mensuales de la **estación del SMN más cercana** (máximo 50 km; `periodo_referencia`: `"SMN-CONAGUA 2013-2025"`). Se usa cuando la zona no tiene datos de Open-Meteo y Open-Meteo no responde (límite de peticiones), o cuando se precargó con `scripts/precarga_conagua.py`. `estacion_smn` dice qué estación y a qué distancia:
+  * `"conagua"`: promedios mensuales de la **estación del SMN más cercana que represente bien la zona**: a 30 km o menos y a no más de 150 m de diferencia de altura (15 km si no se conoce la altura de la estación). `periodo_referencia`: `"SMN-CONAGUA 2013-2025"`. Se usa cuando la zona no tiene datos de Open-Meteo y Open-Meteo no responde (límite de peticiones), o cuando se precargó con `scripts/precarga_conagua.py`. `estacion_smn` dice qué estación y a qué distancia:
 
     ```json
-    "estacion_smn": { "estacion": "Fresnillo, Zac.", "clave": "FREZC", "distancia_km": 2.3, "heladas_estimadas": true }
+    "estacion_smn": { "estacion": "Zapotitlán Lagunas, Oax.", "clave": "ZALOX", "distancia_km": 0.1, "altitud_estacion_m": 1542, "diferencia_altitud_m": 16, "heladas_estimadas": true }
     ```
+
+    `diferencia_altitud_m` es la altura de la zona menos la de la estación (positivo: la estación está más abajo); `altitud_estacion_m` y `diferencia_altitud_m` son `null` si el catálogo del SMN no trae la altura. El frontend lo muestra en "Fuente del clima".
 
     Con `heladas_estimadas: true`, `anios_con_helada_pct` es una **estimación** a partir de la mínima promedio del mes (el SMN no publica datos diarios en sus resúmenes). Sugerencia para el frontend: mostrar "Datos de la estación X (SMN-CONAGUA)" y "helada estimada".
 * `alertas_7_dias`**:** Arreglo con **una alerta por tipo como máximo** (la del peor día de los próximos 7). `[]` cuando no hay riesgo. `cultivos_afectados` son los `id` de los cultivos sensibles a esa alerta (campo `sensible_a` de la curación, más los que no toleran helada).

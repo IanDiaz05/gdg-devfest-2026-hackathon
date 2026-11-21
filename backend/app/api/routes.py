@@ -230,7 +230,7 @@ async def recomendaciones(
         except ClimaNoDisponibleError:
             # Open-Meteo saturado o sin respuesta: se usa la estación del SMN más cercana y se guarda
             # con origen "conagua". scripts/precarga_cache.py la reemplaza después por Open-Meteo.
-            respaldo = clima_processor.resumen_smn_fallback(lat_resuelta, lon_resuelta)
+            respaldo = clima_processor.resumen_smn_fallback(lat_resuelta, lon_resuelta, altitud_m=altitud_m)
             if respaldo is None:
                 raise
             resumen, periodo, fuente = respaldo

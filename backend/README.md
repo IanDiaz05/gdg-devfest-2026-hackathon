@@ -52,9 +52,12 @@ backend\.venv\Scripts\python backend\scripts\descargas\descargar_todo.py
 | Script | Qué hace |
 |---|---|
 | `scripts/precarga_cache.py --limit 40` | Pide a **Open-Meteo** las zonas más pobladas que todavía no tienen su dato (incluye las que solo tienen dato de CONAGUA, para reemplazarlo). Cada zona pesa ~100 llamadas: el límite es de ~5,000 por hora y 10,000 al día por red |
-| `scripts/precarga_conagua.py` | Llena **todas las zonas vacías** con la estación del SMN más cercana (≤ 50 km), sin red y sin límite. Guarda `origen = "conagua"`. Opciones: `--limit 100`, `--estado Yucatán`, `--radio 30` |
+| `scripts/precarga_conagua.py` | Llena **todas las zonas vacías** con la estación del SMN más cercana **que cumpla el criterio de calidad** (ver abajo), sin red y sin límite. Guarda `origen = "conagua"`. Opciones: `--limit 100`, `--estado Yucatán` |
+| `scripts/ajustar_cobertura.py` | Aplica el criterio de calidad a todo: recalcula o borra las zonas de CONAGUA que no cumplen, saca del buscador las localidades que se quedan sin clima confiable y agrega la localidad principal de los municipios del INEGI que faltaban (si tienen estación adecuada). `--simular` solo cuenta. Necesita `data/raw/` de `descargar_ciudades.py` |
 
 Orden recomendado: primero `precarga_cache.py` hasta donde deje el límite y después `precarga_conagua.py` para que ninguna ciudad se quede sin datos.
+
+**Criterio de calidad de una estación** (`estacion_adecuada` en `app/engine/clima_processor.py`): a **30 km o menos** y a **no más de 150 m de diferencia de altura** con la zona; si no se conoce la altura de la estación, solo a 15 km o menos. Se midió contra Open-Meteo en 145 zonas con ambas fuentes: hasta 30 km el error de la temperatura media es de 1.2-1.5 °C; entre 30 y 50 km sube a 3 °C y con más de 100 m de diferencia de altura, a 2.7-4.2 °C. La altura de las estaciones sale del catálogo oficial del SMN (`descargar_smn.py` la agrega; `--solo-altitudes` para solo eso). Con este criterio el buscador tiene **1,694 de los 2,478 municipios**; los demás no tienen estación adecuada ni clima de Open-Meteo guardado.
 
 **Qué tan bueno es el dato de CONAGUA:** comparado con Open-Meteo en las 144 zonas que tienen ambos, la temperatura media difiere ±1.5 °C (las estaciones salen +1.3 °C más cálidas en promedio), el % de heladas ±6 puntos, y el ✅ ⚠️ ❌ de los cultivos coincide en el 77 % de los casos (solo 1.6 % pasa de ✅ a ❌ o al revés). El % de heladas es **estimado** con la mínima promedio del mes (curva ajustada en `app/engine/clima_processor.py`).
 
@@ -104,7 +107,7 @@ backend/data/
 | Parte | Fuente |
 |---|---|
 | Búsqueda de ciudad y GPS | `data/ciudades.json` (sin red) |
-| Clima típico (temperaturas, % de heladas, lluvia del mes) | **Open-Meteo Historical**, 10 años (en vivo, con caché en SQLite por celda de 0.1°). Si Open-Meteo no responde: **estación del SMN más cercana** (≤ 50 km). La respuesta lo indica en `clima_zona.origen` (`open-meteo` o `conagua`) |
+| Clima típico (temperaturas, % de heladas, lluvia del mes) | **Open-Meteo Historical**, 10 años (en vivo, con caché en SQLite por celda de 0.1°). Si Open-Meteo no responde: **estación del SMN más cercana que cumpla el criterio de calidad** (≤ 30 km y ≤ 150 m de diferencia de altura). La respuesta lo indica en `clima_zona.origen` (`open-meteo` o `conagua`) |
 | Alertas de 7 días: helada, calor, lluvia fuerte, tormenta, viento y UV | **Open-Meteo Forecast** (en vivo, caché de 1 hora) |
 | Lluvia del último mes y su comparación con lo normal | **SMN-CONAGUA**, estación más cercana (≤ 30 km) en `data/smn_estaciones.json` |
 | Estado ✅ ⚠️ ❌, razón y meses buenos | Motor de reglas (`app/engine/reglas_siembra.py`) |

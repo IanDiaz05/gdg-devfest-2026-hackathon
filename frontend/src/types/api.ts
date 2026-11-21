@@ -91,6 +91,16 @@ export interface Diagnostico {
     mes_mas_frio: MesClimatico
     mes_mas_caluroso: MesClimatico
     lluvia_mes_mm?: number | null
+    /** De dónde sale el clima típico: modelo Open-Meteo o estación del SMN-CONAGUA */
+    origen?: 'open-meteo' | 'conagua'
+    estacion_smn?: {
+      estacion: string
+      clave: string
+      distancia_km: number
+      altitud_estacion_m?: number | null
+      diferencia_altitud_m?: number | null
+      heladas_estimadas: boolean
+    } | null
     lluvia_reciente?: {
       fuente: string
       estacion: string

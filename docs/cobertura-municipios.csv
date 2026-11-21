@@ -1,0 +1,2479 @@
+﻿clave_inegi,estado,municipio,situacion,localidades_en_buscador,estacion_smn,distancia_km,diferencia_altura_m
+01001,Aguascalientes,Aguascalientes,open-meteo,"Aguascalientes, Hacienda San Marcos [Fraccionamiento], Pocitos",,,
+01002,Aguascalientes,Asientos,conagua,Asientos,"Loreto, Zac.",13.8,83
+01003,Aguascalientes,Calvillo,conagua,"Calvillo, Ojocaliente","Calvillo, Ags.",0.8,-56
+01004,Aguascalientes,Cosío,conagua,Cosío,"Ciudad Cuauhtémoc, Zac.",0.4,-2
+01005,Aguascalientes,Jesús María,conagua,"Jesús Gómez Portugal, Jesús Gómez Portugal (Margaritas), Jesús María","Aguascalientes, Ags.",8.1,-16
+01006,Aguascalientes,Pabellón de Arteaga,conagua,Pabellón de Arteaga,"Pabellón, Ags.",0.0,-9
+01007,Aguascalientes,Rincón de Romos,conagua,Rincón de Romos,"Pabellón, Ags.",10.1,49
+01008,Aguascalientes,San José de Gracia,conagua,San José de Gracia,"Plutarco Elías Calles, Ags.",0.7,7
+01009,Aguascalientes,Tepezalá,conagua,Tepezalá,"Villa Juárez, Ags.",17.8,101
+01010,Aguascalientes,El Llano,conagua,Palo Alto,"Palo Alto, Ags.",0.4,-2
+01011,Aguascalientes,San Francisco de los Romo,conagua,San Francisco de los Romo,"Pabellón, Ags.",0.0,-9
+02001,Baja California,Ensenada,open-meteo,"El Sauzal de Rodríguez, Emiliano Zapata, Ensenada",,,
+02002,Baja California,Mexicali,open-meteo,"Ciudad Coahuila, Ciudad Coahuila (Kilómetro Cincuenta y Siete), Ciudad Guadalupe Victoria",,,
+02003,Baja California,Tecate,conagua,"Lomas de Santa Anita, Tecate","Tecate, B.C.",2.8,-20
+02004,Baja California,Tijuana,open-meteo,"El Niño, La Joya, Las Delicias",,,
+02005,Baja California,Playas de Rosarito,conagua,Rosarito,"Abelardo L. Rodríguez, B.C.",16.0,-74
+02006,Baja California,San Quintín,no está (sin estación adecuada),,,,
+02007,Baja California,San Felipe,no está (sin estación adecuada),,,,
+03001,Baja California Sur,Comondú,conagua,Ciudad Constitución,"Observatorio de Ciudad Constitución, B.C.S.",2.5,5
+03002,Baja California Sur,Mulegé,conagua,"Santa Rosalía, Villa Alberto Andrés Alvarado Arámburo","Observatorio de Santa Rosalía, B.C.S.",0.6,43
+03003,Baja California Sur,La Paz,open-meteo,"La Paz, Todos Santos",,,
+03008,Baja California Sur,Los Cabos,open-meteo,"Cabo San Lucas, Colonia del Sol, Las Palmas",,,
+03009,Baja California Sur,Loreto,conagua,Loreto,"Observatorio de Loreto, B.C.S.",0.1,1
+04001,Campeche,Calkiní,open-meteo,"Bécal, Calkiní, Dzitbalché",,,
+04002,Campeche,Campeche,open-meteo,"Campeche, Chiná, Lerma",,,
+04003,Campeche,Carmen,open-meteo,"Ciudad del Carmen, Sabancuy",,,
+04004,Campeche,Champotón,open-meteo,"Champotón, Seybaplaya",,,
+04005,Campeche,Hecelchakán,open-meteo,"Hecelchakán, Pomuch",,,
+04006,Campeche,Hopelchén,open-meteo,Hopelchén,,,
+04007,Campeche,Palizada,conagua,Palizada,"Palizada, Camp.",0.5,1
+04008,Campeche,Tenabo,conagua,Tenabo,"Hecelchakán, Camp.",20.4,-40
+04009,Campeche,Escárcega,open-meteo,Escárcega,,,
+04010,Campeche,Calakmul,conagua,Xpujil,"Xpujil, Camp.",0.0,11
+04011,Campeche,Candelaria,añadido · conagua,Benito Juárez Uno,"Candelaria, Camp.",11.7,13
+04012,Campeche,Seybaplaya,no está (sin estación adecuada),,,,
+04013,Campeche,Dzitbalché,no está (sin estación adecuada),,,,
+05001,Coahuila,Abasolo,eliminado (sin clima confiable),,,,
+05002,Coahuila,Acuña,open-meteo,Ciudad Acuña,,,
+05003,Coahuila,Allende,conagua,Allende,"Allende, Coah.",1.0,11
+05004,Coahuila,Arteaga,conagua,Arteaga,"Secretaría de Agricultura Saltillo, Coah.",7.5,-21
+05005,Coahuila,Candela,conagua,Candela,"Candela, Coah.",0.8,
+05006,Coahuila,Castaños,conagua,Castaños,"Observatorio de Monclova, Coah.",12.3,141
+05007,Coahuila,Cuatro Ciénegas,conagua,Cuatro Ciénegas de Carranza,"Cuatro Ciénegas, Coah.",0.2,9
+05008,Coahuila,Escobedo,eliminado (sin clima confiable),,,,
+05009,Coahuila,Francisco I. Madero,conagua,Francisco I. Madero,"Matamoros, Coah.",27.6,-8
+05010,Coahuila,Frontera,conagua,Frontera,"Observatorio de Monclova, Coah.",3.6,-23
+05011,Coahuila,General Cepeda,eliminado (sin clima confiable),,,,
+05012,Coahuila,Guerrero,eliminado (sin clima confiable),,,,
+05013,Coahuila,Hidalgo,eliminado (sin clima confiable),,,,
+05014,Coahuila,Jiménez,conagua,Jiménez,"San Miguel, Coah.",27.0,-85
+05015,Coahuila,Juárez,conagua,Juárez,"Venustiano Carranza, Coah.",15.0,6
+05016,Coahuila,Lamadrid,conagua,Lamadrid,"Cuatro Ciénegas, Coah.",27.7,-79
+05017,Coahuila,Matamoros,conagua,"Matamoros, San Antonio del Coyote, San Pedro","Matamoros, Coah.",0.1,-3
+05018,Coahuila,Monclova,open-meteo,Monclova,,,
+05019,Coahuila,Morelos,conagua,Morelos,"Allende, Coah.",8.9,0
+05020,Coahuila,Múzquiz,conagua,"Minas de Barroterán, Palaú","Nueva Rosita, Coah.",7.2,
+05021,Coahuila,Nadadores,conagua,Nadadores,"Observatorio de Monclova, Coah.",21.3,-89
+05022,Coahuila,Nava,conagua,Nava,"Allende, Coah.",11.8,-45
+05023,Coahuila,Ocampo,eliminado (sin clima confiable),,,,
+05024,Coahuila,Parras,conagua,Parras de la Fuente,"Parras, Coah.",0.3,27
+05025,Coahuila,Piedras Negras,open-meteo,Piedras Negras,,,
+05026,Coahuila,Progreso,conagua,Progreso,"Progreso, Coah.",1.5,-51
+05027,Coahuila,Ramos Arizpe,conagua,Ramos Arizpe,"Ramos Arizpe Aeropuerto, Coah.",1.8,13
+05028,Coahuila,Sabinas,conagua,Sabinas,"Sabinas, Coah.",1.6,3
+05029,Coahuila,Sacramento,conagua,Sacramento,"Observatorio de Monclova, Coah.",28.6,-24
+05030,Coahuila,Saltillo,open-meteo,Saltillo,,,
+05031,Coahuila,San Buenaventura,conagua,San Buenaventura,"Observatorio de Monclova, Coah.",21.3,-116
+05032,Coahuila,San Juan de Sabinas,conagua,"Nueva Rosita, San Juan de Sabinas","Sabinas, Coah.",14.2,40
+05033,Coahuila,San Pedro,conagua,"Concordia, San Pedro","San Pedro, Coah.",0.5,1
+05034,Coahuila,Sierra Mojada,eliminado (sin clima confiable),,,,
+05035,Coahuila,Torreón,open-meteo,Torreón,,,
+05036,Coahuila,Viesca,eliminado (sin clima confiable),,,,
+05037,Coahuila,Villa Unión,conagua,Villa Unión,"Allende, Coah.",17.1,11
+05038,Coahuila,Zaragoza,conagua,Zaragoza,"Allende, Coah.",19.0,-12
+06001,Colima,Armería,conagua,"Ciudad de Armería, Cofradía de Juárez","Tecomán, Col.",10.6,45
+06002,Colima,Colima,conagua,Colima,"Buenavista, Col.",10.5,-104
+06003,Colima,Comala,conagua,Comala,"Presa derivadora Peñitas, Col.",5.4,
+06004,Colima,Coquimatlán,conagua,Coquimatlán,"Coquimatlán, Col.",0.2,-4
+06005,Colima,Cuauhtémoc,conagua,"Cuauhtémoc, Quesería","Aeropuerto Nacional de Colima, Col.",13.5,
+06006,Colima,Ixtlahuacán,conagua,Ixtlahuacán,"Tecomán, Col.",17.0,133
+06007,Colima,Manzanillo,open-meteo,"El Colomo, Manzanillo, Tapeixtles",,,
+06008,Colima,Minatitlán,conagua,Minatitlán,"Sierra Manatlán 1, Jal.",11.2,
+06009,Colima,Tecomán,conagua,"Cerro de Ortega, Tecomán","Tecomán, Col.",1.1,-6
+06010,Colima,Villa de Álvarez,conagua,Ciudad de Villa de Álvarez,"La Posta, Col.",9.4,31
+07001,Chiapas,Acacoyagua,conagua,Acacoyagua,"Cacaluta, Chis.",9.4,0
+07002,Chiapas,Acala,conagua,"Acala, Veinte de Noviembre","Acala, Chis.",0.5,-11
+07003,Chiapas,Acapetahua,conagua,Acapetahua,"Cacaluta, Chis.",9.4,0
+07004,Chiapas,Altamirano,sin clima guardado,Altamirano,,,
+07005,Chiapas,Amatán,eliminado (sin clima confiable),,,,
+07006,Chiapas,Amatenango de la Frontera,eliminado (sin clima confiable),,,,
+07007,Chiapas,Amatenango del Valle,eliminado (sin clima confiable),,,,
+07008,Chiapas,Ángel Albino Corzo,conagua,Jaltenango de la Paz,"Reforma, Chis.",7.9,
+07009,Chiapas,Arriaga,conagua,Arriaga,"Observatorio de Arriaga, Chis.",0.7,-1
+07010,Chiapas,Bejucal de Ocampo,eliminado (sin clima confiable),,,,
+07011,Chiapas,Bella Vista,eliminado (sin clima confiable),,,,
+07012,Chiapas,Berriozábal,eliminado (sin clima confiable),,,,
+07013,Chiapas,Bochil,conagua,Bochil,"Santa María, Chis.",10.1,
+07014,Chiapas,El Bosque,eliminado (sin clima confiable),,,,
+07015,Chiapas,Cacahoatán,eliminado (sin clima confiable),,,,
+07016,Chiapas,Catazajá,eliminado (sin clima confiable),,,,
+07017,Chiapas,Cintalapa de Figueroa,conagua,Cintalapa de Figueroa,"Las Flores, Chis.",16.8,97
+07018,Chiapas,Coapilla,conagua,Coapilla,"Yamonhó, Chis.",13.0,150
+07019,Chiapas,Comitán de Domínguez,open-meteo,Comitán,,,
+07020,Chiapas,La Concordia,eliminado (sin clima confiable),,,,
+07021,Chiapas,Copainalá,conagua,Copainalá,"Yamonhó, Chis.",13.0,150
+07022,Chiapas,Chalchihuitán,eliminado (sin clima confiable),,,,
+07023,Chiapas,Chamula,no está (sin estación adecuada),,,,
+07024,Chiapas,Chanal,eliminado (sin clima confiable),,,,
+07025,Chiapas,Chapultenango,eliminado (sin clima confiable),,,,
+07026,Chiapas,Chenalhó,eliminado (sin clima confiable),,,,
+07027,Chiapas,Chiapa de Corzo,conagua,Chiapa de Corzo,"Tuxtla Oriente, Chis.",11.1,-103
+07028,Chiapas,Chiapilla,conagua,Chiapilla,"Acala, Chis.",9.2,123
+07029,Chiapas,Chicoasén,conagua,Chicoasén,"Grijalva, Chis.",2.2,40
+07030,Chiapas,Chicomuselo,conagua,Chicomuselo,"San Miguel, Chis.",6.2,
+07031,Chiapas,Chilón,sin clima guardado,"Bachajón, Chilón",,,
+07032,Chiapas,Escuintla,conagua,Escuintla,"Cacaluta, Chis.",9.4,0
+07033,Chiapas,Francisco León,no está (sin estación adecuada),,,,
+07034,Chiapas,Frontera Comalapa,conagua,Frontera Comalapa,"Puente Concordia, Chis.",21.7,77
+07035,Chiapas,Frontera Hidalgo,conagua,Frontera Hidalgo,"Tapachula, Chis.",14.2,
+07036,Chiapas,La Grandeza,eliminado (sin clima confiable),,,,
+07037,Chiapas,Huehuetán,eliminado (sin clima confiable),,,,
+07038,Chiapas,Huixtán,conagua,Huixtán,"Puente Morelos, Chis.",17.7,-104
+07039,Chiapas,Huitiupán,eliminado (sin clima confiable),,,,
+07040,Chiapas,Huixtla,eliminado (sin clima confiable),,,,
+07041,Chiapas,La Independencia,eliminado (sin clima confiable),,,,
+07042,Chiapas,Ixhuatán,eliminado (sin clima confiable),,,,
+07043,Chiapas,Ixtacomitán,conagua,Ixtacomitán,"San Joaquín, Chis.",14.6,133
+07044,Chiapas,Ixtapa,conagua,Ixtapa,"Manuel Moreno Torres, Chis.",26.5,-124
+07045,Chiapas,Ixtapangajoya,conagua,Ixtapangajoya,"Teapa, Tab.",8.5,52
+07046,Chiapas,Jiquipilas,conagua,Jiquipilas,"Las Flores, Chis.",9.6,51
+07047,Chiapas,Jitotol,conagua,Jitotol,"Santa María, Chis.",14.9,
+07048,Chiapas,Juárez,conagua,Juárez,"San Joaquín, Chis.",12.5,131
+07049,Chiapas,Larráinzar,conagua,Larráinzar,"Santa María, Chis.",12.9,
+07050,Chiapas,La Libertad,eliminado (sin clima confiable),,,,
+07051,Chiapas,Mapastepec,conagua,Mapastepec,"Cacaluta, Chis.",19.6,-36
+07052,Chiapas,Las Margaritas,eliminado (sin clima confiable),,,,
+07053,Chiapas,Mazapa de Madero,conagua,Mazapa de Madero,"Finca Hamburgo, Chis.",22.8,100
+07054,Chiapas,Mazatán,conagua,Mazatán,"Tapachula, Chis.",11.2,
+07055,Chiapas,Metapa,conagua,Metapa de Domínguez,"Tapachula, Chis.",14.2,
+07056,Chiapas,Mitontic,no está (sin estación adecuada),,,,
+07057,Chiapas,Motozintla,conagua,Motozintla de Mendoza,"Finca Hamburgo, Chis.",22.8,100
+07058,Chiapas,Nicolás Ruíz,conagua,Nicolás Ruiz,"Cascajal, Chis.",18.2,31
+07059,Chiapas,Ocosingo,open-meteo,"Altamirano, Frontera Corozal, Nueva Palestina",,,
+07060,Chiapas,Ocotepec,eliminado (sin clima confiable),,,,
+07061,Chiapas,Ocozocoautla de Espinosa,eliminado (sin clima confiable),,,,
+07062,Chiapas,Ostuacán,conagua,Ostuacán,"Sayula, Chis.",5.4,-105
+07063,Chiapas,Osumacinta,añadido · conagua,Osumacinta,"Grijalva, Chis.",5.7,144
+07064,Chiapas,Oxchuc,conagua,Oxchuc,"Puente Morelos, Chis.",29.4,-148
+07065,Chiapas,Palenque,eliminado (sin clima confiable),,,,
+07066,Chiapas,Pantelhó,eliminado (sin clima confiable),,,,
+07067,Chiapas,Pantepec,eliminado (sin clima confiable),,,,
+07068,Chiapas,Pichucalco,conagua,"Pichucalco, Sunuapa","San Joaquín, Chis.",6.6,23
+07069,Chiapas,Pijijiapan,eliminado (sin clima confiable),,,,
+07070,Chiapas,El Porvenir,eliminado (sin clima confiable),,,,
+07071,Chiapas,Villa Comaltitlán,conagua,Villa Comaltitlán,"Cacaluta, Chis.",23.8,-15
+07072,Chiapas,Pueblo Nuevo Solistahuacán,eliminado (sin clima confiable),,,,
+07073,Chiapas,Rayón,eliminado (sin clima confiable),,,,
+07074,Chiapas,Reforma,conagua,Reforma,"Samaria, Tab.",20.0,4
+07075,Chiapas,Las Rosas,eliminado (sin clima confiable),,,,
+07076,Chiapas,Sabanilla,eliminado (sin clima confiable),,,,
+07077,Chiapas,Salto de Agua,conagua,Salto de Agua,"Salto de Agua, Chis.",1.7,4
+07078,Chiapas,San Cristóbal de las Casas,open-meteo,San Cristóbal de las Casas,,,
+07079,Chiapas,San Fernando,eliminado (sin clima confiable),,,,
+07080,Chiapas,Siltepec,eliminado (sin clima confiable),,,,
+07081,Chiapas,Simojovel,eliminado (sin clima confiable),,,,
+07082,Chiapas,Sitalá,no está (sin estación adecuada),,,,
+07083,Chiapas,Socoltenango,eliminado (sin clima confiable),,,,
+07084,Chiapas,Solosuchiapa,conagua,Solosuchiapa,"San Joaquín, Chis.",15.7,143
+07085,Chiapas,Soyaló,conagua,Soyaló,"Santa María, Chis.",12.2,
+07086,Chiapas,Suchiapa,conagua,Suchiapa,"Boquerón, Chis.",5.8,-43
+07087,Chiapas,Suchiate,eliminado (sin clima confiable),,,,
+07088,Chiapas,Sunuapa,añadido · conagua,La Libertad,"Sayula, Chis.",16.5,-38
+07089,Chiapas,Tapachula,open-meteo,"Puerto Madero, Tapachula de Córdova y Ordóñez, Vida Mejor I",,,
+07090,Chiapas,Tapalapa,eliminado (sin clima confiable),,,,
+07091,Chiapas,Tapilula,eliminado (sin clima confiable),,,,
+07092,Chiapas,Tecpatán,conagua,"Raudales Malpaso, Tecpatán","Nezahualcóyotl, Chis.",1.3,
+07093,Chiapas,Tenejapa,conagua,Tenejapa,"Puente Morelos, Chis.",14.5,-102
+07094,Chiapas,Teopisca,eliminado (sin clima confiable),,,,
+07096,Chiapas,Tila,eliminado (sin clima confiable),,,,
+07097,Chiapas,Tonalá,conagua,"Paredón, Tonalá","Observatorio de Arriaga, Chis.",22.5,18
+07098,Chiapas,Totolapa,conagua,Totolapa,"Doctor Belisario Domínguez, Chis.",13.8,100
+07099,Chiapas,La Trinitaria,conagua,La Trinitaria,"Observatorio de Comitán, Chis.",15.4,-145
+07100,Chiapas,Tumbalá,no está (sin estación adecuada),,,,
+07101,Chiapas,Tuxtla Gutiérrez,open-meteo,Tuxtla,,,
+07102,Chiapas,Tuxtla Chico,conagua,Tuxtla Chico,"Tapachula, Chis.",10.5,
+07103,Chiapas,Tuzantán,eliminado (sin clima confiable),,,,
+07104,Chiapas,Tzimol,eliminado (sin clima confiable),,,,
+07105,Chiapas,Unión Juárez,conagua,Unión Juárez,"Finca Hamburgo, Chis.",29.0,120
+07106,Chiapas,Venustiano Carranza,conagua,"San Francisco Pujiltic, Venustiano Carranza","Cascajal, Chis.",9.6,125
+07107,Chiapas,Villa Corzo,conagua,"El Parral, Revolución Mexicana, San Pedro Buenavista","Revolución Mexicana, Chis.",28.2,140
+07108,Chiapas,Villaflores,conagua,"Jesús María Garza, Villaflores","Revolución Mexicana, Chis.",22.0,31
+07109,Chiapas,Yajalón,eliminado (sin clima confiable),,,,
+07110,Chiapas,San Lucas,no está (sin estación adecuada),,,,
+07111,Chiapas,Zinacantán,conagua,Zinacantán,"Observatorio de San Cristóbal, Chis.",9.9,45
+07112,Chiapas,San Juan Cancuc,eliminado (sin clima confiable),,,,
+07113,Chiapas,Aldama,conagua,Aldama,"Santa María, Chis.",12.9,
+07114,Chiapas,Benemérito de las Américas,sin clima guardado,Benemérito de las Américas,,,
+07115,Chiapas,Maravilla Tenejapa,sin clima guardado,Maravilla Tenejapa,,,
+07116,Chiapas,Marqués de Comillas,no está (sin estación adecuada),,,,
+07117,Chiapas,Montecristo de Guerrero,eliminado (sin clima confiable),,,,
+07118,Chiapas,San Andrés Duraznal,eliminado (sin clima confiable),,,,
+07119,Chiapas,Santiago el Pinar,conagua,Santiago el Pinar,"Santa María, Chis.",12.9,
+07120,Chiapas,Capitán Luis Ángel Vidal,no está (sin estación adecuada),,,,
+07121,Chiapas,Rincón Chamula San Pedro,no está (sin estación adecuada),,,,
+07122,Chiapas,El Parral,añadido · conagua,El Triunfo,"Revolución Mexicana, Chis.",22.6,132
+07123,Chiapas,Emiliano Zapata,añadido · conagua,San Isidro,"Acala, Chis.",9.9,12
+07124,Chiapas,Mezcalapa,añadido · conagua,Las Flores,"Ángel Albino Corzo, Chis.",11.8,
+07125,Chiapas,Honduras de la Sierra,no está (sin estación adecuada),,,,
+08001,Chihuahua,Ahumada,sin clima guardado,Miguel Ahumada,,,
+08002,Chihuahua,Aldama,conagua,Juan Aldama,"La Mesa, Chih.",6.9,32
+08003,Chihuahua,Allende,conagua,Valle de Ignacio Allende,"Observatorio de Parral, Chih.",28.1,-127
+08004,Chihuahua,Aquiles Serdán,eliminado (sin clima confiable),,,,
+08005,Chihuahua,Ascensión,sin clima guardado,Puerto Palomas de Villa,,,
+08006,Chihuahua,Bachíniva,conagua,Bachíniva,"Bachíniva, Chih.",0.8,20
+08007,Chihuahua,Balleza,sin clima guardado,Mariano Balleza,,,
+08008,Chihuahua,Batopilas de Manuel Gómez Morín,no está (sin estación adecuada),,,,
+08009,Chihuahua,Bocoyna,conagua,"Bocoyna, Creel, San Juanito","Creel, Chih.",24.9,36
+08010,Chihuahua,Buenaventura,eliminado (sin clima confiable),,,,
+08011,Chihuahua,Camargo,conagua,Santa Rosalía de Camargo,"La Boquilla, Chih.",28.2,-83
+08012,Chihuahua,Carichí,sin clima guardado,Carichí,,,
+08013,Chihuahua,Casas Grandes,conagua,Casas Grandes,"Observatorio de Nuevo Casas Grandes, Chih.",2.0,
+08014,Chihuahua,Coronado,añadido · conagua,José Esteban Coronado,"Villa Coronado, Chih.",0.2,-2
+08015,Chihuahua,Coyame del Sotol,sin clima guardado,Santiago de Coyame,,,
+08016,Chihuahua,La Cruz,conagua,La Cruz,"Ciudad Camargo, Chih.",23.5,-16
+08017,Chihuahua,Cuauhtémoc,open-meteo,"Colonia Anáhuac, Cuauhtémoc",,,
+08018,Chihuahua,Cusihuiriachi,eliminado (sin clima confiable),,,,
+08019,Chihuahua,Chihuahua,open-meteo,Chihuahua,,,
+08020,Chihuahua,Chínipas,conagua,Chínipas de Almada,"Chínipas, Chih.",0.3,-1
+08021,Chihuahua,Delicias,conagua,Ciudad Delicias,"Ciudad Delicias, Chih.",3.2,2
+08022,Chihuahua,Dr. Belisario Domínguez,eliminado (sin clima confiable),,,,
+08023,Chihuahua,Galeana,eliminado (sin clima confiable),,,,
+08024,Chihuahua,Santa Isabel,eliminado (sin clima confiable),,,,
+08025,Chihuahua,Gómez Farías,eliminado (sin clima confiable),,,,
+08026,Chihuahua,Gran Morelos,eliminado (sin clima confiable),,,,
+08027,Chihuahua,Guachochi,conagua,Guachochi,"Guachochi, Chih.",0.4,-16
+08028,Chihuahua,Guadalupe,eliminado (sin clima confiable),,,,
+08029,Chihuahua,Guadalupe y Calvo,eliminado (sin clima confiable),,,,
+08030,Chihuahua,Guazapares,eliminado (sin clima confiable),,,,
+08031,Chihuahua,Guerrero,conagua,"Adolfo López Mateos, Ciudad Guerrero, La Junta","Abraham González, Chih.",15.0,78
+08032,Chihuahua,Hidalgo del Parral,conagua,Hidalgo del Parral,"Observatorio de Parral, Chih.",1.6,2
+08033,Chihuahua,Huejotitán,sin clima guardado,Huejotitán,,,
+08034,Chihuahua,Ignacio Zaragoza,eliminado (sin clima confiable),,,,
+08035,Chihuahua,Janos,eliminado (sin clima confiable),,,,
+08036,Chihuahua,Jiménez,conagua,José Mariano Jiménez,"Jiménez, Chih.",1.2,14
+08037,Chihuahua,Juárez,open-meteo,Ciudad Juárez,,,
+08038,Chihuahua,Julimes,conagua,Julimes,"Ciudad Delicias, Chih.",23.7,-61
+08039,Chihuahua,López,conagua,López,"Jiménez, Chih.",18.3,55
+08040,Chihuahua,Madera,conagua,Madera,"Peñitas, Chih.",5.8,-18
+08041,Chihuahua,Maguarichi,conagua,Maguarichi,"Maguarichi, Chih.",0.1,
+08042,Chihuahua,Manuel Benavides,sin clima guardado,Manuel Benavides,,,
+08043,Chihuahua,Matachí,conagua,Matachí,"Observatorio de Temósachic, Chih.",14.3,30
+08044,Chihuahua,Matamoros,conagua,Mariano Matamoros,"Observatorio de Parral, Chih.",19.6,13
+08045,Chihuahua,Meoqui,conagua,"Colonia Emiliano Zapata, Lázaro Cárdenas, Pedro Meoqui","Ciudad Delicias, Chih.",7.2,-22
+08046,Chihuahua,Morelos,eliminado (sin clima confiable),,,,
+08047,Chihuahua,Moris,eliminado (sin clima confiable),,,,
+08048,Chihuahua,Namiquipa,eliminado (sin clima confiable),,,,
+08049,Chihuahua,Nonoava,sin clima guardado,Nonoava,,,
+08050,Chihuahua,Nuevo Casas Grandes,conagua,Nuevo Casas Grandes,"Observatorio de Nuevo Casas Grandes, Chih.",4.7,
+08051,Chihuahua,Ocampo,eliminado (sin clima confiable),,,,
+08052,Chihuahua,Ojinaga,conagua,"Manuel Ojinaga, Ojinaga","Ojinaga, Chih.",13.0,5
+08053,Chihuahua,Praxedis G. Guerrero,sin clima guardado,Praxedis G. Guerrero,,,
+08054,Chihuahua,Riva Palacio,eliminado (sin clima confiable),,,,
+08055,Chihuahua,Rosales,conagua,Santa Cruz de Rosales,"Las Vírgenes, Chih.",7.5,-61
+08056,Chihuahua,Valle del Rosario,sin clima guardado,Valle del Rosario,,,
+08057,Chihuahua,San Francisco de Borja,sin clima guardado,San Francisco de Borja,,,
+08058,Chihuahua,San Francisco de Conchos,conagua,San Francisco de Conchos,"La Boquilla, Chih.",9.2,-73
+08059,Chihuahua,San Francisco del Oro,eliminado (sin clima confiable),,,,
+08060,Chihuahua,Santa Bárbara,eliminado (sin clima confiable),,,,
+08061,Chihuahua,Satevó,no está (sin estación adecuada),,,,
+08062,Chihuahua,Saucillo,conagua,Saucillo,"Ciudad Delicias, Chih.",25.2,27
+08063,Chihuahua,Temósachic,conagua,Temósachic,"Observatorio de Temósachic, Chih.",0.2,-20
+08064,Chihuahua,El Tule,sin clima guardado,El Tule,,,
+08065,Chihuahua,Urique,conagua,Urique,"Urique, Chih.",0.6,-2
+08066,Chihuahua,Uruachi,eliminado (sin clima confiable),,,,
+08067,Chihuahua,Valle de Zaragoza,conagua,Valle de Zaragoza,"Valle de Zaragoza, Chih.",0.4,3
+09002,Ciudad de México,Azcapotzalco,open-meteo,Azcapotzalco,,,
+09003,Ciudad de México,Coyoacán,open-meteo,Coyoacán,,,
+09004,Ciudad de México,Cuajimalpa de Morelos,open-meteo,"Col. Bosques de las Lomas, Delegación Cuajimalpa de Morelos, San Lorenzo Acopilco",,,
+09005,Ciudad de México,Gustavo A. Madero,open-meteo,Gustavo Adolfo Madero,,,
+09006,Ciudad de México,Iztacalco,open-meteo,Iztacalco,,,
+09007,Ciudad de México,Iztapalapa,open-meteo,Iztapalapa,,,
+09008,Ciudad de México,La Magdalena Contreras,open-meteo,Magdalena Contreras,,,
+09009,Ciudad de México,Milpa Alta,conagua,"Milpa Alta, San Antonio Tecómitl, San Francisco Tecoxpa","Chalco San Lucas, Méx.",10.7,11
+09010,Ciudad de México,Álvaro Obregón,open-meteo,Álvaro Obregón,,,
+09011,Ciudad de México,Tláhuac,open-meteo,"San Andrés Mixquic, San Juan Ixtayopan, Santa Catarina Yecahuizotl",,,
+09012,Ciudad de México,Tlalpan,open-meteo,"San Miguel Ajusco, San Miguel Topilejo, Tlalpan",,,
+09013,Ciudad de México,Xochimilco,open-meteo,Xochimilco,,,
+09014,Ciudad de México,Benito Juárez,open-meteo,"Benito Juárez, Colonia Nativitas, Colonia del Valle",,,
+09015,Ciudad de México,Cuauhtémoc,open-meteo,Cuauhtémoc,,,
+09016,Ciudad de México,Miguel Hidalgo,open-meteo,"Miguel Hidalgo, Polanco",,,
+09017,Ciudad de México,Venustiano Carranza,open-meteo,Venustiano Carranza,,,
+10001,Durango,Canatlán,conagua,Canatlán,"Canatlán, Dgo.",1.3,-22
+10002,Durango,Canelas,eliminado (sin clima confiable),,,,
+10003,Durango,Coneto de Comonfort,eliminado (sin clima confiable),,,,
+10004,Durango,Cuencamé,conagua,Cuencamé de Ceniceros,"Cuencamé, Dgo.",0.2,-13
+10005,Durango,Durango,open-meteo,Victoria de Durango,,,
+10006,Durango,General Simón Bolívar,eliminado (sin clima confiable),,,,
+10007,Durango,Gómez Palacio,open-meteo,Gómez Palacio,,,
+10008,Durango,Guadalupe Victoria,conagua,Guadalupe Victoria,"Ciudad Guadalupe Victoria, Dgo.",1.1,18
+10009,Durango,Guanaceví,conagua,Guanaceví,"Guanaceví, Dgo.",0.4,-38
+10010,Durango,Hidalgo,conagua,Villa Hidalgo,"Villa Hidalgo, Dgo.",1.8,2
+10011,Durango,Indé,eliminado (sin clima confiable),,,,
+10012,Durango,Lerdo,conagua,"Lerdo, Nazareno, Villa Juárez","Ciudad Lerdo, Dgo.",0.4,21
+10013,Durango,Mapimí,conagua,"Bermejillo, Mapimí","Tlahualilo, Dgo.",28.4,43
+10014,Durango,Mezquital,eliminado (sin clima confiable),,,,
+10015,Durango,Nazas,conagua,Nazas,"Nazas, Dgo.",0.1,22
+10016,Durango,Nombre de Dios,eliminado (sin clima confiable),,,,
+10017,Durango,Ocampo,conagua,Villa Ocampo,"Villa Ocampo, Dgo.",0.7,-2
+10018,Durango,El Oro,conagua,Santa María del Oro,"Santa María del Oro, Dgo.",0.5,2
+10019,Durango,Otáez,sin clima guardado,Otaéz,,,
+10020,Durango,Pánuco de Coronado,conagua,Francisco I. Madero,"Ciudad Guadalupe Victoria, Dgo.",18.6,1
+10021,Durango,Peñón Blanco,eliminado (sin clima confiable),,,,
+10022,Durango,Poanas,conagua,Villa Unión,"Francisco Villa, Dgo.",9.0,-74
+10023,Durango,Pueblo Nuevo,sin clima guardado,Pueblo Nuevo,,,
+10024,Durango,Rodeo,conagua,Rodeo,"Rodeo, Dgo.",0.4,0
+10025,Durango,San Bernardo,conagua,San Bernardo,"Santa María del Oro, Dgo.",16.6,-66
+10026,Durango,San Dimas,eliminado (sin clima confiable),,,,
+10027,Durango,San Juan de Guadalupe,conagua,San Juan de Guadalupe,"San Juan de Guadalupe, Dgo.",0.4,-2
+10028,Durango,San Juan del Río,eliminado (sin clima confiable),,,,
+10029,Durango,San Luis del Cordero,eliminado (sin clima confiable),,,,
+10030,Durango,San Pedro del Gallo,conagua,San Pedro del Gallo,"San Pedro del Gallo, Dgo.",0.1,7
+10031,Durango,Santa Clara,añadido · conagua,Santa Clara,"Santa Clara, Dgo.",0.8,10
+10032,Durango,Santiago Papasquiaro,conagua,Santiago Papasquiaro,"Santiago Papasquiaro, Dgo.",0.8,-12
+10033,Durango,Súchil,conagua,Súchil,"Santa Elena, Dgo.",13.5,74
+10034,Durango,Tamazula,conagua,Tamazula de Victoria,"Tamazula, Dgo.",4.1,
+10035,Durango,Tepehuanes,conagua,Santa Catarina de Tepehuanes,"Observatorio de Tepehuanes, Dgo.",0.4,-2
+10036,Durango,Tlahualilo,conagua,Tlahualilo de Zaragoza,"Tlahualilo, Dgo.",0.6,-15
+10037,Durango,Topia,sin clima guardado,Topia,,,
+10038,Durango,Vicente Guerrero,conagua,Vicente Guerrero,"Vicente Guerrero, Dgo.",0.6,6
+10039,Durango,Nuevo Ideal,eliminado (sin clima confiable),,,,
+11001,Guanajuato,Abasolo,conagua,Abasolo,"Abasolo, Gto.",0.8,-49
+11002,Guanajuato,Acámbaro,conagua,"Acámbaro, Irámuco","Acámbaro, Gto.",1.3,15
+11003,Guanajuato,San Miguel de Allende,open-meteo,San Miguel de Allende,,,
+11004,Guanajuato,Apaseo el Alto,conagua,Apaseo el Alto,"Apaseo el Alto, Gto.",0.2,2
+11005,Guanajuato,Apaseo el Grande,conagua,"Apaseo el Grande, San José Agua Azul","Apaseo el Grande, Gto.",1.4,10
+11006,Guanajuato,Atarjea,conagua,Atarjea,"Sierra Gorda 2, Gto.",13.8,
+11007,Guanajuato,Celaya,open-meteo,"Celaya, Rincón de Tamayo, San Juan de la Vega",,,
+11008,Guanajuato,Manuel Doblado,conagua,Ciudad Manuel Doblado,"Las Adjuntas, Gto.",12.7,54
+11009,Guanajuato,Comonfort,conagua,"Comonfort, Empalme Escobedo","Ignacio Allende, Gto.",15.7,-56
+11010,Guanajuato,Coroneo,conagua,Coroneo,"Coroneo, Gto.",0.3,6
+11011,Guanajuato,Cortazar,conagua,Cortazar,"Cortázar, Gto.",0.5,58
+11012,Guanajuato,Cuerámaro,conagua,Cuerámaro,"Cuerámaro, Gto.",1.1,-5
+11013,Guanajuato,Doctor Mora,conagua,Doctor Mora,"Pozos, Gto.",20.1,-89
+11014,Guanajuato,Dolores Hidalgo Cuna de la Independencia Nacional,conagua,Dolores Hidalgo,"Dolores Hidalgo, Gto.",0.7,-2
+11015,Guanajuato,Guanajuato,conagua,"Guanajuato, Marfil, Santa Teresa","Observatorio de Guanajuato, Gto.",0.9,11
+11016,Guanajuato,Huanímaro,conagua,Huanímaro,"Casa Blanca, Mich.",6.2,25
+11017,Guanajuato,Irapuato,open-meteo,"Arandas, Irapuato, San Roque",,,
+11018,Guanajuato,Jaral del Progreso,conagua,Jaral del Progreso,"Santa Julia, Gto.",8.2,
+11019,Guanajuato,Jerécuaro,conagua,Jerécuaro,"Solís, Gto.",23.9,72
+11020,Guanajuato,León,open-meteo,"Centro Familiar la Soledad, Duarte, La Ermita",,,
+11021,Guanajuato,Moroleón,conagua,Moroleón,"Laguna de Yuriria, Gto.",19.6,83
+11022,Guanajuato,Ocampo,conagua,Ocampo,"Ocampo, Gto.",0.3,5
+11023,Guanajuato,Pénjamo,conagua,"Pénjamo, Santa Ana Pacueco","La Golondrina, Gto.",2.1,-69
+11024,Guanajuato,Pueblo Nuevo,conagua,Pueblo Nuevo,"Temascatío, Gto.",11.1,
+11025,Guanajuato,Purísima del Rincón,conagua,Purísima de Bustos,"El Barrial, Gto.",3.9,-23
+11026,Guanajuato,Romita,conagua,Romita,"Presa la Gavia, Gto.",8.7,-20
+11027,Guanajuato,Salamanca,open-meteo,"Cerro Gordo, Salamanca, San José Temascatío",,,
+11028,Guanajuato,Salvatierra,conagua,"Salvatierra, San Nicolás de los Agustinos, Urireo","Salvatierra, Gto.",0.4,43
+11029,Guanajuato,San Diego de la Unión,conagua,San Diego de la Unión,"La Quemada, Gto.",29.1,68
+11030,Guanajuato,San Felipe,conagua,"San Bartolo de Berrios, San Felipe","San Felipe, Gto.",0.5,-5
+11031,Guanajuato,San Francisco del Rincón,conagua,San Francisco del Rincón,"El Barrial, Gto.",3.9,-23
+11032,Guanajuato,San José de Iturbide,conagua,San José Iturbide,"Pozos, Gto.",27.0,-122
+11033,Guanajuato,San Luis de la Paz,conagua,"Misión de Chichimecas, San Luis de la Paz","San Luis de la Paz, Gto.",2.1,3
+11034,Guanajuato,Santa Catarina,eliminado (sin clima confiable),,,,
+11035,Guanajuato,Santa Cruz de Juventino Rosas,conagua,"Juventino Rosas, Santiago de Cuenda","Cortázar, Gto.",17.6,57
+11036,Guanajuato,Santiago Maravatío,conagua,Santiago Maravatío,"El Cubo, Gto.",7.8,8
+11037,Guanajuato,Silao de la Victoria,conagua,"La Aldea, Silao de la Victoria","Comanjilla, Gto.",14.7,-118
+11038,Guanajuato,Tarandacuao,conagua,Tarandacuao,"El Gigante, Mich.",8.1,-16
+11039,Guanajuato,Tarimoro,conagua,Tarimoro,"Tarimoro, Gto.",0.5,30
+11040,Guanajuato,Tierra Blanca,eliminado (sin clima confiable),,,,
+11041,Guanajuato,Uriangato,conagua,Uriangato,"Laguna de Yuriria, Gto.",19.6,83
+11042,Guanajuato,Valle de Santiago,conagua,Valle de Santiago,"Valle de Santiago, Gto.",1.6,2
+11043,Guanajuato,Victoria,eliminado (sin clima confiable),,,,
+11044,Guanajuato,Villagrán,conagua,"Mexicanos, Sarabia, Villagrán","Cortázar, Gto.",0.5,58
+11045,Guanajuato,Xichú,conagua,Xichú,"Xichú, Gto.",3.6,-1
+11046,Guanajuato,Yuriria,conagua,"Cerano, Yuriria","Laguna de Yuriria, Gto.",10.5,17
+12001,Guerrero,Acapulco de Juárez,open-meteo,"Acapulco de Juárez, Tres Palos, Xaltianguis",,,
+12002,Guerrero,Ahuacuotzingo,conagua,Ahuacuotzingo,"Olinalá, Gro.",22.3,144
+12003,Guerrero,Ajuchitlán del Progreso,conagua,Ajuchitlán del Progreso,"Andrés Figueroa, Gro.",18.4,-121
+12004,Guerrero,Alcozauca de Guerrero,conagua,Alcozauca de Guerrero,"Calihualá, Oax.",13.6,75
+12005,Guerrero,Alpoyeca,conagua,Alpoyeca,"Ixcateopan de Tlapa, Gro.",5.4,-71
+12006,Guerrero,Apaxtla de Castrejón,eliminado (sin clima confiable),,,,
+12007,Guerrero,Arcelia,eliminado (sin clima confiable),,,,
+12008,Guerrero,Atenango del Río,eliminado (sin clima confiable),,,,
+12009,Guerrero,Atlamajalcingo del Monte,no está (sin estación adecuada),,,,
+12010,Guerrero,Atlixtac,eliminado (sin clima confiable),,,,
+12011,Guerrero,Atoyac de Álvarez,conagua,Atoyac de Álvarez,"Atoyac, Gro.",0.4,-41
+12012,Guerrero,Ayutla de los Libres,conagua,Ayutla de los Libres,"Ayutla, Gro.",1.7,0
+12013,Guerrero,Azoyú,eliminado (sin clima confiable),,,,
+12014,Guerrero,Benito Juárez,conagua,San Jerónimo de Juárez,"San Jerónimo, Gro.",0.5,
+12015,Guerrero,Buenavista de Cuéllar,conagua,Buenavista de Cuéllar,"Buenavista, Gro.",0.8,-139
+12016,Guerrero,Coahuayutla de José María Izazaga,eliminado (sin clima confiable),,,,
+12017,Guerrero,Cocula,conagua,Cocula,"Iguala, Gro.",17.2,-109
+12018,Guerrero,Copala,eliminado (sin clima confiable),,,,
+12019,Guerrero,Copalillo,eliminado (sin clima confiable),,,,
+12020,Guerrero,Copanatoyac,conagua,Copanatoyac,"Tlapa, Gro.",12.7,
+12021,Guerrero,Coyuca de Benítez,conagua,"Bajos del Ejido, Coyuca de Benítez","Laguna de Coyuca, Gro.",9.2,
+12022,Guerrero,Coyuca de Catalán,conagua,Coyuca de Catalán,"Ciudad Altamirano, Gro.",5.3,-4
+12023,Guerrero,Cuajinicuilapa,conagua,Cuajinicuilapa,"Cuajinicuilapa, Gro.",0.2,
+12024,Guerrero,Cualác,conagua,Cualác,"Olinalá, Gro.",8.8,122
+12025,Guerrero,Cuautepec,eliminado (sin clima confiable),,,,
+12026,Guerrero,Cuetzala del Progreso,eliminado (sin clima confiable),,,,
+12027,Guerrero,Cutzamala de Pinzón,conagua,Cutzamala de Pinzón,"Ciudad Altamirano, Gro.",14.9,-1
+12028,Guerrero,Chilapa de Álvarez,conagua,Chilapa de Álvarez,"Chilapa, Gro.",1.6,-13
+12029,Guerrero,Chilpancingo de los Bravo,open-meteo,"Chilpancingo, Mazatlán, Ocotito",,,
+12030,Guerrero,Florencio Villarreal,conagua,Cruz Grande,"Las Vigas, Gro.",12.6,34
+12031,Guerrero,General Canuto A. Neri,sin clima guardado,Acapetlahuaya,,,
+12032,Guerrero,General Heliodoro Castillo,conagua,Tlacotepec,"Tlacotepec, Gro.",0.2,11
+12033,Guerrero,Huamuxtitlán,conagua,Huamuxtitlán,"Xochihuehuetlán, Gro.",13.8,-125
+12034,Guerrero,Huitzuco de los Figueroa,conagua,Ciudad de Huitzuco,"Valerio Trujano, Gro.",17.5,112
+12035,Guerrero,Iguala de la Independencia,conagua,Iguala de la Independencia,"Iguala, Gro.",1.4,27
+12036,Guerrero,Igualapa,conagua,Igualapa,"Ometepec, Gro.",8.2,
+12037,Guerrero,Ixcateopan de Cuauhtémoc,añadido · conagua,Ixcateopan de Cuauhtémoc,"Taxco, Gro.",20.5,67
+12038,Guerrero,Zihuatanejo de Azueta,conagua,"El Coacoyul, Ixtapa, Ixtapa-Zihuatanejo","Zihuatanejo, Gro.",0.4,-7
+12039,Guerrero,Juan R. Escudero,conagua,Tierra Colorada,"Tierra Colorada, Gro.",0.2,-14
+12040,Guerrero,Leonardo Bravo,conagua,Chichihualco,"Chichihualco, Gro.",2.8,-23
+12041,Guerrero,Malinaltepec,eliminado (sin clima confiable),,,,
+12042,Guerrero,Mártir de Cuilapan,conagua,Apango,"Observatorio de Zumpango, Gro.",24.4,20
+12043,Guerrero,Metlatónoc,eliminado (sin clima confiable),,,,
+12044,Guerrero,Mochitlán,conagua,Mochitlán,"Mochitlán, Gro.",0.1,10
+12045,Guerrero,Olinalá,conagua,Olinalá,"Olinalá, Gro.",0.5,3
+12046,Guerrero,Ometepec,conagua,Ometepec,"Ometepec, Gro.",3.1,
+12047,Guerrero,Pedro Ascencio Alquisiras,eliminado (sin clima confiable),,,,
+12048,Guerrero,Petatlán,conagua,"Petatlán, San Jeronimito","Coyuquilla, Gro.",29.1,21
+12049,Guerrero,Pilcaya,conagua,Pilcaya,"Taxco, Gro.",22.7,-137
+12050,Guerrero,Pungarabato,conagua,Ciudad Altamirano,"Ciudad Altamirano, Gro.",0.6,10
+12051,Guerrero,Quechultenango,eliminado (sin clima confiable),,,,
+12052,Guerrero,San Luis Acatlán,no está (sin estación adecuada),,,,
+12053,Guerrero,San Marcos,conagua,San Marcos,"Las Vigas, Gro.",18.1,43
+12054,Guerrero,San Miguel Totolapan,conagua,San Miguel Totolapan,"Andrés Figueroa, Gro.",16.4,-87
+12055,Guerrero,Taxco de Alarcón,conagua,"Acamixtla, Taxco de Alarcón","Taxco, Gro.",0.3,-33
+12056,Guerrero,Tecoanapa,conagua,Tecoanapa,"Ayutla, Gro.",17.5,64
+12057,Guerrero,Técpan de Galeana,conagua,"El Súchil, San Luis de la Loma, Técpan de Galeana","Atoyac, Gro.",17.7,-35
+12058,Guerrero,Teloloapan,eliminado (sin clima confiable),,,,
+12059,Guerrero,Tepecoacuilco de Trujano,conagua,Tepecoacuilco de Trujano,"Iguala, Gro.",1.4,27
+12060,Guerrero,Tetipac,añadido · conagua,Tetipac,"Taxco, Gro.",0.3,-33
+12061,Guerrero,Tixtla de Guerrero,conagua,"Atliaca, Tixtla de Guerrero","Tixtla, Gro.",0.2,-146
+12062,Guerrero,Tlacoachistlahuaca,eliminado (sin clima confiable),,,,
+12063,Guerrero,Tlacoapa,no está (sin estación adecuada),,,,
+12064,Guerrero,Tlalchapa,conagua,Tlalchapa,"Ciudad Altamirano, Gro.",20.6,149
+12065,Guerrero,Tlalixtaquilla de Maldonado,conagua,Tlalixtaquilla,"Calihualá, Oax.",10.7,-131
+12066,Guerrero,Tlapa de Comonfort,conagua,Tlapa de Comonfort,"Tlapa, Gro.",5.5,
+12067,Guerrero,Tlapehuala,conagua,Tlapehuala,"Andrés Figueroa, Gro.",18.4,-121
+12068,Guerrero,La Unión de Isidoro Montes de Oca,eliminado (sin clima confiable),,,,
+12069,Guerrero,Xalpatláhuac,conagua,Xalpatláhuac,"Tlapa, Gro.",5.5,
+12070,Guerrero,Xochihuehuetlán,conagua,Xochihuehuetlán,"Xochihuehuetlán, Gro.",0.2,22
+12071,Guerrero,Xochistlahuaca,eliminado (sin clima confiable),,,,
+12072,Guerrero,Zapotitlán Tablas,no está (sin estación adecuada),,,,
+12073,Guerrero,Zirándaro,conagua,Zirándaro de los Chávez,"La Calera, Gro.",7.1,-30
+12074,Guerrero,Zitlala,conagua,Zitlala,"Chilapa, Gro.",9.1,-82
+12075,Guerrero,Eduardo Neri,conagua,Zumpango del Río,"Observatorio de Zumpango, Gro.",0.2,-40
+12076,Guerrero,Acatepec,no está (sin estación adecuada),,,,
+12077,Guerrero,Marquelia,eliminado (sin clima confiable),,,,
+12078,Guerrero,Cochoapa el Grande,eliminado (sin clima confiable),,,,
+12079,Guerrero,José Joaquín de Herrera,eliminado (sin clima confiable),,,,
+12080,Guerrero,Juchitán,conagua,Juchitán,"Quetzala, Gro.",14.9,103
+12081,Guerrero,Iliatenco,eliminado (sin clima confiable),,,,
+12082,Guerrero,Las Vigas,no está (sin estación adecuada),,,,
+12083,Guerrero,Ñuu Savi,no está (sin estación adecuada),,,,
+12084,Guerrero,Santa Cruz del Rincón,no está (sin estación adecuada),,,,
+12085,Guerrero,San Nicolás,no está (sin estación adecuada),,,,
+13001,Hidalgo,Acatlán,conagua,Acatlán,"Observatorio de Tulancingo, Hgo.",1.2,-24
+13002,Hidalgo,Acaxochitlán,conagua,Acaxochitlán,"Observatorio de Tulancingo, Hgo.",20.9,51
+13003,Hidalgo,Actopan,conagua,Actopan,"Actopan, Hgo.",0.1,-18
+13004,Hidalgo,Agua Blanca de Iturbide,conagua,Agua Blanca de Iturbide,"Huayacocotla, Ver.",24.3,51
+13005,Hidalgo,Ajacuba,conagua,Ajacuba,"Tajo de Tequixquiac, Méx.",21.9,-73
+13006,Hidalgo,Alfajayucan,conagua,Alfajayucan,"Vicente Aguirre, Hgo.",4.1,-5
+13007,Hidalgo,Almoloya,conagua,Almoloya,"Calpulalpan, Tlax.",21.3,-51
+13008,Hidalgo,Apan,conagua,Apan,"Calpulalpan, Tlax.",18.2,-98
+13009,Hidalgo,El Arenal,conagua,El Arenal,"Actopan, Hgo.",6.0,31
+13010,Hidalgo,Atitalaquia,conagua,"Atitalaquia, Cardonal","Mixquiahuala, Hgo.",16.2,64
+13011,Hidalgo,Atlapexco,eliminado (sin clima confiable),,,,
+13012,Hidalgo,Atotonilco el Grande,conagua,Atotonilco el Grande,"El Chico, Hgo.",12.3,
+13013,Hidalgo,Atotonilco de Tula,conagua,Atotonilco de Tula,"Tajo de Tequixquiac, Méx.",9.4,-39
+13014,Hidalgo,Calnali,eliminado (sin clima confiable),,,,
+13015,Hidalgo,Cardonal,eliminado (sin clima confiable),,,,
+13016,Hidalgo,Cuautepec de Hinojosa,conagua,Cuautepec,"La Esperanza, Hgo.",3.6,32
+13017,Hidalgo,Chapantongo,conagua,Chapantongo,"Endhó, Hgo.",15.7,70
+13018,Hidalgo,Chapulhuacán,conagua,Chapulhuacán,"Tierra Blanca, S.L.P.",11.2,
+13019,Hidalgo,Chilcuautla,conagua,Chilcuautla,"Mixquiahuala, Hgo.",10.4,-132
+13020,Hidalgo,Eloxochitlán,conagua,Eloxochitlán,"Zacualtipán, Hgo.",16.7,-80
+13021,Hidalgo,Emiliano Zapata,conagua,Emiliano Zapata,"Calpulalpan, Tlax.",18.2,-98
+13022,Hidalgo,Epazoyucan,conagua,Epazoyucan,"Observatorio de Pachuca, Hgo.",14.2,40
+13023,Hidalgo,Francisco I. Madero,conagua,"San Juan Tepa, Tepatepec","Mixquiahuala, Hgo.",13.3,-19
+13024,Hidalgo,Huasca de Ocampo,conagua,Huasca de Ocampo,"El Chico, Hgo.",7.3,
+13025,Hidalgo,Huautla,eliminado (sin clima confiable),,,,
+13026,Hidalgo,Huazalingo,no está (sin estación adecuada),,,,
+13027,Hidalgo,Huehuetla,conagua,Huehuetla,"Huehuetla, Hgo.",0.1,2
+13028,Hidalgo,Huejutla de Reyes,conagua,Huejutla de Reyes,"Huejutla, Hgo.",1.1,26
+13029,Hidalgo,Huichapan,conagua,Huichapan,"Huichapan, Hgo.",8.7,-99
+13030,Hidalgo,Ixmiquilpan,conagua,Ixmiquilpan,"Ixmiquilpan, Hgo.",0.3,-15
+13031,Hidalgo,Jacala de Ledezma,eliminado (sin clima confiable),,,,
+13032,Hidalgo,Jaltocán,conagua,Jaltocán,"Huejutla, Hgo.",12.8,81
+13033,Hidalgo,Juárez Hidalgo,eliminado (sin clima confiable),,,,
+13034,Hidalgo,Lolotla,eliminado (sin clima confiable),,,,
+13035,Hidalgo,Metepec,conagua,Metepec,"Observatorio de Tulancingo, Hgo.",10.8,-25
+13036,Hidalgo,San Agustín Metzquititlán,conagua,Mezquititlán,"Metztitlán, Hgo.",19.3,60
+13037,Hidalgo,Metztitlán,conagua,Metztitlán,"Metztitlán, Hgo.",0.8,-8
+13038,Hidalgo,Mineral del Chico,conagua,Mineral del Chico,"El Chico, Hgo.",3.6,
+13039,Hidalgo,Mineral del Monte,open-meteo,Mineral del Monte,,,
+13040,Hidalgo,La Misión,eliminado (sin clima confiable),,,,
+13041,Hidalgo,Mixquiahuala de Juárez,conagua,Mixquiahuala de Juárez,"Mixquiahuala, Hgo.",0.9,-2
+13042,Hidalgo,Molango de Escamilla,eliminado (sin clima confiable),,,,
+13043,Hidalgo,Nicolás Flores,eliminado (sin clima confiable),,,,
+13044,Hidalgo,Nopala de Villagrán,eliminado (sin clima confiable),,,,
+13045,Hidalgo,Omitlán de Juárez,conagua,Omitlán de Juárez,"El Chico, Hgo.",7.3,
+13046,Hidalgo,San Felipe Orizatlán,conagua,San Felipe Orizatlán,"Temamatla, S.L.P.",17.5,-9
+13047,Hidalgo,Pacula,eliminado (sin clima confiable),,,,
+13048,Hidalgo,Pachuca de Soto,open-meteo,Pachuca de Soto,,,
+13049,Hidalgo,Pisaflores,conagua,Pisaflores,"Temamatla, S.L.P.",25.4,84
+13050,Hidalgo,Progreso de Obregón,conagua,Progreso de Obregón,"Mixquiahuala, Hgo.",0.9,-2
+13051,Hidalgo,Mineral de la Reforma,open-meteo,"Campestre Villas del Álamo, La Providencia Siglo XXI, Los Tuzos",,,
+13052,Hidalgo,San Agustín Tlaxiaca,conagua,San Agustín Tlaxiaca,"Observatorio de Pachuca, Hgo.",14.5,-80
+13053,Hidalgo,San Bartolo Tutotepec,conagua,San Bartolo Tutotepec,"Tlaxco, Pue.",17.0,-79
+13054,Hidalgo,San Salvador,conagua,San Salvador,"Actopan, Hgo.",7.9,-58
+13055,Hidalgo,Santiago de Anaya,conagua,Santiago de Anaya,"Actopan, Hgo.",12.9,18
+13056,Hidalgo,Santiago Tulantepec de Lugo Guerrero,conagua,Santiago Tulantepec,"La Esperanza, Hgo.",3.3,-22
+13057,Hidalgo,Singuilucan,eliminado (sin clima confiable),,,,
+13058,Hidalgo,Tasquillo,conagua,Tasquillo,"Ixmiquilpan, Hgo.",12.1,-50
+13059,Hidalgo,Tecozautla,eliminado (sin clima confiable),,,,
+13060,Hidalgo,Tenango de Doria,conagua,Tenango de Doria,"Tlaxco, Pue.",18.4,2
+13061,Hidalgo,Tepeapulco,conagua,"Fray Bernardino de Sahagún, Tepeapulco","Calpulalpan, Tlax.",20.8,-145
+13062,Hidalgo,Tepehuacán de Guerrero,eliminado (sin clima confiable),,,,
+13063,Hidalgo,Tepeji del Río de Ocampo,conagua,Tepeji del Río de Ocampo,"Requena, Hgo.",7.2,27
+13064,Hidalgo,Tepetitlán,conagua,Tepetitlán,"Endhó, Hgo.",3.3,-10
+13065,Hidalgo,Tetepango,conagua,Tetepango,"Mixquiahuala, Hgo.",16.2,64
+13066,Hidalgo,Villa de Tezontepec,conagua,Tezontepec,"Observatorio de Pachuca, Hgo.",24.1,-94
+13067,Hidalgo,Tezontepec de Aldama,conagua,"Huitel, Presas, Tezontepec de Aldama","Mixquiahuala, Hgo.",9.3,18
+13068,Hidalgo,Tianguistengo,eliminado (sin clima confiable),,,,
+13069,Hidalgo,Tizayuca,conagua,"Don Antonio, Huitzila, Tizayuca","Tajo de Tequixquiac, Méx.",16.5,51
+13070,Hidalgo,Tlahuelilpan,conagua,Tlahuelilpan,"Mixquiahuala, Hgo.",16.2,64
+13071,Hidalgo,Tlahuiltepa,eliminado (sin clima confiable),,,,
+13072,Hidalgo,Tlanalapa,conagua,Tlanalapa,"Calpulalpan, Tlax.",20.8,-145
+13073,Hidalgo,Tlanchinol,eliminado (sin clima confiable),,,,
+13074,Hidalgo,Tlaxcoapan,conagua,"Doxey, Tlaxcoapan","Mixquiahuala, Hgo.",16.2,64
+13075,Hidalgo,Tolcayuca,conagua,Tolcayuca,"Observatorio de Pachuca, Hgo.",18.5,-43
+13076,Hidalgo,Tula de Allende,conagua,"El Llano, San Marcos, San Miguel Vindho","Requena, Hgo.",10.9,-62
+13077,Hidalgo,Tulancingo de Bravo,conagua,"Jaltepec, Javier Rojo Gómez, Parque Urbano Napateco","Observatorio de Tulancingo, Hgo.",1.2,-24
+13078,Hidalgo,Xochiatipan,eliminado (sin clima confiable),,,,
+13079,Hidalgo,Xochicoatlán,eliminado (sin clima confiable),,,,
+13080,Hidalgo,Yahualica,eliminado (sin clima confiable),,,,
+13081,Hidalgo,Zacualtipán de Ángeles,conagua,Zacualtipán,"Zacualtipán, Hgo.",1.1,4
+13082,Hidalgo,Zapotlán de Juárez,conagua,"Acayuca, Zapotlán de Juárez","Observatorio de Pachuca, Hgo.",11.6,15
+13083,Hidalgo,Zempoala,conagua,Zempoala,"Observatorio de Pachuca, Hgo.",21.0,44
+13084,Hidalgo,Zimapán,conagua,Zimapán,"Ing. Fernando Hiriart Balderrama, Hgo.",14.8,
+14001,Jalisco,Acatic,eliminado (sin clima confiable),,,,
+14002,Jalisco,Acatlán de Juárez,conagua,"Acatlán de Juárez, Bellavista","Hurtado, Jal.",8.0,
+14003,Jalisco,Ahualulco de Mercado,conagua,Ahualulco de Mercado,"Ing. Santiago Camarena, Jal.",17.8,65
+14004,Jalisco,Amacueca,eliminado (sin clima confiable),,,,
+14005,Jalisco,Amatitán,conagua,Amatitán,"Ing. Santiago Camarena, Jal.",25.5,82
+14006,Jalisco,Ameca,conagua,Ameca,"Río Ameca, Jal.",0.5,14
+14007,Jalisco,San Juanito de Escobedo,conagua,"Antonio Escobedo, San Juanito de Escobedo","Ing. Santiago Camarena, Jal.",27.7,140
+14008,Jalisco,Arandas,eliminado (sin clima confiable),,,,
+14009,Jalisco,El Arenal,conagua,El Arenal,"Ing. Santiago Camarena, Jal.",25.5,82
+14010,Jalisco,Atemajac de Brizuela,eliminado (sin clima confiable),,,,
+14011,Jalisco,Atengo,eliminado (sin clima confiable),,,,
+14012,Jalisco,Atenguillo,eliminado (sin clima confiable),,,,
+14013,Jalisco,Atotonilco el Alto,conagua,Atotonilco el Alto,"Huascato, Jal.",27.9,-15
+14014,Jalisco,Atoyac,eliminado (sin clima confiable),,,,
+14015,Jalisco,Autlán de Navarro,conagua,Autlán de Navarro,"El Corcovado, Jal.",13.0,47
+14016,Jalisco,Ayotlán,conagua,"Ayotlán, La Ribera","Huascato, Jal.",9.6,1
+14017,Jalisco,Ayutla,eliminado (sin clima confiable),,,,
+14018,Jalisco,La Barca,conagua,La Barca,"San Cristóbal, Mich.",12.1,
+14019,Jalisco,Bolaños,no está (sin estación adecuada),,,,
+14020,Jalisco,Cabo Corrientes,eliminado (sin clima confiable),,,,
+14021,Jalisco,Casimiro Castillo,eliminado (sin clima confiable),,,,
+14022,Jalisco,Cihuatlán,conagua,"Cihuatlán, San Patricio","Cihuatlán, Jal.",0.4,9
+14023,Jalisco,Zapotlán el Grande,conagua,Ciudad Guzmán,"Observatorio de Ciudad Guzmán, Jal.",1.5,54
+14024,Jalisco,Cocula,conagua,Cocula,"Ing. Santiago Camarena, Jal.",22.4,89
+14025,Jalisco,Colotlán,conagua,Colotlán,"Observatorio de Colotlán, Jal.",0.7,-9
+14026,Jalisco,Concepción de Buenos Aires,eliminado (sin clima confiable),,,,
+14027,Jalisco,Cuautitlán de García Barragán,eliminado (sin clima confiable),,,,
+14028,Jalisco,Cuautla,no está (sin estación adecuada),,,,
+14029,Jalisco,Cuquío,eliminado (sin clima confiable),,,,
+14030,Jalisco,Chapala,conagua,"Ajijic, Atotonilquillo, Chapala","Lago de Chapala, Jal.",1.3,31
+14031,Jalisco,Chimaltitán,no está (sin estación adecuada),,,,
+14032,Jalisco,Chiquilistlán,eliminado (sin clima confiable),,,,
+14033,Jalisco,Degollado,conagua,Degollado,"La Piedad, Mich.",19.0,109
+14034,Jalisco,Ejutla,eliminado (sin clima confiable),,,,
+14035,Jalisco,Encarnación de Díaz,eliminado (sin clima confiable),,,,
+14036,Jalisco,Etzatlán,eliminado (sin clima confiable),,,,
+14037,Jalisco,El Grullo,conagua,El Grullo,"Basilio Vadillo, Jal.",20.0,29
+14038,Jalisco,Guachinango,eliminado (sin clima confiable),,,,
+14039,Jalisco,Guadalajara,open-meteo,Guadalajara,,,
+14040,Jalisco,Hostotipaquillo,eliminado (sin clima confiable),,,,
+14041,Jalisco,Huejúcar,conagua,Huejúcar,"Achimec, Jal.",4.1,17
+14042,Jalisco,Huejuquilla el Alto,eliminado (sin clima confiable),,,,
+14043,Jalisco,La Huerta,eliminado (sin clima confiable),,,,
+14044,Jalisco,Ixtlahuacán de los Membrillos,conagua,"Atequiza, Ixtlahuacán de los Membrillos, Los Olivos","Chapala 1, Jal.",16.9,19
+14045,Jalisco,Ixtlahuacán del Río,conagua,Ixtlahuacán del Río,"Guadalajara Centro, Jal.",29.2,91
+14046,Jalisco,Jalostotitlán,conagua,Jalostotitlán,"San Gaspar de los Reyes, Jal.",15.2,24
+14047,Jalisco,Jamay,conagua,Jamay,"Jamay, Jal.",0.4,39
+14048,Jalisco,Jesús María,eliminado (sin clima confiable),,,,
+14049,Jalisco,Jilotlán de los Dolores,eliminado (sin clima confiable),,,,
+14050,Jalisco,Jocotepec,conagua,"Jocotepec, San Juan Cosalá","Chapala 1, Jal.",23.7,14
+14051,Jalisco,Juanacatlán,conagua,Juanacatlán,"Tlaquepaque, Jal.",11.5,
+14052,Jalisco,Juchitlán,eliminado (sin clima confiable),,,,
+14053,Jalisco,Lagos de Moreno,conagua,Lagos de Moreno,"Observatorio de Lagos de Moreno, Jal.",1.5,9
+14054,Jalisco,El Limón,conagua,El Limón,"Basilio Vadillo, Jal.",20.0,29
+14055,Jalisco,Magdalena,eliminado (sin clima confiable),,,,
+14056,Jalisco,Santa María del Oro,eliminado (sin clima confiable),,,,
+14057,Jalisco,La Manzanilla de la Paz,eliminado (sin clima confiable),,,,
+14058,Jalisco,Mascota,eliminado (sin clima confiable),,,,
+14059,Jalisco,Mazamitla,eliminado (sin clima confiable),,,,
+14060,Jalisco,Mexticacán,añadido · conagua,Mexticacán,"Nochistlán, Zac.",12.3,-95
+14061,Jalisco,Mezquitic,conagua,Mezquitic,"Bocas, Jal.",1.9,28
+14062,Jalisco,Mixtlán,eliminado (sin clima confiable),,,,
+14063,Jalisco,Ocotlán,conagua,Ocotlán,"Jamay, Jal.",9.1,23
+14064,Jalisco,Ojuelos de Jalisco,conagua,Ojuelos de Jalisco,"Ocampo, Gto.",26.5,-18
+14065,Jalisco,Pihuamo,conagua,Pihuamo,"Buenavista, Col.",24.2,116
+14066,Jalisco,Poncitlán,conagua,"Cuitzeo (La Estancia), Mezcala, Poncitlán","Jamay, Jal.",24.7,9
+14067,Jalisco,Puerto Vallarta,open-meteo,"Ixtapa, Las Juntas, Puerto Vallarta",,,
+14068,Jalisco,Villa Purificación,no está (sin estación adecuada),,,,
+14069,Jalisco,Quitupan,eliminado (sin clima confiable),,,,
+14070,Jalisco,El Salto,open-meteo,"El Salto, Galaxia Bonito Jalisco, Las Pintas de Arriba",,,
+14071,Jalisco,San Cristóbal de la Barranca,eliminado (sin clima confiable),,,,
+14072,Jalisco,San Diego de Alejandría,eliminado (sin clima confiable),,,,
+14073,Jalisco,San Juan de los Lagos,conagua,San Juan de los Lagos,"San Gaspar de los Reyes, Jal.",18.5,-1
+14074,Jalisco,San Julián,eliminado (sin clima confiable),,,,
+14075,Jalisco,San Marcos,eliminado (sin clima confiable),,,,
+14076,Jalisco,San Martín de Bolaños,eliminado (sin clima confiable),,,,
+14077,Jalisco,San Martín Hidalgo,conagua,San Martín Hidalgo,"Río Ameca, Jal.",17.9,78
+14078,Jalisco,San Miguel el Alto,eliminado (sin clima confiable),,,,
+14079,Jalisco,Gómez Farías,conagua,"San Andrés Ixtlán, San Sebastián del Sur","Observatorio de Ciudad Guzmán, Jal.",11.5,60
+14080,Jalisco,San Sebastián del Oeste,eliminado (sin clima confiable),,,,
+14081,Jalisco,Santa María de los Ángeles,conagua,Santa María de los Ángeles,"Tenasco, Jal.",2.7,
+14082,Jalisco,Sayula,eliminado (sin clima confiable),,,,
+14083,Jalisco,Tala,conagua,"El Refugio, Los Ruiseñores, Tala","Ing. Santiago Camarena, Jal.",16.3,77
+14084,Jalisco,Talpa de Allende,eliminado (sin clima confiable),,,,
+14085,Jalisco,Tamazula de Gordiano,eliminado (sin clima confiable),,,,
+14086,Jalisco,Tapalpa,eliminado (sin clima confiable),,,,
+14087,Jalisco,Tecalitlán,eliminado (sin clima confiable),,,,
+14088,Jalisco,Tecolotlán,eliminado (sin clima confiable),,,,
+14089,Jalisco,Techaluta de Montenegro,conagua,Techaluta de Montenegro,JOCOTEPEC JAL (EHCA),26.7,-117
+14090,Jalisco,Tenamaxtlán,eliminado (sin clima confiable),,,,
+14091,Jalisco,Teocaltiche,conagua,Teocaltiche,"Teocaltiche, Jal.",2.0,-2
+14092,Jalisco,Teocuitatlán de Corona,conagua,Teocuitatlán de Corona,"Chapala 1, Jal.",28.7,-150
+14093,Jalisco,Tepatitlán de Morelos,eliminado (sin clima confiable),,,,
+14094,Jalisco,Tequila,eliminado (sin clima confiable),,,,
+14095,Jalisco,Teuchitlán,conagua,Teuchitlán,"Ing. Santiago Camarena, Jal.",9.8,9
+14096,Jalisco,Tizapán el Alto,conagua,Tizapán el Alto,"Lago de Chapala, Jal.",21.9,32
+14097,Jalisco,Tlajomulco de Zúñiga,conagua,"Cajititlán, Capulín, Colinas del Roble","Protección a Infraestructura y Atención a Emergencias Toluquilla, Jal.",7.6,-48
+14098,Jalisco,San Pedro Tlaquepaque,open-meteo,"Santa Anita, Tlaquepaque",,,
+14099,Jalisco,Tolimán,eliminado (sin clima confiable),,,,
+14100,Jalisco,Tomatlán,conagua,Tomatlán,"Río Tomatlán, Jal.",14.0,-85
+14101,Jalisco,Tonalá,open-meteo,"Centro de Readaptación Social, Coyula, Puente Grande",,,
+14102,Jalisco,Tonaya,conagua,Tonaya,"Basilio Vadillo, Jal.",17.2,0
+14103,Jalisco,Tonila,no está (sin estación adecuada),,,,
+14104,Jalisco,Totatiche,conagua,Totatiche,"Tlaltenango, Zac.",16.9,76
+14105,Jalisco,Tototlán,conagua,Tototlán,"Jamay, Jal.",29.0,17
+14106,Jalisco,Tuxcacuesco,conagua,Tuxcacuesco,"Basilio Vadillo, Jal.",25.4,-97
+14107,Jalisco,Tuxcueca,conagua,Tuxcueca,"Lago de Chapala, Jal.",15.3,4
+14108,Jalisco,Tuxpan,eliminado (sin clima confiable),,,,
+14109,Jalisco,Unión de San Antonio,conagua,Unión de San Antonio,"El Barrial, Gto.",19.5,142
+14110,Jalisco,Unión de Tula,conagua,Unión de Tula,"Ramón Corona Madrigal General, Jal.",10.9,
+14111,Jalisco,Valle de Guadalupe,eliminado (sin clima confiable),,,,
+14112,Jalisco,Valle de Juárez,eliminado (sin clima confiable),,,,
+14113,Jalisco,San Gabriel,eliminado (sin clima confiable),,,,
+14114,Jalisco,Villa Corona,conagua,Villa Corona,"Hurtado, Jal.",5.9,
+14115,Jalisco,Villa Guerrero,eliminado (sin clima confiable),,,,
+14116,Jalisco,Villa Hidalgo,conagua,Villa Hidalgo,"El Niágara, Ags.",25.2,98
+14117,Jalisco,Cañadas de Obregón,eliminado (sin clima confiable),,,,
+14118,Jalisco,Yahualica de González Gallo,conagua,Yahualica de González Gallo,"Nochistlán, Zac.",20.2,-61
+14119,Jalisco,Zacoalco de Torres,eliminado (sin clima confiable),,,,
+14120,Jalisco,Zapopan,open-meteo,"La Venta del Astillero, Nuevo México, San Francisco Tesistán",,,
+14121,Jalisco,Zapotiltic,eliminado (sin clima confiable),,,,
+14122,Jalisco,Zapotitlán de Vadillo,conagua,Zapotitlán de Vadillo,"Sierra Manatlán 1, Jal.",14.7,
+14123,Jalisco,Zapotlán del Rey,añadido · conagua,Zapotlán del Rey,"Jamay, Jal.",29.9,23
+14124,Jalisco,Zapotlanejo,conagua,Zapotlanejo,"Protección a Infraestructura y Atención a Emergencias Toluquilla, Jal.",27.3,-83
+14125,Jalisco,San Ignacio Cerro Gordo,eliminado (sin clima confiable),,,,
+15001,Estado de México,Acambay de Ruíz Castañeda,conagua,Villa de Acambay de Ruíz Castañeda,"Atlacomulco, Méx.",25.1,5
+15002,Estado de México,Acolman,conagua,"Acolman de Netzahualcóyotl, Santa Catarina, Tepexpan","La Grande, Méx.",4.4,10
+15003,Estado de México,Aculco,eliminado (sin clima confiable),,,,
+15004,Estado de México,Almoloya de Alquisiras,eliminado (sin clima confiable),,,,
+15005,Estado de México,Almoloya de Juárez,open-meteo,"Fraccionamiento Colinas del Sol, La Cabecera, San Francisco Tlalcilalcalpan",,,
+15006,Estado de México,Almoloya del Río,conagua,Almoloya del Río,"Huitzilac, Mor.",27.8,110
+15007,Estado de México,Amanalco,conagua,Amanalco de Becerra,"Observatorio de Zinacantepec, Méx.",30.0,81
+15008,Estado de México,Amatepec,no está (sin estación adecuada),,,,
+15009,Estado de México,Amecameca,eliminado (sin clima confiable),,,,
+15010,Estado de México,Apaxco,conagua,Apaxco de Ocampo,"Tajo de Tequixquiac, Méx.",9.4,-39
+15011,Estado de México,Atenco,open-meteo,"Granjas Ampliación Santa Rosa, La Pastoría, San Cristóbal Nexquipayac",,,
+15012,Estado de México,Atizapán,conagua,Santa Cruz Atizapán,"Huitzilac, Mor.",27.8,110
+15013,Estado de México,Atizapán de Zaragoza,open-meteo,Ciudad López Mateos,,,
+15014,Estado de México,Atlacomulco,conagua,"Atlacomulco de Fabela, San Lorenzo Tlacotepec","Atlacomulco, Méx.",3.9,2
+15015,Estado de México,Atlautla,conagua,Atlautla,"Huecahuaxco, Mor.",7.3,37
+15016,Estado de México,Axapusco,conagua,"Axapusco, Jaltepec","Calpulalpan, Tlax.",17.5,-48
+15017,Estado de México,Ayapango,eliminado (sin clima confiable),,,,
+15018,Estado de México,Calimaya,conagua,"Calimaya de Díaz González, San Andrés Ocotlán, Santa María Nativitas","Observatorio de Toluca, Méx.",20.9,-137
+15019,Estado de México,Capulhuac,conagua,Capulhuac de Mirafuentes,"Huitzilac, Mor.",27.8,110
+15020,Estado de México,Coacalco de Berriozábal,open-meteo,San Francisco Coacalco,,,
+15021,Estado de México,Coatepec Harinas,no está (sin estación adecuada),,,,
+15022,Estado de México,Cocotitlán,conagua,Cocotitlán,"Chalco San Lucas, Méx.",4.7,6
+15023,Estado de México,Coyotepec,conagua,Coyotepec,"Puente Colgante, Méx.",12.5,
+15024,Estado de México,Cuautitlán,open-meteo,"Cuautitlán, San Mateo Ixtacalco",,,
+15025,Estado de México,Chalco,open-meteo,"Chalco de Díaz Covarrubias, La Candelaria Tlapala, San Gregorio Cuautzingo",,,
+15026,Estado de México,Chapa de Mota,conagua,Chapa de Mota,"Danxho, Méx.",8.7,129
+15027,Estado de México,Chapultepec,conagua,Chapultepec,"Observatorio de Toluca, Méx.",20.9,-137
+15028,Estado de México,Chiautla,conagua,Chiautla,"Chapingo, Méx.",3.4,6
+15029,Estado de México,Chicoloapan,open-meteo,Chicoloapan de Juárez,,,
+15030,Estado de México,Chiconcuac,conagua,Chiconcuac,"La Grande, Méx.",4.4,10
+15031,Estado de México,Chimalhuacán,open-meteo,Santa María Chimalhuacán,,,
+15032,Estado de México,Donato Guerra,añadido · conagua,San Simón de la Laguna,"Valle de Bravo, Méx.",9.5,5
+15033,Estado de México,Ecatepec de Morelos,open-meteo,"Ecatepec de Morelos, Santo Tomás Chiconautla",,,
+15034,Estado de México,Ecatzingo,conagua,Ecatzingo de Hidalgo,"Huecahuaxco, Mor.",7.3,37
+15035,Estado de México,Huehuetoca,conagua,"Ex-Hacienda de Xalpa, Huehuetoca, San Bartolo","Puente Colgante, Méx.",12.5,
+15036,Estado de México,Hueypoxtla,conagua,"Hueypoxtla, Jilotzingo, Santa María Ajoloapan","Tajo de Tequixquiac, Méx.",11.5,120
+15037,Estado de México,Huixquilucan,open-meteo,"Huixquilucan, Huixquilucan de Degollado, Jesús del Monte",,,
+15038,Estado de México,Isidro Fabela,conagua,Tlazala de Fabela,"Cerro Catedral, Méx.",13.1,
+15039,Estado de México,Ixtapaluca,open-meteo,"Coatepec, Ixtapaluca, Jorge Jiménez Cantú",,,
+15040,Estado de México,Ixtapan de la Sal,conagua,Ixtapan de la Sal,"Taxco, Gro.",29.1,132
+15041,Estado de México,Ixtapan del Oro,eliminado (sin clima confiable),,,,
+15042,Estado de México,Ixtlahuaca,conagua,"Emiliano Zapata (Santo Domingo), Ixtlahuaca de Rayón, La Concepción de los Baños","Atlacomulco, Méx.",26.8,-26
+15043,Estado de México,Xalatlaco,eliminado (sin clima confiable),,,,
+15044,Estado de México,Jaltenco,open-meteo,"Alborada Jaltenco, Jaltenco",,,
+15045,Estado de México,Jilotepec,conagua,Jilotepec de Molina Enríquez,"Danxho, Méx.",8.0,-39
+15046,Estado de México,Jilotzingo,conagua,Santa Ana Jilotzingo,"Presa Madín, Méx.",13.6,
+15047,Estado de México,Jiquipilco,conagua,"Jiquipilco, San Bartolo Oxtotitlán","Cerro Catedral, Méx.",9.2,
+15048,Estado de México,Jocotitlán,conagua,"Ciudad de Jocotitlán, San Juan Coajomulco, San Miguel Tenochtitlán","Atlacomulco, Méx.",11.6,-12
+15049,Estado de México,Joquicingo,conagua,Joquicingo de León Guzmán,"Huitzilac, Mor.",28.1,73
+15050,Estado de México,Juchitepec,conagua,"Juchitepec de Mariano Rivapalacio, San Matías Cuijingo","Tlacualera, Mor.",9.7,
+15051,Estado de México,Lerma,conagua,"Lerma de Villada, San Mateo Atarasquillo, San Miguel Ameyalco","Observatorio de Toluca, Méx.",19.7,-146
+15052,Estado de México,Malinalco,conagua,Malinalco,"Palpan, Mor.",7.9,128
+15053,Estado de México,Melchor Ocampo,open-meteo,Melchor Ocampo,,,
+15054,Estado de México,Metepec,conagua,"Metepec, San Bartolomé Tlaltelulco, San Francisco Coaxusco","Observatorio de Toluca, Méx.",13.4,-114
+15055,Estado de México,Mexicaltzingo,conagua,San Mateo Mexicaltzingo,"Observatorio de Toluca, Méx.",20.9,-137
+15056,Estado de México,Morelos,conagua,San Bartolo Morelos,"Atlacomulco, Méx.",17.5,136
+15057,Estado de México,Naucalpan de Juárez,open-meteo,"Naucalpan de Juárez, San Francisco Chimalpa",,,
+15058,Estado de México,Nezahualcóyotl,open-meteo,Ciudad Nezahualcoyotl,,,
+15059,Estado de México,Nextlalpan,open-meteo,"Ex-Hacienda Santa Inés, Santa Ana Nextlalpan",,,
+15060,Estado de México,Nicolás Romero,open-meteo,"Progreso Industrial, Quinto Barrio (Ejido Cahuacán), San José el Vidrio",,,
+15061,Estado de México,Nopaltepec,conagua,Nopaltepec,"Calpulalpan, Tlax.",26.3,-136
+15062,Estado de México,Ocoyoacac,conagua,"Ocoyoacac, San Pedro Cholula","Observatorio de Toluca, Méx.",19.7,-146
+15063,Estado de México,Ocuilan,eliminado (sin clima confiable),,,,
+15064,Estado de México,El Oro,eliminado (sin clima confiable),,,,
+15065,Estado de México,Otumba,conagua,Otumba de Gómez Farías,"La Grande, Méx.",16.4,62
+15066,Estado de México,Otzoloapan,eliminado (sin clima confiable),,,,
+15067,Estado de México,Otzolotepec,conagua,"Santa Ana Jilotzingo, Villa Cuauhtémoc","Observatorio de Toluca, Méx.",11.8,-134
+15068,Estado de México,Ozumba,conagua,Ozumba de Alzate,"Huecahuaxco, Mor.",7.3,37
+15069,Estado de México,Papalotla,conagua,Papalotla,"La Grande, Méx.",4.4,10
+15070,Estado de México,La Paz,open-meteo,"Arenal, El Pino, Emiliano Zapata",,,
+15071,Estado de México,Polotitlán,conagua,Polotitlán de la Ilustración,"Huichapan, Hgo.",15.5,115
+15072,Estado de México,Rayón,conagua,Santa María Rayón,"Observatorio de Toluca, Méx.",24.5,-127
+15073,Estado de México,San Antonio la Isla,conagua,"Ex-Rancho San Dimas, San Antonio la Isla","Observatorio de Toluca, Méx.",20.9,-137
+15074,Estado de México,San Felipe del Progreso,conagua,San Felipe del Progreso,"Atlacomulco, Méx.",16.7,17
+15075,Estado de México,San Martín de las Pirámides,conagua,San Martín de las Pirámides,"La Grande, Méx.",16.4,62
+15076,Estado de México,San Mateo Atenco,conagua,"Atizapán, San Mateo Atenco","Observatorio de Toluca, Méx.",19.7,-146
+15077,Estado de México,San Simón de Guerrero,eliminado (sin clima confiable),,,,
+15078,Estado de México,Santo Tomás,eliminado (sin clima confiable),,,,
+15079,Estado de México,Soyaniquilpan de Juárez,conagua,San Francisco Soyaniquilpan,"Danxho, Méx.",8.0,-39
+15080,Estado de México,Sultepec,sin clima guardado,Sultepec de Pedro Ascencio de Alquisiras,,,
+15081,Estado de México,Tecámac,open-meteo,"Los Reyes Acozac, Ojo de Agua, San Martín Azcatepec",,,
+15082,Estado de México,Tejupilco,eliminado (sin clima confiable),,,,
+15083,Estado de México,Temamatla,conagua,Temamatla,"Chalco San Lucas, Méx.",4.7,6
+15084,Estado de México,Temascalapa,conagua,"San Luis Tecuautitlán, Santa Ana Tlachihualpa, Temascalapa","Tajo de Tequixquiac, Méx.",24.8,126
+15085,Estado de México,Temascalcingo,conagua,Temascalcingo de José María Velasco,"Tepuxtepec, Mich.",25.3,42
+15086,Estado de México,Temascaltepec,eliminado (sin clima confiable),,,,
+15087,Estado de México,Temoaya,conagua,"San Lorenzo Oyamel, San Pedro Abajo, San Pedro Arriba","Observatorio de Toluca, Méx.",26.6,118
+15088,Estado de México,Tenancingo,eliminado (sin clima confiable),,,,
+15089,Estado de México,Tenango del Aire,conagua,Tenango del Aire,"Chalco San Lucas, Méx.",4.7,6
+15090,Estado de México,Tenango del Valle,conagua,"San Bartolomé Atlatlahuca, San Pedro Tlanixco, Santa María Jajalpa","Observatorio de Toluca, Méx.",24.5,-127
+15091,Estado de México,Teoloyucan,open-meteo,"San Bartolo Tlaxihuicalco, Teoloyucan",,,
+15092,Estado de México,Teotihuacán,conagua,Teotihuacán de Arista,"La Grande, Méx.",13.7,34
+15093,Estado de México,Tepetlaoxtoc,conagua,Tepetlaoxtoc de Hidalgo,"Atenco, Méx.",10.3,54
+15094,Estado de México,Tepetlixpa,conagua,Tepetlixpa,"Huecahuaxco, Mor.",7.3,37
+15095,Estado de México,Tepotzotlán,open-meteo,"San Mateo Xoloc, Santa Cruz del Monte, Santa Gertrudis",,,
+15096,Estado de México,Tequixquiac,conagua,Tequixquiac,"Tajo de Tequixquiac, Méx.",2.2,-10
+15097,Estado de México,Texcaltitlán,eliminado (sin clima confiable),,,,
+15098,Estado de México,Texcalyacac,conagua,San Mateo Texcalyacac,"Observatorio de Toluca, Méx.",27.4,-143
+15099,Estado de México,Texcoco,open-meteo,"Montecillo, San Bernardino, San Dieguito Xochimanca",,,
+15100,Estado de México,Tezoyuca,conagua,Tezoyuca,"La Grande, Méx.",4.4,10
+15101,Estado de México,Tianguistenco,conagua,"San Pedro Tlaltizapan, Santiago Tianguistenco de Galeana","Huitzilac, Mor.",27.8,110
+15102,Estado de México,Timilpan,conagua,San Andrés Timilpan,"Atlacomulco, Méx.",21.7,97
+15103,Estado de México,Tlalmanalco,conagua,"San Rafael, Tlalmanalco de Velázquez","Santa Rita Tlahuapan, Pue.",27.1,-57
+15104,Estado de México,Tlalnepantla de Baz,open-meteo,"Puerto Escondido (Tepeolulco Puerto Escondido), Tlalnepantla, Vista Hermosa",,,
+15105,Estado de México,Tlatlaya,sin clima guardado,Tlatlaya,,,
+15106,Estado de México,Toluca,open-meteo,"Cacalomacán, Calixtlahuaca, El Cerrillo Vista Hermosa",,,
+15107,Estado de México,Tonatico,conagua,San Gaspar Tonatico,"Taxco, Gro.",29.1,132
+15108,Estado de México,Tultepec,open-meteo,"Santiago Teyahualco, Tultepec",,,
+15109,Estado de México,Tultitlán,open-meteo,"Ampliación San Mateo, Buenavista, Fuentes del Valle",,,
+15110,Estado de México,Valle de Bravo,eliminado (sin clima confiable),,,,
+15111,Estado de México,Villa de Allende,conagua,Amanalco de Becerra,"Observatorio de Zinacantepec, Méx.",30.0,81
+15112,Estado de México,Villa del Carbón,conagua,Villa del Carbón,"Danxho, Méx.",21.5,110
+15113,Estado de México,Villa Guerrero,eliminado (sin clima confiable),,,,
+15114,Estado de México,Villa Victoria,conagua,Villa Victoria,"Valle de Bravo, Méx.",11.7,28
+15115,Estado de México,Xonacatlán,conagua,"Santa María Zolotepec, Xonacatlán","Observatorio de Toluca, Méx.",23.1,-146
+15116,Estado de México,Zacazonapan,eliminado (sin clima confiable),,,,
+15117,Estado de México,Zacualpan,eliminado (sin clima confiable),,,,
+15118,Estado de México,Zinacantepec,open-meteo,"Barrio de México, Conjunto Urbano la Loma I, Ejido San Lorenzo Cuauhtenco",,,
+15119,Estado de México,Zumpahuacán,conagua,Zumpahuacán,"Palpan, Mor.",19.1,20
+15120,Estado de México,Zumpango,open-meteo,"Arbolada los Sauces, Fraccionamiento la Trinidad, Paseos de San Juan",,,
+15121,Estado de México,Cuautitlán Izcalli,open-meteo,"Cuautitlán Izcalli, Huilango",,,
+15122,Estado de México,Valle de Chalco Solidaridad,open-meteo,Xico,,,
+15123,Estado de México,Luvianos,eliminado (sin clima confiable),,,,
+15124,Estado de México,San José del Rincón,eliminado (sin clima confiable),,,,
+15125,Estado de México,Tonanitla,open-meteo,Santa María Tonanitla,,,
+16001,Michoacán,Acuitzio,conagua,Acuitzio del Canje,"Cointzio, Mich.",16.7,-11
+16002,Michoacán,Aguililla,sin clima guardado,Aguililla,,,
+16003,Michoacán,Álvaro Obregón,conagua,Álvaro Obregón,"Planta de bombeo, Mich.",0.5,53
+16004,Michoacán,Angamacutiro,conagua,Angamacutiro de la Unión,"Melchor Ocampo, Mich.",3.0,-7
+16005,Michoacán,Angangueo,añadido · conagua,Mineral de Angangueo,"Tercer Mundo, Mich.",20.8,-114
+16006,Michoacán,Apatzingán,conagua,Apatzingán,"Apatzingán, Mich.",1.6,4
+16007,Michoacán,Aporo,conagua,Aporo,"Tercer Mundo, Mich.",6.7,-140
+16008,Michoacán,Aquila,eliminado (sin clima confiable),,,,
+16009,Michoacán,Ario,eliminado (sin clima confiable),,,,
+16010,Michoacán,Arteaga,eliminado (sin clima confiable),,,,
+16011,Michoacán,Briseñas,conagua,Briseñas de Matamoros,"San Cristóbal, Mich.",12.2,
+16012,Michoacán,Buenavista,conagua,"Buenavista Tomatlán, Felipe Carrillo Puerto","Apatzingán, Mich.",27.3,149
+16013,Michoacán,Carácuaro,sin clima guardado,Carácuaro de Morelos,,,
+16014,Michoacán,Coahuayana,conagua,Coahuayana de Hidalgo,"Cerro de Ortega, Col.",9.0,8
+16015,Michoacán,Coalcomán de Vázquez Pallares,eliminado (sin clima confiable),,,,
+16016,Michoacán,Coeneo,conagua,Coeneo de la Libertad,"Aristeo Mercado, Mich.",14.2,85
+16017,Michoacán,Contepec,conagua,Contepec,"Tepuxtepec, Mich.",8.5,135
+16018,Michoacán,Copándaro,conagua,Copándaro de Galeana,"Planta de bombeo, Mich.",19.2,9
+16019,Michoacán,Cotija,conagua,Cotija de la Paz,"San Juanico, Mich.",6.2,
+16020,Michoacán,Cuitzeo,conagua,Cuitzeo del Porvenir,"Planta de bombeo, Mich.",18.7,32
+16021,Michoacán,Charapan,no está (sin estación adecuada),,,,
+16022,Michoacán,Charo,conagua,Charo,"Morelia Centro, Mich.",7.7,
+16023,Michoacán,Chavinda,conagua,Chavinda,"Guaracha, Mich.",9.0,
+16024,Michoacán,Cherán,eliminado (sin clima confiable),,,,
+16025,Michoacán,Chilchota,conagua,Chilchota,"Urepetiro, Mich.",12.9,39
+16026,Michoacán,Chinicuila,eliminado (sin clima confiable),,,,
+16027,Michoacán,Chucándiro,conagua,Chucándiro,"Observatorio de Morelia Norte, Mich.",25.3,-52
+16028,Michoacán,Churintzio,conagua,Churintzio,"Urepetiro, Mich.",26.7,131
+16029,Michoacán,Churumuco,eliminado (sin clima confiable),,,,
+16030,Michoacán,Ecuandureo,conagua,Ecuandureo,"Observatorio de Zamora, Mich.",19.3,25
+16031,Michoacán,Epitacio Huerta,añadido · conagua,San Antonio Molinos,"Tepuxtepec, Mich.",8.6,-5
+16032,Michoacán,Erongarícuaro,eliminado (sin clima confiable),,,,
+16033,Michoacán,Gabriel Zamora,eliminado (sin clima confiable),,,,
+16034,Michoacán,Hidalgo,conagua,Ciudad Hidalgo,"Ciudad Hidalgo, Mich.",1.3,-33
+16035,Michoacán,La Huacana,conagua,La Huacana,"Zicuirán, Mich.",13.8,
+16036,Michoacán,Huandacareo,eliminado (sin clima confiable),,,,
+16037,Michoacán,Huaniqueo,conagua,Huaniqueo de Morales,"Aristeo Mercado, Mich.",16.6,87
+16038,Michoacán,Huetamo,conagua,Huetamo de Núñez,"La Calera, Gro.",25.5,48
+16039,Michoacán,Huiramba,conagua,Huiramba,"Cointzio, Mich.",20.8,20
+16040,Michoacán,Indaparapeo,conagua,Indaparapeo,"Planta de bombeo, Mich.",0.5,53
+16041,Michoacán,Irimbo,conagua,Irimbo,"Ciudad Hidalgo, Mich.",7.5,108
+16042,Michoacán,Ixtlán,conagua,Ixtlán de los Hervores,"Barraje de Ibarra, Mich.",3.1,12
+16043,Michoacán,Jacona,open-meteo,Jacona de Plancarte,,,
+16044,Michoacán,Jiménez,añadido · conagua,Villa Jiménez,"Villa Jiménez, Mich.",0.0,11
+16045,Michoacán,Jiquilpan,conagua,Jiquilpan de Juárez,"Sahuayo, Mich.",8.3,58
+16046,Michoacán,Juárez,eliminado (sin clima confiable),,,,
+16047,Michoacán,Jungapeo,eliminado (sin clima confiable),,,,
+16048,Michoacán,Lagunillas,conagua,Lagunillas,"Cointzio, Mich.",17.9,-2
+16049,Michoacán,Madero,conagua,Villa Madero,"Cointzio, Mich.",26.5,92
+16050,Michoacán,Maravatío,conagua,Maravatío de Ocampo,"Maravatío, Mich.",0.3,37
+16051,Michoacán,Marcos Castellanos,eliminado (sin clima confiable),,,,
+16052,Michoacán,Lázaro Cárdenas,open-meteo,"Buenos Aires, Ciudad Lázaro Cárdenas, La Mira",,,
+16053,Michoacán,Morelia,open-meteo,"Capula, Conjunto Habitacional Villas del Pedregal, Fraccionamiento Misión del Valle",,,
+16054,Michoacán,Morelos,no está (sin estación adecuada),,,,
+16055,Michoacán,Múgica,conagua,Nueva Italia de Ruiz,APATZINGAN (EHCA),29.7,84
+16056,Michoacán,Nahuatzen,eliminado (sin clima confiable),,,,
+16057,Michoacán,Nocupétaro,no está (sin estación adecuada),,,,
+16058,Michoacán,Nuevo Parangaricutiro,open-meteo,Nuevo San Juan Parangaricutiro,,,
+16059,Michoacán,Nuevo Urecho,eliminado (sin clima confiable),,,,
+16060,Michoacán,Numarán,conagua,Numarán,"Corrales, Mich.",10.4,-105
+16061,Michoacán,Ocampo,conagua,Ocampo,"Tercer Mundo, Mich.",20.8,-114
+16062,Michoacán,Pajacuarán,conagua,Pajacuarán,"San Cristóbal, Mich.",14.6,
+16063,Michoacán,Panindícuaro,conagua,Panindícuaro,"Melchor Ocampo, Mich.",16.2,127
+16064,Michoacán,Parácuaro,conagua,"Antúnez, Antúnez (Morelos)","Apatzingán, Mich.",19.2,48
+16065,Michoacán,Paracho,eliminado (sin clima confiable),,,,
+16066,Michoacán,Pátzcuaro,eliminado (sin clima confiable),,,,
+16067,Michoacán,Penjamillo,conagua,Penjamillo de Degollado,"Corrales, Mich.",13.7,-22
+16068,Michoacán,Peribán,eliminado (sin clima confiable),,,,
+16069,Michoacán,La Piedad,conagua,La Piedad de Cabadas,"La Piedad, Mich.",2.4,-37
+16070,Michoacán,Purépero,conagua,Purépero de Echáiz,"Villa Jiménez, Mich.",26.6,22
+16071,Michoacán,Puruándiro,conagua,Puruándiro,"Las Jícamas, Gto.",24.5,32
+16072,Michoacán,Queréndaro,conagua,Queréndaro,"Malpaís, Mich.",2.4,33
+16073,Michoacán,Quiroga,conagua,Quiroga,"Cointzio, Mich.",27.9,-13
+16074,Michoacán,Cojumatlán de Régules,conagua,Cojumatlán de Régules,"Sahuayo, Mich.",15.2,37
+16075,Michoacán,Los Reyes,eliminado (sin clima confiable),,,,
+16076,Michoacán,Sahuayo,conagua,Sahuayo de Morelos,"Sahuayo, Mich.",1.1,52
+16077,Michoacán,San Lucas,conagua,San Lucas,"Ciudad Altamirano, Gro.",28.7,50
+16078,Michoacán,Santa Ana Maya,conagua,Santa Ana Maya,"Planta de bombeo, Mich.",20.2,28
+16079,Michoacán,Salvador Escalante,eliminado (sin clima confiable),,,,
+16080,Michoacán,Senguio,conagua,Senguio,"Tercer Mundo, Mich.",6.7,-140
+16081,Michoacán,Susupuato,eliminado (sin clima confiable),,,,
+16082,Michoacán,Tacámbaro,eliminado (sin clima confiable),,,,
+16083,Michoacán,Tancítaro,eliminado (sin clima confiable),,,,
+16084,Michoacán,Tangamandapio,conagua,Santiago Tangamandapio,"Guaracha, Mich.",11.4,
+16085,Michoacán,Tangancícuaro,conagua,Tangancícuaro de Arista,"Urepetiro, Mich.",11.1,-26
+16086,Michoacán,Tanhuato,conagua,Tanhuato de Guerrero,"Huascato, Jal.",16.3,-33
+16087,Michoacán,Taretan,eliminado (sin clima confiable),,,,
+16088,Michoacán,Tarímbaro,conagua,"Fraccionamiento Galaxia Tarímbaro, Fraccionamiento Metrópolis II, Tarímbaro","Observatorio de Morelia Norte, Mich.",8.3,-36
+16089,Michoacán,Tepalcatepec,conagua,Tepalcatepec,"Los Olivos, Mich.",3.3,-37
+16090,Michoacán,Tingambato,eliminado (sin clima confiable),,,,
+16091,Michoacán,Tingüindín,eliminado (sin clima confiable),,,,
+16092,Michoacán,Tiquicheo de Nicolás Romero,sin clima guardado,Tiquicheo,,,
+16093,Michoacán,Tlalpujahua,eliminado (sin clima confiable),,,,
+16094,Michoacán,Tlazazalca,añadido · conagua,Acuitzeramo,"Villa Jiménez, Mich.",24.7,-49
+16095,Michoacán,Tocumbo,eliminado (sin clima confiable),,,,
+16096,Michoacán,Tumbiscatío,eliminado (sin clima confiable),,,,
+16097,Michoacán,Turicato,sin clima guardado,Turicato,,,
+16098,Michoacán,Tuxpan,eliminado (sin clima confiable),,,,
+16099,Michoacán,Tuzantla,eliminado (sin clima confiable),,,,
+16100,Michoacán,Tzintzuntzan,eliminado (sin clima confiable),,,,
+16101,Michoacán,Tzitzio,eliminado (sin clima confiable),,,,
+16102,Michoacán,Uruapan,open-meteo,"Caltzontzin, Uruapan",,,
+16103,Michoacán,Venustiano Carranza,conagua,San Pedro Cahro,"Sahuayo, Mich.",1.1,52
+16104,Michoacán,Villamar,conagua,Villamar,"Jaripo, Mich.",6.9,-51
+16105,Michoacán,Vista Hermosa,conagua,Vista Hermosa de Negrete,"San Cristóbal, Mich.",12.1,
+16106,Michoacán,Yurécuaro,conagua,Yurécuaro,"Huascato, Jal.",16.3,-33
+16107,Michoacán,Zacapu,conagua,Zacapu,"Villa Jiménez, Mich.",12.9,-18
+16108,Michoacán,Zamora,open-meteo,"Ario de Rayón, Zamora de Hidalgo",,,
+16109,Michoacán,Zináparo,conagua,Zináparo,"Corrales, Mich.",14.8,116
+16110,Michoacán,Zinapécuaro,conagua,Zinapécuaro de Figueroa,"Malpaís, Mich.",5.9,34
+16111,Michoacán,Ziracuaretiro,añadido · conagua,San Andrés Coru,"Aeropuerto Internacional de Uruapan, Mich.",12.5,70
+16112,Michoacán,Zitácuaro,conagua,Rincón de Nicolás Romero (Cedros Tercera Manzana),Donato Guerra Mex.,19.5,142
+16113,Michoacán,José Sixto Verduzco,conagua,Pastor Ortiz,"Pastor Ortiz, Mich.",0.4,-27
+17001,Morelos,Amacuzac,conagua,Amacuzac,"Huajintlán, Mor.",2.7,-20
+17002,Morelos,Atlatlahucan,conagua,Atlatlahucan,"Atlatlahucan, Mor.",7.0,-10
+17003,Morelos,Axochiapan,conagua,Axochiapan,"Teotlalco, Pue.",6.1,60
+17004,Morelos,Ayala,open-meteo,"Anenecuilco, Ciudad Ayala, San Pedro Apatlaco",,,
+17005,Morelos,Coatlán del Río,conagua,"Coatlán del Río, La Joya","Apancingo, Mor.",1.5,-142
+17006,Morelos,Cuautla,open-meteo,Cuautla,,,
+17007,Morelos,Cuernavaca,open-meteo,"Cuernavaca, Fraccionamiento Lomas de Ahuatlán",,,
+17008,Morelos,Emiliano Zapata,open-meteo,"Emiliano Zapata, Tres de Mayo",,,
+17009,Morelos,Huitzilac,conagua,Huitzilac,"Observatorio de Cuernavaca, Mor.",4.6,131
+17010,Morelos,Jantetelco,conagua,"Amayuca, Jantetelco","El Peñón, Mor.",2.1,-80
+17011,Morelos,Jiutepec,open-meteo,"Calera Chica, Independencia, Jiutepec",,,
+17012,Morelos,Jojutla,conagua,"Jojutla, Pedro Amaro, Tehuixtla","Jojutla, Mor.",2.6,-63
+17013,Morelos,Jonacatepec de Leandro Valle,conagua,Jonacatepec de Leandro Valle,"El Peñón, Mor.",2.1,-80
+17014,Morelos,Mazatepec,conagua,Mazatepec,"Cuautlita, Mor.",3.9,-11
+17015,Morelos,Miacatlán,conagua,"Coatetelco, Miacatlán","Xoxocotla, Mor.",5.6,-41
+17016,Morelos,Ocuituco,conagua,Ocuituco,"Ocuituco, Mor.",1.8,12
+17017,Morelos,Puente de Ixtla,conagua,"Puente de Ixtla, Xoxocotla","Puente de Ixtla, Mor.",2.1,8
+17018,Morelos,Temixco,conagua,Temixco,"Temixco, Mor.",1.2,-26
+17019,Morelos,Tepalcingo,conagua,Tepalcingo,"Tepalcingo, Mor.",0.2,-2
+17020,Morelos,Tepoztlán,open-meteo,Tepoztlán,,,
+17021,Morelos,Tetecala,conagua,Tetecala,"Cuautlita, Mor.",3.9,-11
+17022,Morelos,Tetela del Volcán,conagua,"Barrio de San Miguel, Tetela del Volcán","Hueyapan, Mor.",2.3,93
+17023,Morelos,Tlalnepantla,conagua,Tlalnepantla,"Tlacualera, Mor.",7.3,
+17024,Morelos,Tlaltizapán de Zapata,conagua,"Santa Rosa Treinta, Tlaltizapán","Observatorio de Zacatepec, Mor.",0.6,34
+17025,Morelos,Tlaquiltenango,conagua,Tlaquiltenango,"Jojutla, Mor.",2.6,-63
+17026,Morelos,Tlayacapan,conagua,Tlayacapan,"Tlacualera, Mor.",7.3,
+17027,Morelos,Totolapan,conagua,Totolapan,"Totolapan, Mor.",0.3,-6
+17028,Morelos,Xochitepec,conagua,"Alpuyeca, Chiconcuac, Unidad Habitacional José María Morelos y Pavón","Temixco, Mor.",1.2,-26
+17029,Morelos,Yautepec,conagua,"Cocoyoc, La Joya, Los Arcos","Yautepec, Mor.",2.6,
+17030,Morelos,Yecapixtla,conagua,"Juan Morales, Yecapixtla","Atlatlahucan, Mor.",7.0,-10
+17031,Morelos,Zacatepec,conagua,"San Nicolás Galeana, Zacatepec de Hidalgo","Observatorio de Zacatepec, Mor.",0.6,34
+17032,Morelos,Zacualpan de Amilpas,conagua,Tlacotepec,"Temoac, Mor.",1.2,-29
+17033,Morelos,Temoac,conagua,Temoac,"Temoac, Mor.",1.2,-29
+17034,Morelos,Coatetelco,no está (sin estación adecuada),,,,
+17035,Morelos,Xoxocotla,no está (sin estación adecuada),,,,
+17036,Morelos,Hueyapan,no está (sin estación adecuada),,,,
+18001,Nayarit,Acaponeta,conagua,Acaponeta,"Acaponeta, Nay.",3.0,
+18002,Nayarit,Ahuacatlán,eliminado (sin clima confiable),,,,
+18003,Nayarit,Amatlán de Cañas,eliminado (sin clima confiable),,,,
+18004,Nayarit,Compostela,eliminado (sin clima confiable),,,,
+18005,Nayarit,Huajicori,no está (sin estación adecuada),,,,
+18006,Nayarit,Ixtlán del Río,conagua,Ixtlán del Río,"Ixtlán del Río, Nay.",7.3,
+18007,Nayarit,Jala,conagua,Jala,"Ixtlán del Río, Nay.",12.6,
+18008,Nayarit,Xalisco,conagua,Xalisco,"Observatorio de Tepic, Nay.",8.4,49
+18009,Nayarit,Del Nayar,conagua,Jesús María,"Jesús María, Nay.",0.1,15
+18010,Nayarit,Rosamorada,eliminado (sin clima confiable),,,,
+18011,Nayarit,Ruiz,conagua,Ruiz,"Capomal, Nay.",13.7,-6
+18012,Nayarit,San Blas,eliminado (sin clima confiable),,,,
+18013,Nayarit,San Pedro Lagunillas,eliminado (sin clima confiable),,,,
+18014,Nayarit,Santa María del Oro,eliminado (sin clima confiable),,,,
+18015,Nayarit,Santiago Ixcuintla,conagua,"Santiago Ixcuintla, Villa Hidalgo","Capomal, Nay.",10.1,-19
+18016,Nayarit,Tecuala,conagua,Tecuala,"Acaponeta, Nay.",11.3,
+18017,Nayarit,Tepic,open-meteo,Tepic,,,
+18018,Nayarit,Tuxpan,conagua,Tuxpan,"Capomal, Nay.",22.8,-24
+18019,Nayarit,La Yesca,eliminado (sin clima confiable),,,,
+18020,Nayarit,Bahía de Banderas,conagua,"Bucerías, El Porvenir, Las Jarretaderas","Cuale, Jal.",19.0,-29
+19001,Nuevo León,Abasolo,no está (sin estación adecuada),,,,
+19002,Nuevo León,Agualeguas,añadido · conagua,Agualeguas,"Cerralvo, N.L.",25.9,-95
+19003,Nuevo León,Los Aldamas,no está (sin estación adecuada),,,,
+19004,Nuevo León,Allende,conagua,Ciudad de Allende,"Rodrigo Gómez, N.L.",19.7,9
+19005,Nuevo León,Anáhuac,sin clima guardado,Anáhuac,,,
+19006,Nuevo León,Apodaca,open-meteo,"Ciudad Apodaca, Loma la Paz, Misión San Pablo",,,
+19007,Nuevo León,Aramberri,añadido · conagua,La Ascención,"La Ascensión, N.L.",0.3,-19
+19008,Nuevo León,Bustamante,no está (sin estación adecuada),,,,
+19009,Nuevo León,Cadereyta Jiménez,conagua,"Cadereyta, Cadereyta Jiménez","Rodrigo Gómez, N.L.",23.0,-122
+19010,Nuevo León,El Carmen,conagua,Carmen,"Observatorio de Monterrey, N.L.",29.7,10
+19011,Nuevo León,Cerralvo,conagua,Ciudad Cerralvo,"Cerralvo, N.L.",0.6,-3
+19012,Nuevo León,Ciénega de Flores,conagua,"Ciénega de Flores, Real del Sol","Higueras, N.L.",19.5,-95
+19013,Nuevo León,China,conagua,China,"Cuchillo Solidaridad, N.L.",4.4,-5
+19014,Nuevo León,Doctor Arroyo,conagua,Doctor Arroyo,"Doctor Arroyo, N.L.",1.1,-7
+19015,Nuevo León,Doctor Coss,añadido · conagua,Doctor Coss,"Cuchillo Solidaridad, N.L.",25.6,-30
+19016,Nuevo León,Doctor González,añadido · conagua,Doctor González,"Higueras, N.L.",13.2,-108
+19017,Nuevo León,Galeana,conagua,Galeana,"Galeana, N.L.",1.2,-19
+19018,Nuevo León,García,conagua,"Mitras Poniente, Parque Industrial Ciudad Mitras, Valle de Lincoln","Observatorio de Monterrey, N.L.",21.2,98
+19019,Nuevo León,San Pedro Garza García,conagua,San Pedro Garza García,"El Canadá, N.L.",17.1,-132
+19020,Nuevo León,General Bravo,añadido · conagua,General Bravo,"Cuchillo Solidaridad, N.L.",13.2,-10
+19021,Nuevo León,General Escobedo,open-meteo,Ciudad General Escobedo,,,
+19022,Nuevo León,General Terán,conagua,Ciudad General Terán,"Montemorelos, N.L.",17.8,-112
+19023,Nuevo León,General Treviño,añadido · conagua,General Treviño,"Cerralvo, N.L.",19.5,-122
+19024,Nuevo León,General Zaragoza,añadido · conagua,General Zaragoza,"Zaragoza, N.L.",1.1,-18
+19025,Nuevo León,General Zuazua,conagua,"Fraccionamiento Real Palmas, General Zuazua, Villas de Alcalá","Observatorio de Monterrey, N.L.",27.1,-106
+19026,Nuevo León,Guadalupe,open-meteo,Guadalupe,,,
+19027,Nuevo León,Los Herreras,añadido · conagua,Los Herreras,"Cuchillo Solidaridad, N.L.",25.4,5
+19028,Nuevo León,Higueras,añadido · conagua,Higueras,"Higueras, N.L.",0.7,12
+19029,Nuevo León,Hualahuises,conagua,Hualahuises,"Camacho, N.L.",9.7,53
+19030,Nuevo León,Iturbide,no está (sin estación adecuada),,,,
+19031,Nuevo León,Juárez,open-meteo,"Ciudad Benito Juárez, Héctor Caballero, Jardines de la Silla",,,
+19032,Nuevo León,Lampazos de Naranjo,eliminado (sin clima confiable),,,,
+19033,Nuevo León,Linares,conagua,Linares,"Camacho, N.L.",1.9,7
+19034,Nuevo León,Marín,añadido · conagua,Marín,"Higueras, N.L.",9.3,-88
+19035,Nuevo León,Melchor Ocampo,añadido · conagua,Melchor Ocampo,"Cerralvo, N.L.",8.1,-25
+19036,Nuevo León,Mier y Noriega,añadido · conagua,Mier y Noriega,"Mier y Noriega, N.L.",0.1,-23
+19037,Nuevo León,Mina,no está (sin estación adecuada),,,,
+19038,Nuevo León,Montemorelos,conagua,Montemorelos,"Montemorelos, N.L.",1.7,1
+19039,Nuevo León,Monterrey,open-meteo,Monterrey,,,
+19040,Nuevo León,Parás,no está (sin estación adecuada),,,,
+19041,Nuevo León,Pesquería,conagua,Pesquería,"Aeropuerto Internacional de Monterrey, N.L.",2.4,
+19042,Nuevo León,Los Ramones,no está (sin estación adecuada),,,,
+19043,Nuevo León,Rayones,no está (sin estación adecuada),,,,
+19044,Nuevo León,Sabinas Hidalgo,sin clima guardado,Ciudad Sabinas Hidalgo,,,
+19045,Nuevo León,Salinas Victoria,conagua,"Emiliano Zapata, Salinas Victoria","Higueras, N.L.",29.3,-47
+19046,Nuevo León,San Nicolás de los Garza,open-meteo,San Nicolás de los Garza,,,
+19047,Nuevo León,Hidalgo,eliminado (sin clima confiable),,,,
+19048,Nuevo León,Santa Catarina,open-meteo,Santa Catarina,,,
+19049,Nuevo León,Santiago,conagua,Santiago,"Rodrigo Gómez, N.L.",2.6,26
+19050,Nuevo León,Vallecillo,no está (sin estación adecuada),,,,
+19051,Nuevo León,Villaldama,no está (sin estación adecuada),,,,
+20001,Oaxaca,Abejones,no está (sin estación adecuada),,,,
+20002,Oaxaca,Acatlán de Pérez Figueroa,conagua,"Acatlán de Pérez Figueroa, Vicente Camalote","Tierra Blanca, Ver.",16.8,47
+20003,Oaxaca,Asunción Cacalotepec,no está (sin estación adecuada),,,,
+20004,Oaxaca,Asunción Cuyotepeji,añadido · conagua,Asunción Cuyotepeji,"Huajuapan de León, Oax.",13.1,98
+20005,Oaxaca,Asunción Ixtaltepec,conagua,Asunción Ixtaltepec,"Ixtepec, Oax.",9.8,
+20006,Oaxaca,Asunción Nochixtlán,conagua,Asunción Nochixtlán,"Nochixtlán, Oax.",3.5,47
+20007,Oaxaca,Asunción Ocotlán,conagua,Asunción Ocotlán,"Oaxaca Centro, Oax.",29.9,-45
+20008,Oaxaca,Asunción Tlacolulita,eliminado (sin clima confiable),,,,
+20009,Oaxaca,Ayotzintepec,añadido · conagua,Ayotzintepec,"Valle Nacional, Oax.",21.5,42
+20010,Oaxaca,El Barrio de la Soledad,no está (sin estación adecuada),,,,
+20011,Oaxaca,Calihualá,conagua,Calihualá,"Calihualá, Oax.",0.1,2
+20012,Oaxaca,Candelaria Loxicha,eliminado (sin clima confiable),,,,
+20013,Oaxaca,Ciénega de Zimatlán,conagua,Ciénega de Zimatlán,"Aeropuerto Internacional de Oaxaca, Oax.",14.0,
+20014,Oaxaca,Ciudad Ixtepec,conagua,Ixtepec,"Ixtepec, Oax.",2.6,
+20015,Oaxaca,Coatecas Altas,conagua,Coatecas Altas,"Miahuatlán, Oax.",23.5,5
+20016,Oaxaca,Coicoyán de las Flores,no está (sin estación adecuada),,,,
+20017,Oaxaca,La Compañía,no está (sin estación adecuada),,,,
+20018,Oaxaca,Concepción Buenavista,añadido · conagua,Concepción Buenavista,"Santiago Teotongo, Oax.",22.3,72
+20019,Oaxaca,Concepción Pápalo,no está (sin estación adecuada),,,,
+20020,Oaxaca,Constancia del Rosario,sin clima guardado,Constancia del Rosario,,,
+20021,Oaxaca,Cosolapa,no está (sin estación adecuada),,,,
+20022,Oaxaca,Cosoltepec,conagua,Cosoltepec,"Zapotitlán Palmas, Oax.",28.2,-80
+20023,Oaxaca,Cuilápam de Guerrero,conagua,Cuilápam de Guerrero,"Observatorio de Aeropuerto Oaxaca, Oax.",6.3,
+20024,Oaxaca,Cuyamecalco Villa de Zaragoza,no está (sin estación adecuada),,,,
+20025,Oaxaca,Chahuites,eliminado (sin clima confiable),,,,
+20026,Oaxaca,Chalcatongo de Hidalgo,no está (sin estación adecuada),,,,
+20027,Oaxaca,Chiquihuitlán de Benito Juárez,eliminado (sin clima confiable),,,,
+20028,Oaxaca,Heroica Ciudad de Ejutla de Crespo,eliminado (sin clima confiable),,,,
+20029,Oaxaca,Eloxochitlán de Flores Magón,conagua,Eloxochitlán de Flores Magón,"La Carbonera, Oax.",6.1,
+20030,Oaxaca,El Espinal,conagua,El Espinal,"Ixtepec, Oax.",12.6,
+20031,Oaxaca,Tamazulápam del Espíritu Santo,no está (sin estación adecuada),,,,
+20032,Oaxaca,Fresnillo de Trujano,no está (sin estación adecuada),,,,
+20033,Oaxaca,Guadalupe Etla,añadido · conagua,Guadalupe Etla,"Oaxaca Centro, Oax.",17.0,98
+20034,Oaxaca,Guadalupe de Ramírez,añadido · conagua,Guadalupe Ramírez,"Calihualá, Oax.",27.8,-138
+20035,Oaxaca,Guelatao de Juárez,no está (sin estación adecuada),,,,
+20036,Oaxaca,Guevea de Humboldt,no está (sin estación adecuada),,,,
+20037,Oaxaca,Mesones Hidalgo,no está (sin estación adecuada),,,,
+20038,Oaxaca,Villa Hidalgo Yalálag,eliminado (sin clima confiable),,,,
+20039,Oaxaca,Heroica Ciudad de Huajuapan de León,conagua,Ciudad de Huajuapan de León,"Huajuapan de León, Oax.",0.4,-6
+20040,Oaxaca,Huautepec,conagua,Huautepec,"La Carbonera, Oax.",11.1,
+20041,Oaxaca,Huautla de Jiménez,añadido · conagua,San Andrés Hidalgo,"La Carbonera, Oax.",11.1,
+20042,Oaxaca,Ixtlán de Juárez,añadido · conagua,Ixtlán de Juárez,"Ixtepeji, Oax.",9.8,108
+20043,Oaxaca,Heroica Ciudad de Juchitán de Zaragoza,conagua,Heroica Ciudad de Juchitán de Zaragoza,"Chicapa, Oax.",28.2,-3
+20044,Oaxaca,Loma Bonita,conagua,Loma Bonita,"Tuxtepec, Oax.",24.7,-6
+20045,Oaxaca,Magdalena Apazco,añadido · conagua,Magdalena Apasco,"Oaxaca Centro, Oax.",17.0,98
+20046,Oaxaca,Magdalena Jaltepec,conagua,Magdalena Jaltepec,"Nochixtlán, Oax.",12.9,-11
+20047,Oaxaca,Santa Magdalena Jicotlán,añadido · conagua,Jicotlán,"Santiago Teotongo, Oax.",11.4,132
+20048,Oaxaca,Magdalena Mixtepec,conagua,Magdalena Mixtepec,"Base Aérea, Oax.",26.8,29
+20049,Oaxaca,Magdalena Ocotlán,no está (sin estación adecuada),,,,
+20050,Oaxaca,Magdalena Peñasco,no está (sin estación adecuada),,,,
+20051,Oaxaca,Magdalena Teitipac,eliminado (sin clima confiable),,,,
+20052,Oaxaca,Magdalena Tequisistlán,eliminado (sin clima confiable),,,,
+20053,Oaxaca,Magdalena Tlacotepec,añadido · conagua,Magdalena Tlacotepec,"Ixtepec, Oax.",12.0,
+20054,Oaxaca,Magdalena Zahuatlán,conagua,Magdalena Zahuatlán,"Nochixtlán, Oax.",5.7,90
+20055,Oaxaca,Mariscala de Juárez,no está (sin estación adecuada),,,,
+20056,Oaxaca,Mártires de Tacubaya,añadido · conagua,Mártires de Tacubaya,"Cuajinicuilapa, Gro.",13.6,
+20057,Oaxaca,Matías Romero Avendaño,eliminado (sin clima confiable),,,,
+20058,Oaxaca,Mazatlán Villa de Flores,eliminado (sin clima confiable),,,,
+20059,Oaxaca,Heroica Ciudad de Miahuatlán de Porfirio Díaz,conagua,Miahuatlán de Porfirio Díaz,"Miahuatlán, Oax.",2.4,-7
+20060,Oaxaca,Mixistlán de la Reforma,no está (sin estación adecuada),,,,
+20061,Oaxaca,Monjas,añadido · conagua,Monjas,"Miahuatlán, Oax.",7.2,-46
+20062,Oaxaca,Natividad,añadido · conagua,Natividad,"Ixtepeji, Oax.",13.0,35
+20063,Oaxaca,Nazareno Etla,añadido · conagua,Lomas de Nazareno,"Oaxaca Centro, Oax.",17.0,98
+20064,Oaxaca,Nejapa de Madero,añadido · conagua,El Camarón,"Boquilla 1, Oax.",14.7,
+20065,Oaxaca,Ixpantepec Nieves,conagua,Ixpantepec Nieves,"San Antonino Monte Verde, Oax.",29.9,-18
+20066,Oaxaca,Santiago Niltepec,añadido · conagua,Niltepec,"Chicapa, Oax.",21.7,37
+20067,Oaxaca,Oaxaca de Juárez,open-meteo,Oaxaca,,,
+20068,Oaxaca,Ocotlán de Morelos,conagua,Ocotlán de Morelos,"Oaxaca Centro, Oax.",29.9,-45
+20069,Oaxaca,La Pe,eliminado (sin clima confiable),,,,
+20070,Oaxaca,Pinotepa de Don Luis,eliminado (sin clima confiable),,,,
+20071,Oaxaca,Pluma Hidalgo,eliminado (sin clima confiable),,,,
+20072,Oaxaca,San José del Progreso,no está (sin estación adecuada),,,,
+20073,Oaxaca,Putla Villa de Guerrero,sin clima guardado,Putla Villa de Guerrero,,,
+20074,Oaxaca,Santa Catarina Quioquitani,no está (sin estación adecuada),,,,
+20075,Oaxaca,Reforma de Pineda,no está (sin estación adecuada),,,,
+20076,Oaxaca,La Reforma,no está (sin estación adecuada),,,,
+20077,Oaxaca,Reyes Etla,añadido · conagua,Reyes Etla,"Oaxaca Centro, Oax.",17.0,98
+20078,Oaxaca,Rojas de Cuauhtémoc,conagua,Rojas de Cuauhtémoc,"Aeropuerto Internacional de Oaxaca, Oax.",12.8,
+20079,Oaxaca,Salina Cruz,conagua,Salina Cruz,"Observatorio de Salina Cruz, Oax.",3.8,
+20080,Oaxaca,San Agustín Amatengo,eliminado (sin clima confiable),,,,
+20081,Oaxaca,San Agustín Atenango,eliminado (sin clima confiable),,,,
+20082,Oaxaca,San Agustín Chayuco,sin clima guardado,San Agustín Chayuco,,,
+20083,Oaxaca,San Agustín de las Juntas,conagua,San Agustin de las Juntas,"Observatorio de Aeropuerto Oaxaca, Oax.",3.4,
+20084,Oaxaca,San Agustín Etla,añadido · conagua,Manuel Gómez Portillo (Ferrería),"Oaxaca Centro, Oax.",17.0,98
+20085,Oaxaca,San Agustín Loxicha,no está (sin estación adecuada),,,,
+20086,Oaxaca,San Agustín Tlacotepec,no está (sin estación adecuada),,,,
+20087,Oaxaca,San Agustín Yatareni,open-meteo,San Agustín Yatareni,,,
+20088,Oaxaca,San Andrés Cabecera Nueva,no está (sin estación adecuada),,,,
+20089,Oaxaca,San Andrés Dinicuiti,conagua,San Andrés Dinicuiti,"San Francisco Yosocuta, Oax.",11.8,
+20090,Oaxaca,San Andrés Huaxpaltepec,sin clima guardado,San Andrés Huaxpaltepec,,,
+20091,Oaxaca,San Andrés Huayápam,open-meteo,San Andrés Huayápam,,,
+20092,Oaxaca,San Andrés Ixtlahuaca,añadido · conagua,San Andrés Ixtlahuaca,"Oaxaca Centro, Oax.",6.0,29
+20093,Oaxaca,San Andrés Lagunas,añadido · conagua,San Isidro Lagunas,"Teposcolula, Oax.",10.3,
+20094,Oaxaca,San Andrés Nuxiño,no está (sin estación adecuada),,,,
+20095,Oaxaca,San Andrés Paxtlán,no está (sin estación adecuada),,,,
+20096,Oaxaca,San Andrés Sinaxtla,conagua,San Andrés Sinaxtla,"Nochixtlán, Oax.",5.1,66
+20097,Oaxaca,San Andrés Solaga,eliminado (sin clima confiable),,,,
+20098,Oaxaca,San Andrés Teotilálpam,no está (sin estación adecuada),,,,
+20099,Oaxaca,San Andrés Tepetlapa,conagua,San Andrés Tepetlapa,"Calihualá, Oax.",22.6,30
+20100,Oaxaca,San Andrés Yaá,eliminado (sin clima confiable),,,,
+20101,Oaxaca,San Andrés Zabache,no está (sin estación adecuada),,,,
+20102,Oaxaca,San Andrés Zautla,añadido · conagua,San Andrés Zautla,"Oaxaca Centro, Oax.",25.0,106
+20103,Oaxaca,San Antonino Castillo Velasco,conagua,San Antonino Castillo Velasco,"Oaxaca Centro, Oax.",29.9,-45
+20104,Oaxaca,San Antonino el Alto,no está (sin estación adecuada),,,,
+20105,Oaxaca,San Antonino Monte Verde,añadido · conagua,San Miguel Monteverde,"San Antonino Monte Verde, Oax.",7.6,98
+20106,Oaxaca,San Antonio Acutla,añadido · conagua,San Antonio Acutla,"Santiago Teotongo, Oax.",4.4,113
+20107,Oaxaca,San Antonio de la Cal,conagua,San Antonio de la Cal,"Observatorio de Aeropuerto Oaxaca, Oax.",3.4,
+20108,Oaxaca,San Antonio Huitepec,no está (sin estación adecuada),,,,
+20109,Oaxaca,San Antonio Nanahuatípam,eliminado (sin clima confiable),,,,
+20110,Oaxaca,San Antonio Sinicahua,no está (sin estación adecuada),,,,
+20111,Oaxaca,San Antonio Tepetlapa,no está (sin estación adecuada),,,,
+20112,Oaxaca,San Baltazar Chichicápam,eliminado (sin clima confiable),,,,
+20113,Oaxaca,San Baltazar Loxicha,eliminado (sin clima confiable),,,,
+20114,Oaxaca,San Baltazar Yatzachi el Bajo,eliminado (sin clima confiable),,,,
+20115,Oaxaca,San Bartolo Coyotepec,añadido · conagua,San Bartolo Coyotepec,"Observatorio de Aeropuerto Oaxaca, Oax.",3.4,
+20116,Oaxaca,San Bartolomé Ayautla,eliminado (sin clima confiable),,,,
+20117,Oaxaca,San Bartolomé Loxicha,eliminado (sin clima confiable),,,,
+20118,Oaxaca,San Bartolomé Quialana,eliminado (sin clima confiable),,,,
+20119,Oaxaca,San Bartolomé Yucuañe,no está (sin estación adecuada),,,,
+20120,Oaxaca,San Bartolomé Zoogocho,no está (sin estación adecuada),,,,
+20121,Oaxaca,San Bartolo Soyaltepec,conagua,San Bartolo Soyaltepec,"Teposcolula, Oax.",13.2,
+20122,Oaxaca,San Bartolo Yautepec,eliminado (sin clima confiable),,,,
+20123,Oaxaca,San Bernardo Mixtepec,eliminado (sin clima confiable),,,,
+20124,Oaxaca,Heroica Villa de San Blas Atempa,eliminado (sin clima confiable),,,,
+20125,Oaxaca,San Carlos Yautepec,eliminado (sin clima confiable),,,,
+20126,Oaxaca,San Cristóbal Amatlán,conagua,San Cristóbal Amatlán,"Miahuatlán, Oax.",18.4,141
+20127,Oaxaca,San Cristóbal Amoltepec,eliminado (sin clima confiable),,,,
+20128,Oaxaca,San Cristóbal Lachirioag,eliminado (sin clima confiable),,,,
+20129,Oaxaca,San Cristóbal Suchixtlahuaca,añadido · conagua,Suchixtlahuaca,"Santiago Teotongo, Oax.",18.0,33
+20130,Oaxaca,San Dionisio del Mar,añadido · conagua,San Dionisio del Mar,"Chicapa, Oax.",29.5,-13
+20131,Oaxaca,San Dionisio Ocotepec,eliminado (sin clima confiable),,,,
+20132,Oaxaca,San Dionisio Ocotlán,no está (sin estación adecuada),,,,
+20133,Oaxaca,San Esteban Atatlahuca,sin clima guardado,San Esteban Atatlahuca,,,
+20134,Oaxaca,San Felipe Jalapa de Díaz,conagua,San Felipe Jalapa de Díaz,"San Felipe Usila, Oax.",20.9,21
+20135,Oaxaca,San Felipe Tejalápam,añadido · conagua,San Felipe Tejalápam,"Oaxaca Centro, Oax.",13.8,86
+20136,Oaxaca,San Felipe Usila,conagua,San Felipe Usila,"San Felipe Usila, Oax.",0.7,23
+20137,Oaxaca,San Francisco Cahuacuá,no está (sin estación adecuada),,,,
+20138,Oaxaca,San Francisco Cajonos,conagua,San Francisco Cajonos,"Ixtepeji, Oax.",27.6,-26
+20139,Oaxaca,San Francisco Chapulapa,no está (sin estación adecuada),,,,
+20140,Oaxaca,San Francisco Chindúa,conagua,San Francisco Chindúa,"Nochixtlán, Oax.",6.7,93
+20141,Oaxaca,San Francisco del Mar,no está (sin estación adecuada),,,,
+20142,Oaxaca,San Francisco Huehuetlán,conagua,San Francisco Huehuetlán,"La Carbonera, Oax.",6.1,
+20143,Oaxaca,San Francisco Ixhuatán,eliminado (sin clima confiable),,,,
+20144,Oaxaca,San Francisco Jaltepetongo,conagua,San Francisco Jaltepetongo,"Nochixtlán, Oax.",6.7,93
+20145,Oaxaca,San Francisco Lachigoló,conagua,San Francisco Lachigoló,"Aeropuerto Internacional de Oaxaca, Oax.",12.8,
+20146,Oaxaca,San Francisco Logueche,no está (sin estación adecuada),,,,
+20147,Oaxaca,San Francisco Nuxaño,conagua,San Francisco Nuxaño,"Nochixtlán, Oax.",6.7,93
+20148,Oaxaca,San Francisco Ozolotepec,eliminado (sin clima confiable),,,,
+20149,Oaxaca,San Francisco Sola,eliminado (sin clima confiable),,,,
+20150,Oaxaca,San Francisco Telixtlahuaca,eliminado (sin clima confiable),,,,
+20151,Oaxaca,San Francisco Teopan,no está (sin estación adecuada),,,,
+20152,Oaxaca,San Francisco Tlapancingo,añadido · conagua,San Francisco Tlapancingo,"Calihualá, Oax.",0.1,2
+20153,Oaxaca,San Gabriel Mixtepec,no está (sin estación adecuada),,,,
+20154,Oaxaca,San Ildefonso Amatlán,conagua,San Ildefonso Amatlán,"Miahuatlán, Oax.",9.5,-13
+20155,Oaxaca,San Ildefonso Sola,no está (sin estación adecuada),,,,
+20156,Oaxaca,San Ildefonso Villa Alta,eliminado (sin clima confiable),,,,
+20157,Oaxaca,San Jacinto Amilpas,conagua,San Jacinto Amilpas,"Oaxaca Centro, Oax.",6.0,29
+20158,Oaxaca,San Jacinto Tlacotepec,no está (sin estación adecuada),,,,
+20159,Oaxaca,San Jerónimo Coatlán,eliminado (sin clima confiable),,,,
+20160,Oaxaca,San Jerónimo Silacayoapilla,conagua,San Jerónimo Silacayoapilla,"Huajuapan de León, Oax.",0.4,-6
+20161,Oaxaca,San Jerónimo Sosola,conagua,San Jerónimo Sosola,"Nochixtlán, Oax.",24.2,-104
+20162,Oaxaca,San Jerónimo Taviche,eliminado (sin clima confiable),,,,
+20163,Oaxaca,San Jerónimo Tecóatl,conagua,San Jerónimo Tecóatl,"La Carbonera, Oax.",6.1,
+20164,Oaxaca,San Jorge Nuchita,conagua,San Jorge Nuchita,"Calihualá, Oax.",26.5,-129
+20165,Oaxaca,San José Ayuquila,conagua,San José Ayuquila,"Huajuapan de León, Oax.",25.9,-30
+20166,Oaxaca,San José Chiltepec,conagua,San José Chiltepec,"Jacatepec, Oax.",9.5,20
+20167,Oaxaca,San José del Peñasco,añadido · conagua,San José del Peñasco,"Miahuatlán, Oax.",9.5,-13
+20168,Oaxaca,San José Estancia Grande,conagua,San José Estancia Grande,"Cuajinicuilapa, Gro.",14.2,
+20169,Oaxaca,San José Independencia,añadido · conagua,San José Independencia,"Presidente Alemán, Oax.",24.7,83
+20170,Oaxaca,San José Lachiguiri,conagua,San José Lachiguiri,"Miahuatlán, Oax.",26.3,135
+20171,Oaxaca,San José Tenango,eliminado (sin clima confiable),,,,
+20172,Oaxaca,San Juan Achiutla,eliminado (sin clima confiable),,,,
+20173,Oaxaca,San Juan Atepec,añadido · conagua,San Juan Atepec,"Atepec, Oax.",1.0,53
+20174,Oaxaca,Ánimas Trujano,conagua,Ánimas Trujano,"Observatorio de Aeropuerto Oaxaca, Oax.",3.4,
+20175,Oaxaca,San Juan Bautista Atatlahuca,no está (sin estación adecuada),,,,
+20176,Oaxaca,San Juan Bautista Coixtlahuaca,conagua,San Juan Bautista Coixtlahuaca,"Santiago Teotongo, Oax.",25.2,51
+20177,Oaxaca,San Juan Bautista Cuicatlán,no está (sin estación adecuada),,,,
+20178,Oaxaca,San Juan Bautista Guelache,añadido · conagua,Fraccionamiento San Miguel,"Oaxaca Centro, Oax.",17.0,98
+20179,Oaxaca,San Juan Bautista Jayacatlán,eliminado (sin clima confiable),,,,
+20180,Oaxaca,San Juan Bautista Lo de Soto,añadido · conagua,San Juan Bautista Lo de Soto,"Cuajinicuilapa, Gro.",13.6,
+20181,Oaxaca,San Juan Bautista Suchitepec,añadido · conagua,Suchitepec,"Zapotitlán Palmas, Oax.",17.1,-59
+20182,Oaxaca,San Juan Bautista Tlacoatzintepec,eliminado (sin clima confiable),,,,
+20183,Oaxaca,San Juan Bautista Tlachichilco,conagua,San Juan Bautista Tlachichilco,"Calihualá, Oax.",12.1,2
+20184,Oaxaca,San Juan Bautista Tuxtepec,open-meteo,Tuxtepec,,,
+20185,Oaxaca,San Juan Cacahuatepec,no está (sin estación adecuada),,,,
+20186,Oaxaca,San Juan Cieneguilla,añadido · conagua,San Juan la Ciénega,"Zapotitlán Lagunas, Oax.",15.7,-135
+20187,Oaxaca,San Juan Coatzóspam,no está (sin estación adecuada),,,,
+20188,Oaxaca,San Juan Colorado,eliminado (sin clima confiable),,,,
+20189,Oaxaca,San Juan Comaltepec,no está (sin estación adecuada),,,,
+20190,Oaxaca,San Juan Cotzocón,añadido · conagua,María Lombardo de Caso,"María Lombardo, Oax.",5.8,9
+20191,Oaxaca,San Juan Chicomezúchil,no está (sin estación adecuada),,,,
+20192,Oaxaca,San Juan Chilateca,conagua,San Juan Chilateca,"Oaxaca Centro, Oax.",29.9,-45
+20193,Oaxaca,San Juan del Estado,eliminado (sin clima confiable),,,,
+20194,Oaxaca,San Juan del Río,no está (sin estación adecuada),,,,
+20195,Oaxaca,San Juan Diuxi,eliminado (sin clima confiable),,,,
+20196,Oaxaca,San Juan Evangelista Analco,no está (sin estación adecuada),,,,
+20197,Oaxaca,San Juan Guelavía,conagua,San Juan Guelavía,"San Antonio Cuajimoloyas, Oax.",14.0,
+20198,Oaxaca,San Juan Guichicovi,no está (sin estación adecuada),,,,
+20199,Oaxaca,San Juan Ihualtepec,conagua,San Juan Ihualtepec,"Calihualá, Oax.",18.7,53
+20200,Oaxaca,San Juan Juquila Mixes,añadido · conagua,San Juan Juquila Mixes,"Zacatepec, Oax.",23.9,50
+20201,Oaxaca,San Juan Juquila Vijanos,eliminado (sin clima confiable),,,,
+20202,Oaxaca,San Juan Lachao,no está (sin estación adecuada),,,,
+20203,Oaxaca,San Juan Lachigalla,conagua,San Juan Lachigalla,"Miahuatlán, Oax.",29.7,28
+20204,Oaxaca,San Juan Lajarcia,no está (sin estación adecuada),,,,
+20205,Oaxaca,San Juan Lalana,añadido · conagua,San José Río Manzo,"Río Manso Lalana, Oax.",8.1,
+20206,Oaxaca,San Juan de los Cués,eliminado (sin clima confiable),,,,
+20207,Oaxaca,San Juan Mazatlán,no está (sin estación adecuada),,,,
+20208,Oaxaca,San Juan Mixtepec,eliminado (sin clima confiable),,,,
+20209,Oaxaca,San Juan Mixtepec,eliminado (sin clima confiable),,,,
+20210,Oaxaca,San Juan Ñumí,conagua,San Juan Ñumí,"San Antonino Monte Verde, Oax.",15.0,131
+20211,Oaxaca,San Juan Ozolotepec,eliminado (sin clima confiable),,,,
+20212,Oaxaca,San Juan Petlapa,eliminado (sin clima confiable),,,,
+20213,Oaxaca,San Juan Quiahije,no está (sin estación adecuada),,,,
+20214,Oaxaca,San Juan Quiotepec,conagua,San Juan Quiotepec,"Atepec, Oax.",19.9,-109
+20215,Oaxaca,San Juan Sayultepec,conagua,San Juan Sayultepec,"Nochixtlán, Oax.",5.1,66
+20216,Oaxaca,San Juan Tabaá,eliminado (sin clima confiable),,,,
+20217,Oaxaca,San Juan Tamazola,no está (sin estación adecuada),,,,
+20218,Oaxaca,San Juan Teita,no está (sin estación adecuada),,,,
+20219,Oaxaca,San Juan Teitipac,eliminado (sin clima confiable),,,,
+20220,Oaxaca,San Juan Tepeuxila,no está (sin estación adecuada),,,,
+20221,Oaxaca,San Juan Teposcolula,añadido · conagua,San Miguel Marcos Pérez,"Teposcolula, Oax.",9.5,
+20222,Oaxaca,San Juan Yaeé,eliminado (sin clima confiable),,,,
+20223,Oaxaca,San Juan Yatzona,eliminado (sin clima confiable),,,,
+20224,Oaxaca,San Juan Yucuita,conagua,San Juan Yucuita,"Nochixtlán, Oax.",5.1,66
+20225,Oaxaca,San Lorenzo,sin clima guardado,San Lorenzo,,,
+20226,Oaxaca,San Lorenzo Albarradas,eliminado (sin clima confiable),,,,
+20227,Oaxaca,San Lorenzo Cacaotepec,conagua,San Lorenzo Cacaotepec,"Oaxaca Centro, Oax.",6.0,29
+20228,Oaxaca,San Lorenzo Cuaunecuiltitla,conagua,San Lorenzo Cuaunecuiltitla,"La Carbonera, Oax.",6.1,
+20229,Oaxaca,San Lorenzo Texmelúcan,sin clima guardado,San Lorenzo Texmelúcan,,,
+20230,Oaxaca,San Lorenzo Victoria,conagua,San Lorenzo Victoria,"Calihualá, Oax.",26.5,-129
+20231,Oaxaca,San Lucas Camotlán,no está (sin estación adecuada),,,,
+20232,Oaxaca,San Lucas Ojitlán,conagua,San Lucas Ojitlán,"Miguel de la Madrid Hurtado, Oax.",15.7,107
+20233,Oaxaca,San Lucas Quiaviní,eliminado (sin clima confiable),,,,
+20234,Oaxaca,San Lucas Zoquiápam,conagua,San Lucas Zoquiápam,"La Carbonera, Oax.",8.4,
+20235,Oaxaca,San Luis Amatlán,conagua,San Luis Amatlán,"Miahuatlán, Oax.",10.2,-44
+20236,Oaxaca,San Marcial Ozolotepec,no está (sin estación adecuada),,,,
+20237,Oaxaca,San Marcos Arteaga,conagua,San Marcos Arteaga,"San Francisco Yosocuta, Oax.",5.3,
+20238,Oaxaca,Heroico San Martín de los Cansecos,eliminado (sin clima confiable),,,,
+20239,Oaxaca,San Martín Huamelúlpam,eliminado (sin clima confiable),,,,
+20240,Oaxaca,San Martín Itunyoso,no está (sin estación adecuada),,,,
+20241,Oaxaca,San Martín Lachilá,no está (sin estación adecuada),,,,
+20242,Oaxaca,San Martín Peras,no está (sin estación adecuada),,,,
+20243,Oaxaca,San Martín Tilcajete,conagua,San Martín Tilcajete,"Observatorio de Aeropuerto Oaxaca, Oax.",8.0,
+20244,Oaxaca,San Martín Toxpalan,eliminado (sin clima confiable),,,,
+20245,Oaxaca,San Martín Zacatepec,no está (sin estación adecuada),,,,
+20246,Oaxaca,San Mateo Cajonos,eliminado (sin clima confiable),,,,
+20247,Oaxaca,Capulálpam de Méndez,no está (sin estación adecuada),,,,
+20248,Oaxaca,San Mateo del Mar,eliminado (sin clima confiable),,,,
+20249,Oaxaca,San Mateo Yoloxochitlán,conagua,San Mateo Yoloxochitlán,"La Carbonera, Oax.",8.4,
+20250,Oaxaca,San Mateo Etlatongo,conagua,San Mateo Etlatongo,"Nochixtlán, Oax.",6.7,93
+20251,Oaxaca,San Mateo Nejápam,conagua,San Mateo Nejápam,"Calihualá, Oax.",22.6,30
+20252,Oaxaca,San Mateo Peñasco,no está (sin estación adecuada),,,,
+20253,Oaxaca,San Mateo Piñas,eliminado (sin clima confiable),,,,
+20254,Oaxaca,San Mateo Río Hondo,no está (sin estación adecuada),,,,
+20255,Oaxaca,San Mateo Sindihui,no está (sin estación adecuada),,,,
+20256,Oaxaca,San Mateo Tlapiltepec,no está (sin estación adecuada),,,,
+20257,Oaxaca,San Melchor Betaza,eliminado (sin clima confiable),,,,
+20258,Oaxaca,San Miguel Achiutla,eliminado (sin clima confiable),,,,
+20259,Oaxaca,San Miguel Ahuehuetitlán,conagua,San Miguel Ahuehuetitlán,"Calihualá, Oax.",18.7,53
+20260,Oaxaca,San Miguel Aloápam,eliminado (sin clima confiable),,,,
+20261,Oaxaca,San Miguel Amatitlán,no está (sin estación adecuada),,,,
+20262,Oaxaca,San Miguel Amatlán,añadido · conagua,San Antonio Cuajimoloyas,"San Antonio Cuajimoloyas, Oax.",0.2,
+20263,Oaxaca,San Miguel Coatlán,eliminado (sin clima confiable),,,,
+20264,Oaxaca,San Miguel Chicahua,eliminado (sin clima confiable),,,,
+20265,Oaxaca,San Miguel Chimalapa,añadido · conagua,San Miguel Chimalapa,"Chicapa, Oax.",16.3,96
+20266,Oaxaca,San Miguel del Puerto,eliminado (sin clima confiable),,,,
+20267,Oaxaca,San Miguel del Río,no está (sin estación adecuada),,,,
+20268,Oaxaca,San Miguel Ejutla,eliminado (sin clima confiable),,,,
+20269,Oaxaca,San Miguel el Grande,no está (sin estación adecuada),,,,
+20270,Oaxaca,San Miguel Huautla,eliminado (sin clima confiable),,,,
+20271,Oaxaca,San Miguel Mixtepec,eliminado (sin clima confiable),,,,
+20272,Oaxaca,San Miguel Panixtlahuaca,sin clima guardado,San Miguel Panixtlahuaca,,,
+20273,Oaxaca,San Miguel Peras,no está (sin estación adecuada),,,,
+20274,Oaxaca,San Miguel Piedras,no está (sin estación adecuada),,,,
+20275,Oaxaca,San Miguel Quetzaltepec,no está (sin estación adecuada),,,,
+20276,Oaxaca,San Miguel Santa Flor,no está (sin estación adecuada),,,,
+20277,Oaxaca,Villa Sola de Vega,no está (sin estación adecuada),,,,
+20278,Oaxaca,San Miguel Soyaltepec,conagua,Temascal,"Presidente Alemán, Oax.",1.4,14
+20279,Oaxaca,San Miguel Suchixtepec,no está (sin estación adecuada),,,,
+20280,Oaxaca,Villa Talea de Castro,eliminado (sin clima confiable),,,,
+20281,Oaxaca,San Miguel Tecomatlán,conagua,San Miguel Tecomatlán,"Nochixtlán, Oax.",6.7,93
+20282,Oaxaca,San Miguel Tenango,eliminado (sin clima confiable),,,,
+20283,Oaxaca,San Miguel Tequixtepec,añadido · conagua,San Miguel Tequixtepec,"Santiago Teotongo, Oax.",22.4,-33
+20284,Oaxaca,San Miguel Tilquiápam,eliminado (sin clima confiable),,,,
+20285,Oaxaca,San Miguel Tlacamama,eliminado (sin clima confiable),,,,
+20286,Oaxaca,San Miguel Tlacotepec,añadido · conagua,San Miguel Tlacotepec,"San Antonino Monte Verde, Oax.",29.9,-18
+20287,Oaxaca,San Miguel Tulancingo,añadido · conagua,San Miguel Tulancingo,"Santiago Teotongo, Oax.",10.6,148
+20288,Oaxaca,San Miguel Yotao,no está (sin estación adecuada),,,,
+20289,Oaxaca,San Nicolás,conagua,San Nicolás,"Miahuatlán, Oax.",16.4,-38
+20290,Oaxaca,San Nicolás Hidalgo,no está (sin estación adecuada),,,,
+20291,Oaxaca,San Pablo Coatlán,eliminado (sin clima confiable),,,,
+20292,Oaxaca,San Pablo Cuatro Venados,eliminado (sin clima confiable),,,,
+20293,Oaxaca,San Pablo Etla,conagua,Hacienda Blanca,"Oaxaca Centro, Oax.",6.0,29
+20294,Oaxaca,San Pablo Huitzo,eliminado (sin clima confiable),,,,
+20295,Oaxaca,San Pablo Huixtepec,eliminado (sin clima confiable),,,,
+20296,Oaxaca,San Pablo Macuiltianguis,eliminado (sin clima confiable),,,,
+20297,Oaxaca,San Pablo Tijaltepec,no está (sin estación adecuada),,,,
+20298,Oaxaca,San Pablo Villa de Mitla,eliminado (sin clima confiable),,,,
+20299,Oaxaca,San Pablo Yaganiza,conagua,San Pablo Yaganiza,"Zacatepec, Oax.",29.2,84
+20300,Oaxaca,San Pedro Amuzgos,no está (sin estación adecuada),,,,
+20301,Oaxaca,San Pedro Apóstol,eliminado (sin clima confiable),,,,
+20302,Oaxaca,San Pedro Atoyac,eliminado (sin clima confiable),,,,
+20303,Oaxaca,San Pedro Cajonos,conagua,San Pedro Cajonos,"Ixtepeji, Oax.",27.6,-26
+20304,Oaxaca,San Pedro Coxcaltepec Cántaros,conagua,San Pedro Coxcaltepec Cántaros,"Nochixtlán, Oax.",19.0,67
+20305,Oaxaca,San Pedro Comitancillo,conagua,San Pedro Comitancillo,"Ixtepec, Oax.",12.0,
+20306,Oaxaca,San Pedro el Alto,no está (sin estación adecuada),,,,
+20307,Oaxaca,San Pedro Huamelula,eliminado (sin clima confiable),,,,
+20308,Oaxaca,San Pedro Huilotepec,añadido · conagua,San Pedro Huilotepec,"Observatorio de Salina Cruz, Oax.",3.8,
+20309,Oaxaca,San Pedro Ixcatlán,añadido · conagua,San Pedro Ixcatlán,"San Felipe Usila, Oax.",20.9,21
+20310,Oaxaca,San Pedro Ixtlahuaca,añadido · conagua,San Pedro Ixtlahuaca,"Oaxaca Centro, Oax.",6.0,29
+20311,Oaxaca,San Pedro Jaltepetongo,eliminado (sin clima confiable),,,,
+20312,Oaxaca,San Pedro Jicayán,eliminado (sin clima confiable),,,,
+20313,Oaxaca,San Pedro Jocotipac,no está (sin estación adecuada),,,,
+20314,Oaxaca,San Pedro Juchatengo,no está (sin estación adecuada),,,,
+20315,Oaxaca,San Pedro Mártir,no está (sin estación adecuada),,,,
+20316,Oaxaca,San Pedro Mártir Quiechapa,eliminado (sin clima confiable),,,,
+20317,Oaxaca,San Pedro Mártir Yucuxaco,eliminado (sin clima confiable),,,,
+20318,Oaxaca,San Pedro Mixtepec,sin clima guardado,"Bajos de Chila, Puerto Escondido, San Pedro Mixtepec Distrito Veintidós",,,
+20319,Oaxaca,San Pedro Mixtepec,eliminado (sin clima confiable),,,,
+20320,Oaxaca,San Pedro Molinos,no está (sin estación adecuada),,,,
+20321,Oaxaca,San Pedro Nopala,añadido · conagua,Nopala,"Santiago Teotongo, Oax.",11.4,132
+20322,Oaxaca,San Pedro Ocopetatillo,conagua,San Pedro Ocopetatillo,"La Carbonera, Oax.",6.1,
+20323,Oaxaca,San Pedro Ocotepec,no está (sin estación adecuada),,,,
+20324,Oaxaca,San Pedro Pochutla,conagua,San Pedro Pochutla,"Observatorio de Puerto Angel, Oax.",9.0,72
+20325,Oaxaca,San Pedro Quiatoni,eliminado (sin clima confiable),,,,
+20326,Oaxaca,San Pedro Sochiápam,eliminado (sin clima confiable),,,,
+20327,Oaxaca,San Pedro Tapanatepec,eliminado (sin clima confiable),,,,
+20328,Oaxaca,San Pedro Taviche,conagua,San Pedro Taviche,"Miahuatlán, Oax.",29.7,28
+20329,Oaxaca,San Pedro Teozacoalco,no está (sin estación adecuada),,,,
+20330,Oaxaca,San Pedro Teutila,no está (sin estación adecuada),,,,
+20331,Oaxaca,San Pedro Tidaá,eliminado (sin clima confiable),,,,
+20332,Oaxaca,San Pedro Topiltepec,conagua,San Pedro Topiltepec,"Nochixtlán, Oax.",6.7,93
+20333,Oaxaca,San Pedro Totolápam,no está (sin estación adecuada),,,,
+20334,Oaxaca,Villa de Tututepec,sin clima guardado,Río Grande,,,
+20335,Oaxaca,San Pedro Yaneri,no está (sin estación adecuada),,,,
+20336,Oaxaca,San Pedro Yólox,conagua,San Pedro Yólox,"Atepec, Oax.",19.9,-109
+20337,Oaxaca,San Pedro y San Pablo Ayutla,eliminado (sin clima confiable),,,,
+20338,Oaxaca,Villa de Etla,conagua,Villa de Etla,"Oaxaca Centro, Oax.",17.0,98
+20339,Oaxaca,San Pedro y San Pablo Teposcolula,conagua,San Pedro y San Pablo Tequixtepec,"Zapotitlán Palmas, Oax.",21.8,-58
+20340,Oaxaca,San Pedro y San Pablo Tequixtepec,añadido · conagua,San Juan Yolotepec,"Zapotitlán Palmas, Oax.",21.8,-58
+20341,Oaxaca,San Pedro Yucunama,añadido · conagua,San Pedro Yucunama,"Teposcolula, Oax.",10.3,
+20342,Oaxaca,San Raymundo Jalpan,conagua,San Raymundo Jalpan,"Observatorio de Aeropuerto Oaxaca, Oax.",6.3,
+20343,Oaxaca,San Sebastián Abasolo,conagua,San Sebastián Abasolo,"Aeropuerto Internacional de Oaxaca, Oax.",12.8,
+20344,Oaxaca,San Sebastián Coatlán,eliminado (sin clima confiable),,,,
+20345,Oaxaca,San Sebastián Ixcapa,no está (sin estación adecuada),,,,
+20346,Oaxaca,San Sebastián Nicananduta,eliminado (sin clima confiable),,,,
+20347,Oaxaca,San Sebastián Río Hondo,no está (sin estación adecuada),,,,
+20348,Oaxaca,San Sebastián Tecomaxtlahuaca,añadido · conagua,Tecomaxtlahuaca,"Silacayoápam, Oax.",23.2,-18
+20349,Oaxaca,San Sebastián Teitipac,conagua,San Sebastián Teitipac,"Aeropuerto Internacional de Oaxaca, Oax.",12.8,
+20350,Oaxaca,San Sebastián Tutla,conagua,El Rosario,"Observatorio de Aeropuerto Oaxaca, Oax.",3.4,
+20351,Oaxaca,San Simón Almolongas,conagua,San Simón Almolongas,"Miahuatlán, Oax.",16.4,-38
+20352,Oaxaca,San Simón Zahuatlán,añadido · conagua,5 de Mayo,"Zapotitlán Palmas, Oax.",20.5,-38
+20353,Oaxaca,Santa Ana,eliminado (sin clima confiable),,,,
+20354,Oaxaca,Santa Ana Ateixtlahuaca,añadido · conagua,Santa Ana Ateixtlahuaca,"La Carbonera, Oax.",6.1,
+20355,Oaxaca,Santa Ana Cuauhtémoc,no está (sin estación adecuada),,,,
+20356,Oaxaca,Santa Ana del Valle,conagua,Santa Ana del Valle,"San Antonio Cuajimoloyas, Oax.",14.0,
+20357,Oaxaca,Santa Ana Tavela,añadido · conagua,Santa Ana Tavela,"Boquilla 1, Oax.",2.1,
+20358,Oaxaca,Santa Ana Tlapacoyan,eliminado (sin clima confiable),,,,
+20359,Oaxaca,Santa Ana Yareni,no está (sin estación adecuada),,,,
+20360,Oaxaca,Santa Ana Zegache,conagua,Santa Ana Zegache,"Oaxaca Centro, Oax.",29.9,-45
+20361,Oaxaca,Santa Catalina Quierí,no está (sin estación adecuada),,,,
+20362,Oaxaca,Santa Catarina Cuixtla,conagua,Santa Catarina Cuixtla,"Miahuatlán, Oax.",2.4,-7
+20363,Oaxaca,Santa Catarina Ixtepeji,añadido · conagua,Santa Catarina Ixtepeji,"Ixtepeji, Oax.",1.3,-98
+20364,Oaxaca,Santa Catarina Juquila,sin clima guardado,Santa Catarina Juquila,,,
+20365,Oaxaca,Santa Catarina Lachatao,añadido · conagua,Benito Juárez,"San Antonio Cuajimoloyas, Oax.",0.2,
+20366,Oaxaca,Santa Catarina Loxicha,eliminado (sin clima confiable),,,,
+20367,Oaxaca,Santa Catarina Mechoacán,sin clima guardado,Santa Catarina Mechoacán,,,
+20368,Oaxaca,Santa Catarina Minas,eliminado (sin clima confiable),,,,
+20369,Oaxaca,Santa Catarina Quiané,conagua,Santa Catarina Quiané,"Observatorio de Aeropuerto Oaxaca, Oax.",8.0,
+20370,Oaxaca,Santa Catarina Tayata,eliminado (sin clima confiable),,,,
+20371,Oaxaca,Santa Catarina Ticuá,no está (sin estación adecuada),,,,
+20372,Oaxaca,Santa Catarina Yosonotú,no está (sin estación adecuada),,,,
+20373,Oaxaca,Santa Catarina Zapoquila,no está (sin estación adecuada),,,,
+20374,Oaxaca,Santa Cruz Acatepec,conagua,Santa Cruz Acatepec,"La Carbonera, Oax.",6.1,
+20375,Oaxaca,Santa Cruz Amilpas,open-meteo,Santa Cruz Amilpas,,,
+20376,Oaxaca,Santa Cruz de Bravo,conagua,Santa Cruz de Bravo,"Silacayoápam, Oax.",12.5,-67
+20377,Oaxaca,Santa Cruz Itundujia,no está (sin estación adecuada),,,,
+20378,Oaxaca,Santa Cruz Mixtepec,eliminado (sin clima confiable),,,,
+20379,Oaxaca,Santa Cruz Nundaco,eliminado (sin clima confiable),,,,
+20380,Oaxaca,Santa Cruz Papalutla,conagua,Santa Cruz Papalutla,"Aeropuerto Internacional de Oaxaca, Oax.",12.8,
+20381,Oaxaca,Santa Cruz Tacache de Mina,no está (sin estación adecuada),,,,
+20382,Oaxaca,Santa Cruz Tacahua,no está (sin estación adecuada),,,,
+20383,Oaxaca,Santa Cruz Tayata,eliminado (sin clima confiable),,,,
+20384,Oaxaca,Santa Cruz Xitla,eliminado (sin clima confiable),,,,
+20385,Oaxaca,Santa Cruz Xoxocotlán,conagua,Santa Cruz Xoxocotlán,"Observatorio de Aeropuerto Oaxaca, Oax.",3.4,
+20386,Oaxaca,Santa Cruz Zenzontepec,no está (sin estación adecuada),,,,
+20387,Oaxaca,Santa Gertrudis,eliminado (sin clima confiable),,,,
+20388,Oaxaca,Santa Inés del Monte,conagua,Santa Inés del Monte,"Base Aérea, Oax.",26.8,29
+20389,Oaxaca,Santa Inés Yatzeche,eliminado (sin clima confiable),,,,
+20390,Oaxaca,Santa Lucía del Camino,añadido · open-meteo,San Francisco Tutla,,,
+20391,Oaxaca,Santa Lucía Miahuatlán,no está (sin estación adecuada),,,,
+20392,Oaxaca,Santa Lucía Monteverde,no está (sin estación adecuada),,,,
+20393,Oaxaca,Santa Lucía Ocotlán,eliminado (sin clima confiable),,,,
+20394,Oaxaca,Santa María Alotepec,añadido · conagua,Santa María Alotepec,"Zacatepec, Oax.",10.1,90
+20395,Oaxaca,Santa María Apazco,conagua,Santa María Apazco,"Nochixtlán, Oax.",27.0,145
+20396,Oaxaca,Santa María la Asunción,añadido · conagua,Santa María la Asunción,"La Carbonera, Oax.",11.1,
+20397,Oaxaca,Heroica Ciudad de Tlaxiaco,conagua,Heroica Ciudad de Tlaxiaco,"San Antonino Monte Verde, Oax.",26.1,4
+20398,Oaxaca,Ayoquezco de Aldama,eliminado (sin clima confiable),,,,
+20399,Oaxaca,Santa María Atzompa,conagua,Santa María Atzompa,"Oaxaca Centro, Oax.",6.0,29
+20400,Oaxaca,Santa María Camotlán,conagua,Santa María Camotlán,"Huajuapan de León, Oax.",13.1,98
+20401,Oaxaca,Santa María Colotepec,sin clima guardado,"Brisas de Zicatela, Santa María Colotepec",,,
+20402,Oaxaca,Santa María Cortijo,añadido · conagua,La Huerta (La Finca),"Cuajinicuilapa, Gro.",8.0,
+20403,Oaxaca,Santa María Coyotepec,añadido · conagua,Santa María Coyotepec,"Observatorio de Aeropuerto Oaxaca, Oax.",3.4,
+20404,Oaxaca,Santa María Chachoápam,conagua,Santa María Chachoápam,"Nochixtlán, Oax.",5.1,66
+20405,Oaxaca,Villa de Chilapa de Díaz,añadido · conagua,Santo Domingo Nundó,"Observatorio de Huajuapan de León, Oax.",22.3,-26
+20406,Oaxaca,Santa María Chilchotla,añadido · conagua,Río Lodo,"Presidente Alemán, Oax.",29.4,61
+20407,Oaxaca,Santa María Chimalapa,no está (sin estación adecuada),,,,
+20408,Oaxaca,Santa María del Rosario,eliminado (sin clima confiable),,,,
+20409,Oaxaca,Santa María del Tule,conagua,Santa María del Tule,"Aeropuerto Internacional de Oaxaca, Oax.",12.8,
+20410,Oaxaca,Santa María Ecatepec,eliminado (sin clima confiable),,,,
+20411,Oaxaca,Santa María Guelacé,conagua,Santa María Guelacé,"Aeropuerto Internacional de Oaxaca, Oax.",12.8,
+20412,Oaxaca,Santa María Guienagati,no está (sin estación adecuada),,,,
+20413,Oaxaca,Santa María Huatulco,conagua,Santa María Huatulco,"Observatorio de Puerto Angel, Oax.",25.8,146
+20414,Oaxaca,Santa María Huazolotitlán,sin clima guardado,Santa María Huazolotitlán,,,
+20415,Oaxaca,Santa María Ipalapa,no está (sin estación adecuada),,,,
+20416,Oaxaca,Santa María Ixcatlán,no está (sin estación adecuada),,,,
+20417,Oaxaca,Santa María Jacatepec,añadido · conagua,Santa María Jacatepec,"Jacatepec, Oax.",9.5,20
+20418,Oaxaca,Santa María Jalapa del Marqués,eliminado (sin clima confiable),,,,
+20419,Oaxaca,Santa María Jaltianguis,añadido · conagua,Santa María Jaltianguis,"Atepec, Oax.",1.0,53
+20420,Oaxaca,Santa María Lachixío,no está (sin estación adecuada),,,,
+20421,Oaxaca,Santa María Mixtequilla,eliminado (sin clima confiable),,,,
+20422,Oaxaca,Santa María Nativitas,conagua,Santa María Nativitas,"Santiago Teotongo, Oax.",25.2,51
+20423,Oaxaca,Santa María Nduayaco,eliminado (sin clima confiable),,,,
+20424,Oaxaca,Santa María Ozolotepec,no está (sin estación adecuada),,,,
+20425,Oaxaca,Santa María Pápalo,no está (sin estación adecuada),,,,
+20426,Oaxaca,Santa María Peñoles,no está (sin estación adecuada),,,,
+20427,Oaxaca,Santa María Petapa,no está (sin estación adecuada),,,,
+20428,Oaxaca,Santa María Quiegolani,eliminado (sin clima confiable),,,,
+20429,Oaxaca,Santa María Sola,sin clima guardado,Santa María Sola,,,
+20430,Oaxaca,Santa María Tataltepec,no está (sin estación adecuada),,,,
+20431,Oaxaca,Santa María Tecomavaca,no está (sin estación adecuada),,,,
+20432,Oaxaca,Santa María Temaxcalapa,eliminado (sin clima confiable),,,,
+20433,Oaxaca,Santa María Temaxcaltepec,no está (sin estación adecuada),,,,
+20434,Oaxaca,Santa María Teopoxco,conagua,Santa María Teopoxco,"La Carbonera, Oax.",7.2,
+20435,Oaxaca,Santa María Tepantlali,eliminado (sin clima confiable),,,,
+20436,Oaxaca,Santa María Texcatitlán,eliminado (sin clima confiable),,,,
+20437,Oaxaca,Santa María Tlahuitoltepec,eliminado (sin clima confiable),,,,
+20438,Oaxaca,Santa María Tlalixtac,no está (sin estación adecuada),,,,
+20439,Oaxaca,Santa María Tonameca,conagua,Santa María Tonameca,"Observatorio de Puerto Angel, Oax.",9.0,72
+20440,Oaxaca,Santa María Totolapilla,no está (sin estación adecuada),,,,
+20441,Oaxaca,Santa María Xadani,conagua,Santa María Xadani,"Chicapa, Oax.",28.2,-3
+20442,Oaxaca,Santa María Yalina,conagua,Santa María Yalina,"Ixtepeji, Oax.",27.6,-26
+20443,Oaxaca,Santa María Yavesía,conagua,Santa María Yavesía,"Ixtepeji, Oax.",13.2,90
+20444,Oaxaca,Santa María Yolotepec,no está (sin estación adecuada),,,,
+20445,Oaxaca,Santa María Yosoyúa,no está (sin estación adecuada),,,,
+20446,Oaxaca,Santa María Yucuhiti,sin clima guardado,Santa María Yucuhiti,,,
+20447,Oaxaca,Santa María Zacatepec,no está (sin estación adecuada),,,,
+20448,Oaxaca,Santa María Zaniza,no está (sin estación adecuada),,,,
+20449,Oaxaca,Santa María Zoquitlán,eliminado (sin clima confiable),,,,
+20450,Oaxaca,Santiago Amoltepec,no está (sin estación adecuada),,,,
+20451,Oaxaca,Santiago Apoala,conagua,Santiago Apoala,"Nochixtlán, Oax.",27.0,145
+20452,Oaxaca,Santiago Apóstol,conagua,Santiago Apóstol,"Oaxaca Centro, Oax.",29.9,-45
+20453,Oaxaca,Santiago Astata,eliminado (sin clima confiable),,,,
+20454,Oaxaca,Santiago Atitlán,no está (sin estación adecuada),,,,
+20455,Oaxaca,Santiago Ayuquililla,conagua,Santiago Ayuquililla,"Huajuapan de León, Oax.",25.9,-30
+20456,Oaxaca,Santiago Cacaloxtepec,conagua,Santiago Cacaloxtepec,"San Francisco Yosocuta, Oax.",11.8,
+20457,Oaxaca,Santiago Camotlán,eliminado (sin clima confiable),,,,
+20458,Oaxaca,Santiago Comaltepec,conagua,Santiago Comaltepec,"Atepec, Oax.",15.0,57
+20459,Oaxaca,Villa de Santiago Chazumba,conagua,Villa de Santiago Chazumba,"Santiago Chazumba, Oax.",2.4,-11
+20460,Oaxaca,Santiago Choápam,añadido · conagua,San Juan del Río,"María Lombardo, Oax.",29.8,63
+20461,Oaxaca,Santiago del Río,no está (sin estación adecuada),,,,
+20462,Oaxaca,Santiago Huajolotitlán,conagua,Santiago Huajolotitlán,"Huajuapan de León, Oax.",5.2,41
+20463,Oaxaca,Santiago Huauclilla,conagua,Santiago Huauclilla,"Nochixtlán, Oax.",19.0,67
+20464,Oaxaca,Santiago Ihuitlán Plumas,añadido · conagua,Santiago Ihuitlán Plumas,"Santiago Teotongo, Oax.",10.6,148
+20465,Oaxaca,Santiago Ixcuintepec,no está (sin estación adecuada),,,,
+20466,Oaxaca,Santiago Ixtayutla,no está (sin estación adecuada),,,,
+20467,Oaxaca,Santiago Jamiltepec,sin clima guardado,Santiago Jamiltepec,,,
+20468,Oaxaca,Santiago Jocotepec,añadido · conagua,Río Chiquito,"Río Manso Lalana, Oax.",12.8,
+20469,Oaxaca,Santiago Juxtlahuaca,conagua,Santiago Juxtlahuaca,"Silacayoápam, Oax.",23.2,-18
+20470,Oaxaca,Santiago Lachiguiri,añadido · conagua,Santiago Lachiguiri,"Río Hondo, Oax.",12.5,
+20471,Oaxaca,Santiago Lalopa,eliminado (sin clima confiable),,,,
+20472,Oaxaca,Santiago Laollaga,añadido · conagua,Santiago Laollaga,"Ixtepec, Oax.",11.2,
+20473,Oaxaca,Santiago Laxopa,conagua,Santiago Laxopa,"Ixtepeji, Oax.",27.6,-26
+20474,Oaxaca,Santiago Llano Grande,conagua,Santa María Cortijo,"Cuajinicuilapa, Gro.",13.6,
+20475,Oaxaca,Santiago Matatlán,eliminado (sin clima confiable),,,,
+20476,Oaxaca,Santiago Miltepec,conagua,Santiago Miltepec,"Zapotitlán Palmas, Oax.",17.1,-59
+20477,Oaxaca,Santiago Minas,no está (sin estación adecuada),,,,
+20478,Oaxaca,Santiago Nacaltepec,no está (sin estación adecuada),,,,
+20479,Oaxaca,Santiago Nejapilla,eliminado (sin clima confiable),,,,
+20480,Oaxaca,Santiago Nundiche,conagua,Santiago Nundiche,"San Antonino Monte Verde, Oax.",26.1,4
+20481,Oaxaca,Santiago Nuyoó,sin clima guardado,Santiago Nuyoó,,,
+20482,Oaxaca,Santiago Pinotepa Nacional,eliminado (sin clima confiable),,,,
+20483,Oaxaca,Santiago Suchilquitongo,conagua,Santiago Suchilquitongo,"Oaxaca Centro, Oax.",25.0,106
+20484,Oaxaca,Santiago Tamazola,conagua,Santiago Tamazola,"Silacayoápam, Oax.",22.9,73
+20485,Oaxaca,Santiago Tapextla,añadido · conagua,Santiago Tapextla,"Cuajinicuilapa, Gro.",14.8,
+20486,Oaxaca,Villa Tejúpam de la Unión,añadido · conagua,Villa Tejúpam de la Unión,"Santiago Teotongo, Oax.",4.4,113
+20487,Oaxaca,Santiago Tenango,conagua,Santiago Tenango,"Nochixtlán, Oax.",28.8,20
+20488,Oaxaca,Santiago Tepetlapa,añadido · conagua,Santiago Tepetlapa,"Santiago Teotongo, Oax.",10.6,148
+20489,Oaxaca,Santiago Tetepec,sin clima guardado,Santiago Tetepec,,,
+20490,Oaxaca,Santiago Texcalcingo,conagua,Santiago Texcalcingo,"La Carbonera, Oax.",7.2,
+20491,Oaxaca,Santiago Textitlán,sin clima guardado,Santiago Textitlán,,,
+20492,Oaxaca,Santiago Tilantongo,eliminado (sin clima confiable),,,,
+20493,Oaxaca,Santiago Tillo,conagua,Santiago Tillo,"Nochixtlán, Oax.",5.1,66
+20494,Oaxaca,Santiago Tlazoyaltepec,no está (sin estación adecuada),,,,
+20495,Oaxaca,Santiago Xanica,eliminado (sin clima confiable),,,,
+20496,Oaxaca,Santiago Xiacuí,no está (sin estación adecuada),,,,
+20497,Oaxaca,Santiago Yaitepec,no está (sin estación adecuada),,,,
+20498,Oaxaca,Santiago Yaveo,no está (sin estación adecuada),,,,
+20499,Oaxaca,Santiago Yolomécatl,conagua,Santiago Yolomécatl,"San Antonino Monte Verde, Oax.",13.3,72
+20500,Oaxaca,Santiago Yosondúa,no está (sin estación adecuada),,,,
+20501,Oaxaca,Santiago Yucuyachi,añadido · conagua,Santa Rosa de Juárez,"Silacayoápam, Oax.",12.5,-67
+20502,Oaxaca,Santiago Zacatepec,añadido · conagua,Zacatepec,"Zacatepec, Oax.",2.0,25
+20503,Oaxaca,Santiago Zoochila,eliminado (sin clima confiable),,,,
+20504,Oaxaca,Nuevo Zoquiápam,añadido · conagua,Rumbo al Pueblo Viejo,"Ixtepeji, Oax.",1.3,-98
+20505,Oaxaca,Santo Domingo Ingenio,añadido · conagua,La Blanca,"Chicapa, Oax.",13.3,30
+20506,Oaxaca,Santo Domingo Albarradas,conagua,Santo Domingo Albarradas,"Zacatepec, Oax.",29.2,84
+20507,Oaxaca,Santo Domingo Armenta,no está (sin estación adecuada),,,,
+20508,Oaxaca,Santo Domingo Chihuitán,añadido · conagua,Santo Domingo Chihuitán,"Ixtepec, Oax.",11.2,
+20509,Oaxaca,Santo Domingo de Morelos,conagua,Santo Domingo de Morelos,"Observatorio de Puerto Angel, Oax.",26.5,73
+20510,Oaxaca,Santo Domingo Ixcatlán,no está (sin estación adecuada),,,,
+20511,Oaxaca,Santo Domingo Nuxaá,no está (sin estación adecuada),,,,
+20512,Oaxaca,Santo Domingo Ozolotepec,eliminado (sin clima confiable),,,,
+20513,Oaxaca,Santo Domingo Petapa,eliminado (sin clima confiable),,,,
+20514,Oaxaca,Santo Domingo Roayaga,eliminado (sin clima confiable),,,,
+20515,Oaxaca,Santo Domingo Tehuantepec,eliminado (sin clima confiable),,,,
+20516,Oaxaca,Santo Domingo Teojomulco,sin clima guardado,Santo Domingo Teojomulco,,,
+20517,Oaxaca,Santo Domingo Tepuxtepec,eliminado (sin clima confiable),,,,
+20518,Oaxaca,Santo Domingo Tlatayápam,conagua,Santo Domingo Tlatayápam,"Nochixtlán, Oax.",6.7,93
+20519,Oaxaca,Santo Domingo Tomaltepec,conagua,Santo Domingo Tomaltepec,"Oaxaca Centro, Oax.",14.6,15
+20520,Oaxaca,Santo Domingo Tonalá,eliminado (sin clima confiable),,,,
+20521,Oaxaca,Santo Domingo Tonaltepec,añadido · conagua,Vista Hermosa,"Teposcolula, Oax.",9.5,
+20522,Oaxaca,Santo Domingo Xagacía,conagua,Santo Domingo Xagacía,"Ixtepeji, Oax.",27.6,-26
+20523,Oaxaca,Santo Domingo Yanhuitlán,añadido · conagua,Santo Domingo Yanhuitlán,"Nochixtlán, Oax.",5.1,66
+20524,Oaxaca,Santo Domingo Yodohino,conagua,Santo Domingo Yodohino,"Observatorio de Huajuapan de León, Oax.",22.3,-26
+20525,Oaxaca,Santo Domingo Zanatepec,sin clima guardado,Santo Domingo Zanatepec,,,
+20526,Oaxaca,Santos Reyes Nopala,sin clima guardado,Santos Reyes Nopala,,,
+20527,Oaxaca,Santos Reyes Pápalo,no está (sin estación adecuada),,,,
+20528,Oaxaca,Santos Reyes Tepejillo,conagua,Santos Reyes Tepejillo,"San Antonino Monte Verde, Oax.",24.1,-126
+20529,Oaxaca,Santos Reyes Yucuná,añadido · conagua,Santos Reyes Yucuna,"Zapotitlán Palmas, Oax.",20.5,-38
+20530,Oaxaca,Santo Tomás Jalieza,conagua,Santo Tomás Jalieza,"Oaxaca Centro, Oax.",29.9,-45
+20531,Oaxaca,Santo Tomás Mazaltepec,añadido · conagua,Mazaltepec,"Oaxaca Centro, Oax.",25.0,106
+20532,Oaxaca,Santo Tomás Ocotepec,no está (sin estación adecuada),,,,
+20533,Oaxaca,Santo Tomás Tamazulapan,no está (sin estación adecuada),,,,
+20534,Oaxaca,San Vicente Coatlán,eliminado (sin clima confiable),,,,
+20535,Oaxaca,San Vicente Lachixío,eliminado (sin clima confiable),,,,
+20536,Oaxaca,San Vicente Nuñú,conagua,San Vicente Nuñú,"Teposcolula, Oax.",10.6,
+20537,Oaxaca,Silacayoápam,conagua,Silacayoápam,"Silacayoápam, Oax.",0.1,-76
+20538,Oaxaca,Sitio de Xitlapehua,conagua,Sitio de Xitlapehua,"Miahuatlán, Oax.",10.2,-44
+20539,Oaxaca,Soledad Etla,añadido · conagua,Matadamas,"Oaxaca Centro, Oax.",17.0,98
+20540,Oaxaca,Villa de Tamazulápam del Progreso,conagua,Tamazulapam Villa del Progreso,"Santiago Teotongo, Oax.",6.7,-47
+20541,Oaxaca,Tanetze de Zaragoza,eliminado (sin clima confiable),,,,
+20542,Oaxaca,Taniche,eliminado (sin clima confiable),,,,
+20543,Oaxaca,Tataltepec de Valdés,sin clima guardado,Tataltepec de Valdés,,,
+20544,Oaxaca,Teococuilco de Marcos Pérez,añadido · conagua,Teococuilco de Marcos Pérez,"Ixtepeji, Oax.",11.7,-130
+20545,Oaxaca,Teotitlán de Flores Magón,eliminado (sin clima confiable),,,,
+20546,Oaxaca,Teotitlán del Valle,conagua,Teotitlán del Valle,"San Antonio Cuajimoloyas, Oax.",14.0,
+20547,Oaxaca,Teotongo,añadido · conagua,Teotongo,"Santiago Teotongo, Oax.",4.4,113
+20548,Oaxaca,Tepelmeme Villa de Morelos,no está (sin estación adecuada),,,,
+20549,Oaxaca,"Heroica Villa Tezoatlán de Segura y Luna, Cuna de la Independencia de Oaxaca",conagua,Tezoatlán de Segura y Luna,"San Francisco Yosocuta, Oax.",10.3,
+20550,Oaxaca,San Jerónimo Tlacochahuaya,conagua,San Jerónimo Tlacochahuaya,"Aeropuerto Internacional de Oaxaca, Oax.",12.8,
+20551,Oaxaca,Tlacolula de Matamoros,conagua,Tlacolula de Matamoros,"San Antonio Cuajimoloyas, Oax.",14.0,
+20552,Oaxaca,Tlacotepec Plumas,añadido · conagua,Tlacotepec,"Santiago Teotongo, Oax.",22.3,72
+20553,Oaxaca,Tlalixtac de Cabrera,conagua,Tlalixtac de Cabrera,"Oaxaca Centro, Oax.",14.6,15
+20554,Oaxaca,Totontepec Villa de Morelos,eliminado (sin clima confiable),,,,
+20555,Oaxaca,Trinidad Zaachila,conagua,Trinidad Zaachila,"Aeropuerto Internacional de Oaxaca, Oax.",14.0,
+20556,Oaxaca,La Trinidad Vista Hermosa,añadido · conagua,La Trinidad,"Santiago Teotongo, Oax.",11.4,132
+20557,Oaxaca,Unión Hidalgo,conagua,Unión Hidalgo,"Chicapa, Oax.",12.4,-17
+20558,Oaxaca,Valerio Trujano,no está (sin estación adecuada),,,,
+20559,Oaxaca,San Juan Bautista Valle Nacional,conagua,San Juan Bautista Valle Nacional,"Valle Nacional, Oax.",0.4,15
+20560,Oaxaca,Villa Díaz Ordaz,conagua,Villa Díaz Ordaz,"San Antonio Cuajimoloyas, Oax.",13.7,
+20561,Oaxaca,Yaxe,eliminado (sin clima confiable),,,,
+20562,Oaxaca,Magdalena Yodocono de Porfirio Díaz,eliminado (sin clima confiable),,,,
+20563,Oaxaca,Yogana,eliminado (sin clima confiable),,,,
+20564,Oaxaca,Yutanduchi de Guerrero,no está (sin estación adecuada),,,,
+20565,Oaxaca,Villa de Zaachila,conagua,"Vicente Guerrero, Villa de Zaachila","Observatorio de Aeropuerto Oaxaca, Oax.",3.4,
+20566,Oaxaca,San Mateo Yucutindoo,no está (sin estación adecuada),,,,
+20567,Oaxaca,Zapotitlán Lagunas,añadido · conagua,Zapotitlán Lagunas,"Zapotitlán Lagunas, Oax.",0.1,16
+20568,Oaxaca,Zapotitlán Palmas,conagua,Zapotitlán Palmas,"Zapotitlán Palmas, Oax.",0.0,5
+20569,Oaxaca,Santa Inés de Zaragoza,no está (sin estación adecuada),,,,
+20570,Oaxaca,Zimatlán de Álvarez,conagua,Zimatlán de Álvarez,"Aeropuerto Internacional de Oaxaca, Oax.",14.0,
+21001,Puebla,Acajete,conagua,"Acajete, La Magdalena Tetela Morelos, San Agustín Tlaxco","Acajete, Pue.",5.8,
+21002,Puebla,Acateno,conagua,San José Acateno,"Martínez de la Torre, Ver.",18.3,78
+21003,Puebla,Acatlán,conagua,Acatlán de Osorio,"Piaxtla, Pue.",28.0,66
+21004,Puebla,Acatzingo,conagua,"Acatzingo, Actipan de Morelos, Villanueva","Tecamachalco, Pue.",11.9,
+21005,Puebla,Acteopan,conagua,Acteopan,"Tlacotepec, Mor.",6.7,-88
+21006,Puebla,Ahuacatlán,añadido · conagua,Tlacotepec (San Mateo),"Zaragoza, Pue.",13.3,
+21007,Puebla,Ahuatlán,conagua,Ahuatlán,"Coatzingo, Pue.",10.7,78
+21008,Puebla,Ahuazotepec,conagua,Ahuazotepec,"Ahuazotepec, Pue.",2.1,-125
+21009,Puebla,Ahuehuetitla,añadido · conagua,Ahuehuetitla,"Piaxtla, Pue.",5.0,82
+21010,Puebla,Ajalpan,eliminado (sin clima confiable),,,,
+21011,Puebla,Albino Zertuche,conagua,Acaxtlahuacán de Albino Zertuche,"Chila de la Sal, Pue.",10.7,
+21012,Puebla,Aljojuca,añadido · conagua,Aljojuca,"Ciudad Serdán, Pue.",15.5,-76
+21013,Puebla,Altepexi,eliminado (sin clima confiable),,,,
+21014,Puebla,Amixtlán,añadido · conagua,Amixtlán,"Tetela de Ocampo, Pue.",19.0,-45
+21015,Puebla,Amozoc,conagua,"Amozoc de Mota, Casa Blanca","Capulac, Pue.",5.4,-119
+21016,Puebla,Aquixtla,conagua,Aquixtla,"Chignahuapan, Pue.",13.3,
+21017,Puebla,Atempan,conagua,Atempan,"Zacapoaxtla, Pue.",9.3,42
+21018,Puebla,Atexcal,añadido · conagua,Atexcal,"Santiago Chazumba, Oax.",24.2,107
+21019,Puebla,Atlixco,conagua,"Atlixco, Ciudad de Atlixco, San Jerónimo Coyula","Atlixco, Pue.",2.2,
+21020,Puebla,Atoyatempan,conagua,Atoyatempan,"Ahuatepec, Pue.",3.9,-74
+21021,Puebla,Atzala,añadido · conagua,Atzala,"Chietla, Pue.",2.8,-21
+21022,Puebla,Atzitzihuacán,añadido · conagua,San Juan Amecac,"Tlacotepec, Mor.",6.7,-88
+21023,Puebla,Atzitzintla,conagua,Atzitzintla,"Ciudad Serdán, Pue.",17.8,132
+21024,Puebla,Axutla,eliminado (sin clima confiable),,,,
+21025,Puebla,Ayotoxco de Guerrero,conagua,Ayotoxco de Guerrero,"Rancho Nuevo, Pue.",2.4,16
+21026,Puebla,Calpan,conagua,San Andrés Calpan,"Huejotzingo, Pue.",0.7,110
+21027,Puebla,Caltepec,no está (sin estación adecuada),,,,
+21028,Puebla,Camocuautla,añadido · conagua,Camocuautla,"Tetela de Ocampo, Pue.",19.0,-45
+21029,Puebla,Caxhuacan,conagua,Caxhuacán,"Cuetzalan del Progreso, Pue.",10.0,-56
+21030,Puebla,Coatepec,no está (sin estación adecuada),,,,
+21031,Puebla,Coatzingo,conagua,Coatzingo,"Coatzingo, Pue.",0.8,-22
+21032,Puebla,Cohetzala,no está (sin estación adecuada),,,,
+21033,Puebla,Cohuecan,añadido · conagua,Los Reyes Teolco,"Tlacotepec, Mor.",10.1,-41
+21034,Puebla,Coronango,open-meteo,"Coronango, San Antonio Mihuacán, San Francisco Ocotlán",,,
+21035,Puebla,Coxcatlán,eliminado (sin clima confiable),,,,
+21036,Puebla,Coyomeapan,añadido · conagua,Tlixco,"Zoquitlán, Pue.",0.7,38
+21037,Puebla,Coyotepec,no está (sin estación adecuada),,,,
+21038,Puebla,Cuapiaxtla de Madero,conagua,Cuapiaxtla de Madero,"Tecamachalco, Pue.",9.5,
+21039,Puebla,Cuautempan,conagua,Cuautempan,"Tepango de Rodríguez, Pue.",11.6,-13
+21040,Puebla,Cuautinchán,añadido · conagua,San Jerónimo Almoloya,"Cemex, Pue.",8.8,-38
+21041,Puebla,Cuautlancingo,open-meteo,"Almecatla, Cuautlancingo, Sanctorum",,,
+21042,Puebla,Cuayuca de Andrade,añadido · conagua,San Pedro Cuayuca,"Coatzingo, Pue.",14.7,18
+21043,Puebla,Cuetzalan del Progreso,eliminado (sin clima confiable),,,,
+21044,Puebla,Cuyoaco,añadido · conagua,San Andrés Payuca,"Tepeyahualco, Pue.",13.8,-94
+21045,Puebla,Chalchicomula de Sesma,conagua,Ciudad Serdán,"Ciudad Serdán, Pue.",0.5,-13
+21046,Puebla,Chapulco,eliminado (sin clima confiable),,,,
+21047,Puebla,Chiautla,conagua,"Chiautla de Tapia, Ciudad de Chiautla de Tapia","Chietla, Pue.",24.1,-95
+21048,Puebla,Chiautzingo,conagua,San Lorenzo Chiautzingo,"Huejotzingo, Pue.",11.5,55
+21049,Puebla,Chiconcuautla,añadido · conagua,Chiconcuautla,"Zaragoza, Pue.",14.5,
+21050,Puebla,Chichiquila,no está (sin estación adecuada),,,,
+21051,Puebla,Chietla,conagua,"Atencingo, Chietla","Chietla, Pue.",2.8,-21
+21052,Puebla,Chigmecatitlán,eliminado (sin clima confiable),,,,
+21053,Puebla,Chignahuapan,conagua,Chignahuapan,"Chignahuapan, Pue.",10.8,
+21054,Puebla,Chignautla,conagua,Chinautla,"Teziutlán, Pue.",0.2,-21
+21055,Puebla,Chila,conagua,Chila,"Huajuapan de León, Oax.",25.2,34
+21056,Puebla,Chila de la Sal,conagua,Chila de la Sal,"Chila de la Sal, Pue.",8.7,
+21057,Puebla,Honey,conagua,Honey,"Observatorio de Tulancingo, Hgo.",20.9,51
+21058,Puebla,Chilchotla,eliminado (sin clima confiable),,,,
+21059,Puebla,Chinantla,añadido · conagua,Chinantla,"Piaxtla, Pue.",0.2,-9
+21060,Puebla,Domingo Arenas,conagua,Domingo Arenas,"Huejotzingo, Pue.",0.7,110
+21061,Puebla,Eloxochitlán,no está (sin estación adecuada),,,,
+21062,Puebla,Epatlán,conagua,San Juan Epatlán,"Izúcar de Matamoros, Pue.",10.5,56
+21063,Puebla,Esperanza,conagua,Esperanza,"Ciudad Serdán, Pue.",10.6,-105
+21064,Puebla,Francisco Z. Mena,no está (sin estación adecuada),,,,
+21065,Puebla,General Felipe Ángeles,no está (sin estación adecuada),,,,
+21066,Puebla,Guadalupe,añadido · conagua,Guadalupe Santa Ana,"Piaxtla, Pue.",19.4,-15
+21067,Puebla,Guadalupe Victoria,conagua,Guadalupe Victoria,"Zalayeta, Ver.",14.5,95
+21068,Puebla,Hermenegildo Galeana,añadido · conagua,Bienvenido,"Zaragoza, Pue.",11.2,
+21069,Puebla,Huaquechula,conagua,Huaquechula,"Huaquechula, Pue.",0.5,-27
+21070,Puebla,Huatlatlauca,conagua,Huatlatlauca,"San Miguel Canoa, Pue.",20.4,-147
+21071,Puebla,Huauchinango,conagua,Huauchinango,"Huauchinango, Pue.",0.5,-6
+21072,Puebla,Huehuetla,conagua,Huehuetla,"Cuetzalan del Progreso, Pue.",10.0,-56
+21073,Puebla,Huehuetlán el Chico,conagua,Huehuetlan el Chico,"Teotlalco, Pue.",12.7,-15
+21074,Puebla,Huejotzingo,conagua,"Huejotzingo, Santa Ana Xalmimilulco","Huejotzingo, Pue.",17.2,-73
+21075,Puebla,Hueyapan,eliminado (sin clima confiable),,,,
+21076,Puebla,Hueytamalco,eliminado (sin clima confiable),,,,
+21077,Puebla,Hueytlalpan,no está (sin estación adecuada),,,,
+21078,Puebla,Huitzilan de Serdán,eliminado (sin clima confiable),,,,
+21079,Puebla,Huitziltepec,conagua,Santa Clara Huitziltepec,"Ahuatepec, Pue.",3.9,-74
+21080,Puebla,Atlequizayan,eliminado (sin clima confiable),,,,
+21081,Puebla,Ixcamilpa de Guerrero,eliminado (sin clima confiable),,,,
+21082,Puebla,Ixcaquixtla,no está (sin estación adecuada),,,,
+21083,Puebla,Ixtacamaxtitlán,eliminado (sin clima confiable),,,,
+21084,Puebla,Ixtepec,eliminado (sin clima confiable),,,,
+21085,Puebla,Izúcar de Matamoros,conagua,Izúcar de Matamoros,"Izúcar de Matamoros, Pue.",1.1,-5
+21086,Puebla,Jalpan,añadido · conagua,Apapantilla,"Apapantilla, Pue.",0.4,-47
+21087,Puebla,Jolalpan,conagua,Jolalpan,"Teotlalco, Pue.",15.8,-96
+21088,Puebla,Jonotla,eliminado (sin clima confiable),,,,
+21089,Puebla,Jopala,añadido · conagua,Chicontla,"Zaragoza, Pue.",7.3,
+21090,Puebla,Juan C. Bonilla,open-meteo,"Cuanalá, Santa María Zacatepec",,,
+21091,Puebla,Juan Galindo,eliminado (sin clima confiable),,,,
+21092,Puebla,Juan N. Méndez,no está (sin estación adecuada),,,,
+21093,Puebla,Lafragua,conagua,Saltillo,"Zalayeta, Ver.",14.5,95
+21094,Puebla,Libres,conagua,Libres,"Ixtacamaxtitlán, Pue.",18.2,-78
+21095,Puebla,La Magdalena Tlatlauquitepec,añadido · conagua,La Magdalena Tlatlauquitepec,"San Miguel Canoa, Pue.",20.2,-103
+21096,Puebla,Mazapiltepec de Juárez,conagua,Mazapiltepec,"Cuapiaxtla, Tlax.",23.3,-133
+21097,Puebla,Mixtla,conagua,Mixtla,"Cemex, Pue.",9.5,-68
+21098,Puebla,Molcaxac,añadido · conagua,Santa Cruz Huitziltepec,"San Miguel Canoa, Pue.",3.6,130
+21099,Puebla,Cañada Morelos,conagua,Morelos Cañada,"Tehuacán, Pue.",24.6,-119
+21100,Puebla,Naupan,conagua,Naupan,"Huauchinango, Pue.",0.5,-6
+21101,Puebla,Nauzontla,añadido · conagua,Nauzontla,"Tepango de Rodríguez, Pue.",20.4,-93
+21102,Puebla,Nealtican,conagua,Nealtican,"Huejotzingo, Pue.",6.5,-81
+21103,Puebla,Nicolás Bravo,no está (sin estación adecuada),,,,
+21104,Puebla,Nopalucan,conagua,"El Rincón Citlaltépetl, Nopalucán, Santa María Ixtiyucán","Cuapiaxtla, Tlax.",8.6,-83
+21105,Puebla,Ocotepec,añadido · conagua,Guadalupe Victoria,"Ixtacamaxtitlán, Pue.",17.7,-36
+21106,Puebla,Ocoyucan,conagua,Chalchihuapan,"Mayorazgo 21 Poniente, Pue.",5.2,15
+21107,Puebla,Olintla,añadido · conagua,Olintla,"Zaragoza, Pue.",11.2,
+21108,Puebla,Oriental,conagua,"Oriental, Zacatepec","Quimixtlán, Pue.",9.0,
+21109,Puebla,Pahuatlán,conagua,Pahuatlán de Valle,"Tlaxco, Pue.",18.4,2
+21110,Puebla,Palmar de Bravo,conagua,Xaltepec,"Tecamachalco, Pue.",12.3,
+21111,Puebla,Pantepec,añadido · conagua,Mecapalapa,"Apapantilla, Pue.",13.4,-69
+21112,Puebla,Petlalcingo,conagua,Petlalcingo,"Acatlán de Osorio, Pue.",25.6,-55
+21113,Puebla,Piaxtla,añadido · conagua,Piaxtla,"Piaxtla, Pue.",0.2,-9
+21114,Puebla,Puebla,open-meteo,"Chautla, La Resurrección, Puebla",,,
+21115,Puebla,Quecholac,conagua,"Palmarito Tochapan, Quecholac","Tecamachalco, Pue.",12.3,
+21116,Puebla,Quimixtlán,no está (sin estación adecuada),,,,
+21117,Puebla,Rafael Lara Grajales,conagua,Grajales,"Cuapiaxtla, Tlax.",8.6,-83
+21118,Puebla,Los Reyes de Juárez,conagua,Los Reyes de Juárez,"Tecamachalco, Pue.",9.5,
+21119,Puebla,San Andrés Cholula,open-meteo,"San Andrés Cholula, San Bernardino Tlaxcalancingo",,,
+21120,Puebla,San Antonio Cañada,no está (sin estación adecuada),,,,
+21121,Puebla,San Diego la Mesa Tochimiltzingo,no está (sin estación adecuada),,,,
+21122,Puebla,San Felipe Teotlalcingo,conagua,Teotlaltzingo,"Huejotzingo, Pue.",11.5,55
+21123,Puebla,San Felipe Tepatlán,añadido · conagua,Altica,"Zaragoza, Pue.",13.3,
+21124,Puebla,San Gabriel Chilac,eliminado (sin clima confiable),,,,
+21125,Puebla,San Gregorio Atzompa,conagua,San Gregorio Atzompa,"Mayorazgo 21 Poniente, Pue.",5.2,15
+21126,Puebla,San Jerónimo Tecuanipan,añadido · conagua,Tecuanipan,"Huejotzingo, Pue.",6.5,-81
+21127,Puebla,San Jerónimo Xayacatlán,conagua,San Jerónimo Xayacatlán,"Acatlán de Osorio, Pue.",16.3,-126
+21128,Puebla,San José Chiapa,conagua,San José Chiapa,"Cuapiaxtla, Tlax.",8.6,-83
+21129,Puebla,San José Miahuatlán,eliminado (sin clima confiable),,,,
+21130,Puebla,San Juan Atenco,añadido · conagua,San Juan Atenco,"Ciudad Serdán, Pue.",15.5,-76
+21131,Puebla,San Juan Atzompa,conagua,San Juan Atzompa,"San Miguel Canoa, Pue.",12.1,-75
+21132,Puebla,San Martín Texmelucan,open-meteo,"Moyotzingo, San Juan Tuxco, San Martin Texmelucan de Labastida",,,
+21133,Puebla,San Martín Totoltepec,conagua,Totoltepec,"Izúcar de Matamoros, Pue.",20.1,130
+21134,Puebla,San Matías Tlalancaleca,conagua,San Matias Tlalancaleca,"San Martín Texmelucan, Pue.",8.8,29
+21135,Puebla,San Miguel Ixitlán,conagua,San Miguel Ixitlán,"Huajuapan de León, Oax.",21.6,112
+21136,Puebla,San Miguel Xoxtla,conagua,San Miguel Xoxtla,"Zacatelco, Tlax.",8.9,-12
+21137,Puebla,San Nicolás Buenos Aires,añadido · conagua,San Nicolas Buenos Aires,"Quimixtlán, Pue.",11.7,
+21138,Puebla,San Nicolás de los Ranchos,conagua,San Nicolás de los Ranchos,"Huejotzingo, Pue.",0.7,110
+21139,Puebla,San Pablo Anicano,añadido · conagua,San Pablo Anicano,"Piaxtla, Pue.",19.4,-15
+21140,Puebla,San Pedro Cholula,open-meteo,"Cholula, Santiago Momoxpan, Zacapechpan",,,
+21141,Puebla,San Pedro Yeloixtlahuaca,añadido · conagua,San Pedro Yeloixtlahuacan,"Piaxtla, Pue.",19.4,-15
+21142,Puebla,San Salvador el Seco,conagua,"San Salvador El Seco, Santa Maria Coatepec","Quimixtlán, Pue.",13.2,
+21143,Puebla,San Salvador el Verde,conagua,"San Lucas el Grande, San Salvador el Verde","San Martín Texmelucan, Pue.",8.8,29
+21144,Puebla,San Salvador Huixcolotla,conagua,Huixcolotla,"Tecamachalco, Pue.",9.5,
+21145,Puebla,San Sebastián Tlacotepec,añadido · conagua,Tlacotepec,"Tlacotepec de Díaz, Pue.",0.2,2
+21146,Puebla,Santa Catarina Tlaltempan,eliminado (sin clima confiable),,,,
+21147,Puebla,Santa Inés Ahuatempan,no está (sin estación adecuada),,,,
+21148,Puebla,Santa Isabel Cholula,añadido · conagua,San Pablo Ahuatempa,"Huejotzingo, Pue.",6.5,-81
+21149,Puebla,Santiago Miahuatlán,open-meteo,Miahuatlán,,,
+21150,Puebla,Huehuetlán el Grande,conagua,Santo Domingo Huehuetlán,"Izúcar de Matamoros, Pue.",29.8,63
+21151,Puebla,Santo Tomás Hueyotlipan,conagua,Hueyotlipan,"Cemex, Pue.",9.5,-68
+21152,Puebla,Soltepec,conagua,Soltepec,"Cuapiaxtla, Tlax.",23.3,-133
+21153,Puebla,Tecali de Herrera,conagua,Tecali,"Cemex, Pue.",8.8,-38
+21154,Puebla,Tecamachalco,conagua,"Santiago Alseseca, Tecamachalco, Tlaixpan","Tecamachalco, Pue.",2.1,
+21155,Puebla,Tecomatlán,añadido · conagua,Tecomatlán,"Xochihuehuetlán, Gro.",29.4,-97
+21156,Puebla,Tehuacán,open-meteo,Tehuacán,,,
+21157,Puebla,Tehuitzingo,conagua,Tehuitzingo,"Piaxtla, Pue.",14.7,-45
+21158,Puebla,Tenampulco,conagua,Tenampulco,"Rancho Nuevo, Pue.",6.0,-55
+21159,Puebla,Teopantlán,conagua,Teopantlán,"Izúcar de Matamoros, Pue.",20.1,130
+21160,Puebla,Teotlalco,conagua,Teotlalco,"Teotlalco, Pue.",6.1,60
+21161,Puebla,Tepanco de López,eliminado (sin clima confiable),,,,
+21162,Puebla,Tepango de Rodríguez,añadido · conagua,Tepango,"Tetela de Ocampo, Pue.",19.0,-45
+21163,Puebla,Tepatlaxco de Hidalgo,añadido · conagua,Santa Cruz (Colonia Tetel),"Acajete, Pue.",5.8,
+21164,Puebla,Tepeaca,conagua,"San Hipólito, Santiago Acatlán, Tepeaca","Cemex, Pue.",6.2,19
+21165,Puebla,Tepemaxalco,añadido · conagua,San Felipe Tepemaxalco,"Tlacotepec, Mor.",15.2,99
+21166,Puebla,Tepeojuma,conagua,Tepeojuma,"Huaquechula, Pue.",11.2,-130
+21167,Puebla,Tepetzintla,conagua,Tepetzintla,"Tetela de Ocampo, Pue.",19.0,-45
+21168,Puebla,Tepexco,añadido · conagua,Calmeca,"Izúcar de Matamoros, Pue.",9.1,-59
+21169,Puebla,Tepexi de Rodríguez,añadido · conagua,Tepexi,"San Miguel Canoa, Pue.",17.2,-1
+21170,Puebla,Tepeyahualco,añadido · conagua,Alchichica,"Zalayeta, Ver.",2.3,-15
+21171,Puebla,Tepeyahualco de Cuauhtémoc,conagua,Tepeyahualco,"Ahuatepec, Pue.",3.9,-74
+21172,Puebla,Tetela de Ocampo,conagua,Tetela de Ocampo,"Tetela de Ocampo, Pue.",1.3,3
+21173,Puebla,Teteles de Ávila Castillo,añadido · conagua,Teteles de Avila Castillo,"Zacapoaxtla, Pue.",9.4,17
+21174,Puebla,Teziutlán,conagua,Teziutlan,"Teziutlán, Pue.",0.2,-21
+21175,Puebla,Tianguismanalco,conagua,Tianguismanalco,"Huejotzingo, Pue.",6.5,-81
+21176,Puebla,Tilapa,conagua,Tilapa,"Izúcar de Matamoros, Pue.",9.1,-59
+21177,Puebla,Tlacotepec de Benito Juárez,conagua,Tlacotepec,"Ahuatepec, Pue.",28.9,-82
+21178,Puebla,Tlacuilotepec,conagua,Tlacuilotepec,"Xicotepec de Juárez, Pue.",12.8,135
+21179,Puebla,Tlachichuca,conagua,Tlachichuca,"Ciudad Serdán, Pue.",14.4,55
+21180,Puebla,Tlahuapan,conagua,Santa Rita Tlahuapan,"Santa Rita Tlahuapan, Pue.",0.6,-10
+21181,Puebla,Tlaltenango,conagua,Tlaltenango,"Zacatelco, Tlax.",8.9,-12
+21182,Puebla,Tlanepantla,conagua,Tlanepantla,"Cemex, Pue.",9.5,-68
+21183,Puebla,Tlaola,añadido · conagua,Xaltepuxtla,"Zaragoza, Pue.",14.5,
+21184,Puebla,Tlapacoya,añadido · conagua,Tlamaya Grande,"Zaragoza, Pue.",13.3,
+21185,Puebla,Tlapanalá,conagua,Tlapanalá,"Izúcar de Matamoros, Pue.",10.5,117
+21186,Puebla,Tlatlauquitepec,conagua,"Ciudad de Tlatlauquitepec, Tlatlauquitepec","Zacapoaxtla, Pue.",9.3,42
+21187,Puebla,Tlaxco,eliminado (sin clima confiable),,,,
+21188,Puebla,Tochimilco,conagua,Tochimilco,"Hueyapan, Mor.",13.3,-74
+21189,Puebla,Tochtepec,conagua,"San Martín Caltenco, Tochtepec","Tecamachalco, Pue.",8.6,
+21190,Puebla,Totoltepec de Guerrero,conagua,Totoltepec de Guerrero,"Acatlán de Osorio, Pue.",16.3,-126
+21191,Puebla,Tulcingo,conagua,Tulcingo de Valle,"Xochihuehuetlán, Gro.",14.2,83
+21192,Puebla,Tuzamapan de Galeana,conagua,Tuzamapan,"Cuetzalan del Progreso, Pue.",10.0,-56
+21193,Puebla,Tzicatlacoyan,añadido · conagua,San Antonio Juárez,"Ahuatepec, Pue.",9.9,55
+21194,Puebla,Venustiano Carranza,conagua,"Venustiano Carranza, Villa Lázaro Cárdenas","Apapantilla, Pue.",18.3,76
+21195,Puebla,Vicente Guerrero,no está (sin estación adecuada),,,,
+21196,Puebla,Xayacatlán de Bravo,conagua,Xayacatlán de Bravo,"Piaxtla, Pue.",28.0,66
+21197,Puebla,Xicotepec,conagua,"Villa Avila Camacho, Xicotepec de Juárez","Xicotepec de Juárez, Pue.",0.5,-1
+21198,Puebla,Xicotlán,conagua,Xicotlán,"Chila de la Sal, Pue.",8.7,
+21199,Puebla,Xiutetelco,conagua,San Juan Xiutetelco,"Teziutlán, Pue.",5.5,-75
+21200,Puebla,Xochiapulco,no está (sin estación adecuada),,,,
+21201,Puebla,Xochiltepec,conagua,Xochiltepec,"Izúcar de Matamoros, Pue.",20.1,130
+21202,Puebla,Xochitlán de Vicente Suárez,añadido · conagua,Zoatecpan,"Zacapoaxtla, Pue.",1.5,-61
+21203,Puebla,Xochitlán Todos Santos,conagua,Xochitlan Todos Santos,"Ahuatepec, Pue.",21.3,-118
+21204,Puebla,Yaonáhuac,añadido · conagua,Yaonahuac,"Zacapoaxtla, Pue.",9.4,17
+21205,Puebla,Yehualtepec,conagua,"San Gabriel Tetzoyocán, Yehualtepec","Tecamachalco, Pue.",6.1,
+21206,Puebla,Zacapala,eliminado (sin clima confiable),,,,
+21207,Puebla,Zacapoaxtla,conagua,Zacapoaxtla,"Zacapoaxtla, Pue.",1.5,-61
+21208,Puebla,Zacatlán,open-meteo,Zacatlán,,,
+21209,Puebla,Zapotitlán,conagua,Zapotitlán,Tehuacán Pue.,12.7,
+21210,Puebla,Zapotitlán de Méndez,no está (sin estación adecuada),,,,
+21211,Puebla,Zaragoza,eliminado (sin clima confiable),,,,
+21212,Puebla,Zautla,conagua,Zautla,"Zacapoaxtla, Pue.",21.5,103
+21213,Puebla,Zihuateutla,añadido · conagua,La Unión,"Zaragoza, Pue.",10.1,
+21214,Puebla,Zinacatepec,eliminado (sin clima confiable),,,,
+21215,Puebla,Zongozotla,eliminado (sin clima confiable),,,,
+21216,Puebla,Zoquiapan,eliminado (sin clima confiable),,,,
+21217,Puebla,Zoquitlán,conagua,Zoquitlán,"Zoquitlán, Pue.",0.7,38
+22001,Querétaro,Amealco de Bonfil,eliminado (sin clima confiable),,,,
+22002,Querétaro,Pinal de Amoles,eliminado (sin clima confiable),,,,
+22003,Querétaro,Arroyo Seco,conagua,Arroyo Seco,"Pedro Montoya, S.L.P.",18.6,79
+22004,Querétaro,Cadereyta de Montes,eliminado (sin clima confiable),,,,
+22005,Querétaro,Colón,eliminado (sin clima confiable),,,,
+22006,Querétaro,Corregidora,open-meteo,"El Pueblito, La Negreta, San José de los Olvera",,,
+22007,Querétaro,Ezequiel Montes,conagua,Villa Progreso,"Huichapan, Hgo.",30.0,-76
+22008,Querétaro,Huimilpan,no está (sin estación adecuada),,,,
+22009,Querétaro,Jalpan de Serra,conagua,Jalpan de Serra,Presa Jalpan Qro.,3.3,-16
+22010,Querétaro,Landa de Matamoros,eliminado (sin clima confiable),,,,
+22011,Querétaro,El Marqués,conagua,"Amazcala, La Cañada, La Pradera","Observatorio de Querétaro, Qro.",6.2,37
+22012,Querétaro,Pedro Escobedo,conagua,"El Sauz, La Lira, Pedro Escobedo","Observatorio de Querétaro, Qro.",24.4,68
+22013,Querétaro,Peñamiller,eliminado (sin clima confiable),,,,
+22014,Querétaro,Querétaro,open-meteo,"Juriquilla, San José el Alto, San Pedro Mártir",,,
+22015,Querétaro,San Joaquín,eliminado (sin clima confiable),,,,
+22016,Querétaro,San Juan del Río,eliminado (sin clima confiable),,,,
+22017,Querétaro,Tequisquiapan,eliminado (sin clima confiable),,,,
+22018,Querétaro,Tolimán,eliminado (sin clima confiable),,,,
+23001,Quintana Roo,Cozumel,open-meteo,Cozumel,,,
+23002,Quintana Roo,Felipe Carrillo Puerto,open-meteo,Felipe Carrillo Puerto,,,
+23003,Quintana Roo,Isla Mujeres,open-meteo,Isla Mujeres,,,
+23004,Quintana Roo,Othón P. Blanco,open-meteo,"Bacalar, Calderitas, Chetumal",,,
+23005,Quintana Roo,Benito Juárez,open-meteo,"Alfredo V. Bonfil, Cancún",,,
+23006,Quintana Roo,José María Morelos,open-meteo,José María Morelos,,,
+23007,Quintana Roo,Lázaro Cárdenas,conagua,Kantunilkín,"Kantunilkín, Q. Roo",0.0,0
+23008,Quintana Roo,Playa del Carmen,open-meteo,"Playa del Carmen, Puerto Aventuras",,,
+23009,Quintana Roo,Tulum,open-meteo,Tulum,,,
+23010,Quintana Roo,Bacalar,no está (sin estación adecuada),,,,
+23011,Quintana Roo,Puerto Morelos,no está (sin estación adecuada),,,,
+24001,San Luis Potosí,Ahualulco del Sonido 13,conagua,Ahualulco del Sonido Trece,"Soledad Graciano, S.L.P.",28.1,-49
+24002,San Luis Potosí,Alaquines,eliminado (sin clima confiable),,,,
+24003,San Luis Potosí,Aquismón,conagua,Aquismón,"Requetemu, S.L.P.",22.6,128
+24004,San Luis Potosí,Armadillo de los Infante,eliminado (sin clima confiable),,,,
+24005,San Luis Potosí,Cárdenas,eliminado (sin clima confiable),,,,
+24006,San Luis Potosí,Catorce,no está (sin estación adecuada),,,,
+24007,San Luis Potosí,Cedral,conagua,Cedral,"Matehuala, S.L.P.",20.1,145
+24008,San Luis Potosí,Cerritos,sin clima guardado,Cerritos,,,
+24009,San Luis Potosí,Cerro de San Pedro,conagua,Cerro de San Pedro,"Soledad Graciano, S.L.P.",20.6,137
+24010,San Luis Potosí,Ciudad del Maíz,eliminado (sin clima confiable),,,,
+24011,San Luis Potosí,Ciudad Fernández,conagua,Ciudad Fernández,"Observatorio de Río Verde, S.L.P.",0.7,3
+24012,San Luis Potosí,Tancanhuitz,conagua,Tancanhuitz,"Requetemu, S.L.P.",22.6,128
+24013,San Luis Potosí,Ciudad Valles,conagua,Ciudad Valles,"Ciudad Valles, S.L.P.",1.6,3
+24014,San Luis Potosí,Coxcatlán,conagua,Coxcatlán,"Requetemu, S.L.P.",13.0,53
+24015,San Luis Potosí,Charcas,sin clima guardado,Charcas,,,
+24016,San Luis Potosí,Ebano,conagua,"Ponciano Arriaga, Ébano","Tamesí, Tamps.",22.2,50
+24017,San Luis Potosí,Guadalcázar,sin clima guardado,Guadalcázar,,,
+24018,San Luis Potosí,Huehuetlán,conagua,Huehuetlán,"Observatorio de Matlapa, S.L.P.",27.2,-80
+24019,San Luis Potosí,Lagunillas,conagua,Lagunillas,"Pedro Montoya, S.L.P.",28.2,13
+24020,San Luis Potosí,Matehuala,conagua,Matehuala,"Matehuala, S.L.P.",1.0,21
+24021,San Luis Potosí,Mexquitic de Carmona,conagua,Mexquitic de Carmona,"Soledad Graciano, S.L.P.",13.8,125
+24022,San Luis Potosí,Moctezuma,sin clima guardado,Moctezuma,,,
+24023,San Luis Potosí,Rayón,conagua,Rayón,"Pedro Montoya, S.L.P.",28.9,53
+24024,San Luis Potosí,Rioverde,conagua,Rioverde,"Observatorio de Río Verde, S.L.P.",0.7,3
+24025,San Luis Potosí,Salinas,conagua,Salinas de Hidalgo,"Villa González Ortega, Zac.",24.0,-78
+24026,San Luis Potosí,San Antonio,conagua,San Antonio,"Requetemu, S.L.P.",19.5,133
+24027,San Luis Potosí,San Ciro de Acosta,conagua,San Ciro de Acosta,"Pedro Montoya, S.L.P.",1.2,-10
+24028,San Luis Potosí,San Luis Potosí,open-meteo,"La Pila, San Luis Potosí",,,
+24029,San Luis Potosí,San Martín Chalchicuautla,conagua,San Martín Chalchicuautla,"Temamatla, S.L.P.",18.7,1
+24030,San Luis Potosí,San Nicolás Tolentino,eliminado (sin clima confiable),,,,
+24031,San Luis Potosí,Santa Catarina,eliminado (sin clima confiable),,,,
+24032,San Luis Potosí,Santa María del Río,conagua,Santa María del Río,Gogorrón S.L.P.,24.8,-84
+24033,San Luis Potosí,Santo Domingo,sin clima guardado,Santo Domingo,,,
+24034,San Luis Potosí,San Vicente Tancuayalab,añadido · conagua,San Francisco Cuayalab,"San Vicente, S.L.P.",11.3,139
+24035,San Luis Potosí,Soledad de Graciano Sánchez,open-meteo,Soledad de Graciano Sánchez,,,
+24036,San Luis Potosí,Tamasopo,añadido · conagua,Tamasopo,"Gallinas, S.L.P.",16.0,47
+24037,San Luis Potosí,Tamazunchale,conagua,Tamazunchale,"Temamatla, S.L.P.",3.8,-56
+24038,San Luis Potosí,Tampacán,conagua,Tampacán,"Temamatla, S.L.P.",18.7,1
+24039,San Luis Potosí,Tampamolón Corona,conagua,Tampamolón Corona,"Requetemu, S.L.P.",16.5,11
+24040,San Luis Potosí,Tamuín,conagua,Tamuín,"Las Adjuntas, S.L.P.",23.1,9
+24041,San Luis Potosí,Tanlajás,conagua,Tanlajás,"Ballesmi, S.L.P.",11.8,84
+24042,San Luis Potosí,Tanquián de Escobedo,conagua,Tanquián de Escobedo,"San Vicente, S.L.P.",10.8,14
+24043,San Luis Potosí,Tierra Nueva,eliminado (sin clima confiable),,,,
+24044,San Luis Potosí,Vanegas,eliminado (sin clima confiable),,,,
+24045,San Luis Potosí,Venado,sin clima guardado,Venado,,,
+24046,San Luis Potosí,Villa de Arriaga,conagua,Villa de Arriaga,"Pino Suárez, Zac.",23.3,50
+24047,San Luis Potosí,Villa de Guadalupe,eliminado (sin clima confiable),,,,
+24048,San Luis Potosí,Villa de la Paz,conagua,Villa de la Paz,"Matehuala, S.L.P.",5.7,
+24049,San Luis Potosí,Villa de Ramos,eliminado (sin clima confiable),,,,
+24050,San Luis Potosí,Villa de Reyes,conagua,Villa de Reyes,Gogorrón S.L.P.,4.3,-5
+24051,San Luis Potosí,Villa Hidalgo,eliminado (sin clima confiable),,,,
+24052,San Luis Potosí,Villa Juárez,sin clima guardado,Villa Juárez,,,
+24053,San Luis Potosí,Axtla de Terrazas,conagua,Axtla de Terrazas,"Requetemu, S.L.P.",2.1,-2
+24054,San Luis Potosí,Xilitla,eliminado (sin clima confiable),,,,
+24055,San Luis Potosí,Zaragoza,eliminado (sin clima confiable),,,,
+24056,San Luis Potosí,Villa de Arista,eliminado (sin clima confiable),,,,
+24057,San Luis Potosí,Matlapa,conagua,Matlapa,"Temamatla, S.L.P.",3.8,-56
+24058,San Luis Potosí,El Naranjo,conagua,El Naranjo,"Naranjos, S.L.P.",1.0,-4
+24059,San Luis Potosí,Villa de Pozos,no está (sin estación adecuada),,,,
+25001,Sinaloa,Ahome,open-meteo,"Ahome, Higuera de Zaragoza, Los Mochis",,,
+25002,Sinaloa,Angostura,conagua,Angostura,"Guamúchil, Sin.",13.5,-16
+25003,Sinaloa,Badiraguato,conagua,Badiraguato,"Badiraguato, Sin.",3.5,27
+25004,Sinaloa,Concordia,conagua,Concordia,"Siqueros, Sin.",20.3,75
+25005,Sinaloa,Cosalá,conagua,Cosalá,"José López Portillo, Sin.",21.3,76
+25006,Sinaloa,Culiacán,open-meteo,"Adolfo López Mateos (El Tamarindo), Costa Rica, Culiacán",,,
+25007,Sinaloa,Choix,conagua,Choix,"Observatorio de Choix, Sin.",0.9,16
+25008,Sinaloa,Elota,conagua,La Cruz,"La Cruz, Sin.",0.9,4
+25009,Sinaloa,Escuinapa,conagua,Escuinapa de Hidalgo,"Las Tortugas, Sin.",29.1,-24
+25010,Sinaloa,El Fuerte,conagua,"Constancia, El Fuerte, Mochicahui","El Fuerte, Sin.",1.8,-1
+25011,Sinaloa,Guasave,conagua,"Adolfo Ruiz Cortines, Estación Bamoa, Gabriel Leyva Solano","Guasave, Sin.",13.4,
+25012,Sinaloa,Mazatlán,open-meteo,"Fraccionamiento los Ángeles, Mazatlán, Villa Unión",,,
+25013,Sinaloa,Mocorito,conagua,"Mocorito, Pericos","Estación Rancho Viejo, Sin.",7.5,-10
+25014,Sinaloa,Rosario,conagua,El Rosario,"Las Tortugas, Sin.",10.9,-32
+25015,Sinaloa,Salvador Alvarado,conagua,Guamúchil,"Guamúchil, Sin.",1.9,2
+25016,Sinaloa,San Ignacio,conagua,San Ignacio,"Ixpalino, Sin.",17.4,97
+25017,Sinaloa,Sinaloa,conagua,"Estación Naranjo, Sinaloa de Leyva","Guasave, Sin.",10.1,
+25018,Sinaloa,Navolato,conagua,"General Ángel Flores (La Palma), Licenciado Benito Juárez, Navolato","Observatorio de Culiacán, Sin.",29.8,-5
+25019,Sinaloa,Eldorado,no está (sin estación adecuada),,,,
+25020,Sinaloa,Juan José Ríos,no está (sin estación adecuada),,,,
+26001,Sonora,Aconchi,conagua,Aconchi,"Aconchi, Son.",0.2,1
+26002,Sonora,Agua Prieta,sin clima guardado,Agua Prieta,,,
+26003,Sonora,Álamos,eliminado (sin clima confiable),,,,
+26004,Sonora,Altar,conagua,Altar,"Observatorio de Altar, Son.",0.4,-7
+26005,Sonora,Arivechi,conagua,Arivechi,"Sahuaripa, Son. REMAS",16.8,65
+26006,Sonora,Arizpe,conagua,Arizpe,"Arizpe, Son.",0.2,1
+26007,Sonora,Atil,conagua,Átil,"Cuauhtémoc, Son.",7.2,-60
+26008,Sonora,Bacadéhuachi,eliminado (sin clima confiable),,,,
+26009,Sonora,Bacanora,conagua,Bacanora,"Plutarco Elías Calles, Son.",23.5,132
+26010,Sonora,Bacerac,conagua,Bacerac,"Bacerac, Son.",0.1,2
+26011,Sonora,Bacoachi,conagua,Bacoachi,"Bacanuchi, Son.",26.2,-6
+26012,Sonora,Bácum,conagua,"Bácum, Francisco Javier Mina","Ciudad Obregón, Son.",17.9,-19
+26013,Sonora,Banámichi,conagua,Banámichi,"Aconchi, Son.",20.4,75
+26014,Sonora,Baviácora,conagua,Baviácora,"Aconchi, Son.",13.8,-56
+26015,Sonora,Bavispe,conagua,Bavispe,"Bacerac, Son.",13.9,-38
+26016,Sonora,Benjamín Hill,conagua,Benjamín Hill,"Querobabi, Son.",15.9,57
+26017,Sonora,Caborca,conagua,Heroica Caborca,"Pitiquito, Son.",6.0,4
+26018,Sonora,Cajeme,open-meteo,"Ciudad Obregón, Cócorit, Esperanza",,,
+26019,Sonora,Cananea,conagua,Cananea,"Cananea, Son.",0.8,-25
+26020,Sonora,Carbó,eliminado (sin clima confiable),,,,
+26021,Sonora,La Colorada,conagua,La Colorada,"San José de Pimas, Son.",24.7,21
+26022,Sonora,Cucurpe,eliminado (sin clima confiable),,,,
+26023,Sonora,Cumpas,eliminado (sin clima confiable),,,,
+26024,Sonora,Divisaderos,conagua,Divisaderos,"Tepache, Son.",10.7,85
+26025,Sonora,Empalme,conagua,Empalme,"Observatorio de Empalme, Son.",1.7,1
+26026,Sonora,Etchojoa,conagua,"Bacobampo, Etchojoa","Navojoa, Son.",25.4,-30
+26027,Sonora,Fronteras,sin clima guardado,Fronteras,,,
+26028,Sonora,Granados,eliminado (sin clima confiable),,,,
+26029,Sonora,Guaymas,conagua,"Heroica Guaymas, Pótam, Vicam","Guaymas, Son.",5.9,
+26030,Sonora,Hermosillo,open-meteo,"Bahía de Kino, Hermosillo, Miguel Alemán (La Doce)",,,
+26031,Sonora,Huachinera,conagua,Huachinera,"Huachinera, Son.",0.1,9
+26032,Sonora,Huásabas,eliminado (sin clima confiable),,,,
+26033,Sonora,Huatabampo,conagua,Huatabampo,"Huatabampo, Son. REMAS",2.6,
+26034,Sonora,Huépac,conagua,Huépac,"Aconchi, Son.",9.9,15
+26035,Sonora,Imuris,conagua,Imuris,"Imuris, Son.",5.0,23
+26036,Sonora,Magdalena,conagua,Magdalena de Kino,"Imuris, Son.",16.6,-65
+26037,Sonora,Mazatán,conagua,Mazatán,"Mazatán, Son.",3.9,0
+26038,Sonora,Moctezuma,eliminado (sin clima confiable),,,,
+26039,Sonora,Naco,sin clima guardado,Naco,,,
+26040,Sonora,Nácori Chico,eliminado (sin clima confiable),,,,
+26041,Sonora,Nacozari de García,eliminado (sin clima confiable),,,,
+26042,Sonora,Navojoa,conagua,Navojoa,"Navojoa, Son.",0.1,-1
+26043,Sonora,Nogales,open-meteo,Nogales,,,
+26044,Sonora,Ónavas,eliminado (sin clima confiable),,,,
+26045,Sonora,Opodepe,eliminado (sin clima confiable),,,,
+26046,Sonora,Oquitoa,conagua,Oquitoa,"Observatorio de Altar, Son.",10.1,57
+26047,Sonora,Pitiquito,conagua,Pitiquito,"Pitiquito, Son.",4.9,34
+26048,Sonora,Puerto Peñasco,conagua,Puerto Peñasco,"Observatorio de Puerto Peñasco, Son.",4.1,
+26049,Sonora,Quiriego,conagua,Quiriego,"Tesocoma, Son.",15.9,-89
+26050,Sonora,Rayón,eliminado (sin clima confiable),,,,
+26051,Sonora,Rosario,añadido · conagua,Rosario,Rosario Tesopaco Son. REMAS,3.3,
+26052,Sonora,Sahuaripa,conagua,Sahuaripa,"Sahuaripa, Son. REMAS",5.8,3
+26053,Sonora,San Felipe de Jesús,conagua,San Felipe de Jesús,"Aconchi, Son.",9.9,15
+26054,Sonora,San Javier,eliminado (sin clima confiable),,,,
+26055,Sonora,San Luis Río Colorado,open-meteo,San Luis Río Colorado,,,
+26056,Sonora,San Miguel de Horcasitas,conagua,"Pesqueira, San Miguel de Horcasitas","El Cajón, Son.",18.6,-64
+26057,Sonora,San Pedro de la Cueva,eliminado (sin clima confiable),,,,
+26058,Sonora,Santa Ana,eliminado (sin clima confiable),,,,
+26059,Sonora,Santa Cruz,conagua,Santa Cruz,"Santa Cruz, Son. REMAS",0.6,
+26060,Sonora,Sáric,eliminado (sin clima confiable),,,,
+26061,Sonora,Soyopa,conagua,Soyopa,"Plutarco Elías Calles, Son.",23.7,-117
+26062,Sonora,Suaqui Grande,eliminado (sin clima confiable),,,,
+26063,Sonora,Tepache,conagua,Tepache,"Tepache, Son.",0.3,1
+26064,Sonora,Trincheras,conagua,Trincheras,"Santa Rosa 2, Son.",8.2,-53
+26065,Sonora,Tubutama,conagua,Tubutama,"Cuauhtémoc, Son.",5.2,29
+26066,Sonora,Ures,conagua,Ures municipality,"Ures, Son. REMAS",9.8,
+26067,Sonora,Villa Hidalgo,eliminado (sin clima confiable),,,,
+26068,Sonora,Villa Pesqueira,conagua,Villa Pesqueira,"Mátape, Son. REMAS",2.3,0
+26069,Sonora,Yécora,conagua,Yécora,"Yécora, Son.",0.0,2
+26070,Sonora,General Plutarco Elías Calles,conagua,Sonoyta,"Sonoyta, Son.",0.4,11
+26071,Sonora,Benito Juárez,conagua,Villa Juárez,"Block 1922, Son. REMAS",8.0,
+26072,Sonora,San Ignacio Río Muerto,conagua,San Ignacio Río Muerto,"Vícam, Son.",25.7,3
+27001,Tabasco,Balancán,eliminado (sin clima confiable),,,,
+27002,Tabasco,Cárdenas,conagua,"Cárdenas, Santa Rosalía","Cárdenas, Tab.",0.1,1
+27003,Tabasco,Centla,sin clima guardado,Frontera,,,
+27004,Tabasco,Centro,open-meteo,"Anacleto Canabal 2da. Sección, Huapinol, La Lima",,,
+27005,Tabasco,Comalcalco,conagua,"Aldama, Miguel Hidalgo, Tecolutilla","Paraíso, Tab.",13.7,
+27006,Tabasco,Cunduacán,conagua,Cunduacán,"Samaria, Tab.",13.3,-9
+27007,Tabasco,Emiliano Zapata,eliminado (sin clima confiable),,,,
+27008,Tabasco,Huimanguillo,conagua,"Huimanguillo, La Venta","Cárdenas, Tab.",18.5,6
+27009,Tabasco,Jalapa,conagua,"Jalapa, Río de Teapa","Pueblo Nuevo, Tab.",9.2,
+27010,Tabasco,Jalpa de Méndez,conagua,"Ayapa, Jalpa de Méndez","Samaria, Tab.",29.2,-11
+27011,Tabasco,Jonuta,conagua,Jonuta,"Palizada, Camp.",18.9,4
+27012,Tabasco,Macuspana,conagua,"Belén, Benito Juárez, La Curva","Macuspana, Tab.",0.8,4
+27013,Tabasco,Nacajuca,open-meteo,"Bosque de Saloya, La Selva, Nacajuca",,,
+27014,Tabasco,Paraíso,conagua,"Paraiso, Quintín Arauz","Paraíso, Tab.",12.4,
+27015,Tabasco,Tacotalpa,conagua,Tacotalpa,"Puyacatengo, Tab.",12.3,-27
+27016,Tabasco,Teapa,conagua,Teapa,"Puyacatengo, Tab.",1.6,30
+27017,Tabasco,Tenosique,conagua,Tenosique,"Boca del Cerro, Tab.",7.7,19
+28001,Tamaulipas,Abasolo,conagua,Abasolo,"Abasolo, Tamps.",1.8,-14
+28002,Tamaulipas,Aldama,eliminado (sin clima confiable),,,,
+28003,Tamaulipas,Altamira,conagua,"Altamira, Cuauhtémoc, Miramar","Bombas Altamira, Tamps.",3.9,1
+28004,Tamaulipas,Antiguo Morelos,añadido · conagua,Antiguo Morelos,"Ciudad Mante, Tamps.",23.9,113
+28005,Tamaulipas,Burgos,conagua,Burgos,"Méndez, Tamps.",28.7,81
+28006,Tamaulipas,Bustamante,eliminado (sin clima confiable),,,,
+28007,Tamaulipas,Camargo,conagua,Ciudad Camargo,"S J 2 18 Ciudad Díaz Ordaz, Tamps.",21.3,14
+28008,Tamaulipas,Casas,conagua,Casas,"Paso de Molina, Tamps.",0.9,10
+28009,Tamaulipas,Ciudad Madero,open-meteo,Ciudad Madero,,,
+28010,Tamaulipas,Cruillas,eliminado (sin clima confiable),,,,
+28011,Tamaulipas,Gómez Farías,conagua,Loma Alta,"Río Frío, Tamps.",4.6,20
+28012,Tamaulipas,González,conagua,González,"Magiscatzín Dos, Tamps.",28.8,41
+28013,Tamaulipas,Güémez,conagua,Güémez,"Corona, Tamps.",7.5,20
+28014,Tamaulipas,Guerrero,eliminado (sin clima confiable),,,,
+28015,Tamaulipas,Gustavo Díaz Ordaz,conagua,Ciudad Gustavo Díaz Ordaz,"S J 2 18 Ciudad Díaz Ordaz, Tamps.",0.7,5
+28016,Tamaulipas,Hidalgo,conagua,"Estación Santa Engracia, Guillermo Zúñiga, Hidalgo","Santa Engracia, Tamps.",8.3,
+28017,Tamaulipas,Jaumave,eliminado (sin clima confiable),,,,
+28018,Tamaulipas,Jiménez,conagua,Santander Jiménez,"Abasolo, Tamps.",19.3,43
+28019,Tamaulipas,Llera,conagua,Llera de Canales,"La Encantada, Tamps.",9.2,
+28020,Tamaulipas,Mainero,conagua,Villa Mainero,"Magueyes, Tamps.",6.6,47
+28021,Tamaulipas,El Mante,conagua,Ciudad Mante,"Ciudad Mante, Tamps.",1.2,-13
+28022,Tamaulipas,Matamoros,open-meteo,Heroica Matamoros,,,
+28023,Tamaulipas,Méndez,conagua,Méndez,"Méndez, Tamps.",0.1,-1
+28024,Tamaulipas,Mier,eliminado (sin clima confiable),,,,
+28025,Tamaulipas,Miguel Alemán,eliminado (sin clima confiable),,,,
+28026,Tamaulipas,Miquihuana,eliminado (sin clima confiable),,,,
+28027,Tamaulipas,Nuevo Laredo,open-meteo,"El Campanario y Oradel, Nuevo Laredo",,,
+28028,Tamaulipas,Nuevo Morelos,conagua,Nuevo Morelos,"Naranjos, S.L.P.",10.6,-25
+28029,Tamaulipas,Ocampo,eliminado (sin clima confiable),,,,
+28030,Tamaulipas,Padilla,conagua,Nueva Villa de Padilla,"Padilla, Tamps.",0.2,
+28031,Tamaulipas,Palmillas,eliminado (sin clima confiable),,,,
+28032,Tamaulipas,Reynosa,open-meteo,Reynosa,,,
+28033,Tamaulipas,Río Bravo,conagua,"Ciudad Río Bravo, Nuevo Progreso","S J 3 42 Reynosa, Tamps.",22.2,-43
+28034,Tamaulipas,San Carlos,eliminado (sin clima confiable),,,,
+28035,Tamaulipas,San Fernando,conagua,San Fernando,"San Fernando, Tamps.",1.0,-2
+28036,Tamaulipas,San Nicolás,sin clima guardado,San Nicolás,,,
+28037,Tamaulipas,Soto la Marina,conagua,Soto la Marina,"Observatorio de Soto la Marina, Tamps.",0.6,-1
+28038,Tamaulipas,Tampico,open-meteo,Tampico,,,
+28039,Tamaulipas,Tula,sin clima guardado,Ciudad Tula,,,
+28040,Tamaulipas,Valle Hermoso,conagua,Valle Hermoso,"Valle Hermoso, Tamps.",3.2,
+28041,Tamaulipas,Victoria,open-meteo,Ciudad Victoria,,,
+28042,Tamaulipas,Villagrán,conagua,Villagrán,"Magueyes, Tamps.",12.1,-50
+28043,Tamaulipas,Xicoténcatl,conagua,Xicoténcatl,"Sabinas, Tamps.",16.0,-5
+29001,Tlaxcala,Amaxac de Guerrero,conagua,Amaxac de Guerrero,"Observatorio de Tlaxcala, Tlax.",1.2,6
+29002,Tlaxcala,Apetatitlán de Antonio Carvajal,añadido · conagua,Belén Atzitzimititlán,"Observatorio de Tlaxcala, Tlax.",1.2,6
+29003,Tlaxcala,Atlangatepec,conagua,Atlangatepec,"San José Atlanga, Tlax.",9.1,-1
+29004,Tlaxcala,Atltzayanca,conagua,Altzayanca,"Cuapiaxtla, Tlax.",8.9,-13
+29005,Tlaxcala,Apizaco,conagua,"Apizaco, San Luis Apizaquito, Santa Anita Huiloac","San José Atlanga, Tlax.",20.3,-65
+29006,Tlaxcala,Calpulalpan,conagua,Calpulalpan,"Calpulalpan, Tlax.",0.7,5
+29007,Tlaxcala,El Carmen Tequexquitla,conagua,Villa de El Carmen Tequexquitla,"El Carmen Tequexquitla, Tlax.",1.0,13
+29008,Tlaxcala,Cuapiaxtla,conagua,Cuapiaxtla,"Cuapiaxtla, Tlax.",0.3,3
+29009,Tlaxcala,Cuaxomulco,conagua,Cuaxomulco,"San José Atlanga, Tlax.",20.3,-65
+29010,Tlaxcala,Chiautempan,conagua,Tlaxcala,"Observatorio de Tlaxcala, Tlax.",1.2,6
+29011,Tlaxcala,Muñoz de Domingo Arenas,conagua,Muñoz,"San José Atlanga, Tlax.",9.1,-1
+29012,Tlaxcala,Españita,conagua,Españita,"Calpulalpan, Tlax.",20.0,66
+29013,Tlaxcala,Huamantla,conagua,"Huamantla, Ignacio Zaragoza, San José Xicohténcatl","Huamantla, Tlax.",1.5,44
+29014,Tlaxcala,Hueyotlipan,conagua,Hueyotlipan,"San José Atlanga, Tlax.",18.1,91
+29015,Tlaxcala,Ixtacuixtla de Mariano Matamoros,open-meteo,Villa Mariano Matamoros,,,
+29016,Tlaxcala,Ixtenco,conagua,Ixtenco,"Huamantla, Tlax.",1.5,44
+29017,Tlaxcala,Mazatecochco de José María Morelos,conagua,Mazatecochco,"Zacatelco, Tlax.",0.5,8
+29018,Tlaxcala,Contla de Juan Cuamatzi,conagua,"Apetatitlán Antonio Carbajal, Contla","Observatorio de Tlaxcala, Tlax.",1.2,6
+29019,Tlaxcala,Tepetitla de Lardizábal,open-meteo,"Tepetitla, Villa Alta",,,
+29020,Tlaxcala,Sanctórum de Lázaro Cárdenas,conagua,Sanctórum,"Calpulalpan, Tlax.",10.7,136
+29021,Tlaxcala,Nanacamilpa de Mariano Arista,conagua,Ciudad de Nanacamilpa,"Calpulalpan, Tlax.",10.7,136
+29022,Tlaxcala,Acuamanala de Miguel Hidalgo,añadido · conagua,Acuamanala,"Zacatelco, Tlax.",0.5,8
+29023,Tlaxcala,Natívitas,añadido · conagua,Santiago Michac,"Zacatelco, Tlax.",8.9,-12
+29024,Tlaxcala,Panotla,conagua,Panotla,"Observatorio de Tlaxcala, Tlax.",2.6,0
+29025,Tlaxcala,San Pablo del Monte,conagua,"San Isidro Buen Suceso, Villa Vicente Guerrero","San Cristóbal Caleras, Pue.",5.8,
+29026,Tlaxcala,Santa Cruz Tlaxcala,conagua,"San Miguel Contla, Santa Cruz Tlaxcala","San José Atlanga, Tlax.",20.3,-65
+29027,Tlaxcala,Tenancingo,conagua,Tenancingo,"San Cristóbal Caleras, Pue.",5.8,
+29028,Tlaxcala,Teolocholco,conagua,Teolocholco,"Zacatelco, Tlax.",0.5,8
+29029,Tlaxcala,Tepeyanco,conagua,Tepeyanco,"Zacatelco, Tlax.",0.5,8
+29030,Tlaxcala,Terrenate,eliminado (sin clima confiable),,,,
+29031,Tlaxcala,Tetla de la Solidaridad,conagua,Tetla,"San José Atlanga, Tlax.",20.3,-65
+29032,Tlaxcala,Tetlatlahuca,conagua,Tetlatlahuca,"Zacatelco, Tlax.",8.9,-12
+29033,Tlaxcala,Tlaxcala,conagua,"Acuitlapilco, San Esteban Tizatlán, Santa Ana Chiautempan","Observatorio de Tlaxcala, Tlax.",1.2,6
+29034,Tlaxcala,Tlaxco,conagua,Tlaxco,"San José Atlanga, Tlax.",10.6,61
+29035,Tlaxcala,Tocatlán,conagua,Tocatlán,"Huamantla, Tlax.",17.5,42
+29036,Tlaxcala,Totolac,conagua,Totolac,"Observatorio de Tlaxcala, Tlax.",2.6,0
+29037,Tlaxcala,Ziltlaltépec de Trinidad Sánchez Santos,conagua,Zitlaltépec,"Zitlaltepec, Tlax.",0.4,-1
+29038,Tlaxcala,Tzompantepec,conagua,"San Andrés Ahuashuatepec, Tzompantepec","San José Atlanga, Tlax.",20.3,-65
+29039,Tlaxcala,Xaloztoc,conagua,Xaloztoc,"Huamantla, Tlax.",17.5,42
+29040,Tlaxcala,Xaltocan,conagua,Xaltocan,"San José Atlanga, Tlax.",17.4,-41
+29041,Tlaxcala,Papalotla de Xicohténcatl,conagua,Papalotla,"Zacatelco, Tlax.",0.5,8
+29042,Tlaxcala,Xicohtzinco,conagua,Xicohtzinco,"Zacatelco, Tlax.",0.5,8
+29043,Tlaxcala,Yauhquemehcan,conagua,"San Benito Xaltocan, San José Tetel, Yauhquemehcan","San José Atlanga, Tlax.",17.4,-41
+29044,Tlaxcala,Zacatelco,conagua,Zacatelco,"Zacatelco, Tlax.",0.5,8
+29045,Tlaxcala,Benito Juárez,conagua,Benito Juárez,"Calpulalpan, Tlax.",14.2,-48
+29046,Tlaxcala,Emiliano Zapata,no está (sin estación adecuada),,,,
+29047,Tlaxcala,Lázaro Cárdenas,añadido · conagua,Lázaro Cárdenas,"Ixtacamaxtitlán, Pue.",19.8,49
+29048,Tlaxcala,La Magdalena Tlaltelulco,conagua,La Magdalena Tlaltelulco,"Observatorio de Tlaxcala, Tlax.",1.2,6
+29049,Tlaxcala,San Damián Texóloc,conagua,San Damián Texoloc,"Observatorio de Tlaxcala, Tlax.",2.6,0
+29050,Tlaxcala,San Francisco Tetlanohcan,conagua,"San Francisco Tetlanohcan, Tetlanohcán","Observatorio de Tlaxcala, Tlax.",1.2,6
+29051,Tlaxcala,San Jerónimo Zacualpan,añadido · conagua,San Jerónimo Zacualpan,"Zacatelco, Tlax.",8.9,-12
+29052,Tlaxcala,San José Teacalco,conagua,San José Teacalco,"Huamantla, Tlax.",16.2,134
+29053,Tlaxcala,San Juan Huactzinco,conagua,San Juan Huactzinco,"Zacatelco, Tlax.",8.9,-12
+29054,Tlaxcala,San Lorenzo Axocomanitla,conagua,San Lorenzo Axocomanitla,"Zacatelco, Tlax.",0.5,8
+29055,Tlaxcala,San Lucas Tecopilco,conagua,San Lucas Tecopilco,"San José Atlanga, Tlax.",18.1,91
+29056,Tlaxcala,Santa Ana Nopalucan,conagua,Santa Ana Nopalucan,"Observatorio de Tlaxcala, Tlax.",2.6,0
+29057,Tlaxcala,Santa Apolonia Teacalco,conagua,Santa Apolonia Teacalco,"Zacatelco, Tlax.",8.9,-12
+29058,Tlaxcala,Santa Catarina Ayometla,conagua,Santa Catarina Ayometla,"Zacatelco, Tlax.",0.5,8
+29059,Tlaxcala,Santa Cruz Quilehtla,añadido · conagua,Ayometitla,"Zacatelco, Tlax.",0.5,8
+29060,Tlaxcala,Santa Isabel Xiloxoxtla,conagua,Santa Isabel Xiloxoxtla,"Observatorio de Tlaxcala, Tlax.",1.2,6
+30001,Veracruz,Acajete,conagua,Acajete,"Otilpan, Ver.",1.1,17
+30002,Veracruz,Acatlán,conagua,Acatlán,"La Joya, Ver.",25.5,-109
+30003,Veracruz,Acayucan,conagua,Acayucan,"San Juan Evangelista, Ver.",24.4,84
+30004,Veracruz,Actopan,conagua,Actopan,"Actopan, Ver.",3.2,4
+30005,Veracruz,Acula,eliminado (sin clima confiable),,,,
+30006,Veracruz,Acultzingo,eliminado (sin clima confiable),,,,
+30007,Veracruz,Camarón de Tejeda,conagua,Camarón de Tejeda,"Villa Tejeda, Ver.",0.1,4
+30008,Veracruz,Alpatláhuac,eliminado (sin clima confiable),,,,
+30009,Veracruz,Alto Lucero de Gutiérrez Barrios,conagua,Alto Lucero,"Ingenio Concepción, Ver.",19.3,137
+30010,Veracruz,Altotonga,conagua,Altotonga,"Altotonga, Ver.",1.2,28
+30011,Veracruz,Alvarado,conagua,Antón Lizardo,"Observatorio de Veracruz, Ver.",12.6,
+30012,Veracruz,Amatitlán,conagua,Amatitlán,"Garro, Ver.",25.8,-13
+30013,Veracruz,Naranjos Amatlán,conagua,Naranjos,"El Moralillo, Ver.",22.8,-123
+30014,Veracruz,Amatlán de los Reyes,open-meteo,"Amatlán de los Reyes, Peñuela",,,
+30015,Veracruz,Angel R. Cabada,conagua,Ángel R. Cabada,"Angel Rosario Cabada, Ver.",1.7,2
+30016,Veracruz,La Antigua,conagua,José Cardel,"Cardel, Ver.",0.6,-4
+30017,Veracruz,Apazapan,conagua,Apazapan,"Carrizal, Ver.",7.5,
+30018,Veracruz,Aquila,eliminado (sin clima confiable),,,,
+30019,Veracruz,Astacinga,eliminado (sin clima confiable),,,,
+30020,Veracruz,Atlahuilco,eliminado (sin clima confiable),,,,
+30021,Veracruz,Atoyac,eliminado (sin clima confiable),,,,
+30022,Veracruz,Atzacan,conagua,Atzacan,"Observatorio de Orizaba, Ver.",1.5,1
+30023,Veracruz,Atzalan,conagua,Atzalan,"Altotonga, Ver.",1.2,28
+30024,Veracruz,Tlaltetela,eliminado (sin clima confiable),,,,
+30025,Veracruz,Ayahualulco,conagua,Ayahualulco,"La Joya, Ver.",24.1,-120
+30026,Veracruz,Banderilla,conagua,Banderilla,"Banderilla, Ver.",0.7,-32
+30027,Veracruz,Benito Juárez,no está (sin estación adecuada),,,,
+30028,Veracruz,Boca del Río,añadido · conagua,Paso Colorado,"Observatorio de Veracruz, Ver.",4.3,
+30029,Veracruz,Calcahualco,eliminado (sin clima confiable),,,,
+30030,Veracruz,Camerino Z. Mendoza,conagua,Ciudad Mendoza,"Observatorio de Orizaba, Ver.",7.2,41
+30031,Veracruz,Carrillo Puerto,añadido · conagua,Loma Angosta,"Villa Tejeda, Ver.",25.8,30
+30032,Veracruz,Catemaco,eliminado (sin clima confiable),,,,
+30033,Veracruz,Cazones de Herrera,conagua,Cazones de Herrera,"Poza Rica, Ver.",25.2,-22
+30034,Veracruz,Cerro Azul,conagua,Cerro Azul,"El Moralillo, Ver.",7.7,-44
+30035,Veracruz,Citlaltépetl,conagua,Citlaltépec,"El Moralillo, Ver.",17.4,46
+30036,Veracruz,Coacoatzintla,conagua,Coacoatzintla,"Naolinco, Ver.",0.5,20
+30037,Veracruz,Coahuitlán,añadido · conagua,Coahuitlán,"Apapantilla, Pue.",19.2,-96
+30038,Veracruz,Coatepec,conagua,"Coatepec, Tuzamapan","Tapachapan, Ver.",0.6,14
+30039,Veracruz,Coatzacoalcos,open-meteo,"Allende, Coatzacoalcos, Fraccionamiento Ciudad Olmeca",,,
+30040,Veracruz,Coatzintla,open-meteo,Coatzintla,,,
+30041,Veracruz,Coetzala,conagua,Coetzala,Córdoba Ver. SGT,10.2,-52
+30042,Veracruz,Colipa,conagua,Colipa,"Misantla, Ver.",11.2,-117
+30043,Veracruz,Comapa,eliminado (sin clima confiable),,,,
+30044,Veracruz,Córdoba,open-meteo,Córdoba,,,
+30045,Veracruz,Cosamaloapan de Carpio,conagua,Cosamaloapan,"Garro, Ver.",27.7,-8
+30046,Veracruz,Cosautlán de Carvajal,conagua,Cosautlán,"Teocelo, Ver.",6.2,69
+30047,Veracruz,Coscomatepec,conagua,"Coscomatepec de Bravo, Xocotla","Observatorio de Orizaba, Ver.",28.0,53
+30048,Veracruz,Cosoleacaque,conagua,"Coacotla, Cosoleacaque","Jáltipan, Ver.",12.9,
+30049,Veracruz,Cotaxtla,no está (sin estación adecuada),,,,
+30050,Veracruz,Coxquihui,conagua,Coxquihui,"Rancho Nuevo, Pue.",22.7,0
+30051,Veracruz,Coyutla,conagua,Coyutla,"Zaragoza, Pue.",13.7,
+30052,Veracruz,Cuichapa,conagua,Cuichapa,Córdoba Ver. SGT,10.2,-52
+30053,Veracruz,Cuitláhuac,conagua,Cuitláhuac,"Villa Tejeda, Ver.",25.8,30
+30054,Veracruz,Chacaltianguis,no está (sin estación adecuada),,,,
+30055,Veracruz,Chalma,conagua,Chalma,"Huejutla, Hgo.",6.8,24
+30056,Veracruz,Chiconamel,añadido · conagua,Romantla,"Huejutla, Hgo.",6.8,24
+30057,Veracruz,Chiconquiaco,conagua,Chiconquiaco,"La Joya, Ver.",25.5,-109
+30058,Veracruz,Chicontepec,eliminado (sin clima confiable),,,,
+30059,Veracruz,Chinameca,conagua,Chinameca,"Jáltipan, Ver.",5.3,
+30060,Veracruz,Chinampa de Gorostiza,conagua,Chinampa de Gorostiza,"El Moralillo, Ver.",22.8,-123
+30061,Veracruz,Las Choapas,conagua,Las Choapas,"San José del Carmen, Ver.",4.3,9
+30062,Veracruz,Chocamán,conagua,Chocamán,"Observatorio de Orizaba, Ver.",17.7,121
+30063,Veracruz,Chontla,conagua,Chontla,"El Moralillo, Ver.",17.4,46
+30064,Veracruz,Chumatlán,conagua,Chumatlán,"Rancho Nuevo, Pue.",22.7,0
+30065,Veracruz,Emiliano Zapata,open-meteo,"Jacarandas, Rinconada",,,
+30066,Veracruz,Espinal,conagua,Espinal,"Poza Rica, Ver.",28.0,43
+30067,Veracruz,Filomeno Mata,conagua,Filomeno Mata,"Zaragoza, Pue.",13.7,
+30068,Veracruz,Fortín,conagua,Monte Blanco,"Observatorio de Orizaba, Ver.",17.7,121
+30069,Veracruz,Gutiérrez Zamora,eliminado (sin clima confiable),,,,
+30070,Veracruz,Hidalgotitlán,eliminado (sin clima confiable),,,,
+30071,Veracruz,Huatusco,conagua,Huatusco,"Observatorio de Orizaba, Ver.",28.0,53
+30072,Veracruz,Huayacocotla,conagua,Huayacocotla,"Huayacocotla, Ver.",0.5,1
+30073,Veracruz,Hueyapan de Ocampo,conagua,Juan Díaz Covarrubias,"Cuatotolapan, Ver.",11.6,18
+30074,Veracruz,Huiloapan de Cuauhtémoc,añadido · conagua,Huiloapan de Cuauhtémoc,"Observatorio de Orizaba, Ver.",7.2,41
+30075,Veracruz,Ignacio de la Llave,eliminado (sin clima confiable),,,,
+30076,Veracruz,Ilamatlán,eliminado (sin clima confiable),,,,
+30077,Veracruz,Isla,conagua,Isla,"Garro, Ver.",27.2,47
+30078,Veracruz,Ixcatepec,añadido · conagua,Ixcatepec,"El Moralillo, Ver.",20.8,23
+30079,Veracruz,Ixhuacán de los Reyes,conagua,Ixhuacán de los Reyes,"La Joya, Ver.",24.1,-120
+30080,Veracruz,Ixhuatlán del Café,conagua,Ixhuatlán del Café,"Observatorio de Orizaba, Ver.",28.0,53
+30081,Veracruz,Ixhuatlancillo,conagua,"Ixhuatlancillo, Unión y Progreso","Observatorio de Orizaba, Ver.",1.5,1
+30082,Veracruz,Ixhuatlán del Sureste,conagua,Ixhuatlán del Sureste,"Observatorio de Coatzacoalcos, Ver.",18.5,44
+30083,Veracruz,Ixhuatlán de Madero,conagua,Ixhuatlán de Madero,"Metlaltoyuca, Pue.",16.0,129
+30084,Veracruz,Ixmatlahuacan,no está (sin estación adecuada),,,,
+30085,Veracruz,Ixtaczoquitlán,conagua,Ixtaczoquitlán,"Observatorio de Orizaba, Ver.",1.5,1
+30086,Veracruz,Jalacingo,conagua,Jalacingo,"Teziutlán, Pue.",5.5,-75
+30087,Veracruz,Xalapa,open-meteo,"Colonia Santa Bárbara, El Castillo, Lomas Verdes",,,
+30088,Veracruz,Jalcomulco,conagua,Jalcomulco,"Carrizal, Ver.",12.2,
+30089,Veracruz,Jáltipan,conagua,Jáltipan de Morelos,"Jáltipan, Ver.",5.3,
+30090,Veracruz,Jamapa,conagua,Jamapa,"El Tejar, Ver.",9.2,13
+30091,Veracruz,Jesús Carranza,conagua,Jesús Carranza,"Jesús Carranza, Ver.",0.8,8
+30092,Veracruz,Xico,conagua,"San Marcos de León, Xico","Tapachapan, Ver.",5.4,130
+30093,Veracruz,Jilotepec,conagua,Jilotepec,"Otilpan, Ver.",1.1,17
+30094,Veracruz,Juan Rodríguez Clara,conagua,Juan Rodríguez Clara,"Cuatotolapan, Ver.",20.2,123
+30095,Veracruz,Juchique de Ferrer,conagua,Juchique de Ferrer,"Misantla, Ver.",17.8,75
+30096,Veracruz,Landero y Coss,conagua,Landero y Coss,"Naolinco, Ver.",0.5,20
+30097,Veracruz,Lerdo de Tejada,conagua,Lerdo de Tejada,"Angel Rosario Cabada, Ver.",10.1,-19
+30098,Veracruz,Magdalena,no está (sin estación adecuada),,,,
+30099,Veracruz,Maltrata,eliminado (sin clima confiable),,,,
+30100,Veracruz,Manlio Fabio Altamirano,conagua,Manlio Fabio Altamirano,"El Tejar, Ver.",18.6,45
+30101,Veracruz,Mariano Escobedo,conagua,Palmira,"Observatorio de Orizaba, Ver.",1.5,1
+30102,Veracruz,Martínez de la Torre,conagua,"Martínez de la Torre, Villa Independencia","Martínez de la Torre, Ver.",1.4,29
+30103,Veracruz,Mecatlán,conagua,Mecatlán,"Zaragoza, Pue.",13.7,
+30104,Veracruz,Mecayapan,conagua,Mecayapan,"Minzapan, Ver.",12.4,72
+30105,Veracruz,Medellín de Bravo,conagua,"El Tejar, Fraccionamiento Arboledas San Ramón, Medellín de Bravo","El Tejar, Ver.",0.7,5
+30106,Veracruz,Miahuatlán,conagua,Miahuatlán,"Naolinco, Ver.",0.5,20
+30107,Veracruz,Las Minas,conagua,Las Minas,"La Joya, Ver.",13.5,-114
+30108,Veracruz,Minatitlán,conagua,Minatitlán,"Jáltipan, Ver.",12.9,
+30109,Veracruz,Misantla,conagua,Misantla,"Misantla, Ver.",2.0,-5
+30110,Veracruz,Mixtla de Altamirano,conagua,Mixtla de Altamirano,"Zoquitlán, Pue.",29.8,-109
+30111,Veracruz,Moloacán,conagua,"Cuichapa, Moloacán","San José del Carmen, Ver.",21.5,21
+30112,Veracruz,Naolinco,conagua,Naolinco de Victoria,"Naolinco, Ver.",0.5,20
+30113,Veracruz,Naranjal,conagua,Naranjal,Córdoba Ver. SGT,13.1,-67
+30114,Veracruz,Nautla,conagua,Nautla,"Libertad, Ver.",27.6,-50
+30115,Veracruz,Nogales,conagua,Nogales,"Observatorio de Orizaba, Ver.",7.2,41
+30116,Veracruz,Oluta,conagua,Oluta,"San Juan Evangelista, Ver.",24.4,84
+30117,Veracruz,Omealca,eliminado (sin clima confiable),,,,
+30118,Veracruz,Orizaba,conagua,Orizaba,"Observatorio de Orizaba, Ver.",1.5,1
+30119,Veracruz,Otatitlán,conagua,Otatitlán,"Tuxtepec, Oax.",19.2,-8
+30120,Veracruz,Oteapan,conagua,Oteapan,"Jáltipan, Ver.",5.3,
+30121,Veracruz,Ozuluama de Mascareñas,conagua,Ozuluama de Mascareñas,"Paso de Piedras, Ver.",26.8,129
+30122,Veracruz,Pajapan,conagua,Pajapan,"Minzapan, Ver.",16.5,150
+30123,Veracruz,Pánuco,conagua,"Moralillo, Pánuco","Pánuco, Ver.",0.9,-1
+30124,Veracruz,Papantla,conagua,"Agua Dulce, Papantla de Olarte","Poza Rica, Ver.",19.1,134
+30125,Veracruz,Paso del Macho,conagua,Paso del Macho,"Villa Tejeda, Ver.",12.9,141
+30126,Veracruz,Paso de Ovejas,conagua,Paso de Ovejas,"Loma Fina, Ver.",4.0,16
+30127,Veracruz,La Perla,conagua,La Perla,"Observatorio de Orizaba, Ver.",1.5,1
+30128,Veracruz,Perote,conagua,Perote,"Perote, Ver.",2.1,24
+30129,Veracruz,Platón Sánchez,conagua,Platón Sánchez,"Platón Sánchez, Ver.",3.4,13
+30130,Veracruz,Playa Vicente,conagua,Playa Vicente,"Río Manso Lalana, Oax.",14.4,
+30131,Veracruz,Poza Rica de Hidalgo,open-meteo,Poza Rica de Hidalgo,,,
+30132,Veracruz,Las Vigas de Ramírez,conagua,Las Vigas de Ramírez,"Las Vigas de Ramírez, Ver.",1.4,12
+30133,Veracruz,Pueblo Viejo,open-meteo,"Anahuac, Benito Juárez, Ciudad Cuauhtémoc",,,
+30134,Veracruz,Puente Nacional,conagua,Cabezas,"Cardel, Ver.",0.6,-4
+30135,Veracruz,Rafael Delgado,conagua,"Jalapilla, Rafael Delgado","Observatorio de Orizaba, Ver.",6.8,-66
+30136,Veracruz,Rafael Lucio,conagua,Rafael Lucio,"Otilpan, Ver.",1.1,17
+30137,Veracruz,Los Reyes,conagua,Los Reyes,"Observatorio de Orizaba, Ver.",24.5,-18
+30138,Veracruz,Río Blanco,conagua,Río Blanco,"Observatorio de Orizaba, Ver.",7.2,41
+30139,Veracruz,Saltabarranca,conagua,Saltabarranca,"Angel Rosario Cabada, Ver.",10.1,-19
+30140,Veracruz,San Andrés Tenejapan,conagua,San Andrés Tenejapan,"Observatorio de Orizaba, Ver.",6.8,-66
+30141,Veracruz,San Andrés Tuxtla,eliminado (sin clima confiable),,,,
+30142,Veracruz,San Juan Evangelista,conagua,San Juan Evangelista,"San Juan Evangelista, Ver.",0.7,17
+30143,Veracruz,Santiago Tuxtla,eliminado (sin clima confiable),,,,
+30144,Veracruz,Sayula de Alemán,conagua,Sayula de Alemán,"San Juan Evangelista, Ver.",18.4,75
+30145,Veracruz,Soconusco,conagua,Soconusco,"Minzapan, Ver.",22.4,30
+30146,Veracruz,Sochiapa,eliminado (sin clima confiable),,,,
+30147,Veracruz,Soledad Atzompa,conagua,Soledad Atzompa,"Observatorio de Orizaba, Ver.",7.2,41
+30148,Veracruz,Soledad de Doblado,conagua,Soledad de Doblado,"El Tejar, Ver.",26.5,92
+30149,Veracruz,Soteapan,eliminado (sin clima confiable),,,,
+30150,Veracruz,Tamalín,conagua,Tamalín,"El Moralillo, Ver.",17.2,-38
+30151,Veracruz,Tamiahua,conagua,Tamiahua,"Chalahuite, Ver.",25.6,-46
+30152,Veracruz,Tampico Alto,eliminado (sin clima confiable),,,,
+30153,Veracruz,Tancoco,conagua,Tancoco,"El Moralillo, Ver.",17.2,-38
+30154,Veracruz,Tantima,conagua,Tantima,"El Moralillo, Ver.",17.2,-38
+30155,Veracruz,Tantoyuca,conagua,Tantoyuca,"Platón Sánchez, Ver.",14.8,110
+30156,Veracruz,Tatatila,conagua,Tatatila,"La Joya, Ver.",13.5,-114
+30157,Veracruz,Castillo de Teayo,conagua,Castillo de Teayo,"Alamo Temapache, Ver.",20.7,57
+30158,Veracruz,Tecolutla,eliminado (sin clima confiable),,,,
+30159,Veracruz,Tehuipango,eliminado (sin clima confiable),,,,
+30160,Veracruz,Álamo Temapache,conagua,Álamo,"Alamo Temapache, Ver.",2.1,4
+30161,Veracruz,Tempoal,conagua,Tempoal de Sánchez,"Tempoal, Ver.",3.1,30
+30162,Veracruz,Tenampa,eliminado (sin clima confiable),,,,
+30163,Veracruz,Tenochtitlán,añadido · conagua,Tenochtitlán,"Tenochtitlán, Ver.",0.2,10
+30164,Veracruz,Teocelo,conagua,Teocelo,"Tapachapan, Ver.",5.4,130
+30165,Veracruz,Tepatlaxco,conagua,Tepatlaxco,Córdoba Ver. SGT,26.5,30
+30166,Veracruz,Tepetlán,conagua,Tepetlán,"La Joya, Ver.",25.5,-109
+30167,Veracruz,Tepetzintla,conagua,Tepetzintla,"El Moralillo, Ver.",4.5,94
+30168,Veracruz,Tequila,eliminado (sin clima confiable),,,,
+30169,Veracruz,José Azueta,conagua,"Tesechoacan, Villa Azueta","Garro, Ver.",18.3,-2
+30170,Veracruz,Texcatepec,conagua,Texcatepec,"Zacualtipán, Hgo.",26.4,-121
+30171,Veracruz,Texhuacán,conagua,Texhuacán,"Zoquitlán, Pue.",29.8,-109
+30172,Veracruz,Texistepec,conagua,Texistepec,"Minzapan, Ver.",26.3,1
+30173,Veracruz,Tezonapa,conagua,Tezonapa,"Tlacotepec de Díaz, Pue.",27.9,-111
+30174,Veracruz,Tierra Blanca,conagua,"La Isla, Tierra Blanca","Presidente Alemán, Oax.",24.6,32
+30175,Veracruz,Tihuatlán,open-meteo,"Plan de Ayala, Tihuatlan, Totolapa",,,
+30176,Veracruz,Tlacojalpan,conagua,Tlacojalpan,"Tuxtepec, Oax.",27.9,-13
+30177,Veracruz,Tlacolulan,conagua,Tlacolulan,"Acatlán, Ver.",16.3,4
+30178,Veracruz,Tlacotalpan,conagua,Tlacotalpan,"Radar Alvarado, Ver.",12.0,
+30179,Veracruz,Tlacotepec de Mejía,eliminado (sin clima confiable),,,,
+30180,Veracruz,Tlachichilco,eliminado (sin clima confiable),,,,
+30181,Veracruz,Tlalixcoyan,conagua,Piedras Negras,"Paso del Toro, Ver.",27.4,16
+30182,Veracruz,Tlalnelhuayocan,conagua,"Guadalupe Victoria, Tlalnelhuayocan","Otilpan, Ver.",1.1,17
+30183,Veracruz,Tlapacoyan,eliminado (sin clima confiable),,,,
+30184,Veracruz,Tlaquilpa,eliminado (sin clima confiable),,,,
+30185,Veracruz,Tlilapan,conagua,Tlilapan,"Observatorio de Orizaba, Ver.",6.8,-66
+30186,Veracruz,Tomatlán,conagua,Tomatlán,"Observatorio de Orizaba, Ver.",17.7,121
+30187,Veracruz,Tonayán,conagua,Tonayán,"Naolinco, Ver.",0.5,20
+30188,Veracruz,Totutla,conagua,Totutla,"Totutla, Ver.",2.7,3
+30189,Veracruz,Tuxpan,conagua,"Alto Lucero, Santiago de la Peña, Túxpam de Rodríguez Cano","Observatorio de Tuxpan, Ver.",1.0,6
+30190,Veracruz,Tuxtilla,conagua,Tuxtilla,"Tuxtepec, Oax.",27.9,-13
+30191,Veracruz,Ursulo Galván,conagua,"Villa Zempoala, Úrsulo Galván","Cardel, Ver.",0.6,-4
+30192,Veracruz,Vega de Alatorre,eliminado (sin clima confiable),,,,
+30193,Veracruz,Veracruz,open-meteo,"Fraccionamiento Geovillas los Pinos, Las Amapolas, Valente Diaz",,,
+30194,Veracruz,Villa Aldama,añadido · conagua,Colonia Libertad,"Perote, Ver.",11.1,50
+30195,Veracruz,Xoxocotla,eliminado (sin clima confiable),,,,
+30196,Veracruz,Yanga,eliminado (sin clima confiable),,,,
+30197,Veracruz,Yecuatla,eliminado (sin clima confiable),,,,
+30198,Veracruz,Zacualpan,eliminado (sin clima confiable),,,,
+30199,Veracruz,Zaragoza,conagua,Zaragoza,"Jáltipan, Ver.",12.9,
+30200,Veracruz,Zentla,conagua,Colonia Manuel González,Córdoba Ver. SGT,23.4,143
+30201,Veracruz,Zongolica,conagua,Zongolica,"Observatorio de Orizaba, Ver.",24.5,-18
+30202,Veracruz,Zontecomatlán de López y Fuentes,eliminado (sin clima confiable),,,,
+30203,Veracruz,Zozocolco de Hidalgo,conagua,Zozocolco de Hidalgo,"Cuetzalan del Progreso, Pue.",10.0,-56
+30204,Veracruz,Agua Dulce,conagua,Agua Dulce,"San José del Carmen, Ver.",25.2,8
+30205,Veracruz,El Higo,conagua,El Higo,"El Higo, Ver.",1.0,5
+30206,Veracruz,Nanchital de Lázaro Cárdenas del Río,open-meteo,Nanchital de Lázaro Cárdenas del Río,,,
+30207,Veracruz,Tres Valles,conagua,Tres Valles,"Tuxtepec, Oax.",13.4,25
+30208,Veracruz,Carlos A. Carrillo,conagua,Carlos A. Carrillo,"Garro, Ver.",27.7,-8
+30209,Veracruz,Tatahuicapan de Juárez,conagua,Tatahuicapan,"Minzapan, Ver.",12.4,72
+30210,Veracruz,Uxpanapa,eliminado (sin clima confiable),,,,
+30211,Veracruz,San Rafael,conagua,San Rafael,"Libertad, Ver.",19.1,-46
+30212,Veracruz,Santiago Sochiapan,eliminado (sin clima confiable),,,,
+31001,Yucatán,Abalá,conagua,Abalá,"Abalá, Yuc.",0.2,0
+31002,Yucatán,Acanceh,open-meteo,Acanceh,,,
+31003,Yucatán,Akil,open-meteo,Akil,,,
+31004,Yucatán,Baca,añadido · conagua,Baca,"Mocochá, Yuc.",5.2,-11
+31005,Yucatán,Bokobá,añadido · conagua,Bokoba,"Mocochá, Yuc.",27.3,-6
+31006,Yucatán,Buctzotz,open-meteo,Buctzotz,,,
+31007,Yucatán,Cacalchén,conagua,Cacalchen,"Mocochá, Yuc.",27.3,-6
+31008,Yucatán,Calotmul,conagua,Calotmul,"Tizimín, Yuc.",15.5,11
+31009,Yucatán,Cansahcab,no está (sin estación adecuada),,,,
+31010,Yucatán,Cantamayec,añadido · conagua,Cantamayec,"Cantamayec, Yuc.",0.8,3
+31011,Yucatán,Celestún,conagua,Celestún,"Celestún, Yuc.",1.6,-2
+31012,Yucatán,Cenotillo,eliminado (sin clima confiable),,,,
+31013,Yucatán,Conkal,conagua,Conkal,"Conkal, Yuc.",2.0,-4
+31014,Yucatán,Cuncunul,añadido · conagua,Cuncunul,"Observatorio de Valladolid, Yuc.",10.2,15
+31015,Yucatán,Cuzamá,no está (sin estación adecuada),,,,
+31016,Yucatán,Chacsinkín,añadido · conagua,Chacsinkin,"Peto, Yuc.",10.0,3
+31017,Yucatán,Chankom,añadido · conagua,Xcalak Dzonot,"Chan Chichimilá, Yuc.",11.7,1
+31018,Yucatán,Chapab,añadido · conagua,Chapab,"Ticul, Yuc.",12.5,-14
+31019,Yucatán,Chemax,open-meteo,Chemax,,,
+31020,Yucatán,Chicxulub Pueblo,conagua,Chicxulub Pueblo,"Conkal, Yuc.",2.0,-4
+31021,Yucatán,Chichimilá,conagua,Chichimila,"Observatorio de Valladolid, Yuc.",6.8,4
+31022,Yucatán,Chikindzonot,añadido · conagua,Chikindzonot,"Chan Chichimilá, Yuc.",6.1,7
+31023,Yucatán,Chocholá,conagua,Chocholá,"Chocholá, Yuc.",0.2,-2
+31024,Yucatán,Chumayel,añadido · conagua,Chumayel,"Oxkutzcab, Yuc.",16.8,-1
+31025,Yucatán,Dzan,añadido · open-meteo,Dzan,,,
+31026,Yucatán,Dzemul,añadido · conagua,Dzemul,"Motul, Yuc.",12.2,
+31027,Yucatán,Dzidzantún,eliminado (sin clima confiable),,,,
+31028,Yucatán,Dzilam de Bravo,sin clima guardado,Dzilam de Bravo,,,
+31029,Yucatán,Dzilam González,eliminado (sin clima confiable),,,,
+31030,Yucatán,Dzitás,eliminado (sin clima confiable),,,,
+31031,Yucatán,Dzoncauich,eliminado (sin clima confiable),,,,
+31032,Yucatán,Espita,open-meteo,Espita,,,
+31033,Yucatán,Halachó,open-meteo,Halachó,,,
+31034,Yucatán,Hocabá,no está (sin estación adecuada),,,,
+31035,Yucatán,Hoctún,no está (sin estación adecuada),,,,
+31036,Yucatán,Homún,eliminado (sin clima confiable),,,,
+31037,Yucatán,Huhí,no está (sin estación adecuada),,,,
+31038,Yucatán,Hunucmá,open-meteo,Hunucmá,,,
+31039,Yucatán,Ixil,conagua,Ixil,"Mocochá, Yuc.",7.1,-12
+31040,Yucatán,Izamal,open-meteo,Izamal,,,
+31041,Yucatán,Kanasín,open-meteo,Kanasín,,,
+31042,Yucatán,Kantunil,no está (sin estación adecuada),,,,
+31043,Yucatán,Kaua,añadido · conagua,Kaua,"Observatorio de Valladolid, Yuc.",22.1,8
+31044,Yucatán,Kinchil,conagua,Kinchil,"Chocholá, Yuc.",21.8,-2
+31045,Yucatán,Kopomá,conagua,Kopomá,"Muna, Yuc.",16.5,-10
+31046,Yucatán,Mama,añadido · conagua,Mama,"Oxkutzcab, Yuc.",21.0,-1
+31047,Yucatán,Maní,añadido · conagua,Mani,"Oxkutzcab, Yuc.",10.8,6
+31048,Yucatán,Maxcanú,open-meteo,Maxcanú,,,
+31049,Yucatán,Mayapán,añadido · conagua,Mayapan,"Cantamayec, Yuc.",13.8,0
+31050,Yucatán,Mérida,open-meteo,"Caucel, Cholul, Mérida",,,
+31051,Yucatán,Mocochá,conagua,Mocochá,"Conkal, Yuc.",2.0,-4
+31052,Yucatán,Motul,open-meteo,Motul,,,
+31053,Yucatán,Muna,open-meteo,Muna,,,
+31054,Yucatán,Muxupip,conagua,Muxupip,"Motul, Yuc.",7.3,
+31055,Yucatán,Opichén,conagua,Opichén,"Muna, Yuc.",16.5,-10
+31056,Yucatán,Oxkutzcab,open-meteo,Oxkutzkab,,,
+31057,Yucatán,Panabá,conagua,Panabá,"Tizimín, Yuc.",18.4,7
+31058,Yucatán,Peto,open-meteo,Peto,,,
+31059,Yucatán,Progreso,open-meteo,"Chicxulub Puerto, Progreso",,,
+31060,Yucatán,Quintana Roo,eliminado (sin clima confiable),,,,
+31061,Yucatán,Río Lagartos,añadido · conagua,Río Lagartos,"Río Lagartos, Yuc.",2.6,-3
+31062,Yucatán,Sacalum,añadido · conagua,Sacalum,"Ticul, Yuc.",11.5,-8
+31063,Yucatán,Samahil,conagua,Samahil,"Chocholá, Yuc.",15.8,-6
+31064,Yucatán,Sanahcat,no está (sin estación adecuada),,,,
+31065,Yucatán,San Felipe,añadido · conagua,San Felipe,"Río Lagartos, Yuc.",2.6,-3
+31066,Yucatán,Santa Elena,añadido · conagua,Santa Elena,"Ticul, Yuc.",11.9,12
+31067,Yucatán,Seyé,open-meteo,Seyé,,,
+31068,Yucatán,Sinanché,añadido · conagua,Sinanche,"Mocochá, Yuc.",29.4,-8
+31069,Yucatán,Sotuta,conagua,Sotuta,"Cantamayec, Yuc.",16.7,-5
+31070,Yucatán,Sucilá,conagua,Sucilá,"Tizimín, Yuc.",14.7,3
+31071,Yucatán,Sudzal,open-meteo,Sudzal,,,
+31072,Yucatán,Suma,no está (sin estación adecuada),,,,
+31073,Yucatán,Tahdziú,añadido · conagua,Tahdziu,"Peto, Yuc.",8.2,6
+31074,Yucatán,Tahmek,no está (sin estación adecuada),,,,
+31075,Yucatán,Teabo,conagua,Teabo,"Oxkutzcab, Yuc.",16.8,-1
+31076,Yucatán,Tecoh,open-meteo,Tekoh,,,
+31077,Yucatán,Tekal de Venegas,eliminado (sin clima confiable),,,,
+31078,Yucatán,Tekantó,no está (sin estación adecuada),,,,
+31079,Yucatán,Tekax,open-meteo,Tecax,,,
+31080,Yucatán,Tekit,open-meteo,Tekit,,,
+31081,Yucatán,Tekom,añadido · conagua,Tekom,"Observatorio de Valladolid, Yuc.",10.2,15
+31082,Yucatán,Telchac Pueblo,añadido · conagua,Telchac Pueblo,"Motul, Yuc.",12.2,
+31083,Yucatán,Telchac Puerto,conagua,Telchac Puerto,"Mocochá, Yuc.",25.9,-19
+31084,Yucatán,Temax,eliminado (sin clima confiable),,,,
+31085,Yucatán,Temozón,conagua,Temozon,"Observatorio de Valladolid, Yuc.",12.4,1
+31086,Yucatán,Tepakán,no está (sin estación adecuada),,,,
+31087,Yucatán,Tetiz,open-meteo,Tetiz,,,
+31088,Yucatán,Teya,no está (sin estación adecuada),,,,
+31089,Yucatán,Ticul,open-meteo,Ticul,,,
+31090,Yucatán,Timucuy,open-meteo,Timucuy,,,
+31091,Yucatán,Tinum,open-meteo,"Chichén-Itzá, Piste, Tinum",,,
+31092,Yucatán,Tixcacalcupul,añadido · conagua,Tixcacalcupul,"Observatorio de Valladolid, Yuc.",18.3,11
+31093,Yucatán,Tixkokob,open-meteo,Tixkokob,,,
+31094,Yucatán,Tixméhuac,añadido · conagua,Tixmehuac,"Peto, Yuc.",21.7,-9
+31095,Yucatán,Tixpéual,open-meteo,Tixpéhual,,,
+31096,Yucatán,Tizimín,open-meteo,Tizimín,,,
+31097,Yucatán,Tunkás,no está (sin estación adecuada),,,,
+31098,Yucatán,Tzucacab,open-meteo,Tzucacab,,,
+31099,Yucatán,Uayma,añadido · conagua,Uayma,"Observatorio de Valladolid, Yuc.",10.9,14
+31100,Yucatán,Ucú,conagua,Ucú,"Organismo de Cuenca Península de Yucatán, Yuc.",6.2,-3
+31101,Yucatán,Umán,open-meteo,"Paseos de Itzincab, Umán",,,
+31102,Yucatán,Valladolid,open-meteo,Valladolid,,,
+31103,Yucatán,Xocchel,no está (sin estación adecuada),,,,
+31104,Yucatán,Yaxcabá,conagua,Yaxcabá,"Cantamayec, Yuc.",28.1,4
+31105,Yucatán,Yaxkukul,conagua,Yaxkukul,"Mocochá, Yuc.",5.2,-11
+31106,Yucatán,Yobaín,no está (sin estación adecuada),,,,
+32001,Zacatecas,Apozol,conagua,Apozol,"Juchipila, Zac.",7.8,43
+32002,Zacatecas,Apulco,conagua,Apulco,"Teocaltiche, Jal.",12.3,55
+32003,Zacatecas,Atolinga,conagua,Atolinga,"Atolinga, Zac.",0.8,-11
+32004,Zacatecas,Benito Juárez,eliminado (sin clima confiable),,,,
+32005,Zacatecas,Calera,conagua,Víctor Rosales,"Llano Blanco, Zac.",6.8,17
+32006,Zacatecas,Cañitas de Felipe Pescador,conagua,Cañitas de Felipe Pescador,"Cañitas de Felipe Pescador, Zac.",0.9,-33
+32007,Zacatecas,Concepción del Oro,eliminado (sin clima confiable),,,,
+32008,Zacatecas,Cuauhtémoc,conagua,San Pedro Piedra Gorda,"Ciudad Cuauhtémoc, Zac.",0.4,-2
+32009,Zacatecas,Chalchihuites,conagua,Chalchihuites,"Chalchihuites, Zac.",0.7,-78
+32010,Zacatecas,Fresnillo,conagua,Fresnillo,"Fresnillo, Zac.",2.3,-9
+32011,Zacatecas,Trinidad García de la Cadena,conagua,La Estanzuela,"Huitzila, Zac.",11.3,90
+32012,Zacatecas,Genaro Codina,conagua,Genaro Codina,"Genaro Codina, Zac.",0.4,22
+32013,Zacatecas,General Enrique Estrada,conagua,General Enrique Estrada,"Llano Blanco, Zac.",8.4,4
+32014,Zacatecas,General Francisco R. Murguía,conagua,Nieves,"Río Grande, Zac.",19.8,38
+32015,Zacatecas,El Plateado de Joaquín Amaro,conagua,El Plateado de Joaquín Amaro,"General Joaquín Amaro, Zac.",0.3,-21
+32016,Zacatecas,General Pánfilo Natera,conagua,General Pánfilo Natera,"El Saladillo, Zac.",7.1,59
+32017,Zacatecas,Guadalupe,open-meteo,"Guadalupe, Tacoaleche",,,
+32018,Zacatecas,Huanusco,conagua,Huanusco,"Los Moraleños, Zac.",9.8,49
+32019,Zacatecas,Jalpa,conagua,Jalpa,"Los Moraleños, Zac.",11.7,-91
+32020,Zacatecas,Jerez,conagua,Jerez de García Salinas,"Jerez, Zac.",1.5,1
+32021,Zacatecas,Jiménez del Teul,eliminado (sin clima confiable),,,,
+32022,Zacatecas,Juan Aldama,conagua,Juan Aldama,"Juan Aldama, Zac.",1.1,-3
+32023,Zacatecas,Juchipila,conagua,Juchipila,"Juchipila, Zac.",0.8,-27
+32024,Zacatecas,Loreto,conagua,Loreto,"Loreto, Zac.",0.8,-12
+32025,Zacatecas,Luis Moya,conagua,Luis Moya,"Luis Moya, Zac.",0.8,-34
+32026,Zacatecas,Mazapil,eliminado (sin clima confiable),,,,
+32027,Zacatecas,Melchor Ocampo,no está (sin estación adecuada),,,,
+32028,Zacatecas,Mezquital del Oro,añadido · conagua,Mezquital del Oro,"Mezquital del Oro, Zac.",0.4,6
+32029,Zacatecas,Miguel Auza,conagua,Miguel Auza,"Miguel Auza, Zac.",1.1,-29
+32030,Zacatecas,Momax,conagua,Momax,"Tlaltenango, Zac.",16.7,-35
+32031,Zacatecas,Monte Escobedo,conagua,Monte Escobedo,"Monte Escobedo, Zac.",0.4,-6
+32032,Zacatecas,Morelos,conagua,Morelos,"Zacatecas, Zac.",19.6,47
+32033,Zacatecas,Moyahua de Estrada,conagua,Moyahua de Estrada,"Juchipila, Zac.",16.3,-84
+32034,Zacatecas,Nochistlán de Mejía,conagua,Nochistlán de Mejía,"Nochistlán, Zac.",0.7,13
+32035,Zacatecas,Noria de Ángeles,conagua,Noria de Ángeles,"Villa González Ortega, Zac.",8.6,44
+32036,Zacatecas,Ojocaliente,añadido · conagua,La Capilla,"Ojo Caliente, Zac.",12.5,82
+32037,Zacatecas,Pánuco,conagua,"Pozo de Gamboa, Pánuco","Zacatecas, Zac.",19.6,47
+32038,Zacatecas,Pinos,eliminado (sin clima confiable),,,,
+32039,Zacatecas,Río Grande,conagua,Río Grande,"Río Grande, Zac.",1.4,-43
+32040,Zacatecas,Sain Alto,conagua,Sain Alto,"Río Grande, Zac.",29.9,148
+32041,Zacatecas,El Salvador,sin clima guardado,El Salvador,,,
+32042,Zacatecas,Sombrerete,conagua,Sombrerete,"Observatorio de Sombrerete, Zac.",1.0,38
+32043,Zacatecas,Susticacán,conagua,Susticacán,"Jerez, Zac.",10.6,55
+32044,Zacatecas,Tabasco,conagua,Tabasco,"Media Luna, Ags.",14.1,-69
+32045,Zacatecas,Tepechitlán,conagua,Tepechitlán,"Miguel Alemán, Zac.",2.8,-21
+32046,Zacatecas,Tepetongo,conagua,Tepetongo,"Achimec, Jal.",16.6,100
+32047,Zacatecas,Teúl de González Ortega,conagua,Teúl de González Ortega,"Teúl de González Ortega, Zac.",0.5,3
+32048,Zacatecas,Tlaltenango de Sánchez Román,conagua,Tlaltenango de Sánchez Román,"Tlaltenango, Zac.",1.0,-11
+32049,Zacatecas,Valparaíso,conagua,Valparaíso,"La Florida, Zac.",9.9,25
+32050,Zacatecas,Vetagrande,añadido · conagua,Sauceda de La Borda,"Zacatecas, Zac.",9.3,36
+32051,Zacatecas,Villa de Cos,conagua,Villa de Cos,"Villa de Cos, Zac.",0.6,-7
+32052,Zacatecas,Villa García,conagua,Villa García,"Loreto, Zac.",11.8,25
+32053,Zacatecas,Villa González Ortega,conagua,Villa González Ortega,"Villa González Ortega, Zac.",0.9,-1
+32054,Zacatecas,Villa Hidalgo,conagua,Villa Hidalgo,"Villa Hidalgo, Zac.",0.8,-3
+32055,Zacatecas,Villanueva,conagua,Villanueva,"Palomas, Zac.",9.0,-126
+32056,Zacatecas,Zacatecas,conagua,Zacatecas,"Zacatecas, Zac.",0.6,18
+32057,Zacatecas,Trancoso,conagua,Trancoso,"Zacatecas, Zac.",14.4,-72
+32058,Zacatecas,Santa María de la Paz,conagua,Santa María de la Paz,"Teúl de González Ortega, Zac.",7.4,11

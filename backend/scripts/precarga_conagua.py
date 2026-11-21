@@ -6,7 +6,7 @@ origen "conagua". No consulta Open-Meteo, así que no tiene límite de peticione
 - Solo llena zonas vacías: nunca reemplaza un clima de Open-Meteo.
 - Cuando después se corre scripts/precarga_cache.py, esas zonas se vuelven a pedir a Open-Meteo y
   el dato de CONAGUA se reemplaza por el completo.
-- Diferencias con Open-Meteo: la estación puede estar hasta a --radio km y el % de heladas es
+- Diferencias con Open-Meteo: la estación está a 30 km o menos y a no más de 150 m de altura de diferencia (15 km si no se conoce su altura) y el % de heladas es
   estimado (el SMN solo publica promedios mensuales).
 
 Uso:
@@ -49,7 +49,7 @@ async def main_async(limit: int | None, radio_km: float, estados: list[str]) -> 
         if await database.get_clima_cache(celda["lat_grid"], celda["lon_grid"]) is not None:
             ya_tenian += 1
             continue
-        respaldo = clima_processor.resumen_smn_fallback(celda["lat"], celda["lon"], radio_km)
+        respaldo = clima_processor.resumen_smn_fallback(celda["lat"], celda["lon"], radio_km, celda["altitud_m"])
         if respaldo is None:
             sin_estacion += 1
             continue

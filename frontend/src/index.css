@@ -151,6 +151,15 @@
   }
 }
 
+/* Trazo de los íconos de cultivo (IconoCultivo.tsx): usa el color del texto, así cambia con el modo oscuro */
+.icono-garabato .k {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 @layer base {
   /* Barra de la página delgada, sin fondo y del color de la marca */
   html {

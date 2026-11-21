@@ -41,6 +41,11 @@ const diagnostico = campos({
       activa: booleano, nivel: unoDe('D0', 'D1', 'D2', 'D3', 'D4'), nivel_nombre: texto, fecha_dato: texto, consejo: texto,
     }))),
     lluvia_mes_mm: opcional(nullable(numero)),
+    origen: opcional(unoDe('open-meteo', 'conagua')),
+    estacion_smn: opcional(nullable(campos({
+      estacion: texto, clave: texto, distancia_km: numero, heladas_estimadas: booleano,
+      altitud_estacion_m: opcional(nullable(numero)), diferencia_altitud_m: opcional(nullable(numero)),
+    }))),
     lluvia_reciente: opcional(nullable(campos({
       fuente: texto, estacion: texto, distancia_km: numero, mes: texto, lluvia_mm: numero,
       normal_mm: opcional(nullable(numero)), anomalia_pct: opcional(nullable(entero)),

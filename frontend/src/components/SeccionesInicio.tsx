@@ -2,6 +2,7 @@ import { CalendarDays, Clock3, CloudSun, Container, Leaf, MapPin, Sprout, UserRo
 import { Link } from 'react-router-dom'
 import type { Recomendacion } from '../types/api'
 import { espacios } from '../utils/consulta'
+import { IconoCultivo } from './IconoCultivo'
 
 export const cultivosEjemplo = [
   { id: 'jitomate', nombre: 'Jitomate', icono: '🍅', detalle: 'Hortaliza de fruto' },
@@ -60,7 +61,7 @@ export function SeccionesInicio({ cultivos, busqueda, ejemplo }: { cultivos?: Re
         <ul className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {tarjetas.map(({ id, nombre, icono, detalle, ficha }) => <li key={id}
             className="surface grid content-start overflow-hidden shadow-soft motion-safe:transition motion-safe:duration-200 motion-safe:hover:-translate-y-1 hover:shadow-raised">
-            <div aria-hidden="true" className="grid min-h-24 place-items-center bg-secondary/70 text-5xl">{icono}</div>
+            <div aria-hidden="true" className="grid min-h-24 place-items-center bg-secondary/70 text-5xl text-foreground"><IconoCultivo id={id} icono={icono} size={64} /></div>
             <div className="px-4 pt-3 pb-2">
               <p className="text-sm text-muted-foreground">{detalle}</p>
               <h3 className="mt-0.5 font-display text-2xl font-semibold text-primary">{nombre}</h3>

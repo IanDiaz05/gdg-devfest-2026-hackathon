@@ -23,6 +23,7 @@ import argparse
 import csv
 import io
 import json
+import math
 import time
 from concurrent.futures import ThreadPoolExecutor
 from datetime import date
@@ -102,13 +103,59 @@ def leer(ruta) -> list[dict]:
     return salida
 
 
+URL_CATALOGO = "https://smn.conagua.gob.mx/tools/GUI/estaciones-climatologicas/data/estaciones_climatologicas.geojson"
+RADIO_EMPATE_KM = 3.0  # el catálogo usa claves numéricas; se empata con los resúmenes por ubicación
+
+
+def agregar_altitudes(estaciones: list[dict], forzar: bool = False) -> int:
+    """Pone `altitud_m` a cada estación, tomada del catálogo oficial de estaciones del SMN.
+
+    Los resúmenes mensuales no traen la altitud y sus claves (letras) no coinciden con las del
+    catálogo (números), así que se toma la estación del catálogo más cercana a 3 km o menos.
+    La API la usa para descartar estaciones a otra altura que la ciudad (ver clima_processor.py).
+    """
+    ruta = CARPETA / "catalogo_estaciones.geojson"
+    if forzar or not ruta.exists():
+        r = sesion().get(URL_CATALOGO, timeout=120)
+        r.raise_for_status()
+        CARPETA.mkdir(parents=True, exist_ok=True)
+        ruta.write_bytes(r.content)
+    puntos: dict[tuple[int, int], list[tuple[float, float, float]]] = {}
+    for f in json.loads(ruta.read_bytes())["features"]:
+        altitud = (f.get("properties") or {}).get("altitud")
+        try:
+            lon, lat = f["geometry"]["coordinates"][:2]
+            puntos.setdefault((int(lat * 2), int(lon * 2)), []).append((float(lat), float(lon), float(altitud)))
+        except (TypeError, ValueError, KeyError):
+            continue
+    con_altitud = 0
+    for e in estaciones:
+        cerca = [p for i in (-1, 0, 1) for j in (-1, 0, 1)
+                 for p in puntos.get((int(e["lat"] * 2) + i, int(e["lon"] * 2) + j), [])]
+        mejor = min(cerca, key=lambda p: math.hypot((p[0] - e["lat"]) * 111, (p[1] - e["lon"]) * 111 * math.cos(math.radians(e["lat"]))), default=None)
+        km = None if mejor is None else math.hypot((mejor[0] - e["lat"]) * 111, (mejor[1] - e["lon"]) * 111 * math.cos(math.radians(e["lat"])))
+        e["altitud_m"] = int(round(mejor[2])) if km is not None and km <= RADIO_EMPATE_KM else None
+        con_altitud += e["altitud_m"] is not None
+    return con_altitud
+
+
 def main() -> None:
     preparar()
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--desde", default="2013-01", help="AAAA-MM (el SMN tiene archivos desde 2013-01)")
     ap.add_argument("--forzar", action="store_true", help="volver a descargar los meses que ya existen")
     ap.add_argument("--hilos", type=int, default=4)
+    ap.add_argument("--solo-altitudes", action="store_true",
+                    help="solo agregar la altitud a data/smn_estaciones.json, sin descargar los meses")
     args = ap.parse_args()
+
+    if args.solo_altitudes:
+        ruta = DATA / "smn_estaciones.json"
+        datos = json.loads(ruta.read_text(encoding="utf-8"))
+        con = agregar_altitudes(datos["estaciones"], args.forzar)
+        guardar_json(datos, ruta, compacto=True)
+        print(f"  {con:,} de {len(datos['estaciones']):,} estaciones con altitud (catálogo del SMN)")
+        return
 
     lista = meses(args.desde, date.today())
     tareas = [(ym, t) for ym in lista for t in TIPOS]
@@ -160,6 +207,8 @@ def main() -> None:
         salida.append({**{k: e[k] for k in ("clave", "nombre", "edo", "lat", "lon")},
                        "normal": normal,
                        "ultimo": e["ultimo"] or None})
+    con_altitud = agregar_altitudes(salida, args.forzar)
+    print(f"  {con_altitud:,} estaciones con altitud (catálogo del SMN)")
 
     guardar_json({
         "fuente": "Servicio Meteorológico Nacional (SMN), CONAGUA: resúmenes mensuales por estación",

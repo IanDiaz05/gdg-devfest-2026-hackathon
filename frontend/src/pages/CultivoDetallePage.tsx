@@ -142,7 +142,7 @@ export function CultivoDetallePage() {
     <div className="sobre space-y-3">
       {/* Frente del sobre */}
       <div className="etiqueta relative flex flex-col gap-4 sm:flex-row sm:items-start sm:p-6">
-        <CultivoIcono icono={ficha.icono} />
+        <CultivoIcono id={ficha.id} icono={ficha.icono} />
         <div className="min-w-0 sm:pr-40">
           <p className="eyebrow">{ficha.categoria} · Maceta de {tecnica.maceta_min_litros} L mín.</p>
           <h1 className="mt-2 font-display text-4xl font-semibold tracking-tight text-primary">{ficha.nombre}</h1>

@@ -23,7 +23,7 @@ export function TarjetaCultivo({ cultivo, busqueda, destacada = false }: {
     aria-label={`Ver ficha de ${cultivo.nombre}`}
     className={`group flex h-full gap-2 rounded-2xl border p-3 sm:gap-3 sm:p-4 motion-safe:transition-shadow focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring ${destacada ? 'border-primary bg-primary text-primary-foreground shadow-hero oscuro:bg-secondary oscuro:text-foreground' : 'border-border bg-card hover:shadow-soft'}`}
   >
-    <CultivoIcono icono={cultivo.icono} />
+    <CultivoIcono id={cultivo.id} icono={cultivo.icono} />
     <div className="min-w-0 flex-1">
       <p className={`text-xs font-semibold uppercase tracking-wider ${destacada ? 'text-primary-foreground/85 oscuro:text-muted-foreground' : 'text-muted-foreground'}`}>{cultivo.categoria}</p>
       <p className="mt-1 text-lg font-bold">{cultivo.nombre}</p>
