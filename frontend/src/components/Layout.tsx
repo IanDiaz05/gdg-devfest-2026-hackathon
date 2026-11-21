@@ -45,6 +45,7 @@ export function Layout() {
           <nav aria-label="Enlaces del pie" className="flex flex-wrap items-center gap-x-5">
             {navegacion.slice(1).map(({ ruta, etiqueta }) => <Link key={ruta} to={{ pathname: ruta, search }}
               className="inline-flex min-h-11 items-center text-sm font-semibold underline-offset-4 hover:underline focus-visible:outline-white">{etiqueta}</Link>)}
+            <Link to="/privacidad" className="inline-flex min-h-11 items-center text-sm font-semibold underline-offset-4 hover:underline focus-visible:outline-white">Aviso de privacidad</Link>
           </nav>
         </div>
       </footer>

@@ -173,6 +173,11 @@
     background: var(--c-barra);
   }
 
+  /* Tailwind 4 ya no pone la manita en los botones; sin ella parece que no responden al pasar el mouse */
+  :is(button, [role="button"], summary, select):not(:disabled) {
+    cursor: pointer;
+  }
+
   :is(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
     @apply outline-2 outline-offset-3 outline-ring;
   }

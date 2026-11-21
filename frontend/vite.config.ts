@@ -12,7 +12,7 @@ function generarWorker(): Plugin {
     enforce: 'post',
     async generateBundle(_, bundle) {
       const fuente = await readFile(new URL('./src/pwa/sw.js', import.meta.url), 'utf8')
-      const archivos = ['index.html', 'manifest.webmanifest', 'pwa/icon-192.png', 'pwa/icon-512.png', 'pwa/apple-touch-icon.png']
+      const archivos = ['index.html', 'manifest.webmanifest', 'pwa/icon-192.png', 'pwa/icon-512.png', 'pwa/icon-maskable-192.png', 'pwa/icon-maskable-512.png', 'pwa/apple-touch-icon.png', 'favicon.ico', 'favicon-16.png', 'favicon-32.png']
       const hash = createHash('sha256').update(fuente)
       for (const nombre of archivos.slice(1)) {
         hash.update(await readFile(new URL(`./public/${nombre}`, import.meta.url)))

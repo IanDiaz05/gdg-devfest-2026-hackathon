@@ -55,7 +55,26 @@ Si el backend responde 404 en `GET /api/ciudades`, el autocompletado usa el cat�
 
 El build incluye manifest, iconos instalables y un service worker con precarga de la aplicación. Con conexión, la API sigue siendo la primera fuente. Sin conexión se pueden leer las fichas y búsquedas por localidad previamente guardadas, identificadas con su fecha. Las consultas por coordenadas no se guardan en caché persistente.
 
-En Chromium usa **Instalar QUESIEMBRO** si el navegador lo ofrece. En Safari de iOS, usa **Compartir → Agregar a inicio**. Cuando haya una nueva revisión, la aplicación ofrece **Actualizar**.
+En Chromium usa el ícono de descarga de la barra (**Instalar QUESIEMBRO**) si el navegador lo ofrece. En Safari de iOS, usa **Compartir → Agregar a inicio**. Cuando haya una nueva revisión, la aplicación ofrece **Actualizar**.
+
+### Íconos
+
+Se generan a partir del logo `frontend/src/assets/imagen.png` (fondo transparente) con:
+
+```powershell
+cd frontend; npm run iconos
+```
+
+| Archivo en `frontend/public/` | Para qué |
+| --- | --- |
+| `pwa/icon-192.png`, `pwa/icon-512.png` | `purpose: any`. Cuadro verde redondeado: Android (cajón de apps) y app instalada en Windows, macOS y Linux con Chrome o Edge |
+| `pwa/icon-maskable-192.png`, `pwa/icon-maskable-512.png` | `purpose: maskable`. Fondo completo con el logo al 60 %: Android lo recorta en círculo o gota sin cortar el logo |
+| `pwa/apple-touch-icon.png` (180 px, sin transparencia) | iPhone, iPad y Safari en Mac. iOS redondea las esquinas solo |
+| `favicon.ico` (16, 32 y 48 px), `favicon-16.png`, `favicon-32.png` | Pestaña del navegador y accesos directos de Windows |
+
+`index.html` declara también el nombre bajo el ícono en iOS (`apple-mobile-web-app-title`: QueSiembro) y que se abra sin la barra de Safari. Los íconos están en la precarga del service worker (`vite.config.ts`).
+
+Si cambia el logo: correr `npm run iconos`, hacer build y desplegar. Android y PC actualizan el ícono solos (puede tardar); en iPhone hay que borrar la app de la pantalla de inicio y volver a agregarla.
 
 ## Estado y siguientes pasos
 

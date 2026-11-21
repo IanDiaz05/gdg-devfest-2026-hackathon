@@ -7,6 +7,7 @@ import { HomePage } from './pages/HomePage'
 const CalendarioAnualPage = lazy(() => import('./pages/CalendarioAnualPage').then((modulo) => ({ default: modulo.CalendarioAnualPage })))
 const CultivoDetallePage = lazy(() => import('./pages/CultivoDetallePage').then((modulo) => ({ default: modulo.CultivoDetallePage })))
 const Recomendaciones = lazy(() => import('./pages/Recomendaciones').then((modulo) => ({ default: modulo.Recomendaciones })))
+const PrivacidadPage = lazy(() => import('./pages/PrivacidadPage').then((modulo) => ({ default: modulo.PrivacidadPage })))
 const ZonaRecomendacionesPage = lazy(() => import('./pages/ZonaRecomendacionesPage').then((modulo) => ({ default: modulo.ZonaRecomendacionesPage })))
 
 export default function App() {
@@ -20,6 +21,7 @@ export default function App() {
           <Route path="cultivo/:id" element={<CultivoDetallePage />} />
           <Route path="cultivos/:id" element={<CultivoDetallePage />} />
           <Route path="calendario" element={<CalendarioAnualPage />} />
+          <Route path="privacidad" element={<PrivacidadPage />} />
           <Route path="*" element={<TituloPagina etiqueta="QUESIEMBRO" titulo="Página no encontrada">
             <Link className="mt-4 inline-flex min-h-11 items-center font-bold text-primary underline underline-offset-4" to="/">Volver al inicio</Link>
           </TituloPagina>} />

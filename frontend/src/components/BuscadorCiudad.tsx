@@ -11,12 +11,15 @@ const ESPERA_MS = 150
  * Campo de ciudad con sugerencias (patrón combobox de WAI-ARIA).
  * Al enfocarlo muestra las primeras 10 ciudades en orden alfabético ("Ciudad, Estado") y la lista
  * se actualiza mientras se escribe. Flechas para moverse, Enter para elegir y Escape para cerrar.
- * Elegir una opción solo llena el campo: la consulta se envía con el botón del formulario.
+ * Elegir una opción llena el campo; con `onElegir` además se avisa al instante (por ejemplo, para
+ * cambiar de zona sin pulsar otro botón). Sin `onElegir`, la consulta se envía con el formulario.
  */
-export function BuscadorCiudad({ id, valor, onCambio }: {
+export function BuscadorCiudad({ id, valor, onCambio, onElegir, placeholder = 'Ciudad o municipio' }: {
   id: string
   valor: string
   onCambio: (valor: string) => void
+  onElegir?: (etiqueta: string) => void
+  placeholder?: string
 }) {
   const idLista = useId()
   const [abierto, setAbierto] = useState(false)
@@ -50,6 +53,7 @@ export function BuscadorCiudad({ id, valor, onCambio }: {
     onCambio(opcion.etiqueta)
     setAbierto(false)
     setActiva(-1)
+    onElegir?.(opcion.etiqueta)
   }
 
   function teclado(evento: KeyboardEvent<HTMLInputElement>) {
@@ -73,7 +77,7 @@ export function BuscadorCiudad({ id, valor, onCambio }: {
       <div className="flex min-h-12 items-center rounded-xl border border-border bg-cream px-3 focus-within:ring-2 focus-within:ring-primary">
         <MapPin size={19} strokeWidth={1.75} className="shrink-0 text-primary" aria-hidden="true" />
         <input className="min-h-12 min-w-0 flex-1 px-2 text-base text-foreground outline-none placeholder:text-muted-foreground focus-visible:outline-none"
-          id={id} value={valor} placeholder="Ciudad o municipio" inputMode="search" autoComplete="off" required maxLength={120}
+          id={id} value={valor} placeholder={placeholder} inputMode="search" autoComplete="off" required maxLength={120}
           role="combobox" aria-autocomplete="list" aria-expanded={visible} aria-controls={idLista}
           aria-activedescendant={visible && activa >= 0 ? `${idLista}-${activa}` : undefined}
           onChange={(evento) => { onCambio(evento.target.value); setAbierto(true) }}

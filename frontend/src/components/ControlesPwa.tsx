@@ -1,35 +1,18 @@
-import { Download, RefreshCw, WifiOff } from 'lucide-react'
+import { RefreshCw, WifiOff } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { useConexion } from '../pwa/conexion'
 
-interface EventoInstalacion extends Event {
-  prompt(): Promise<void>
-  userChoice: Promise<{ outcome: 'accepted' | 'dismissed' }>
-}
-
+/**
+ * Registra el service worker y muestra los avisos de "sin conexión" y "nueva versión".
+ * El botón de instalar vive en la barra de navegación (BotonInstalar).
+ */
 export function ControlesPwa() {
   const conectado = useConexion()
-  const [instalacion, setInstalacion] = useState<EventoInstalacion>()
-  const [instalada, setInstalada] = useState(() =>
-    matchMedia('(display-mode: standalone)').matches ||
-    Boolean((navigator as Navigator & { standalone?: boolean }).standalone),
-  )
   const [actualizacion, setActualizacion] = useState<ServiceWorker>()
-  const [instrucciones, setInstrucciones] = useState(false)
   const [aplicando, setAplicando] = useState(false)
-  const ios = /iPhone|iPad|iPod/.test(navigator.userAgent) ||
-    (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
 
   useEffect(() => {
     if (!import.meta.env.PROD || !('serviceWorker' in navigator)) return
-    const capturar = (evento: Event) => {
-      evento.preventDefault()
-      setInstalacion(evento as EventoInstalacion)
-    }
-    const instalada = () => { setInstalacion(undefined); setInstalada(true) }
-    window.addEventListener('beforeinstallprompt', capturar)
-    window.addEventListener('appinstalled', instalada)
-
     const worker = navigator.serviceWorker
     let activa = true
     let registro: ServiceWorkerRegistration | undefined
@@ -62,8 +45,6 @@ export function ControlesPwa() {
     }).catch(() => {})
     return () => {
       activa = false
-      window.removeEventListener('beforeinstallprompt', capturar)
-      window.removeEventListener('appinstalled', instalada)
       worker.removeEventListener('controllerchange', cambiarControlador)
       document.removeEventListener('visibilitychange', revisar)
       window.removeEventListener('online', revisar)
@@ -72,22 +53,7 @@ export function ControlesPwa() {
     }
   }, [])
 
-  async function instalar() {
-    if (!instalacion) {
-      setInstrucciones((visible) => !visible)
-      return
-    }
-    try {
-      await instalacion.prompt()
-      if ((await instalacion.userChoice).outcome === 'accepted') setInstalada(true)
-    } catch {
-      setInstrucciones(true)
-    } finally {
-      setInstalacion(undefined)
-    }
-  }
-
-  if (conectado && !actualizacion && !instrucciones && (instalada || (!instalacion && !ios) || !import.meta.env.PROD)) return null
+  if (conectado && !actualizacion) return null
 
   return <div className="app-frame space-y-2">
     {!conectado && <p role="status" className="flex items-center gap-2 rounded-xl bg-warning-soft px-4 py-3 text-sm font-medium text-warning">
@@ -100,11 +66,5 @@ export function ControlesPwa() {
         actualizacion.postMessage('ACTUALIZAR')
       }}><RefreshCw size={16} aria-hidden="true" /> Actualizar</button>
     </div>}
-    {import.meta.env.PROD && !instalada && (instalacion || ios) && <button type="button" onClick={() => void instalar()} className="app-button" aria-expanded={!instalacion ? instrucciones : undefined}>
-      <Download size={16} aria-hidden="true" /> Instalar QUESIEMBRO
-    </button>}
-    {instrucciones && !instalada && <p role="status" className="text-sm text-muted-foreground">
-      {ios ? 'En Safari, toca Compartir y elige Agregar a inicio.' : 'Abre el menú del navegador y busca Instalar aplicación.'}
-    </p>}
   </div>
 }

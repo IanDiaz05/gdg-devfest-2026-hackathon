@@ -97,6 +97,11 @@ export function HomePage() {
                   <span aria-live="polite">{buscando ? 'Localizando…' : 'Usar mi ubicación actual'}</span>
                 </Boton>
               </div>
+              {/* Aviso de privacidad simplificado: se muestra donde se piden los datos */}
+              <p className="mt-3 text-xs leading-5 text-muted-foreground">
+                Sin cuentas ni registro. Tu ubicación es opcional: se redondea a unos 100 m y solo sirve para buscar el clima de tu
+                zona. <Link className="font-semibold text-primary underline underline-offset-2 hover:text-primary-hover" to="/privacidad">Aviso de privacidad</Link>
+              </p>
             </form>
             {error && <Aviso error>{error}</Aviso>}
             {modoDemo && <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-0.5">

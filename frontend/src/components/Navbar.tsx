@@ -8,6 +8,7 @@ import { claveDiagnostico } from '../hooks/useRecomendaciones'
 import { useScrolled } from '../hooks/useScrolled'
 import type { Diagnostico } from '../types/api'
 import { leerMes, leerUbicacion } from '../utils/consulta'
+import { BotonInstalar } from './BotonInstalar'
 import { BotonTema } from './BotonTema'
 
 export const navegacion = [
@@ -172,6 +173,7 @@ export function Navbar() {
             <LocationChip etiqueta={etiqueta} destino={destinoZona} />
             <CtaSembrar destino={destinoCta} />
           </div>
+          <BotonInstalar className={`${foco} ${transicion}`} />
           <BotonTema className={foco} />
           <button ref={boton} type="button" aria-expanded={menu} aria-controls="menu-movil"
           aria-label={menu ? 'Cerrar menú' : 'Abrir menú'} onClick={() => setMenu((abierto) => !abierto)}

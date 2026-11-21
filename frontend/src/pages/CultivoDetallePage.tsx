@@ -75,7 +75,7 @@ export function CultivoDetallePage() {
   const consulta = useCultivoDetalle(id)
   const [mensaje, setMensaje] = useState('')
   const [enlaceManual, setEnlaceManual] = useState('')
-  const volver = <Link className="inline-flex min-h-11 items-center gap-1 text-sm font-bold text-primary" to={{ pathname: '/zona', search: busqueda }}>
+  const volver = <Link className="-ml-3 inline-flex min-h-11 items-center gap-1 rounded-full px-3 text-sm font-bold text-primary hover:bg-secondary hover:text-primary-hover active:scale-95 motion-safe:transition" to={{ pathname: '/zona', search: busqueda }}>
     <ArrowLeft size={18} strokeWidth={1.75} aria-hidden="true" /> Volver
   </Link>
 
@@ -132,7 +132,7 @@ export function CultivoDetallePage() {
     {diagnostico.data && <EstadoDatos datos={diagnostico.data} actualizado={diagnostico.dataUpdatedAt} contexto="Zona" />}
     <header className="flex flex-wrap items-center justify-between gap-2 border-b border-border pb-2">
       {volver}
-      <button className="flex min-h-11 items-center gap-1.5 justify-self-end text-sm font-bold text-primary" type="button" onClick={() => void compartir()}><Share2 size={17} strokeWidth={1.75} aria-hidden="true" /> Compartir</button>
+      <button className="-mr-3 flex min-h-11 items-center gap-1.5 justify-self-end rounded-full px-3 text-sm font-bold text-primary hover:bg-secondary hover:text-primary-hover active:scale-95 motion-safe:transition" type="button" onClick={() => void compartir()}><Share2 size={17} strokeWidth={1.75} aria-hidden="true" /> Compartir</button>
     </header>
     {mensaje && <Aviso>{mensaje}</Aviso>}
     {enlaceManual && <label className="grid gap-2 text-sm font-semibold">Copia el enlace de la ficha

@@ -20,9 +20,18 @@
         if (tema === 'oscuro') document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0B120E')
       })()
     </script>
+    <!-- PWA: íconos generados con `npm run iconos` (scripts/generar-iconos.mjs) -->
     <link rel="manifest" href="%BASE_URL%manifest.webmanifest" />
-    <link rel="icon" type="image/png" href="/src/assets/imagen.png" />
-    <link rel="apple-touch-icon" href="%BASE_URL%pwa/apple-touch-icon.png" />
+    <link rel="icon" href="%BASE_URL%favicon.ico" sizes="48x48" />
+    <link rel="icon" type="image/png" sizes="32x32" href="%BASE_URL%favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="%BASE_URL%favicon-16.png" />
+    <!-- iPhone y iPad: ícono, nombre bajo el ícono y abrir sin barra de Safari -->
+    <link rel="apple-touch-icon" sizes="180x180" href="%BASE_URL%pwa/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="QueSiembro" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="application-name" content="QueSiembro" />
     <title>QUESIEMBRO · Huertos en casa</title>
   </head>
   <body class="bg-shell font-sans text-foreground antialiased">
