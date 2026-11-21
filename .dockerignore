@@ -1,0 +1,16 @@
+.git/
+.gitignore
+docs/
+**/.venv/
+**/venv/
+**/__pycache__/
+**/*.py[cod]
+**/node_modules/
+frontend/dist/
+frontend/build/
+**/*.db
+**/*.sqlite*
+sqlite_data/
+.env*
+*.md
+docs/
