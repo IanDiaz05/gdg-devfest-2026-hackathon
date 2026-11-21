@@ -2,9 +2,9 @@ import { useState } from 'react'
 import { ChevronRight, PiggyBank } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import type { EstadoSiembra, Recomendacion } from '../types/api'
-import { espacios, meses } from '../utils/consulta'
+import { meses } from '../utils/consulta'
 import { useFiltroEspacio } from './FiltrosCultivos'
-import { Chip } from './Chip'
+import { FiltrosRecomendaciones } from './FiltrosRecomendaciones'
 import { Aviso, CultivoIcono, Estado, estados } from './Interfaz'
 
 const grupos = Object.keys(estados) as EstadoSiembra[]
@@ -53,22 +53,8 @@ export function CultivosRecomendados({ cultivos, busqueda }: { cultivos: Recomen
   )
   return <section className="mt-8" aria-labelledby="recomendaciones">
     <h2 id="recomendaciones" className="text-2xl font-bold">Qué sembrar</h2>
-    <div className="surface mt-4 grid gap-4 p-3 sm:p-4 lg:grid-cols-2">
-      <fieldset>
-        <legend className="mb-2 text-sm font-semibold">Espacio</legend>
-        <div className="flex flex-wrap gap-2">
-          {espacios.map(([valor, etiqueta]) => <Chip key={valor} selected={espacio === valor} onClick={() => setEspacio(valor)}>{etiqueta}</Chip>)}
-        </div>
-      </fieldset>
-      <fieldset>
-        <legend className="mb-2 text-sm font-semibold">Categoría</legend>
-        <div className="flex flex-wrap gap-2">
-          <Chip selected={categoriaActiva === ''} onClick={() => setCategoria('')}>Todas las categorías</Chip>
-          {categorias.map((valor) => <Chip key={valor} selected={categoriaActiva === valor} onClick={() => setCategoria(valor)}>{valor}</Chip>)}
-        </div>
-      </fieldset>
-    </div>
-    <p role="status" className="sr-only">{filtrados.length} cultivos coinciden con los filtros.</p>
+    <FiltrosRecomendaciones cultivos={cultivos} categorias={categorias} espacio={espacio}
+      categoria={categoriaActiva} setEspacio={setEspacio} setCategoria={setCategoria} total={filtrados.length} />
     {filtrados.length === 0 && <Aviso>{cultivos.length ? 'No hay cultivos con estos filtros.' : 'Todavía no hay recomendaciones para esta zona.'}</Aviso>}
     {grupos.map((grupo) => {
       const lista = filtrados.filter((cultivo) => cultivo.estado === grupo)
