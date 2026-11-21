@@ -1,3 +1,4 @@
+import logging
 from datetime import datetime
 from typing import Any
 
@@ -27,6 +28,8 @@ from app.schemas.recomendaciones import (
     UbicacionInfo,
 )
 from app.services import open_meteo
+
+logger = logging.getLogger(__name__)
 
 router = APIRouter(prefix="/api")
 
@@ -310,12 +313,22 @@ async def alertas(
     lugar = await _resolver_lugar(q, lat, lon)
     lat_resuelta, lon_resuelta = float(lugar["lat"]), float(lugar["lon"])
     lat_grid, lon_grid = round(lat_resuelta, 1), round(lon_resuelta, 1)
+    # 1) Lo guardado en la base de datos (menos de 1 hora). 2) Open-Meteo. 3) Si Open-Meteo falla,
+    # el último pronóstico guardado aunque sea viejo. 4) Si no hay nada, lista vacía. Nunca responde 500.
     pronostico = await database.get_pronostico_cache(lat_grid, lon_grid)
     desde_cache = pronostico is not None
     if pronostico is None:
-        pronostico = await open_meteo.obtener_pronostico_7d(lat_resuelta, lon_resuelta)
-        # También se guarda una semana sin alertas, para no volver a preguntar en la siguiente hora
-        await database.save_pronostico_cache(lat_grid, lon_grid, pronostico, settings.PRONOSTICO_TTL_SECONDS)
+        try:
+            pronostico = await open_meteo.obtener_pronostico_7d(lat_resuelta, lon_resuelta)
+        except Exception:  # noqa: BLE001 - red, límite 429 o respuesta rara de Open-Meteo
+            logger.warning("Pronóstico no disponible para %s, %s; se usa el último guardado", lat_grid, lon_grid, exc_info=True)
+            pronostico = await database.get_pronostico_cache(lat_grid, lon_grid, incluir_vencido=True) or []
+            desde_cache = True
+        else:
+            try:
+                await database.save_pronostico_cache(lat_grid, lon_grid, pronostico, settings.PRONOSTICO_TTL_SECONDS)
+            except Exception:  # noqa: BLE001 - p. ej. base de datos de solo lectura en el servidor
+                logger.warning("No se pudo guardar el pronóstico en la caché", exc_info=True)
     return AlertasResponse(
         ubicacion=UbicacionAlertas(nombre=str(lugar["nombre"]), estado=str(lugar["estado"]), lat=lat_resuelta, lon=lon_resuelta),
         alertas_7_dias=_con_cultivos_afectados(pronostico, await database.get_all_cultivos()),

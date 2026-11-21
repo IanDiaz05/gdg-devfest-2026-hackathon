@@ -49,8 +49,9 @@ export function ZonaRecomendacionesPage() {
     <SelectorLocalidad alternativas={zona.alternativas} elegir={({ lat, lon }) => cambiar({ lat, lon }, clima.mes_evaluado)} />
     <div className={enLinea ? 'grid gap-5 lg:grid-cols-[minmax(0,1.65fr)_minmax(0,1fr)]' : undefined}>
       <ClimaCard clima={clima} altitud={zona.altitud_m} />
-      {enLinea && <AlertasClima alertas={pronostico.data?.alertas_7_dias} cargando={pronostico.isPending}
-        error={pronostico.isError} reintentar={() => void pronostico.refetch()} />}
+      {/* Si /api/alertas falla, se usan las alertas guardadas que ya vienen con las recomendaciones */}
+      {enLinea && <AlertasClima alertas={pronostico.isError ? consulta.data.alertas_7_dias : pronostico.data?.alertas_7_dias}
+        cargando={pronostico.isPending && !pronostico.isError} />}
     </div>
 
     {destacados.length > 0 && <section className="mt-8" aria-labelledby="destacados">

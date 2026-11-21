@@ -155,21 +155,25 @@ async def save_clima_cache(
     created_at = datetime.now(timezone.utc).isoformat()
     payload = json.dumps(resumen_mensual, ensure_ascii=False)
     fuente_json = json.dumps(fuente, ensure_ascii=False) if fuente is not None else None
-    async with get_connection() as db:
-        await db.execute(
-            """
-            INSERT OR REPLACE INTO clima_historico_cache (
-                lat_grid, lon_grid, altitud_m, periodo_referencia,
-                resumen_mensual_json, created_at, origen, fuente_json
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-            """,
-            (lat_grid, lon_grid, altitud_m, periodo_referencia, payload, created_at, origen, fuente_json),
-        )
-        await db.commit()
+    try:
+        async with get_connection() as db:
+            await db.execute(
+                """
+                INSERT OR REPLACE INTO clima_historico_cache (
+                    lat_grid, lon_grid, altitud_m, periodo_referencia,
+                    resumen_mensual_json, created_at, origen, fuente_json
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                """,
+                (lat_grid, lon_grid, altitud_m, periodo_referencia, payload, created_at, origen, fuente_json),
+            )
+            await db.commit()
+    except aiosqlite.Error:
+        # La caché es una optimización: si no se puede escribir (p. ej. base de solo lectura), se sigue sin guardar
+        logger.warning("No se pudo guardar en la caché (%s)", "save_clima_cache", exc_info=True)
 
 
 async def get_pronostico_cache(
-    lat_grid: float, lon_grid: float
+    lat_grid: float, lon_grid: float, incluir_vencido: bool = False
 ) -> list[dict[str, Any]] | None:
     ahora = int(time.time())
     async with get_connection() as db:
@@ -184,7 +188,7 @@ async def get_pronostico_cache(
             row = await cursor.fetchone()
     if row is None:
         return None
-    if int(row["expires_at"]) < ahora:
+    if int(row["expires_at"]) < ahora and not incluir_vencido:
         return None
     parsed = _parse_json(row["alertas_json"])
     if not isinstance(parsed, list):
@@ -201,13 +205,17 @@ async def save_pronostico_cache(
 ) -> None:
     expires_at = int(time.time()) + ttl_seconds
     payload = json.dumps(alertas, ensure_ascii=False)
-    async with get_connection() as db:
-        await db.execute(
-            """
-            INSERT OR REPLACE INTO pronostico_7d_cache (
-                lat_grid, lon_grid, alertas_json, expires_at
-            ) VALUES (?, ?, ?, ?)
-            """,
-            (lat_grid, lon_grid, payload, expires_at),
-        )
-        await db.commit()
+    try:
+        async with get_connection() as db:
+            await db.execute(
+                """
+                INSERT OR REPLACE INTO pronostico_7d_cache (
+                    lat_grid, lon_grid, alertas_json, expires_at
+                ) VALUES (?, ?, ?, ?)
+                """,
+                (lat_grid, lon_grid, payload, expires_at),
+            )
+            await db.commit()
+    except aiosqlite.Error:
+        # La caché es una optimización: si no se puede escribir (p. ej. base de solo lectura), se sigue sin guardar
+        logger.warning("No se pudo guardar en la caché (%s)", "save_pronostico_cache", exc_info=True)

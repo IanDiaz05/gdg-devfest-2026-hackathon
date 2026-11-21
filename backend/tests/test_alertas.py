@@ -45,11 +45,13 @@ def test_semana_sin_alertas_tambien_se_guarda(cliente_api: TestClient) -> None:
     pronostico.assert_called_once()
 
 
-def test_errores_de_ubicacion_y_de_open_meteo(cliente_api: TestClient) -> None:
+def test_errores_de_ubicacion_y_open_meteo_caido(cliente_api: TestClient) -> None:
     assert cliente_api.get("/api/alertas").status_code == 400
     assert cliente_api.get("/api/alertas", params={"q": "zzzzz"}).status_code == 404
+    # Open-Meteo caído y nada guardado: responde 200 con lista vacía (nunca 500)
     with patch("app.api.routes.open_meteo.obtener_pronostico_7d", new=AsyncMock(side_effect=ClimaNoDisponibleError())):
-        assert cliente_api.get("/api/alertas", params={"q": "Tulum"}).status_code == 503
+        respuesta = cliente_api.get("/api/alertas", params={"q": "Tulum"})
+    assert respuesta.status_code == 200 and respuesta.json()["alertas_7_dias"] == []
 
 
 def test_recomendaciones_no_esperan_al_pronostico(cliente_api: TestClient) -> None:
@@ -61,17 +63,13 @@ def test_recomendaciones_no_esperan_al_pronostico(cliente_api: TestClient) -> No
     pronostico.assert_not_called()
 
 
-def test_si_open_meteo_falla_no_dice_sin_alertas_ni_lo_guarda(cliente_api: TestClient) -> None:
-    # Con la función real: un 429 o una respuesta sin días es error (503), no "sin alertas"
-    from app.services.open_meteo import OpenMeteoRateLimitError
-    with patch("app.services.open_meteo._get", new=AsyncMock(side_effect=OpenMeteoRateLimitError())):
-        assert cliente_api.get("/api/alertas", params={"q": "Tulum"}).status_code == 503
-    with patch("app.services.open_meteo._get", new=AsyncMock(return_value={"daily": {}})):
-        assert cliente_api.get("/api/alertas", params={"q": "Tulum"}).status_code == 503
-    # Nada quedó en caché: cuando Open-Meteo vuelve, se consulta de nuevo
-    semana = {"daily": {"time": ["2026-11-21"], "temperature_2m_min": [22], "temperature_2m_max": [30],
-                        "precipitation_sum": [0], "wind_gusts_10m_max": [10], "uv_index_max": [5], "weather_code": [1]}}
-    with patch("app.services.open_meteo._get", new=AsyncMock(return_value=semana)):
+def test_si_open_meteo_falla_usa_el_ultimo_pronostico_guardado(cliente_api: TestClient) -> None:
+    import asyncio
+    from app.core import database
+    # Un pronóstico guardado que ya venció (TTL negativo)
+    asyncio.run(database.save_pronostico_cache(20.2, -87.5, [ALERTA], -10))
+    with patch("app.api.routes.open_meteo.obtener_pronostico_7d", new=AsyncMock(side_effect=Exception("sin red"))):
         respuesta = cliente_api.get("/api/alertas", params={"q": "Tulum"})
-    assert respuesta.status_code == 200 and respuesta.json()["alertas_7_dias"] == []
-    assert respuesta.json()["desde_cache"] is False
+    assert respuesta.status_code == 200, respuesta.text
+    assert respuesta.json()["alertas_7_dias"][0]["tipo"] == "lluvia_fuerte"
+    assert respuesta.json()["desde_cache"] is True
