@@ -32,21 +32,22 @@ export function Estado({ estado, texto }: { estado: EstadoSiembra; texto?: strin
 
 export function CultivoIcono({ icono }: { icono?: string }) {
   return (
-    <span className="grid size-12 shrink-0 place-items-center rounded-2xl bg-cream text-2xl text-primary" aria-hidden="true">
+    <span className="grid size-12 shrink-0 place-items-center rounded-2xl bg-earth-soft text-2xl text-primary" aria-hidden="true">
       {icono ?? <Leaf size={26} strokeWidth={1.75} />}
     </span>
   )
 }
 
-export function Aviso({ children, error, reintentar }: {
+export function Aviso({ children, error, reintentar, reintentoBloqueado }: {
   children: ReactNode
   error?: boolean
   reintentar?: () => void
+  reintentoBloqueado?: boolean
 }) {
   return (
     <div className={`my-3 rounded-2xl border p-4 ${error ? 'border-red-200 bg-red-50 text-red-800' : 'border-border bg-white text-muted-foreground'}`} role={error ? 'alert' : 'status'}>
       <p>{children}</p>
-      {reintentar && <button className="mt-3 min-h-11 rounded-full border border-primary px-4 text-sm font-bold text-primary" onClick={reintentar}>Reintentar</button>}
+      {reintentar && <button className="mt-3 min-h-11 rounded-full border border-primary px-4 text-sm font-bold text-primary disabled:opacity-60" disabled={reintentoBloqueado} onClick={reintentar}>Reintentar</button>}
     </div>
   )
 }
@@ -63,7 +64,7 @@ export function TituloPagina({ etiqueta, titulo, children }: {
   return (
     <header>
       <p className="mb-3 text-xs font-bold uppercase tracking-[0.16em] text-terracotta">{etiqueta}</p>
-      <h1 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl">{titulo}</h1>
+      <h1 className="font-display text-3xl font-semibold tracking-tight text-primary md:text-4xl">{titulo}</h1>
       {children}
     </header>
   )

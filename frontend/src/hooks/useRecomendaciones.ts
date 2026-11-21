@@ -1,9 +1,10 @@
+import { fechaGuardada } from '../pwa/datosGuardados'
 import { useQuery } from '@tanstack/react-query'
 import { useSearchParams } from 'react-router-dom'
 import { obtenerDiagnostico } from '../services/api'
 import { leerMes, leerUbicacion } from '../utils/consulta'
 
-const claveDiagnostico = (ubicacion: ReturnType<typeof leerUbicacion>, mes: number | undefined) => ['diagnostico', ubicacion, mes] as const
+export const claveDiagnostico = (ubicacion: ReturnType<typeof leerUbicacion>, mes: number | undefined) => ['diagnostico', ubicacion, mes] as const
 
 export function useRecomendaciones() {
   const [params] = useSearchParams()
@@ -17,6 +18,10 @@ export function useRecomendaciones() {
     },
     enabled: Boolean(ubicacion),
     retry: false,
+    networkMode: 'always',
+    structuralSharing: false,
+    staleTime: (query) => fechaGuardada(query.state.data) ? 0 : 30 * 60 * 1000,
+    refetchOnReconnect: true,
   })
 
   return { consulta, ubicacion, busqueda: params.toString() }

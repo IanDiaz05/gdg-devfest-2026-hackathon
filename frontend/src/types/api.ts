@@ -5,7 +5,9 @@ export type TipoEspacio = 'maceta_chica' | 'maceta_grande' | 'patio'
 export type Luz = 'pleno_sol' | 'media_sombra' | 'sombra'
 export type Dificultad = 'facil' | 'media' | 'dificil'
 export type Evidencia = 'comprobada' | 'popular'
-export type TipoAlerta = 'helada' | 'calor'
+export type TipoAlerta = 'helada' | 'calor' | 'lluvia_fuerte' | 'tormenta' | 'viento' | 'uv'
+export type NivelLuz = 1 | 2 | 3 | 4
+export type ConsumoHidrico = 'bajo' | 'medio' | 'alto'
 export type Severidad = 'media' | 'alta'
 
 export interface Alternativa {
@@ -24,6 +26,8 @@ export interface MesClimatico {
 export interface Alerta {
   tipo: TipoAlerta
   severidad: Severidad
+  fecha?: string
+  cultivos_afectados?: string[]
   titulo: string
   mensaje: string
 }
@@ -42,11 +46,18 @@ export interface Recomendacion {
   filtros_rapidos: {
     maceta_min_litros: number
     espacio_tipo: TipoEspacio
-    luz: Luz
+    luz?: Luz
+    luz_nivel?: NivelLuz
+    profundidad_maceta_cm?: number
+    riego_frecuencia_dias?: number
+    consumo_hidrico?: ConsumoHidrico
+    pet_safe?: boolean
+    atrae_polinizadores?: boolean
+    es_nativa_region?: boolean
     dias_cosecha_aprox: number
     dificultad: Dificultad
   }
-  finanzas_sniim: {
+  finanzas_sniim?: {
     mercado_referencia: string
     producto_sniim: string
     mes_cosecha_estimado: number
@@ -73,7 +84,21 @@ export interface Diagnostico {
     anios_con_helada_pct: number
     mes_mas_frio: MesClimatico
     mes_mas_caluroso: MesClimatico
-    sequia: {
+    lluvia_mes_mm?: number | null
+    lluvia_reciente?: {
+      fuente: string
+      estacion: string
+      distancia_km: number
+      mes: string
+      lluvia_mm: number
+      normal_mm?: number | null
+      anomalia_pct?: number | null
+      temp_min_c?: number | null
+      temp_max_c?: number | null
+      mensaje: string
+      consejo: string
+    } | null
+    sequia?: {
       activa: boolean
       nivel: string
       nivel_nombre: string
@@ -99,6 +124,10 @@ export interface FichaCultivo {
   categoria: string
   icono: string
   resumen: string
+  es_nativa_region?: boolean
+  restricciones?: { pet_safe: boolean; dificultad: Dificultad }
+  impacto_ambiental?: { consumo_hidrico: ConsumoHidrico; atrae_polinizadores: boolean }
+  guia_rapida?: { error_comun: string }
   ficha_tecnica: {
     temp_ideal_c: [number, number]
     temp_limite_c: [number, number]
@@ -106,17 +135,18 @@ export interface FichaCultivo {
     altitud_max_m: number
     dias_a_cosecha: [number, number]
     maceta_min_litros: number
-    profundidad_min_cm: number
-    luz: Luz
     riego: string
     sustrato_recomendado: string
-  }
+  } & (
+    { profundidad_maceta_cm: number; luz_nivel: NivelLuz; riego_frecuencia_dias: number }
+    | { profundidad_min_cm: number; luz: Luz }
+  )
   tutorial: string[]
   companeros_cultivo: { id: string; nombre: string; beneficio: string; evidencia: Evidencia }[]
   curiosidades: string[]
   ojo: string[]
   fuentes: string[]
-  contexto_economico_sniim: {
+  contexto_economico_sniim?: {
     mercado_referencia: string
     producto_sniim: string
     mes_mas_caro: MesPrecio
@@ -127,5 +157,5 @@ export interface FichaCultivo {
 }
 
 export type ErrorContrato =
-  | { error: 'ciudad_no_encontrada' | 'cultivo_no_encontrado'; detail: string }
+  | { error: 'ciudad_no_encontrada' | 'cultivo_no_encontrado' | 'ubicacion_invalida'; detail: string }
   | { error: 'clima_no_disponible'; detail: string; reintentar_en_s: number }

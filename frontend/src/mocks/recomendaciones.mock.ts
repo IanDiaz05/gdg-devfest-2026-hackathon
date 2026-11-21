@@ -1,6 +1,6 @@
-import { ErrorApi } from '../services/api'
-import type { Diagnostico, FichaCultivo, Recomendacion, Ubicacion } from '../types/api'
-import { normalizar, meses } from '../utils/consulta'
+import { ErrorApi } from '../services/ErrorApi'
+import type { Diagnostico, FichaCultivo, Ubicacion } from '../types/api'
+import { normalizar } from '../utils/consulta'
 import { jitomate } from './jitomate'
 import { toluca } from './toluca-diciembre'
 
@@ -71,45 +71,16 @@ const monterrey: Diagnostico = {
   ],
 }
 
-const alternativas: Diagnostico[] = toluca.ubicacion.alternativas.map((lugar, indice) => ({
-  ...(indice === 0 ? merida : monterrey),
-  ubicacion: { ...lugar, municipio: lugar.nombre, altitud_m: indice === 0 ? 25 : 2080, desde_cache: true, alternativas: [] },
-  alertas_7_dias: [],
-}))
-
-const zonas = [toluca, merida, monterrey, ...alternativas]
-const nombres = new Map([['toluca', toluca], ['toluca de lerdo', toluca], ['merida', merida], ['monterrey', monterrey]])
-const semaforos = { optimo: 'verde', con_cuidados: 'amarillo', no_ahora: 'rojo' } as const
-
-function evaluar(cultivo: Recomendacion, mes: number): Recomendacion {
-  const estado = cultivo.meses_ideales.includes(mes) ? 'optimo'
-    : cultivo.meses_posibles.includes(mes) ? 'con_cuidados' : 'no_ahora'
-  return {
-    ...cultivo, estado, semaforo: semaforos[estado], finanzas_sniim: null,
-    etiqueta_clima: estado === 'optimo' ? 'Mes ideal' : estado === 'con_cuidados' ? 'Siembra con cuidados' : 'Fuera de temporada',
-    razon_corta: `Evaluación de ejemplo para ${meses[mes - 1].toLocaleLowerCase('es-MX')} según el calendario de esta zona.`,
-  }
-}
-
+const tolucaDemo = { ...toluca, ubicacion: { ...toluca.ubicacion, alternativas: [] } }
+const zonas = [tolucaDemo, merida, monterrey]
+const nombres = new Map([['toluca', tolucaDemo], ['toluca de lerdo', tolucaDemo], ['merida', merida], ['monterrey', monterrey]])
 export function diagnosticoDemo(ubicacion: Ubicacion, mes = 12): Diagnostico {
   const zona = 'q' in ubicacion ? nombres.get(normalizar(ubicacion.q)) : zonas.find(({ ubicacion: lugar }) =>
     Math.hypot(lugar.lat - ubicacion.lat, lugar.lon - ubicacion.lon) <= 0.25,
   )
   if (!zona) throw new ErrorApi('La demo incluye Toluca, Mérida y Monterrey. Prueba con alguna de estas ciudades.', 404, 'ciudad_no_encontrada')
-  if (mes === 12) return zona
-  const clima = zona.clima_zona
-  const extremos = [clima.mes_mas_frio, clima.mes_mas_caluroso]
-  const promedio = extremos.find((extremo) => extremo.mes === mes)?.temp_media_c ?? clima.temp_media_c
-  const diferencia = promedio - clima.temp_media_c
-  return {
-    ...zona,
-    clima_zona: {
-      ...clima, mes_evaluado: mes, mes_nombre: meses[mes - 1], temp_media_c: promedio,
-      temp_min_promedio_c: Number((clima.temp_min_promedio_c + diferencia).toFixed(1)),
-      temp_max_promedio_c: Number((clima.temp_max_promedio_c + diferencia).toFixed(1)),
-    },
-    cultivos: zona.cultivos.map((cultivo) => evaluar(cultivo, mes)),
-  }
+  if (mes !== 12) throw new ErrorApi('La demo solo incluye diagnósticos de diciembre. Vuelve al inicio para elegir un ejemplo.', 404, 'mes_demo_no_disponible')
+  return zona
 }
 
 const fichas: FichaCultivo[] = [

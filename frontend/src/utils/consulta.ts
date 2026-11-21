@@ -44,3 +44,25 @@ export const espacios = [
 ] as const
 
 export const formatoNumero = new Intl.NumberFormat('es-MX', { maximumFractionDigits: 1 })
+
+const claveEspacio = 'quesiembro-espacio'
+
+export function leerEspacio(valor: string | null) {
+  let preferencia = valor
+  if (preferencia === null) {
+    try {
+      preferencia = sessionStorage.getItem(claveEspacio)
+    } catch {
+      // La navegación todavía conserva el filtro en la URL.
+    }
+  }
+  return espacios.find(([id]) => id === preferencia)?.[0] ?? ''
+}
+
+export function guardarEspacio(valor: string) {
+  try {
+    sessionStorage.setItem(claveEspacio, valor)
+  } catch {
+    // La navegación todavía conserva el filtro en la URL.
+  }
+}

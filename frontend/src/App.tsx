@@ -1,15 +1,17 @@
+import { lazy } from 'react'
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
 import { Layout } from './components/Layout'
 import { TituloPagina } from './components/Interfaz'
-import { CalendarioAnualPage } from './pages/CalendarioAnualPage'
-import { CultivoDetallePage } from './pages/CultivoDetallePage'
 import { HomePage } from './pages/HomePage'
-import { Recomendaciones } from './pages/Recomendaciones'
-import { ZonaRecomendacionesPage } from './pages/ZonaRecomendacionesPage'
+
+const CalendarioAnualPage = lazy(() => import('./pages/CalendarioAnualPage').then((modulo) => ({ default: modulo.CalendarioAnualPage })))
+const CultivoDetallePage = lazy(() => import('./pages/CultivoDetallePage').then((modulo) => ({ default: modulo.CultivoDetallePage })))
+const Recomendaciones = lazy(() => import('./pages/Recomendaciones').then((modulo) => ({ default: modulo.Recomendaciones })))
+const ZonaRecomendacionesPage = lazy(() => import('./pages/ZonaRecomendacionesPage').then((modulo) => ({ default: modulo.ZonaRecomendacionesPage })))
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Routes>
         <Route element={<Layout />}>
           <Route index element={<HomePage />} />

@@ -1,3 +1,4 @@
+import { EstadoDatos } from '../components/EstadoDatos'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ErrorConsulta } from '../components/ErrorConsulta'
@@ -25,15 +26,16 @@ export function CalendarioAnualPage() {
   const filtrados = cultivos.filter((cultivo) => normalizar(cultivo.nombre).includes(normalizar(nombre))
     && (!espacio || cultivo.filtros_rapidos.espacio_tipo === espacio))
 
-  return <div className="mx-auto max-w-md md:max-w-none">
+  return <div className="w-full">
+    <EstadoDatos datos={consulta.data} actualizado={consulta.dataUpdatedAt} />
     <TituloPagina etiqueta={zona.nombre} titulo="Calendario anual" />
-    <div className="my-5 grid gap-3 sm:grid-cols-2">
+    <div className="surface my-5 grid gap-3 p-3 sm:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] sm:p-4">
       <label className="grid gap-1 text-sm font-semibold">Buscar cultivo
         <input type="search" className={estiloControl} value={nombre} onChange={(event) => setNombre(event.target.value)} placeholder="Ej. jitomate" />
       </label>
       <FiltroEspacio valor={espacio} cambiar={setEspacio} />
     </div>
-    <ul className="mb-4 flex flex-wrap gap-2 text-xs">
+    <ul className="mb-4 flex flex-wrap gap-2 text-sm">
       {Object.values(estadosMes).map(({ texto, clase, simbolo }) => <li key={texto} className={`rounded-full px-3 py-1.5 font-semibold ${clase}`}>{simbolo} {texto}</li>)}
     </ul>
     {filtrados.length ? <ul className="grid gap-3">
@@ -43,7 +45,7 @@ export function CalendarioAnualPage() {
             <span aria-hidden="true">{cultivo.icono}</span>{cultivo.nombre}
           </Link>
         </h2>
-        <ol className="grid grid-cols-4 gap-1.5 sm:grid-cols-6 lg:grid-cols-12">
+        <ol className="grid grid-cols-3 gap-1.5 min-[360px]:grid-cols-4 sm:grid-cols-6 lg:grid-cols-12">
           {meses.map((mes, index) => {
             const numero = index + 1
             const estado = cultivo.meses_ideales.includes(numero) ? estadosMes.ideal

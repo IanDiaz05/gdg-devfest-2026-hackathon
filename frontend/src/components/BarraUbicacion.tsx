@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { MapPin } from "lucide-react";
 
 import type { Diagnostico } from "../types/api";
+import { modoDemo } from "../services/api";
 import { MesSelect } from "./MesSelect";
 
 export function BarraUbicacion({
@@ -23,12 +24,12 @@ export function BarraUbicacion({
           <p className="break-words text-sm font-semibold">
             {ubicacion.nombre}, {ubicacion.estado}
           </p>
-          <Link to={{ pathname: "/", search: busqueda }} className="inline-flex min-h-8 items-center text-sm font-medium text-primary underline underline-offset-2">
+          <Link to={{ pathname: "/", search: busqueda }} className="inline-flex min-h-11 items-center text-sm font-medium text-primary underline underline-offset-2">
             Cambiar ubicación
           </Link>
         </div>
       </div>
-      <MesSelect mes={mes} onChange={onMes} />
+      {modoDemo ? <span className="self-center rounded-xl bg-secondary px-2 py-2 text-sm">Diciembre</span> : <MesSelect mes={mes} onChange={onMes} />}
     </div>
   );
 }

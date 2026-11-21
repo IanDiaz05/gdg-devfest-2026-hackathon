@@ -38,3 +38,12 @@ El checkout contiene el frontend y los documentos de integración. Al probar amb
 - `npm run build` completó el chequeo de tipos y generó el bundle de producción.
 - Se probaron las cuatro rutas principales y las dos rutas de compatibilidad en Brave sin interfaz, con viewport móvil de 390 px. En modo mock se verificaron las ciudades, las alternativas, el mes, el calendario y la ficha. En modo conectado, un servidor HTTP local sirvió los ejemplos v2 y permitió verificar CORS, prioridad de coordenadas, filtros sin peticiones adicionales, 404 y recuperación del 503.
 - La integración con una instancia de FastAPI y el catálogo real requiere una URL activa del equipo backend.
+
+## Aplicación del plan de mejoras con FastAPI v3.1
+
+- La configuración local apunta a FastAPI en `http://127.0.0.1:8000`. Toluca, Mérida y las coordenadas de prueba respondieron con 200 y 28 cultivos. Una búsqueda inexistente devolvió 404. Las respuestas revisadas no incluyeron homónimos.
+- El cliente valida ventanas anuales y semáforo, respeta la espera del 503 y presenta D0 si la API entrega ese dato. El contrato v3.1 sigue proporcionando lluvia reciente y alertas con fecha.
+- GPS conserva tres decimales en la URL. Los atajos fijos aparecen en modo demo. Los diagnósticos de ejemplo se limitan a diciembre y el filtro de espacio sigue disponible con almacenamiento restringido.
+- La navegación móvil mantiene las opciones en una fila, conserva la cabecera al entrar, y mantiene acceso al enlace de salto con Tab. Los destacados se pueden recorrer con teclado y la ficha muestra primero la explicación térmica.
+- `npm test` ejecuta las regresiones de contrato y servicio con Node y Vite. `npm run build` valida TypeScript y compila la SPA.
+- El selector de alternativas usa los datos existentes del diagnóstico. Un catálogo Estado → Municipio, la serie térmica mensual y las horas de sol siguen sujetos a los campos y endpoints que acuerde el equipo.
