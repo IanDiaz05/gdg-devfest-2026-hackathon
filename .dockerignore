@@ -13,4 +13,3 @@ frontend/build/
 sqlite_data/
 .env*
 *.md
-docs/
